@@ -11,6 +11,7 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       # 1️⃣ Checkout source code
       - uses: actions/checkout@v4
@@ -25,30 +26,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-material mkdocs-rss-plugin python-frontmatter requests pyyaml
+          pip install mkdocs mkdocs-material mkdocs-rss-plugin python-frontmatter pyyaml
 
-      # # 4️⃣ Generate podcast RSS
-      # - name: Generate podcast RSS
-      #   run: python scripts/generate_podcast_rss.py
-      #   env:
-      #     SITE_URL: ${{ secrets.SITE_URL }}
-
-      # # 5️⃣ Publish posts to Medium/Dev.to (optional)
-      # - name: Publish blog posts
-      #   run: python scripts/publish_posts.py
-      #   env:
-      #     DEVTO_TOKEN: ${{ secrets.DEVTO_TOKEN }}
-      #     MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
-      #     MEDIUM_USER_ID: ${{ secrets.MEDIUM_USER_ID }}
-
-      # 6️⃣ Build MkDocs site
+      # 4️⃣ Build MkDocs site
       - name: Build site
         run: mkdocs build
 
-      # 7️⃣ Deploy to GitHub Pages
+      # 5️⃣ Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # works for public repo
+          github_token: ${{ secrets.GITHUB_TOKEN }} # works for public repos
           publish_dir: ./site
-          # this will automatically create gh-pages branch if it doesn't exist
