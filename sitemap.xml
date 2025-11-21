@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://kfir-g.github.io/</loc>
-         <lastmod>2025-11-17</lastmod>
+         <lastmod>2025-11-21</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/about/</loc>
-         <lastmod>2025-11-17</lastmod>
+         <lastmod>2025-11-21</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/resources/</loc>
-         <lastmod>2025-11-17</lastmod>
+         <lastmod>2025-11-21</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/example/</loc>
-         <lastmod>2025-11-17</lastmod>
+         <lastmod>2025-11-21</lastmod>
     </url>
     <url>
-         <loc>https://kfir-g.github.io/podcasts/example/</loc>
-         <lastmod>2025-11-17</lastmod>
+         <loc>https://kfir-g.github.io/podcast/example/</loc>
+         <lastmod>2025-11-21</lastmod>
     </url>
     <url>
-         <loc>https://kfir-g.github.io/videos/example/</loc>
-         <lastmod>2025-11-17</lastmod>
+         <loc>https://kfir-g.github.io/videos/spain-devsecops/</loc>
+         <lastmod>2025-11-21</lastmod>
     </url>
 </urlset>
