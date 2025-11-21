@@ -1,0 +1,15 @@
+/* Reduce spacing for headers and lists */
+.md-content h1, .md-content h2, .md-content h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.md-content ul li {
+    margin-bottom: 0.25rem;
+}
+
+/* Optional: make icons slightly smaller and inline */
+.md-content img {
+    vertical-align: middle;
+    margin-right: 0.25rem;
+}

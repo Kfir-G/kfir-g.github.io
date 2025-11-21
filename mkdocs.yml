@@ -1,8 +1,34 @@
-site_name: "Kfir G's Site"
+site_name: "Kfir's Site"
 site_url: "https://kfir-g.github.io/"
+
 theme:
   name: material
+  logo: assets/logo.jpg
+  favicon: assets/logo.jpg
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - content.tabs.link
+    - content.columns  
+    - toc.integrate
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+
 plugins:
   - search
-  - rss:
-      site_url: "https://kfir-g.github.io/"
+  # - rss:
+  #     site_url: "https://kfir-g.github.io/"
+
+extra_css:
+  - assets/stylesheets/colors.css
+  - assets/css/custom.css
+  - overrides/main.css
