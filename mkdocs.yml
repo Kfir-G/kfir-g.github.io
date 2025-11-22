@@ -12,15 +12,21 @@ theme:
     - navigation.expand
     - content.code.copy
     - content.tabs.link
-    - content.columns  
+    - content.grid       # enables grids
     - toc.integrate
 
 markdown_extensions:
+  # Core
   - admonition
   - attr_list
   - def_list
-  - pymdownx.details
+  - sane_lists
+  - smarty
+  - md_in_html
+
+  # Pymdown Extensions 
   - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.tabbed
 
 plugins:
