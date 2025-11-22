@@ -12,7 +12,7 @@ theme:
     - navigation.expand
     - content.code.copy
     - content.tabs.link
-    - content.grid       # enables grids
+    - content.grid
     - toc.integrate
 
 markdown_extensions:

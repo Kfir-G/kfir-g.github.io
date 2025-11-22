@@ -4,7 +4,7 @@ This is the central site where I share blogs, videos, podcasts, and resources.
 
 Check out:
 
-- [Blog](blog/)
-- [Videos](videos/)
-- [Podcasts](podcasts/)
-- [Resources](resources.md)
+- [About-me](about.md)
+- [Blog](blog/index.md)
+- [Videos](videos/index.md)
+- [Podcast](podcast/index.md)
