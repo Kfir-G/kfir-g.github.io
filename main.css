@@ -13,3 +13,32 @@
     vertical-align: middle;
     margin-right: 0.25rem;
 }
+
+/* Make the footer stick to the bottom */
+.site-footer {
+    width: 100%;
+    background-color: #fff8e7; /* optional: same as your theme */
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+/* Space the icons a bit */
+.site-footer a {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.md-footer-meta img {
+    margin: 0 0.5em;
+    height: 35px;
+    transition: transform 0.2s;
+}
+
+.md-footer-meta img:hover {
+    transform: scale(1.1);
+}

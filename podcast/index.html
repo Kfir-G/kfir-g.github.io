@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/">
+        <link rel="canonical" href="https://kfir-g.github.io/podcast/">
       
       
-        <link rel="prev" href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
+        <link rel="prev" href="../blog/2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/">
       
       
-        <link rel="next" href="../2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/">
+        <link rel="next" href="example/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID - Kfir's Site</title>
+        <title>Podcast - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-isolation-means" class="md-skip">
+        <a href="#podcast" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href=".." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
+              Podcast
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../about/" class="md-tabs__link">
         
   
   
@@ -214,13 +214,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../blog/" class="md-tabs__link">
           
   
   
@@ -236,11 +234,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href=".." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   
@@ -364,31 +364,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -406,7 +403,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -424,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../blog/" class="md-nav__link">
         
   
   
@@ -452,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/" class="md-nav__link">
+      <a href="../blog/2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/" class="md-nav__link">
         
   
   
@@ -480,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/" class="md-nav__link">
+      <a href="../blog/2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -508,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/" class="md-nav__link">
+      <a href="../blog/2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -536,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/" class="md-nav__link">
+      <a href="../blog/2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -561,35 +558,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../blog/2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -605,123 +577,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-isolation-means" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Isolation Means
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#postgresqls-isolation-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PostgreSQL’s Isolation Levels
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-see-isolation-in-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Let’s See Isolation in Action
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-committed-non-repeatable-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Read Committed: Non-Repeatable Reads
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#repeatable-read-same-snapshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repeatable Read: Same Snapshot
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serializable-strictest-isolation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Serializable: Strictest Isolation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing the Right Level
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Thoughts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -734,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/" class="md-nav__link">
+      <a href="../blog/2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/" class="md-nav__link">
         
   
   
@@ -762,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-10-20-How-the-Browser-Works/" class="md-nav__link">
+      <a href="../blog/2025-10-20-How-the-Browser-Works/" class="md-nav__link">
         
   
   
@@ -790,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/" class="md-nav__link">
+      <a href="../blog/2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/" class="md-nav__link">
         
   
   
@@ -818,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/" class="md-nav__link">
+      <a href="../blog/2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/" class="md-nav__link">
         
   
   
@@ -846,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/" class="md-nav__link">
+      <a href="../blog/2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/" class="md-nav__link">
         
   
   
@@ -878,28 +733,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -917,7 +775,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -932,10 +790,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -951,6 +818,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -963,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="example/" class="md-nav__link">
         
   
   
@@ -1052,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../videos/" class="md-nav__link">
         
   
   
@@ -1080,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1125,168 +993,8 @@
 
 
 
-  <h1>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID</h1>
-
-<hr />
-<p>title: Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
-date: 2025-07-07
-original_url: https://levelup.gitconnected.com/understanding-isolation-in-postgresql-a-deep-dive-into-the-i-in-acid-c493d635a35b?source=rss-e0d89d1af01d------2</p>
-<hr />
-<p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*w8bYYfVQxfSZuy1dzA07Ng.jpeg" />Photo by Matheus
-Viana: <a href="https://www.pexels.com/photo/open-locker-in-wooden-locker-
-room-31220117/">https://www.pexels.com/photo/open-locker-in-wooden-locker-
-room-31220117/</a></p>
-<p>When we talk about PostgreSQL being <em>ACID-compliant</em> , Isolation is the “I”
-that quietly does a lot of heavy lifting. In my previous articles, we explored
-Atomicity and Consistency -how PostgreSQL makes sure that transactions either
-happen fully or not at all, and that the database remains valid. Now it’s time
-to look at how Isolation keeps transactions from interfering with each other
-when multiple operations run at the same time.</p>
-<p>Isolation sounds simple: each transaction should run as if it’s the only one.
-But the details can get tricky, especially when different isolation levels
-come into play. Let’s see what this means, how it works in PostgreSQL, and
-what to watch out for.</p>
-<h3 id="what-isolation-means">What Isolation Means</h3>
-<p>In short, Isolation makes sure that the intermediate state of a transaction is
-invisible to other transactions. If one transaction is in the middle of
-changing a row, another transaction shouldn’t see a half-finished version of
-that row.</p>
-<p>Without Isolation, you can run into problems like:</p>
-<ul>
-<li><strong>Dirty reads</strong> : reading uncommitted changes that might get rolled back.</li>
-<li><strong>Non-repeatable reads</strong> : getting different results when you read the same row twice in a transaction.</li>
-<li><strong>Phantom reads</strong> : rows appear or disappear when you run the same query again.</li>
-</ul>
-<p>PostgreSQL handles this with different isolation levels, each balancing
-correctness and performance.</p>
-<h3 id="postgresqls-isolation-levels">PostgreSQL’s Isolation Levels</h3>
-<p>PostgreSQL supports the standard SQL isolation levels:</p>
-<ol>
-<li>
-<p><strong>Read Uncommitted</strong><br />
-PostgreSQL actually treats this the same as Read Committed, so dirty reads are
-never allowed.</p>
-</li>
-<li>
-<p><strong>Read Committed</strong> (default)<br />
-Each query sees a snapshot of the database taken at the start of that query.
-Changes committed by other transactions become visible to the next query in
-the same transaction.</p>
-</li>
-<li>
-<p><strong>Repeatable Read</strong><br />
-All queries in the transaction see the same snapshot taken when the
-transaction starts. You avoid non-repeatable reads, but phantom reads can
-still happen.</p>
-</li>
-<li>
-<p><strong>Serializable</strong><br />
-The strictest level. Transactions run as if they were executed one after
-another. PostgreSQL uses Serializable Snapshot Isolation (SSI) to make this
-work and may abort transactions that can’t be serialized.</p>
-</li>
-</ol>
-<h3 id="lets-see-isolation-in-action">Let’s See Isolation in Action</h3>
-<p>Here’s a simple table to experiment with:</p>
-<pre><code>CREATE TABLE inventory (  
-  id SERIAL PRIMARY KEY,  
-  stock INT  
-);
-
-INSERT INTO inventory (stock) VALUES (100);
-</code></pre>
-<p>Open two psql sessions: Session A and Session B.</p>
-<h3 id="read-committed-non-repeatable-reads">Read Committed: Non-Repeatable Reads</h3>
-<p>In Session A:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- stock = 100
-</code></pre>
-<p>In Session B:</p>
-<pre><code>UPDATE inventory SET stock = 50 WHERE id = 1;  
-COMMIT;
-</code></pre>
-<p>Back in Session A:</p>
-<pre><code>SELECT stock FROM inventory WHERE id = 1;  
--- stock = 50
-</code></pre>
-<p>The same row gave a different value within the same transaction. This is a
-non-repeatable read, and it’s allowed in Read Committed.</p>
-<h3 id="repeatable-read-same-snapshot">Repeatable Read: Same Snapshot</h3>
-<p>Now try Repeatable Read.</p>
-<p>Session A:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- stock = 100
-</code></pre>
-<p>Session B:</p>
-<pre><code>UPDATE inventory SET stock = 30 WHERE id = 1;  
-COMMIT;
-</code></pre>
-<p>Back in Session A:</p>
-<pre><code>SELECT stock FROM inventory WHERE id = 1;  
--- stock = 100
-</code></pre>
-<p>This time, the value stays the same because Repeatable Read ensures you always
-see the same snapshot.</p>
-<h3 id="serializable-strictest-isolation">Serializable: Strictest Isolation</h3>
-<p>With Serializable, PostgreSQL checks whether your transactions could produce
-different results than if they ran one after the other.</p>
-<p>Session A:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- 100
-
-UPDATE inventory SET stock = stock - 10 WHERE id = 1;
-</code></pre>
-<p>Session B:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- 100
-
-UPDATE inventory SET stock = stock - 20 WHERE id = 1;  
-COMMIT;
-</code></pre>
-<p>Back in Session A:</p>
-<pre><code>COMMIT;  
--- ERROR: could not serialize access due to concurrent update
-</code></pre>
-<p>PostgreSQL detects that running these transactions together could lead to
-inconsistencies, so it rolls one back. Better safe than sorry.</p>
-<h3 id="choosing-the-right-level">Choosing the Right Level</h3>
-<ul>
-<li><strong>Read Committed</strong> works well for most use cases where short transactions don’t need repeatable reads.</li>
-<li><strong>Repeatable Read</strong> is useful for consistent reads in longer transactions or reports.</li>
-<li><strong>Serializable</strong> is the safest but can lead to transaction rollbacks, so you need to handle retries.</li>
-</ul>
-<h3 id="final-thoughts">Final Thoughts</h3>
-<p>Isolation is about making sure your transactions don’t see each other’s work
-half-finished. It’s not something you think about every day- until things go
-wrong because of subtle race conditions.</p>
-<p>Getting Isolation right is key to safe and predictable data in multi-user
-systems. Now you know what each level does and how PostgreSQL keeps your data
-consistent even when things get busy.</p>
-<h3 id="references">References</h3>
-<ul>
-<li><a href="https://www.postgresql.org/docs/current/transaction-iso.html">PostgreSQL: Isolation Levels</a></li>
-<li><a href="https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE">PostgreSQL: Serializable Isolation</a></li>
-</ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c493d635a35b" /></p>
-<hr />
-<p><a href="https://levelup.gitconnected.com/understanding-isolation-in-postgresql-
-a-deep-dive-into-the-i-in-acid-c493d635a35b">Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in
-ACID</a> was originally published in
-<a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium, where people
-are continuing the conversation by highlighting and responding to this story.</p>
+<h1 id="podcast">Podcast</h1>
+<p>Coming Soon &hellip;</p>
 
 
 
@@ -1341,10 +1049,10 @@ are continuing the conversation by highlighting and responding to this story.</p
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
