@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/example/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/">
       
       
-        <link rel="prev" href="../2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/">
+        <link rel="prev" href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/">
       
       
-        <link rel="next" href="../../podcast/example/">
+        <link rel="next" href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Example Blog Post - Kfir's Site</title>
+        <title>2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID - Kfir's Site</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#example-blog-post" class="md-skip">
+        <a href="#what-consistency-really-means" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Example Blog Post
+              2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
             
           </span>
         </div>
@@ -523,10 +523,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -542,6 +567,112 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-consistency-really-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Consistency Really Means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-schema-with-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Schema With Invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#violating-consistency-with-a-bad-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Violating Consistency with a Bad Transaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-business-logic-with-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcing Business Logic with Triggers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referential-integrity-via-foreign-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referential Integrity via Foreign Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistency-in-application-code-python-psycopg3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consistency in Application Code (Python + psycopg3)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Thoughts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -747,19 +878,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
         
   
   
@@ -775,7 +897,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -983,18 +1104,162 @@
 
 
 
-<h1 id="example-blog-post">Example Blog Post</h1>
-<p>This is a demo blog post.<br />
-You can add code, images, and anything else here.</p>
+  <h1>2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID</h1>
+
+<hr />
+<p>title: Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
+date: 2025-06-01
+original_url: https://levelup.gitconnected.com/understanding-consistency-in-postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec?source=rss-e0d89d1af01d------2</p>
+<hr />
+<p><img alt="" src="https://cdn-
+images-1.medium.com/max/1024/1*HjAix9wWNkXyGl1BfIvVkw.jpeg" />Photo by Matheus
+Viana: <a href="https://www.pexels.com/photo/orange-wall-and-sitting-boy-10216566/">https://www.pexels.com/photo/orange-wall-and-sitting-boy-10216566/</a></p>
+<p>In systems where data correctness is non-negotiable- whether you’re handling
+user authentication, e-commerce inventory, or hospital patient records-
+<strong>Consistency</strong> is the invisible guardrail that ensures the rules of your
+domain are never broken.</p>
+<p>This article explores <strong>Consistency</strong> , the second principle of ACID. We’ll
+walk through how PostgreSQL enforces it via constraints, how violations are
+handled, and what developers need to be mindful of to avoid state corruption
+in real-world systems.</p>
+<h3 id="what-consistency-really-means">What Consistency Really Means</h3>
+<p>Consistency ensures that a transaction brings the database from one valid
+state to another. That means all defined <strong>constraints, rules, and
+invariants</strong> must be satisfied before and after every transaction.</p>
+<p>If any part of a transaction would leave the data in an invalid state,
+PostgreSQL <strong>rejects the entire transaction-</strong> not just the failing statement-
+preserving the integrity of your system.</p>
+<h3 id="a-schema-with-invariants">A Schema With Invariants</h3>
+<p>Let’s return to our simple banking system and define some rules we want
+PostgreSQL to enforce:</p>
+<pre><code>CREATE TABLE accounts (  
+    id SERIAL PRIMARY KEY,  
+    name TEXT NOT NULL,  
+    balance INTEGER NOT NULL CHECK (balance &gt;= 0),  
+    UNIQUE(name)  
+);
+</code></pre>
+<p>Here, we’ve defined:</p>
+<ul>
+<li>Every account must have a non-null name.</li>
+<li>Balances must be zero or greater.</li>
+<li>Names must be unique.</li>
+</ul>
+<p>These are <strong>declarative constraints</strong>. PostgreSQL uses them to guarantee that
+no transaction can violate your domain rules.</p>
+<h3 id="violating-consistency-with-a-bad-transaction">Violating Consistency with a Bad Transaction</h3>
+<p>Say Alice tries to transfer more than she has:</p>
+<pre><code>BEGIN;
+
+UPDATE accounts SET balance = balance - 1200 WHERE name = 'Alice';  
+UPDATE accounts SET balance = balance + 1200 WHERE name = 'Bob';
+
+COMMIT;
+</code></pre>
+<p>If Alice only has 1000, PostgreSQL will raise:</p>
+<pre><code>ERROR:  new row for relation "accounts" violates check constraint "accounts_balance_check"
+</code></pre>
+<p>At this point, the transaction is marked as failed and must be rolled back:</p>
+<pre><code>ROLLBACK;
+</code></pre>
+<p><strong>Result</strong> : No changes are applied. This is Consistency at work- the
+integrity rule (balance &gt;= 0) was violated, so PostgreSQL refused to apply any
+part of the transaction.</p>
+<h3 id="enforcing-business-logic-with-triggers">Enforcing Business Logic with Triggers</h3>
+<p>Not all rules are easily encoded as column constraints. For more complex
+logic- like age-based restrictions or cross-table validations- we can use
+<strong>triggers</strong>.</p>
+<p>Example: prevent creating users under age 18.</p>
+<pre><code>CREATE OR REPLACE FUNCTION check_age()  
+RETURNS TRIGGER AS $$  
+BEGIN  
+    IF NEW.age &lt; 18 THEN  
+        RAISE EXCEPTION 'Age must be at least 18';  
+    END IF;  
+    RETURN NEW;  
+END;  
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER check_age_trigger  
+BEFORE INSERT OR UPDATE ON users  
+FOR EACH ROW  
+EXECUTE FUNCTION check_age();
+</code></pre>
+<p>Now, any INSERT or UPDATE that violates this rule will automatically fail, and
+the transaction will be rolled back- keeping the system in a consistent state.</p>
+<h3 id="referential-integrity-via-foreign-keys">Referential Integrity via Foreign Keys</h3>
+<p>Let’s introduce a transactions table that logs money transfers:</p>
+<pre><code>CREATE TABLE transactions (  
+    id SERIAL PRIMARY KEY,  
+    from_account INTEGER REFERENCES accounts(id),  
+    to_account INTEGER REFERENCES accounts(id),  
+    amount INTEGER NOT NULL CHECK (amount &gt; 0)  
+);
+</code></pre>
+<p>PostgreSQL ensures that both from_account and to_account actually exist.
+Attempting to insert a transaction for a non-existent account will fail
+immediately.</p>
+<pre><code>INSERT INTO transactions (from_account, to_account, amount)  
+VALUES (999, 2, 100);
+
+
+ERROR:  insert or update on table "transactions" violates foreign key constraint
+</code></pre>
+<p>That’s PostgreSQL maintaining consistency via <strong>referential integrity</strong>.</p>
+<h3 id="consistency-in-application-code-python-psycopg3">Consistency in Application Code (Python + psycopg3)</h3>
+<p>Here’s how consistency violations behave in real-world application code:</p>
+<pre><code>import psycopg
+
+conn = psycopg.connect("postgresql://user:pass@localhost/db")
+
+try:  
+    with conn.transaction():  
+        with conn.cursor() as cur:  
+            cur.execute("UPDATE accounts SET balance = balance - 1200 WHERE name = 'Alice'")  
+            cur.execute("UPDATE accounts SET balance = balance + 1200 WHERE name = 'Bob'")
+
+except Exception as e:  
+    print(f"Transaction failed: {e}")
+</code></pre>
+<p>If the balance - 1200 fails the CHECK constraint, the entire block is rolled
+back. You’ll never end up in a partial state where Alice lost money but Bob
+gained nothing.</p>
+<h3 id="summary-of-cases">Summary of Cases</h3>
+<ul>
+<li><strong>Constraint violations</strong> : Cause immediate rollback of the entire transaction.</li>
+<li><strong>Triggers</strong> : Allow custom rules that extend beyond column-level checks.</li>
+<li><strong>Foreign key violations</strong> : Prevent inconsistent references between tables.</li>
+<li><strong>Application-level transactions</strong> : psycopg3 ensures that rule violations bubble up cleanly, triggering a rollback.</li>
+</ul>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>Consistency is the safety net that protects your data from logical corruption.
+PostgreSQL’s constraint system- combined with triggers and foreign keys-
+ensures that your application’s data model is always honored.</p>
+<p>If you’re building systems where correctness matters, you must treat
+consistency as a first-class design concern. Don’t rely on application code
+alone to enforce business rules- declarative constraints and transactional
+integrity are your best allies.</p>
+<p><strong>Further Reading:</strong></p>
+<ul>
+<li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html">PostgreSQL Constraints</a></li>
+<li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK">PostgreSQL Foreign Keys</a></li>
+<li><a href="https://www.postgresql.org/docs/current/plpgsql-trigger.html">Triggers</a></li>
+<li><a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3 Transactions</a></li>
+</ul>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=82ed2d1093ec" /></p>
+<hr />
+<p><a href="https://levelup.gitconnected.com/understanding-consistency-in-
+postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec">Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in
+ACID</a> was originally
+published in <a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium,
+where people are continuing the conversation by highlighting and responding to
+this story.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 

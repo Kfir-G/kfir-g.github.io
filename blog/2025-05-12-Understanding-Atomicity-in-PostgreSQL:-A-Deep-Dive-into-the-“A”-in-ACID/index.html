@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/example/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/">
       
       
-        <link rel="prev" href="../2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/">
+        <link rel="prev" href="../2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/">
       
       
-        <link rel="next" href="../../podcast/example/">
+        <link rel="next" href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Example Blog Post - Kfir's Site</title>
+        <title>2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID - Kfir's Site</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#example-blog-post" class="md-skip">
+        <a href="#what-atomicity-really-means" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Example Blog Post
+              2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID
             
           </span>
         </div>
@@ -495,10 +495,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -514,6 +539,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-atomicity-really-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Atomicity Really Means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-simple-transfer-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Simple Transfer Operation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulating-a-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulating a Failure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-if-you-dont-use-transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What If You Don’t Use Transactions?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statement-level-atomicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statement-Level Atomicity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constraint-failures-and-runtime-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraint Failures and Runtime Errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-transactions-in-application-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Transactions in Application Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Thoughts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -747,19 +889,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../example/" class="md-nav__link">
         
   
   
@@ -775,7 +908,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -983,18 +1115,168 @@
 
 
 
-<h1 id="example-blog-post">Example Blog Post</h1>
-<p>This is a demo blog post.<br />
-You can add code, images, and anything else here.</p>
+  <h1>2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID</h1>
+
+<hr />
+<p>title: Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID
+date: 2025-05-12
+original_url: https://levelup.gitconnected.com/understanding-atomicity-in-postgresql-a-deep-dive-into-the-a-in-acid-5bde6fd042e3?source=rss-e0d89d1af01d------2</p>
+<hr />
+<p><img alt="" src="https://cdn-
+images-1.medium.com/max/1024/1*by0EZDhNnatcIASaS2YoWQ.jpeg" />Photo by Thiago
+Matos : <a href="https://www.pexels.com/photo/orange-led-cfl-bulb-2338672/">https://www.pexels.com/photo/orange-led-cfl-bulb-2338672/</a></p>
+<p>In production systems that manage critical data- whether financial
+transactions, user state, or infrastructure configuration- the integrity of
+state transitions is non-negotiable. That’s where the ACID properties of
+relational databases come into play.</p>
+<p>This article takes a focused look at <strong>Atomicity</strong> , the first principle of
+ACID. We’ll analyze how PostgreSQL enforces it, how failures are handled, and
+what engineers must understand to avoid subtle consistency bugs in real-world
+systems.</p>
+<h3 id="what-atomicity-really-means">What Atomicity Really Means</h3>
+<p>Atomicity guarantees that a <strong>transaction is all-or-nothing</strong> : every
+operation in the transaction either completes successfully, or none of them
+do. There is no concept of “partial success.”</p>
+<p>Atomicity is enforced at the transaction level, not the statement level.
+PostgreSQL ensures that even if a failure occurs midway through a transaction,
+all previous operations in that transaction are automatically rolled back.</p>
+<p>For reference, see the official <a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL Transaction
+Tutorial</a>.</p>
+<h3 id="a-simple-transfer-operation">A Simple Transfer Operation</h3>
+<p>Consider a simplified banking example. We’ll create an accounts table and
+simulate transferring funds between two accounts:</p>
+<pre><code>CREATE TABLE accounts (  
+    id SERIAL PRIMARY KEY,  
+    name TEXT NOT NULL,  
+    balance INTEGER NOT NULL CHECK (balance &gt;= 0)  
+);
+
+INSERT INTO accounts (name, balance)  
+VALUES ('Alice', 1000), ('Bob', 1000);
+</code></pre>
+<p>Now, we implement a basic transfer operation using an explicit transaction:</p>
+<pre><code>BEGIN;
+
+UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice';  
+UPDATE accounts SET balance = balance + 200 WHERE name = 'Bob';
+
+COMMIT;
+</code></pre>
+<p>If both statements succeed, the transaction is committed and both updates
+become permanent.</p>
+<h3 id="simulating-a-failure">Simulating a Failure</h3>
+<p>Now let’s simulate an error that occurs in the second statement:</p>
+<pre><code>BEGIN;
+
+UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice';  
+-- Intentional typo: column name is misspelled  
+UPDATE accounts SET balnce = balance + 200 WHERE name = 'Bob';
+
+COMMIT;
+</code></pre>
+<p>PostgreSQL will raise an error:</p>
+<pre><code>ERROR: column "balnce" does not exist
+</code></pre>
+<p>At this point, the transaction is marked as failed. No further operations are
+allowed until a rollback is issued:</p>
+<pre><code>ROLLBACK;
+</code></pre>
+<p>Although the first UPDATE ran without error, its effect is discarded because
+the transaction was never successfully committed. This is atomicity in
+practice.</p>
+<h3 id="what-if-you-dont-use-transactions">What If You Don’t Use Transactions?</h3>
+<p>When operations are issued individually without an explicit BEGIN block,
+PostgreSQL executes each as its own atomic unit:</p>
+<pre><code>UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice';  
+-- This succeeds
+
+UPDATE accounts SET balnce = balance + 200 WHERE name = 'Bob';  
+-- This fails
+</code></pre>
+<p>Here, Alice’s balance is reduced, but Bob never receives the funds. This
+violates our consistency requirements and results in data loss.</p>
+<p><strong>Lesson:</strong> without explicit transactions, the database cannot enforce
+atomicity across multiple operations.</p>
+<h3 id="statement-level-atomicity">Statement-Level Atomicity</h3>
+<p>PostgreSQL does provide implicit transaction handling for single statements.
+If a single INSERT, UPDATE, or DELETE statement fails, it is discarded
+entirely and does not affect the database. However, for multiple operations
+that must succeed together, atomicity is not guaranteed unless you explicitly
+wrap them in a transaction.</p>
+<p>Relevant documentation: <a href="https://www.postgresql.org/docs/current/sql-begin.html">PostgreSQL
+BEGIN</a></p>
+<h3 id="constraint-failures-and-runtime-errors">Constraint Failures and Runtime Errors</h3>
+<p>PostgreSQL also enforces atomicity in the presence of constraint violations or
+other runtime errors. For example, suppose we enforce that balances cannot be
+negative:</p>
+<pre><code>ALTER TABLE accounts ADD CONSTRAINT non_negative_balance CHECK (balance &gt;= 0);
+</code></pre>
+<p>Then attempt:</p>
+<pre><code>BEGIN;
+
+UPDATE accounts SET balance = balance - 1100 WHERE name = 'Alice';  
+UPDATE accounts SET balance = balance + 1100 WHERE name = 'Bob';
+
+COMMIT;
+</code></pre>
+<p>Alice only has 1000, so her balance would go negative. The first statement
+violates the constraint, and the entire transaction is aborted. No changes are
+applied.</p>
+<h3 id="handling-transactions-in-application-code">Handling Transactions in Application Code</h3>
+<p>Here’s how atomicity works in a real-world PostgreSQL client using Python with
+<a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3</a>:</p>
+<pre><code>import psycopg
+
+conn = psycopg.connect("postgresql://user:pass@localhost/db")
+
+try:  
+    with conn.transaction():  
+        with conn.cursor() as cur:  
+            cur.execute("UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice'")  
+            cur.execute("UPDATE accounts SET balnce = balance + 200 WHERE name = 'Bob'")  # Bug
+
+except Exception as e:  
+    print(f"Transaction failed: {e}")
+</code></pre>
+<p>In this case, conn.transaction() ensures that the entire block is treated as
+atomic. When the second query fails, psycopg3 automatically rolls back the
+transaction. No data is persisted.</p>
+<h3 id="summary-of-cases">Summary of Cases</h3>
+<ul>
+<li><strong>Single</strong><strong>UPDATE</strong> : Executed without an explicit transaction block, PostgreSQL treats it as an implicit transaction. It either succeeds or fails as a single atomic operation.</li>
+<li><strong>Multiple</strong><strong>UPDATEs without</strong><strong>BEGIN</strong> : When multiple operations are issued individually without wrapping them in a transaction, atomicity is not guaranteed. If one statement succeeds and another fails, partial state changes can persist.</li>
+<li><strong>BEGIN /</strong><strong>COMMIT with syntax or runtime error</strong> : When using an explicit transaction, any error- be it a syntax issue or constraint violation- causes the entire transaction to be rolled back. This ensures atomicity across all enclosed operations.</li>
+<li><strong>Using psycopg3 with</strong><strong>with conn.transaction()</strong> : In application code, using this context manager ensures atomicity. If any exception is raised during the block, psycopg3 automatically rolls back the transaction.</li>
+</ul>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>PostgreSQL provides strong atomicity guarantees, but they’re only effective
+when transactions are used intentionally and correctly. Multi-statement
+operations should <strong>always</strong> be wrapped in an explicit transaction, and
+developers must anticipate rollback paths as part of the application’s normal
+flow.</p>
+<p>Failing to do so can result in partial writes, corrupted state, and long-tail
+data integrity bugs that are difficult to trace.</p>
+<p>For more details, refer to the official documentation:</p>
+<ul>
+<li><a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL Transactions</a></li>
+<li><a href="https://www.postgresql.org/docs/current/sql-begin.html">BEGIN</a></li>
+<li><a href="https://www.postgresql.org/docs/current/sql-commit.html">COMMIT</a></li>
+<li><a href="https://www.postgresql.org/docs/current/sql-rollback.html">ROLLBACK</a></li>
+<li><a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3 Transactions</a></li>
+</ul>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=5bde6fd042e3" /></p>
+<hr />
+<p><a href="https://levelup.gitconnected.com/understanding-atomicity-in-postgresql-
+a-deep-dive-into-the-a-in-acid-5bde6fd042e3">Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in
+ACID</a> was originally published in
+<a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium, where people
+are continuing the conversation by highlighting and responding to this story.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
