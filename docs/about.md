@@ -48,7 +48,7 @@ I also write technical articles on Medium and Dev.to, contribute to open-source 
 
 ---
 
-### Supporting Open Source and Community Engagement
+## Supporting Open Source and Community Engagement
 
 - Recognized as a **Top 8 FastAPI Expert for 2025** by [FastAPI](https://fastapi.tiangolo.com/fastapi-people/#fastapi-experts-1-year).
 
