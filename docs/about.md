@@ -7,9 +7,12 @@ I also write technical articles on Medium and Dev.to, contribute to open-source 
 ---
 
 ## Social
+
+[![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kfir-G)
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://bit.ly/2VMjsaf)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kfir.gisman@gmail.com)
 [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@kfir-g)
+[![RSS](https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white)](https://medium.com/feed/@Kfir-G)
 [![Dev.to](https://img.shields.io/badge/dev.to-12100E?style=for-the-badge&logo=dev.to&logoColor=white)](https://dev.to/kfir-g)
 
 ---
