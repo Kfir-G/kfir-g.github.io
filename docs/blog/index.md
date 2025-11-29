@@ -1,9 +1,5 @@
 # Blogs
 
-My newest blogs in the left toolbar: [blogs](docs/blog/)
-
----
-
 I regularly publish in some of Medium’s top engineering publications, reaching a global audience of hundreds of thousands of developers every month. My work appears in:
 
 * **[Level Up Coding](https://levelup.gitconnected.com/)** — One of the most-read dev publications, home to tutorials, engineering deep-dives, and practical coding guides.

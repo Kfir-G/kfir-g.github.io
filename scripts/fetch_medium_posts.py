@@ -8,7 +8,7 @@ from datetime import datetime
 RSS_FEED_URL = "https://medium.com/feed/@Kfir-G"
 
 # Where to save Markdown files
-OUTPUT_DIR = "docs/blog"
+OUTPUT_DIR = "docs/blog/blogs"
 
 # Ensure output directory exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
