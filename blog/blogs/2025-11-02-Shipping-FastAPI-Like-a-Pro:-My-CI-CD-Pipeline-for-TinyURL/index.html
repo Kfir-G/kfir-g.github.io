@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/">
       
       
-        <link rel="prev" href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/">
+        <link rel="prev" href="../2025-10-20-How-the-Browser-Works/">
       
       
-        <link rel="next" href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
+        <link rel="next" href="../2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID - Kfir's Site</title>
+        <title>2025 11 02 Shipping FastAPI Like a Pro: My CI CD Pipeline for TinyURL - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../../../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-consistency-really-means" class="md-skip">
+        <a href="#1-cicd-isnt-about-tools-its-about-trust" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
+              2025 11 02 Shipping FastAPI Like a Pro: My CI CD Pipeline for TinyURL
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -220,7 +220,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -240,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -444,6 +444,63 @@
   
 
               
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -505,35 +562,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -549,112 +581,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-consistency-really-means" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Consistency Really Means
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-schema-with-invariants" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A Schema With Invariants
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#violating-consistency-with-a-bad-transaction" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Violating Consistency with a Bad Transaction
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enforcing-business-logic-with-triggers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enforcing Business Logic with Triggers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referential-integrity-via-foreign-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Referential Integrity via Foreign Keys
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#consistency-in-application-code-python-psycopg3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consistency in Application Code (Python + psycopg3)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-of-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary of Cases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Thoughts
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -776,10 +702,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 11 02 Shipping FastAPI Like a Pro: My CI CD Pipeline for TinyURL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -795,6 +746,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-cicd-isnt-about-tools-its-about-trust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. CI/CD isn’t about tools- it’s about trust
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-build-pipeline-test-early-build-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The build pipeline: test early, build once
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-containerization-made-cicd-predictable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Containerization made CI/CD predictable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-deployment-zero-downtime-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Deployment: zero downtime, one command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-secrets-are-sacred" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Secrets are sacred
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-what-i-learned-the-hard-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. What I learned the hard way
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack Recap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-message-from-our-founder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A message from our Founder
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -851,6 +919,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -924,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -952,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="../../../podcast/example/" class="md-nav__link">
         
   
   
@@ -1041,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -1069,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1114,156 +1190,151 @@
 
 
 
-  <h1>2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID</h1>
+  <h1>2025 11 02 Shipping FastAPI Like a Pro: My CI CD Pipeline for TinyURL</h1>
 
 <hr />
-<p>title: Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
-date: 2025-06-01
-original_url: https://levelup.gitconnected.com/understanding-consistency-in-postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec?source=rss-e0d89d1af01d------2</p>
+<p>title: Shipping FastAPI Like a Pro: My CI/CD Pipeline for TinyURL
+date: 2025-11-02
+original_url: https://python.plainenglish.io/shipping-fastapi-like-a-pro-my-ci-cd-pipeline-for-tinyurl-c27b68434f04?source=rss-e0d89d1af01d------2</p>
 <hr />
-<p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*HjAix9wWNkXyGl1BfIvVkw.jpeg" />Photo by Matheus
-Viana: <a href="https://www.pexels.com/photo/orange-wall-and-sitting-boy-10216566/">https://www.pexels.com/photo/orange-wall-and-sitting-boy-10216566/</a></p>
-<p>In systems where data correctness is non-negotiable- whether you’re handling
-user authentication, e-commerce inventory, or hospital patient records-
-<strong>Consistency</strong> is the invisible guardrail that ensures the rules of your
-domain are never broken.</p>
-<p>This article explores <strong>Consistency</strong> , the second principle of ACID. We’ll
-walk through how PostgreSQL enforces it via constraints, how violations are
-handled, and what developers need to be mindful of to avoid state corruption
-in real-world systems.</p>
-<h3 id="what-consistency-really-means">What Consistency Really Means</h3>
-<p>Consistency ensures that a transaction brings the database from one valid
-state to another. That means all defined <strong>constraints, rules, and
-invariants</strong> must be satisfied before and after every transaction.</p>
-<p>If any part of a transaction would leave the data in an invalid state,
-PostgreSQL <strong>rejects the entire transaction-</strong> not just the failing statement-
-preserving the integrity of your system.</p>
-<h3 id="a-schema-with-invariants">A Schema With Invariants</h3>
-<p>Let’s return to our simple banking system and define some rules we want
-PostgreSQL to enforce:</p>
-<pre><code>CREATE TABLE accounts (  
-    id SERIAL PRIMARY KEY,  
-    name TEXT NOT NULL,  
-    balance INTEGER NOT NULL CHECK (balance &gt;= 0),  
-    UNIQUE(name)  
-);
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*jZegZscIECNvbkss-
+NuwQg.jpeg" />Photo by Jan Zakelj: <a href="https://www.pexels.com/photo/a-person-
+holding-yellow-pipes-9389356/">https://www.pexels.com/photo/a-person-
+holding-yellow-pipes-9389356/</a></p>
+<p>When I first deployed <strong>TinyURL-</strong> my FastAPI + Postgres + Nginx URL
+shortener-I wanted a workflow that felt real, not just docker compose up on my
+laptop. So I built a simple but solid <strong>CI/CD pipeline</strong> using GitHub Actions
+that runs tests, builds containers, and deploys automatically.</p>
+<p>Here’s what I learned and how it all fits together.</p>
+<h3 id="1-cicd-isnt-about-tools-its-about-trust">1. CI/CD isn’t about tools- it’s about trust</h3>
+<p>The main goal wasn’t automation for its own sake. It was to reach a point
+where every push to main could safely go live- no surprises, no “works on my
+machine.”</p>
+<p>That mindset helped me design a pipeline that checks, builds, and ships with
+zero manual steps.</p>
+<h3 id="2-the-build-pipeline-test-early-build-once">2. The build pipeline: test early, build once</h3>
+<p>Here’s a simplified view of my GitHub Actions workflow
+(.github/workflows/deploy.yml):</p>
+<pre><code>name: Deploy TinyURL
+
+on:  
+  push:  
+    branches:  
+      - main  
+jobs:  
+  build-and-deploy:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Checkout repo  
+        uses: actions/checkout@v4  
+      - name: Set up Python  
+        uses: actions/setup-python@v5  
+        with:  
+          python-version: 3.11  
+      - name: Install dependencies  
+        run: pip install -r requirements.txt  
+      - name: Run tests  
+        run: pytest -q  
+      - name: Build Docker images  
+        run: docker compose -f docker-compose.prod.yml build  
+      - name: Deploy via SSH  
+        env:  
+          HOST: ${{ secrets.EC2_HOST }}  
+          KEY: ${{ secrets.EC2_SSH_KEY }}  
+        run: |  
+          echo "$KEY" &gt; key.pem  
+          chmod 600 key.pem  
+          scp -i key.pem docker-compose.prod.yml ubuntu@$HOST:/home/ubuntu/tinyurl/  
+          ssh -i key.pem ubuntu@$HOST "cd /home/ubuntu/tinyurl &amp;&amp; docker compose -f docker-compose.prod.yml up -d --build"
 </code></pre>
-<p>Here, we’ve defined:</p>
+<p>This is the heartbeat of my project:</p>
 <ul>
-<li>Every account must have a non-null name.</li>
-<li>Balances must be zero or greater.</li>
-<li>Names must be unique.</li>
+<li>Every push triggers the pipeline.</li>
+<li>Tests must pass before anything deploys.</li>
+<li>The build happens <strong>once</strong> , and that same build runs in production.</li>
 </ul>
-<p>These are <strong>declarative constraints</strong>. PostgreSQL uses them to guarantee that
-no transaction can violate your domain rules.</p>
-<h3 id="violating-consistency-with-a-bad-transaction">Violating Consistency with a Bad Transaction</h3>
-<p>Say Alice tries to transfer more than she has:</p>
-<pre><code>BEGIN;
-
-UPDATE accounts SET balance = balance - 1200 WHERE name = 'Alice';  
-UPDATE accounts SET balance = balance + 1200 WHERE name = 'Bob';
-
-COMMIT;
-</code></pre>
-<p>If Alice only has 1000, PostgreSQL will raise:</p>
-<pre><code>ERROR:  new row for relation "accounts" violates check constraint "accounts_balance_check"
-</code></pre>
-<p>At this point, the transaction is marked as failed and must be rolled back:</p>
-<pre><code>ROLLBACK;
-</code></pre>
-<p><strong>Result</strong> : No changes are applied. This is Consistency at work- the
-integrity rule (balance &gt;= 0) was violated, so PostgreSQL refused to apply any
-part of the transaction.</p>
-<h3 id="enforcing-business-logic-with-triggers">Enforcing Business Logic with Triggers</h3>
-<p>Not all rules are easily encoded as column constraints. For more complex
-logic- like age-based restrictions or cross-table validations- we can use
-<strong>triggers</strong>.</p>
-<p>Example: prevent creating users under age 18.</p>
-<pre><code>CREATE OR REPLACE FUNCTION check_age()  
-RETURNS TRIGGER AS $$  
-BEGIN  
-    IF NEW.age &lt; 18 THEN  
-        RAISE EXCEPTION 'Age must be at least 18';  
-    END IF;  
-    RETURN NEW;  
-END;  
-$$ LANGUAGE plpgsql;
-
-CREATE TRIGGER check_age_trigger  
-BEFORE INSERT OR UPDATE ON users  
-FOR EACH ROW  
-EXECUTE FUNCTION check_age();
-</code></pre>
-<p>Now, any INSERT or UPDATE that violates this rule will automatically fail, and
-the transaction will be rolled back- keeping the system in a consistent state.</p>
-<h3 id="referential-integrity-via-foreign-keys">Referential Integrity via Foreign Keys</h3>
-<p>Let’s introduce a transactions table that logs money transfers:</p>
-<pre><code>CREATE TABLE transactions (  
-    id SERIAL PRIMARY KEY,  
-    from_account INTEGER REFERENCES accounts(id),  
-    to_account INTEGER REFERENCES accounts(id),  
-    amount INTEGER NOT NULL CHECK (amount &gt; 0)  
-);
-</code></pre>
-<p>PostgreSQL ensures that both from_account and to_account actually exist.
-Attempting to insert a transaction for a non-existent account will fail
-immediately.</p>
-<pre><code>INSERT INTO transactions (from_account, to_account, amount)  
-VALUES (999, 2, 100);
-
-
-ERROR:  insert or update on table "transactions" violates foreign key constraint
-</code></pre>
-<p>That’s PostgreSQL maintaining consistency via <strong>referential integrity</strong>.</p>
-<h3 id="consistency-in-application-code-python-psycopg3">Consistency in Application Code (Python + psycopg3)</h3>
-<p>Here’s how consistency violations behave in real-world application code:</p>
-<pre><code>import psycopg
-
-conn = psycopg.connect("postgresql://user:pass@localhost/db")
-
-try:  
-    with conn.transaction():  
-        with conn.cursor() as cur:  
-            cur.execute("UPDATE accounts SET balance = balance - 1200 WHERE name = 'Alice'")  
-            cur.execute("UPDATE accounts SET balance = balance + 1200 WHERE name = 'Bob'")
-
-except Exception as e:  
-    print(f"Transaction failed: {e}")
-</code></pre>
-<p>If the balance - 1200 fails the CHECK constraint, the entire block is rolled
-back. You’ll never end up in a partial state where Alice lost money but Bob
-gained nothing.</p>
-<h3 id="summary-of-cases">Summary of Cases</h3>
+<h3 id="3-containerization-made-cicd-predictable">3. Containerization made CI/CD predictable</h3>
+<p>The biggest win came from using <strong>Docker Compose</strong> for both local and
+production setups.</p>
+<p>My dev environment runs three containers:</p>
 <ul>
-<li><strong>Constraint violations</strong> : Cause immediate rollback of the entire transaction.</li>
-<li><strong>Triggers</strong> : Allow custom rules that extend beyond column-level checks.</li>
-<li><strong>Foreign key violations</strong> : Prevent inconsistent references between tables.</li>
-<li><strong>Application-level transactions</strong> : psycopg3 ensures that rule violations bubble up cleanly, triggering a rollback.</li>
+<li>db (Postgres)</li>
+<li>fastapi (backend)</li>
+<li>nginx (reverse proxy)</li>
 </ul>
-<h3 id="final-thoughts">Final Thoughts</h3>
-<p>Consistency is the safety net that protects your data from logical corruption.
-PostgreSQL’s constraint system- combined with triggers and foreign keys-
-ensures that your application’s data model is always honored.</p>
-<p>If you’re building systems where correctness matters, you must treat
-consistency as a first-class design concern. Don’t rely on application code
-alone to enforce business rules- declarative constraints and transactional
-integrity are your best allies.</p>
-<p><strong>Further Reading:</strong></p>
+<p>And my production setup? Exactly the same- except the compose file uses:</p>
 <ul>
-<li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html">PostgreSQL Constraints</a></li>
-<li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK">PostgreSQL Foreign Keys</a></li>
-<li><a href="https://www.postgresql.org/docs/current/plpgsql-trigger.html">Triggers</a></li>
-<li><a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3 Transactions</a></li>
+<li>Different environment variables</li>
+<li>Mounted SSL certs from Let’s Encrypt</li>
+<li>No auto-reload or debugging</li>
 </ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=82ed2d1093ec" /></p>
+<p>Because both stacks share the same Docker config, the CI/CD pipeline doesn’t
+need special cases or hacks. If it runs locally, it’ll run in CI.</p>
+<h3 id="4-deployment-zero-downtime-one-command">4. Deployment: zero downtime, one command</h3>
+<p>Once the new image is built and pushed, the EC2 host just pulls and restarts
+containers with:</p>
+<pre><code>docker compose -f docker-compose.prod.yml up -d --build
+</code></pre>
+<p>Nginx handles live traffic, so backend containers can restart without
+downtime. Since FastAPI and Nginx talk over Docker’s internal network, there’s
+no need for manual reconfiguration.</p>
+<p>That “click → push → deploy” feeling is addictive.</p>
+<h3 id="5-secrets-are-sacred">5. Secrets are sacred</h3>
+<p>The pipeline uses <strong>GitHub Secrets</strong> to store:</p>
+<ul>
+<li>EC2_HOST (server IP or domain)</li>
+<li>EC2_SSH_KEY (private key)</li>
+<li>POSTGRES_PASSWORD</li>
+<li>FASTAPI_SECRET_KEY</li>
+</ul>
+<p>No plaintext credentials in the repo, no .env files in commits. That alone
+made me sleep better at night.</p>
+<h3 id="6-what-i-learned-the-hard-way">6. What I learned the hard way</h3>
+<ul>
+<li><strong>Don’t skip tests-</strong> failing fast is cheaper than debugging in production.</li>
+<li><strong>Don’t rebuild images on the server-</strong> build once, deploy the same artifact.</li>
+<li><strong>Keep Docker tags consistent-</strong> otherwise latest will surprise you.</li>
+<li><strong>Automate HTTPS renewal</strong> s- my Let’s Encrypt cron job now runs monthly.</li>
+</ul>
+<p>These small habits make the pipeline boring- and boring pipelines are the best
+kind.</p>
+<h3 id="7-the-result">7. The result</h3>
+<p>Now every push to main runs tests, builds containers, and ships a fully
+reproducible environment to production. No manual steps, no “did I rebuild?”
+anxiety. Just continuous confidence.</p>
+<h3 id="tech-stack-recap">Tech Stack Recap</h3>
+<ul>
+<li><strong>FastAPI-</strong> backend API</li>
+<li><strong>PostgreSQL-</strong> database</li>
+<li><strong>Streamlit-</strong> frontend</li>
+<li><strong>Nginx-</strong> reverse proxy</li>
+<li><strong>GitHub Actions-</strong> CI/CD</li>
+<li><strong>Docker Compose-</strong> orchestration</li>
+</ul>
+<blockquote>
+<p><em>“CI/CD isn’t about speed- it’s about peace of mind.”</em></p>
+</blockquote>
+<p><em>This post is part of my TinyURL series- real-world lessons from turning a
+small FastAPI project into a production-grade service.</em></p>
+<h3 id="a-message-from-our-founder">A message from our Founder</h3>
+<p><strong>Hey,</strong><a href="https://linkedin.com/in/sunilsandhu"><strong>Sunil</strong></a><strong>here.</strong> I wanted to
+take a moment to thank you for reading until the end and for being a part of
+this community.</p>
+<p>Did you know that our team run these publications as a volunteer effort to
+over 3.5m monthly readers? <strong>We don’t receive any funding, we do this to
+support the community. ❤️</strong></p>
+<p>If you want to show some love, please take a moment to <strong>follow me
+on</strong><a href="https://linkedin.com/in/sunilsandhu"><strong>LinkedIn</strong></a><strong>,</strong><a href="https://tiktok.com/@messyfounder"><strong>TikTok</strong></a>,
+<a href="https://instagram.com/sunilsandhu"><strong>Instagram</strong></a>. You can also subscribe to
+our <a href="https://newsletter.plainenglish.io/"><strong>weekly newsletter</strong></a>.</p>
+<p>And before you go, don’t forget to <strong>clap</strong> and <strong>follow</strong> the writer️!</p>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c27b68434f04" /></p>
 <hr />
-<p><a href="https://levelup.gitconnected.com/understanding-consistency-in-
-postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec">Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in
-ACID</a> was originally
-published in <a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium,
-where people are continuing the conversation by highlighting and responding to
-this story.</p>
+<p><a href="https://python.plainenglish.io/shipping-fastapi-like-a-pro-my-ci-cd-
+pipeline-for-tinyurl-c27b68434f04">Shipping FastAPI Like a Pro: My CI/CD Pipeline for
+TinyURL</a> was originally published in <a href="https://python.plainenglish.io">Python in
+Plain English</a> on Medium, where people are
+continuing the conversation by highlighting and responding to this story.</p>
 
 
 
@@ -1318,10 +1389,10 @@ this story.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>

@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/">
       
       
-        <link rel="prev" href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
+        <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/">
+        <link rel="next" href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID - Kfir's Site</title>
+        <title>7 Quick Tips to Get Started with HashiCorp Vault - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../../../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-isolation-means" class="md-skip">
+        <a href="#1-understand-the-vault-trust-flow" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
+              7 Quick Tips to Get Started with HashiCorp Vault
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -220,7 +220,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -240,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -449,10 +449,92 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/" class="md-nav__link">
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Quick Tips to Get Started with HashiCorp Vault
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -468,6 +550,112 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-understand-the-vault-trust-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 1. Understand the Vault Trust Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-understand-that-vault-is-path-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📂 2. Understand That Vault Is Path-Based
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-spin-up-vault-instantly-using-docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🐳 3. Spin Up Vault Instantly Using Docker
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-use-output-curl-string-to-understand-api-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 4. Use -output-curl-string to Understand API Calls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-use-the-cli-ui-and-api-depending-on-your-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 5. Use the CLI, UI, and API Depending on Your Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dont-skip-the-docs-or-youtube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 6. Don’t Skip the Docs (or YouTube)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-use-terraform-to-configure-vault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌱 7. Use Terraform to Configure Vault
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wrapping-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Wrapping Up
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -561,35 +749,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -605,123 +768,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-isolation-means" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Isolation Means
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#postgresqls-isolation-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PostgreSQL’s Isolation Levels
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lets-see-isolation-in-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Let’s See Isolation in Action
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#read-committed-non-repeatable-reads" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Read Committed: Non-Repeatable Reads
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#repeatable-read-same-snapshot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repeatable Read: Same Snapshot
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serializable-strictest-isolation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Serializable: Strictest Isolation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing the Right Level
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Thoughts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -873,6 +919,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -935,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -963,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="../../../podcast/example/" class="md-nav__link">
         
   
   
@@ -1052,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -1080,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1125,174 +1179,143 @@
 
 
 
-  <h1>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID</h1>
+  <h1>7 Quick Tips to Get Started with HashiCorp Vault</h1>
 
-<hr />
-<p>title: Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
-date: 2025-07-07
-original_url: https://levelup.gitconnected.com/understanding-isolation-in-postgresql-a-deep-dive-into-the-i-in-acid-c493d635a35b?source=rss-e0d89d1af01d------2</p>
-<hr />
-<p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*w8bYYfVQxfSZuy1dzA07Ng.jpeg" />Photo by Matheus
-Viana: <a href="https://www.pexels.com/photo/open-locker-in-wooden-locker-
-room-31220117/">https://www.pexels.com/photo/open-locker-in-wooden-locker-
-room-31220117/</a></p>
-<p>When we talk about PostgreSQL being <em>ACID-compliant</em> , Isolation is the “I”
-that quietly does a lot of heavy lifting. In my previous articles, we explored
-Atomicity and Consistency -how PostgreSQL makes sure that transactions either
-happen fully or not at all, and that the database remains valid. Now it’s time
-to look at how Isolation keeps transactions from interfering with each other
-when multiple operations run at the same time.</p>
-<p>Isolation sounds simple: each transaction should run as if it’s the only one.
-But the details can get tricky, especially when different isolation levels
-come into play. Let’s see what this means, how it works in PostgreSQL, and
-what to watch out for.</p>
-<h3 id="what-isolation-means">What Isolation Means</h3>
-<p>In short, Isolation makes sure that the intermediate state of a transaction is
-invisible to other transactions. If one transaction is in the middle of
-changing a row, another transaction shouldn’t see a half-finished version of
-that row.</p>
-<p>Without Isolation, you can run into problems like:</p>
+<p>HashiCorp Vault is an incredibly powerful tool for managing secrets, access
+control, and sensitive data across your infrastructure. But to make the most
+of it, you need to understand both the theory and the tooling.</p>
+<p>Here are <strong>7 tips</strong> to get you started- from the core mental model to using
+Vault in real-world projects with confidence.</p>
+<h3 id="1-understand-the-vault-trust-flow">🧠 1. Understand the Vault Trust Flow</h3>
+<p>Before touching the CLI, UI, or API, understand what Vault is actually doing
+under the hood.</p>
+<p>This image summarizes how Vault works:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*pHCohWWdXglK42JVCIzsZQ.png" /></p>
 <ul>
-<li><strong>Dirty reads</strong> : reading uncommitted changes that might get rolled back.</li>
-<li><strong>Non-repeatable reads</strong> : getting different results when you read the same row twice in a transaction.</li>
-<li><strong>Phantom reads</strong> : rows appear or disappear when you run the same query again.</li>
+<li>On the <strong>left</strong> , users/services authenticate via cloud, GitHub, Kubernetes, etc.</li>
+<li>Vault sits in the <strong>center</strong> , evaluating policies and issuing credentials.</li>
+<li>On the <strong>right</strong> , secrets engines like AWS, SSH, databases, etc., return short-lived, scoped credentials.</li>
 </ul>
-<p>PostgreSQL handles this with different isolation levels, each balancing
-correctness and performance.</p>
-<h3 id="postgresqls-isolation-levels">PostgreSQL’s Isolation Levels</h3>
-<p>PostgreSQL supports the standard SQL isolation levels:</p>
-<ol>
-<li>
-<p><strong>Read Uncommitted</strong><br />
-PostgreSQL actually treats this the same as Read Committed, so dirty reads are
-never allowed.</p>
-</li>
-<li>
-<p><strong>Read Committed</strong> (default)<br />
-Each query sees a snapshot of the database taken at the start of that query.
-Changes committed by other transactions become visible to the next query in
-the same transaction.</p>
-</li>
-<li>
-<p><strong>Repeatable Read</strong><br />
-All queries in the transaction see the same snapshot taken when the
-transaction starts. You avoid non-repeatable reads, but phantom reads can
-still happen.</p>
-</li>
-<li>
-<p><strong>Serializable</strong><br />
-The strictest level. Transactions run as if they were executed one after
-another. PostgreSQL uses Serializable Snapshot Isolation (SSI) to make this
-work and may abort transactions that can’t be serialized.</p>
-</li>
-</ol>
-<h3 id="lets-see-isolation-in-action">Let’s See Isolation in Action</h3>
-<p>Here’s a simple table to experiment with:</p>
-<pre><code>CREATE TABLE inventory (  
-  id SERIAL PRIMARY KEY,  
-  stock INT  
-);
-
-INSERT INTO inventory (stock) VALUES (100);
-</code></pre>
-<p>Open two psql sessions: Session A and Session B.</p>
-<h3 id="read-committed-non-repeatable-reads">Read Committed: Non-Repeatable Reads</h3>
-<p>In Session A:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- stock = 100
-</code></pre>
-<p>In Session B:</p>
-<pre><code>UPDATE inventory SET stock = 50 WHERE id = 1;  
-COMMIT;
-</code></pre>
-<p>Back in Session A:</p>
-<pre><code>SELECT stock FROM inventory WHERE id = 1;  
--- stock = 50
-</code></pre>
-<p>The same row gave a different value within the same transaction. This is a
-non-repeatable read, and it’s allowed in Read Committed.</p>
-<h3 id="repeatable-read-same-snapshot">Repeatable Read: Same Snapshot</h3>
-<p>Now try Repeatable Read.</p>
-<p>Session A:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- stock = 100
-</code></pre>
-<p>Session B:</p>
-<pre><code>UPDATE inventory SET stock = 30 WHERE id = 1;  
-COMMIT;
-</code></pre>
-<p>Back in Session A:</p>
-<pre><code>SELECT stock FROM inventory WHERE id = 1;  
--- stock = 100
-</code></pre>
-<p>This time, the value stays the same because Repeatable Read ensures you always
-see the same snapshot.</p>
-<h3 id="serializable-strictest-isolation">Serializable: Strictest Isolation</h3>
-<p>With Serializable, PostgreSQL checks whether your transactions could produce
-different results than if they ran one after the other.</p>
-<p>Session A:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- 100
-
-UPDATE inventory SET stock = stock - 10 WHERE id = 1;
-</code></pre>
-<p>Session B:</p>
-<pre><code>BEGIN;  
-SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-
-SELECT stock FROM inventory WHERE id = 1;  
--- 100
-
-UPDATE inventory SET stock = stock - 20 WHERE id = 1;  
-COMMIT;
-</code></pre>
-<p>Back in Session A:</p>
-<pre><code>COMMIT;  
--- ERROR: could not serialize access due to concurrent update
-</code></pre>
-<p>PostgreSQL detects that running these transactions together could lead to
-inconsistencies, so it rolls one back. Better safe than sorry.</p>
-<h3 id="choosing-the-right-level">Choosing the Right Level</h3>
+<p>Vault isn’t just a “key/value store”- it’s a dynamic identity broker. This
+diagram helps make sense of how everything connects.</p>
+<blockquote>
+<p><em>🔐 Once you get this flow, the rest of Vault will feel way more intuitive.</em></p>
+</blockquote>
+<h3 id="2-understand-that-vault-is-path-based">📂 2. Understand That Vault Is Path-Based</h3>
+<p>Vault’s entire structure is path-centric:</p>
 <ul>
-<li><strong>Read Committed</strong> works well for most use cases where short transactions don’t need repeatable reads.</li>
-<li><strong>Repeatable Read</strong> is useful for consistent reads in longer transactions or reports.</li>
-<li><strong>Serializable</strong> is the safest but can lead to transaction rollbacks, so you need to handle retries.</li>
+<li><strong>Secrets</strong> are stored at paths (e.g. secret/myapp)</li>
+<li><strong>Policies</strong> are applied to paths</li>
+<li><strong>Auth methods</strong> and <strong>secret engines</strong> are mounted at paths</li>
 </ul>
-<h3 id="final-thoughts">Final Thoughts</h3>
-<p>Isolation is about making sure your transactions don’t see each other’s work
-half-finished. It’s not something you think about every day- until things go
-wrong because of subtle race conditions.</p>
-<p>Getting Isolation right is key to safe and predictable data in multi-user
-systems. Now you know what each level does and how PostgreSQL keeps your data
-consistent even when things get busy.</p>
-<h3 id="references">References</h3>
+<p>Think of it like a secure API-based filesystem. If you don’t get the path
+right- or your policy doesn’t cover it- you’ll hit “permission denied” walls
+all over the place (least privilege).</p>
+<blockquote>
+<p><em>🧩 Learning to reason in “paths” is one of the fastest ways to level up with
+Vault.</em></p>
+</blockquote>
+<h3 id="3-spin-up-vault-instantly-using-docker">🐳 3. Spin Up Vault Instantly Using Docker</h3>
+<p>Now that you understand the core model, try it out locally. Vault offers a dev
+mode you can run in seconds using Docker:</p>
+<pre><code>docker run --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=root' -p 8200:8200 hashicorp/vault
+</code></pre>
+<p>You get:</p>
 <ul>
-<li><a href="https://www.postgresql.org/docs/current/transaction-iso.html">PostgreSQL: Isolation Levels</a></li>
-<li><a href="https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE">PostgreSQL: Serializable Isolation</a></li>
+<li>A running Vault server on <a href="http://127.0.0.1:8200">http://127.0.0.1:8200</a></li>
+<li>A root token (root) to authenticate</li>
+<li>No persistent storage (so it’s safe for testing)</li>
 </ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c493d635a35b" /></p>
+<p>Perfect for sandboxing features, learning, and scripting Vault workflows.</p>
+<h3 id="4-use-output-curl-string-to-understand-api-calls">🧪 4. Use -output-curl-string to Understand API Calls</h3>
+<p>When you use the Vault CLI, you can peek behind the scenes by adding:</p>
+<pre><code>-output-curl-string
+</code></pre>
+<p>This shows the exact curl command Vault would send via HTTP API:</p>
+<pre><code>vault kv get -output-curl-string secret/myapp
+</code></pre>
+<p>It’s an amazing way to learn Vault’s API while using the CLI- and great for
+debugging or scripting raw requests.</p>
+<h3 id="5-use-the-cli-ui-and-api-depending-on-your-workflow">🧭 5. Use the CLI, UI, and API Depending on Your Workflow</h3>
+<p>Vault offers <strong>three ways to interact</strong> with it:</p>
+<ul>
+<li><strong>CLI</strong> : Great for scripting and automation</li>
+<li><strong>UI</strong> : Easy onboarding for newcomers and exploration</li>
+<li><strong>API</strong> : Best for tight app integrations</li>
+</ul>
+<p>Each has its place. CLI and UI are great for development and ops. API is
+perfect for production use from apps.</p>
+<blockquote>
+<p><em>🧠 Mastering all three will make you comfortable in any Vault environment.</em></p>
+</blockquote>
+<h3 id="6-dont-skip-the-docs-or-youtube">📚 6. Don’t Skip the Docs (or YouTube)</h3>
+<p>Vault’s <a href="https://developer.hashicorp.com/vault/docs">official documentation</a>
+is extremely well-written. No fluff — just solid, practical info with real-
+world examples.</p>
+<ul>
+<li><a href="https://developer.hashicorp.com/vault/docs/what-is-vault">Vault Overview</a></li>
+<li><a href="https://developer.hashicorp.com/vault/docs/commands">CLI Reference</a></li>
+<li><a href="https://developer.hashicorp.com/vault/tutorials">Hands-on Tutorials</a></li>
+</ul>
+<p>Want visuals? These two YouTube creators explain Vault better than most
+courses:</p>
+<ul>
+<li>
+<p>🎥 <strong>Rahul Wagh’s Vault Playlist</strong><br />
+<a href="https://www.youtube.com/watch?v=XLgzhZXRhlA&amp;list=PLFkEchqXDZx7CuMTbxnlGVflB7UKwf_N3">Watch on
+YouTube</a></p>
+</li>
+<li>
+<p>🎥 <strong>TechWorld with Nana’s Vault Intro</strong><br />
+<a href="https://www.youtube.com/watch?v=ae72pKpXe-s"> Watch on YouTube</a></p>
+</li>
+</ul>
+<h3 id="7-use-terraform-to-configure-vault">🌱 7. Use Terraform to Configure Vault</h3>
+<p>Vault is a configuration-heavy system. Managing it manually? You’ll hit walls
+fast.</p>
+<p>Use <strong>Terraform</strong> to:</p>
+<ul>
+<li>Enable and mount secrets engines</li>
+<li>Configure auth methods</li>
+<li>Create policies and roles</li>
+<li>Set up secret backends</li>
+</ul>
+<p>Codifying this config gives you version control, repeatability, and fewer
+mistakes. It’s a best practice- especially for teams.</p>
+<p><a href="https://registry.terraform.io/providers/hashicorp/vault/latest/docs">Terraform Vault
+Provider</a></p>
+<blockquote>
+<p><em>🧱 If you use Terraform for infrastructure, it’s a no-brainer to extend it
+to Vault.</em></p>
+</blockquote>
+<h3 id="wrapping-up">🎯 Wrapping Up</h3>
+<p>Vault can be intimidating at first, but once you break it down into paths,
+flows, and automation- everything clicks into place.</p>
+<p>These 7 tips aim to give you a <strong>solid mental model</strong> , a <strong>working
+environment</strong> , and the <strong>best tools and resources</strong> to keep going.</p>
+<p>Feel free to fork, share, or leave questions. And if you’ve got your own tips-
+send them my way!</p>
+<blockquote>
+<p><em>✍️</em><strong> <em>Note</em></strong> <em>: This blog post was written and polished with the help
+of</em><strong> <em>ChatGPT</em></strong> <em>, used for grammar correction, structure, and adding
+emoji for clarity and style.</em></p>
+</blockquote>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=9e56e42251bf" /></p>
 <hr />
-<p><a href="https://levelup.gitconnected.com/understanding-isolation-in-postgresql-
-a-deep-dive-into-the-i-in-acid-c493d635a35b">Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in
-ACID</a> was originally published in
-<a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium, where people
-are continuing the conversation by highlighting and responding to this story.</p>
+<p><a href="https://levelup.gitconnected.com/7-quick-tips-to-get-started-with-
+hashicorp-vault-9e56e42251bf">🚀 7 Quick Tips to Get Started with HashiCorp
+Vault</a> was originally published in <a href="https://levelup.gitconnected.com">Level Up
+Coding</a> on Medium, where people are
+continuing the conversation by highlighting and responding to this story.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1341,10 +1364,10 @@ are continuing the conversation by highlighting and responding to this story.</p
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>

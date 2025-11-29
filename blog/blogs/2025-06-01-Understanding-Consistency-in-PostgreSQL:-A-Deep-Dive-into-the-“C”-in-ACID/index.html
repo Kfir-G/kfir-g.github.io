@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/">
       
       
-        <link rel="prev" href="../2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/">
+        <link rel="prev" href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/">
       
       
-        <link rel="next" href="../../podcast/">
+        <link rel="next" href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 11 21 From Passive FastAPI Developer to Real FastAPI Engineer Part 1: ASGI - Kfir's Site</title>
+        <title>2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../../../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#understanding-asgi-by-breaking-down-an-http-request" class="md-skip">
+        <a href="#what-consistency-really-means" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 11 21 From Passive FastAPI Developer to Real FastAPI Engineer  Part 1: ASGI
+              2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -220,7 +220,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -240,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -444,6 +444,63 @@
   
 
               
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -505,10 +562,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -524,6 +606,112 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-consistency-really-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Consistency Really Means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-schema-with-invariants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Schema With Invariants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#violating-consistency-with-a-bad-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Violating Consistency with a Bad Transaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-business-logic-with-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enforcing Business Logic with Triggers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referential-integrity-via-foreign-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referential Integrity via Foreign Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consistency-in-application-code-python-psycopg3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Consistency in Application Code (Python + psycopg3)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Thoughts
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -701,35 +889,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 11 21 From Passive FastAPI Developer to Real FastAPI Engineer  Part 1: ASGI
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/" class="md-nav__link">
         
   
   
@@ -745,221 +908,13 @@
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#understanding-asgi-by-breaking-down-an-http-request" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understanding ASGI by Breaking Down an HTTP Request
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-asgi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is ASGI?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-do-we-need-asgi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Do We Need ASGI?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-quick-timeline-of-request-interfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A Quick Timeline of Request Interfaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-wsgi-wasnt-enough" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why WSGI Wasn’t Enough
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#asgis-core-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ASGI’s Core Idea
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-minimal-asgi-app-raw" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A Minimal ASGI App (Raw)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#http-request-flow-in-wsgi-vs-asgi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        HTTP Request Flow in WSGI vs ASGI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wsgi-flow-sync" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WSGI Flow (Sync)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#asgi-flow-event-based-async" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ASGI Flow (Event-Based, Async)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-asgi-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why ASGI Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-concurrency" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Concurrency
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-websockets-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. WebSockets Support
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-full-duplex-communication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Full-Duplex Communication
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-protocol-independence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Protocol Independence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-tiny-diagram-asgi-in-fastapi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A Tiny Diagram: ASGI in FastAPI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References:
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1034,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -1062,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="../../../podcast/example/" class="md-nav__link">
         
   
   
@@ -1151,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -1179,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1224,206 +1179,156 @@
 
 
 
-  <h1>2025 11 21 From Passive FastAPI Developer to Real FastAPI Engineer  Part 1: ASGI</h1>
+  <h1>2025 06 01 Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID</h1>
 
 <hr />
-<p>title: From Passive FastAPI Developer to Real FastAPI Engineer- Part 1: ASGI
-date: 2025-11-21
-original_url: https://levelup.gitconnected.com/from-passive-fastapi-developer-to-real-fastapi-engineer-part-1-asgi-059a588a54ae?source=rss-e0d89d1af01d------2</p>
+<p>title: Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in ACID
+date: 2025-06-01
+original_url: https://levelup.gitconnected.com/understanding-consistency-in-postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec?source=rss-e0d89d1af01d------2</p>
 <hr />
 <p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*0aGbK5MJNAkF0XKM0hV3zA.jpeg" />Photo by Kaue
-Barbier: <a href="https://www.pexels.com/photo/28182842/">https://www.pexels.com/photo/28182842/</a></p>
-<h3 id="understanding-asgi-by-breaking-down-an-http-request">Understanding ASGI by Breaking Down an HTTP Request</h3>
-<p>Modern Python web frameworks feel effortless- you write a function, return
-some JSON, and boom: a web app. But underneath that smooth layer lies a ton of
-complexity: raw bytes over TCP, state machines, protocols, concurrency, and
-error-prone details you never want to touch.</p>
-<p><strong>ASGI exists to shield you from that pain.</strong> Let’s break an HTTP request down
-and see how ASGI fits into the picture.</p>
-<h3 id="what-is-asgi">What is ASGI?</h3>
-<p><strong>ASGI (Asynchronous Server Gateway Interface)</strong> is a <strong>Python specification</strong>
-that defines how web servers communicate with asynchronous Python
-applications.</p>
-<p>Official spec: <a href="https://asgi.readthedocs.io/en/latest/">https://asgi.readthedocs.io/en/latest/</a></p>
-<p>You can think of it as the evolution of WSGI, designed for modern async apps,
-HTTP/2, and WebSockets.</p>
-<h3 id="why-do-we-need-asgi">Why Do We Need ASGI?</h3>
-<p>Inside every web server, there are three conceptual layers:</p>
-<pre><code>Transport  -&gt;  Protocol  -&gt;  Application Logic  
-TCP/SSL        HTTP/WS        Your FastAPI code
+images-1.medium.com/max/1024/1*HjAix9wWNkXyGl1BfIvVkw.jpeg" />Photo by Matheus
+Viana: <a href="https://www.pexels.com/photo/orange-wall-and-sitting-boy-10216566/">https://www.pexels.com/photo/orange-wall-and-sitting-boy-10216566/</a></p>
+<p>In systems where data correctness is non-negotiable- whether you’re handling
+user authentication, e-commerce inventory, or hospital patient records-
+<strong>Consistency</strong> is the invisible guardrail that ensures the rules of your
+domain are never broken.</p>
+<p>This article explores <strong>Consistency</strong> , the second principle of ACID. We’ll
+walk through how PostgreSQL enforces it via constraints, how violations are
+handled, and what developers need to be mindful of to avoid state corruption
+in real-world systems.</p>
+<h3 id="what-consistency-really-means">What Consistency Really Means</h3>
+<p>Consistency ensures that a transaction brings the database from one valid
+state to another. That means all defined <strong>constraints, rules, and
+invariants</strong> must be satisfied before and after every transaction.</p>
+<p>If any part of a transaction would leave the data in an invalid state,
+PostgreSQL <strong>rejects the entire transaction-</strong> not just the failing statement-
+preserving the integrity of your system.</p>
+<h3 id="a-schema-with-invariants">A Schema With Invariants</h3>
+<p>Let’s return to our simple banking system and define some rules we want
+PostgreSQL to enforce:</p>
+<pre><code>CREATE TABLE accounts (  
+    id SERIAL PRIMARY KEY,  
+    name TEXT NOT NULL,  
+    balance INTEGER NOT NULL CHECK (balance &gt;= 0),  
+    UNIQUE(name)  
+);
 </code></pre>
-<p>The problem:<br />
-If every framework had to re-implement TCP handling, HTTP parsing, connection
-lifecycle, etc., we’d live in a world of endless duplicated code and subtle
-bugs.</p>
-<p><strong>ASGI proposes a clean split into two Python components:</strong></p>
-<ol>
-<li><strong>Protocol Server</strong> (e.g., Uvicorn, Hypercorn)</li>
-</ol>
+<p>Here, we’ve defined:</p>
 <ul>
-<li>Handles raw network I/O</li>
-<li>Transforms bytes into structured ASGI events</li>
+<li>Every account must have a non-null name.</li>
+<li>Balances must be zero or greater.</li>
+<li>Names must be unique.</li>
 </ul>
-<p><strong>2. Application</strong> (e.g., Starlette, FastAPI, custom ASGI apps)</p>
-<ul>
-<li>Receives events like http.request</li>
-<li>Returns events like http.response.start and http.response.body</li>
-</ul>
-<p>This “bridge” is ASGI:</p>
-<pre><code>Protocol Server  &lt;---- ASGI ----&gt;  Application
-</code></pre>
-<h3 id="a-quick-timeline-of-request-interfaces">A Quick Timeline of Request Interfaces</h3>
-<p>Year Spec Notes:</p>
-<p><strong>1993</strong> CGI Process-per-request. Ancient, slow.</p>
-<p><strong>2003</strong> WSGI (PEP 333) Standardized sync Python apps.</p>
-<p><strong>2010</strong> WSGI 1.0.1 (PEP 3333) Updated for Python 3.</p>
-<p><strong>2016</strong> ASGI Async, event-based design.</p>
-<p><strong>2019</strong> ASGI 3.0 Modern form used today.</p>
-<h3 id="why-wsgi-wasnt-enough">Why WSGI Wasn’t Enough</h3>
-<p>WSGI apps are <strong>synchronous</strong> and take exactly two parameters:</p>
-<pre><code>def app(environ, start_response):  
-    start_response("200 OK", [("Content-Type", "text/plain")])  
-    return [b"hello"]
-</code></pre>
-<p>This works for HTTP/1.1 but fails for:</p>
-<ul>
-<li>concurrency</li>
-<li>streaming</li>
-<li>long-lived connections</li>
-<li>WebSockets</li>
-</ul>
-<p>WSGI can’t represent async behavior or event-driven protocols.</p>
-<h3 id="asgis-core-idea">ASGI’s Core Idea</h3>
-<p>An ASGI application is <strong>an async callable</strong> :</p>
-<pre><code>async def app(scope, receive, send):  
-    ...
-</code></pre>
-<ul>
-<li><strong>scope</strong> → Metadata about the connection (type, path, headers, etc.)</li>
-<li><strong>receive()</strong> → Wait for events from server (e.g., request body chunks)</li>
-<li><strong>send()</strong> → Emit events back (response start, response body, WebSocket messages)</li>
-</ul>
-<p>This event system is the real power. It makes communication flexible and
-supports full-duplex protocols.</p>
-<h3 id="a-minimal-asgi-app-raw">A Minimal ASGI App (Raw)</h3>
-<pre><code>async def app(scope, receive, send):  
-    assert scope["type"] == "http"
+<p>These are <strong>declarative constraints</strong>. PostgreSQL uses them to guarantee that
+no transaction can violate your domain rules.</p>
+<h3 id="violating-consistency-with-a-bad-transaction">Violating Consistency with a Bad Transaction</h3>
+<p>Say Alice tries to transfer more than she has:</p>
+<pre><code>BEGIN;
 
-await send({  
-        "type": "http.response.start",  
-        "status": 200,  
-        "headers": [(b"content-type", b"text/plain")],  
-    })  
-    await send({  
-        "type": "http.response.body",  
-        "body": b"Hello from raw ASGI!",  
-    })
+UPDATE accounts SET balance = balance - 1200 WHERE name = 'Alice';  
+UPDATE accounts SET balance = balance + 1200 WHERE name = 'Bob';
+
+COMMIT;
 </code></pre>
-<p>Run it with Uvicorn:</p>
-<pre><code>uvicorn example:app
+<p>If Alice only has 1000, PostgreSQL will raise:</p>
+<pre><code>ERROR:  new row for relation "accounts" violates check constraint "accounts_balance_check"
 </code></pre>
-<h3 id="http-request-flow-in-wsgi-vs-asgi">HTTP Request Flow in WSGI vs ASGI</h3>
-<h3 id="wsgi-flow-sync">WSGI Flow (Sync)</h3>
-<pre><code>Client  
-  |  
-HTTP Request  
-  |  
-WSGI Server parses bytes  
-  |  
-(environ, start_response)  
-  |  
-WSGI App  
-  |  
-Iterables of bytes  
-  |  
-WSGI Server → HTTP Response
+<p>At this point, the transaction is marked as failed and must be rolled back:</p>
+<pre><code>ROLLBACK;
 </code></pre>
-<p>No events. No async. No real-time messaging.</p>
-<h3 id="asgi-flow-event-based-async">ASGI Flow (Event-Based, Async)</h3>
-<pre><code>Client  
-  |  
-Raw Bytes  
-  |  
-Protocol Server (Uvicorn / Daphne)  
-  |  
-ASGI Event: "http.request", "http.disconnect"  
-  |  
-async app(scope, receive, send)  
-  |  
-Your app emits events:  
-  - "http.response.start"  
-  - "http.response.body"  
-  - "websocket.accept"  
-  - "websocket.send"
+<p><strong>Result</strong> : No changes are applied. This is Consistency at work- the
+integrity rule (balance &gt;= 0) was violated, so PostgreSQL refused to apply any
+part of the transaction.</p>
+<h3 id="enforcing-business-logic-with-triggers">Enforcing Business Logic with Triggers</h3>
+<p>Not all rules are easily encoded as column constraints. For more complex
+logic- like age-based restrictions or cross-table validations- we can use
+<strong>triggers</strong>.</p>
+<p>Example: prevent creating users under age 18.</p>
+<pre><code>CREATE OR REPLACE FUNCTION check_age()  
+RETURNS TRIGGER AS $$  
+BEGIN  
+    IF NEW.age &lt; 18 THEN  
+        RAISE EXCEPTION 'Age must be at least 18';  
+    END IF;  
+    RETURN NEW;  
+END;  
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER check_age_trigger  
+BEFORE INSERT OR UPDATE ON users  
+FOR EACH ROW  
+EXECUTE FUNCTION check_age();
 </code></pre>
-<p>This model is more general, flexible, and future-proof.</p>
-<h3 id="why-asgi-matters">Why ASGI Matters</h3>
-<h3 id="1-concurrency">1. Concurrency</h3>
-<p>Async I/O = thousands of simultaneous connections.</p>
-<h3 id="2-websockets-support">2. WebSockets Support</h3>
-<p>WSGI can’t do WebSockets.<br />
-ASGI makes WebSockets just another protocol supported by events.</p>
-<h3 id="3-full-duplex-communication">3. Full-Duplex Communication</h3>
-<p>Send and receive independently- essential for:</p>
+<p>Now, any INSERT or UPDATE that violates this rule will automatically fail, and
+the transaction will be rolled back- keeping the system in a consistent state.</p>
+<h3 id="referential-integrity-via-foreign-keys">Referential Integrity via Foreign Keys</h3>
+<p>Let’s introduce a transactions table that logs money transfers:</p>
+<pre><code>CREATE TABLE transactions (  
+    id SERIAL PRIMARY KEY,  
+    from_account INTEGER REFERENCES accounts(id),  
+    to_account INTEGER REFERENCES accounts(id),  
+    amount INTEGER NOT NULL CHECK (amount &gt; 0)  
+);
+</code></pre>
+<p>PostgreSQL ensures that both from_account and to_account actually exist.
+Attempting to insert a transaction for a non-existent account will fail
+immediately.</p>
+<pre><code>INSERT INTO transactions (from_account, to_account, amount)  
+VALUES (999, 2, 100);
+
+
+ERROR:  insert or update on table "transactions" violates foreign key constraint
+</code></pre>
+<p>That’s PostgreSQL maintaining consistency via <strong>referential integrity</strong>.</p>
+<h3 id="consistency-in-application-code-python-psycopg3">Consistency in Application Code (Python + psycopg3)</h3>
+<p>Here’s how consistency violations behave in real-world application code:</p>
+<pre><code>import psycopg
+
+conn = psycopg.connect("postgresql://user:pass@localhost/db")
+
+try:  
+    with conn.transaction():  
+        with conn.cursor() as cur:  
+            cur.execute("UPDATE accounts SET balance = balance - 1200 WHERE name = 'Alice'")  
+            cur.execute("UPDATE accounts SET balance = balance + 1200 WHERE name = 'Bob'")
+
+except Exception as e:  
+    print(f"Transaction failed: {e}")
+</code></pre>
+<p>If the balance - 1200 fails the CHECK constraint, the entire block is rolled
+back. You’ll never end up in a partial state where Alice lost money but Bob
+gained nothing.</p>
+<h3 id="summary-of-cases">Summary of Cases</h3>
 <ul>
-<li>WebSockets</li>
-<li>HTTP streaming</li>
-<li>Server-Sent Events</li>
-<li>Background events</li>
+<li><strong>Constraint violations</strong> : Cause immediate rollback of the entire transaction.</li>
+<li><strong>Triggers</strong> : Allow custom rules that extend beyond column-level checks.</li>
+<li><strong>Foreign key violations</strong> : Prevent inconsistent references between tables.</li>
+<li><strong>Application-level transactions</strong> : psycopg3 ensures that rule violations bubble up cleanly, triggering a rollback.</li>
 </ul>
-<h3 id="4-protocol-independence">4. Protocol Independence</h3>
-<p>ASGI officially supports:</p>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>Consistency is the safety net that protects your data from logical corruption.
+PostgreSQL’s constraint system- combined with triggers and foreign keys-
+ensures that your application’s data model is always honored.</p>
+<p>If you’re building systems where correctness matters, you must treat
+consistency as a first-class design concern. Don’t rely on application code
+alone to enforce business rules- declarative constraints and transactional
+integrity are your best allies.</p>
+<p><strong>Further Reading:</strong></p>
 <ul>
-<li><strong>http</strong></li>
-<li><strong>websocket</strong></li>
-<li><strong>lifespan</strong> (startup/shutdown events)</li>
+<li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html">PostgreSQL Constraints</a></li>
+<li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK">PostgreSQL Foreign Keys</a></li>
+<li><a href="https://www.postgresql.org/docs/current/plpgsql-trigger.html">Triggers</a></li>
+<li><a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3 Transactions</a></li>
 </ul>
-<p>More protocols can be added without rewriting frameworks.</p>
-<h3 id="a-tiny-diagram-asgi-in-fastapi">A Tiny Diagram: ASGI in FastAPI</h3>
-<pre><code>      ┌──────────────────┐  
-      │   Your FastAPI   │  
-      │      App         │  
-      └────────┬─────────┘  
-               │  ASGI callable  
-               ▼  
-        ASGI Interface  
-               ▲  
-               │ events  
-      ┌────────┴─────────┐  
-      │   Uvicorn Server │  
-      │ (Protocol Layer) │  
-      └──────────────────┘
-</code></pre>
-<p>You “inject” your application into the protocol server.<br />
-The server handles all low-level details- your app just reacts to events.</p>
-<h3 id="final-summary">Final Summary</h3>
-<p>ASGI gives us:</p>
-<ul>
-<li>async concurrency</li>
-<li>flexible event-driven communication</li>
-<li>WebSocket support</li>
-<li>protocol independence</li>
-<li>clean separation of logic vs transport</li>
-<li>a standard interface for modern Python web servers</li>
-</ul>
-<p>It’s the foundation that makes <strong>Starlette</strong> and <strong>FastAPI</strong> so fast and the
-reason you never have to manipulate raw HTTP bytes yourself.</p>
-<h3 id="references">References:</h3>
-<ul>
-<li>The <strong>ASGI official specification</strong> at <a href="https://asgi.readthedocs.io/en/latest/">https://asgi.readthedocs.io/en/latest/</a></li>
-<li>The <strong>WSGI standard</strong> via <strong>PEP 333</strong> at <a href="https://peps.python.org/pep-0333/">https://peps.python.org/pep-0333/</a> and <strong>PEP 3333</strong> at <a href="https://peps.python.org/pep-3333/">https://peps.python.org/pep-3333/</a>, the historical <strong>CGI/1.1 RFC</strong> at <a href="https://www.rfc-editor.org/rfc/rfc3875">https://www.rfc-editor.org/rfc/rfc3875</a></li>
-<li>The <strong>Uvicorn ASGI server</strong> documentation at <a href="https://www.uvicorn.org/">https://www.uvicorn.org/</a></li>
-<li>The <strong>Starlette framework</strong> documentation at <a href="https://www.starlette.io/">https://www.starlette.io/</a></li>
-<li>Tmhe <strong>HTTP/1.1 protocol</strong> definition at <a href="https://www.rfc-editor.org/rfc/rfc7230">https://www.rfc-editor.org/rfc/rfc7230</a>, and the <strong>WebSocket protocol spec</strong> at <a href="https://www.rfc-editor.org/rfc/rfc6455">https://www.rfc-editor.org/rfc/rfc6455</a></li>
-</ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=059a588a54ae" /></p>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=82ed2d1093ec" /></p>
 <hr />
-<p><a href="https://levelup.gitconnected.com/from-passive-fastapi-developer-to-real-
-fastapi-engineer-part-1-asgi-059a588a54ae">From Passive FastAPI Developer to Real FastAPI Engineer- Part 1:
-ASGI</a> was originally published in <a href="https://levelup.gitconnected.com">Level
-Up Coding</a> on Medium, where people are
-continuing the conversation by highlighting and responding to this story.</p>
+<p><a href="https://levelup.gitconnected.com/understanding-consistency-in-
+postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec">Understanding Consistency in PostgreSQL: A Deep Dive into the “C” in
+ACID</a> was originally
+published in <a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium,
+where people are continuing the conversation by highlighting and responding to
+this story.</p>
 
 
 
@@ -1478,10 +1383,10 @@ continuing the conversation by highlighting and responding to this story.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>

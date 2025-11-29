@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/">
       
       
-        <link rel="prev" href="../2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/">
+        <link rel="prev" href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
       
       
-        <link rel="next" href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/">
+        <link rel="next" href="../2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID - Kfir's Site</title>
+        <title>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../../../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-atomicity-really-means" class="md-skip">
+        <a href="#what-isolation-means" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID
+              2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -220,7 +220,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -240,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -444,6 +444,63 @@
   
 
               
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -477,35 +534,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/" class="md-nav__link">
         
   
   
@@ -521,123 +553,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-atomicity-really-means" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Atomicity Really Means
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-transfer-operation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A Simple Transfer Operation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#simulating-a-failure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simulating a Failure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-if-you-dont-use-transactions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What If You Don’t Use Transactions?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#statement-level-atomicity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Statement-Level Atomicity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constraint-failures-and-runtime-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Constraint Failures and Runtime Errors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handling-transactions-in-application-code" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Handling Transactions in Application Code
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary-of-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary of Cases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Final Thoughts
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -703,10 +618,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -722,6 +662,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-isolation-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Isolation Means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#postgresqls-isolation-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL’s Isolation Levels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-see-isolation-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let’s See Isolation in Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-committed-non-repeatable-reads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Committed: Non-Repeatable Reads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repeatable-read-same-snapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repeatable Read: Same Snapshot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serializable-strictest-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serializable: Strictest Isolation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing the Right Level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Thoughts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -873,6 +930,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -935,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -963,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="../../../podcast/example/" class="md-nav__link">
         
   
   
@@ -1052,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -1080,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1125,159 +1190,165 @@
 
 
 
-  <h1>2025 05 12 Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID</h1>
+  <h1>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID</h1>
 
 <hr />
-<p>title: Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in ACID
-date: 2025-05-12
-original_url: https://levelup.gitconnected.com/understanding-atomicity-in-postgresql-a-deep-dive-into-the-a-in-acid-5bde6fd042e3?source=rss-e0d89d1af01d------2</p>
+<p>title: Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
+date: 2025-07-07
+original_url: https://levelup.gitconnected.com/understanding-isolation-in-postgresql-a-deep-dive-into-the-i-in-acid-c493d635a35b?source=rss-e0d89d1af01d------2</p>
 <hr />
 <p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*by0EZDhNnatcIASaS2YoWQ.jpeg" />Photo by Thiago
-Matos : <a href="https://www.pexels.com/photo/orange-led-cfl-bulb-2338672/">https://www.pexels.com/photo/orange-led-cfl-bulb-2338672/</a></p>
-<p>In production systems that manage critical data- whether financial
-transactions, user state, or infrastructure configuration- the integrity of
-state transitions is non-negotiable. That’s where the ACID properties of
-relational databases come into play.</p>
-<p>This article takes a focused look at <strong>Atomicity</strong> , the first principle of
-ACID. We’ll analyze how PostgreSQL enforces it, how failures are handled, and
-what engineers must understand to avoid subtle consistency bugs in real-world
-systems.</p>
-<h3 id="what-atomicity-really-means">What Atomicity Really Means</h3>
-<p>Atomicity guarantees that a <strong>transaction is all-or-nothing</strong> : every
-operation in the transaction either completes successfully, or none of them
-do. There is no concept of “partial success.”</p>
-<p>Atomicity is enforced at the transaction level, not the statement level.
-PostgreSQL ensures that even if a failure occurs midway through a transaction,
-all previous operations in that transaction are automatically rolled back.</p>
-<p>For reference, see the official <a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL Transaction
-Tutorial</a>.</p>
-<h3 id="a-simple-transfer-operation">A Simple Transfer Operation</h3>
-<p>Consider a simplified banking example. We’ll create an accounts table and
-simulate transferring funds between two accounts:</p>
-<pre><code>CREATE TABLE accounts (  
-    id SERIAL PRIMARY KEY,  
-    name TEXT NOT NULL,  
-    balance INTEGER NOT NULL CHECK (balance &gt;= 0)  
+images-1.medium.com/max/1024/1*w8bYYfVQxfSZuy1dzA07Ng.jpeg" />Photo by Matheus
+Viana: <a href="https://www.pexels.com/photo/open-locker-in-wooden-locker-
+room-31220117/">https://www.pexels.com/photo/open-locker-in-wooden-locker-
+room-31220117/</a></p>
+<p>When we talk about PostgreSQL being <em>ACID-compliant</em> , Isolation is the “I”
+that quietly does a lot of heavy lifting. In my previous articles, we explored
+Atomicity and Consistency -how PostgreSQL makes sure that transactions either
+happen fully or not at all, and that the database remains valid. Now it’s time
+to look at how Isolation keeps transactions from interfering with each other
+when multiple operations run at the same time.</p>
+<p>Isolation sounds simple: each transaction should run as if it’s the only one.
+But the details can get tricky, especially when different isolation levels
+come into play. Let’s see what this means, how it works in PostgreSQL, and
+what to watch out for.</p>
+<h3 id="what-isolation-means">What Isolation Means</h3>
+<p>In short, Isolation makes sure that the intermediate state of a transaction is
+invisible to other transactions. If one transaction is in the middle of
+changing a row, another transaction shouldn’t see a half-finished version of
+that row.</p>
+<p>Without Isolation, you can run into problems like:</p>
+<ul>
+<li><strong>Dirty reads</strong> : reading uncommitted changes that might get rolled back.</li>
+<li><strong>Non-repeatable reads</strong> : getting different results when you read the same row twice in a transaction.</li>
+<li><strong>Phantom reads</strong> : rows appear or disappear when you run the same query again.</li>
+</ul>
+<p>PostgreSQL handles this with different isolation levels, each balancing
+correctness and performance.</p>
+<h3 id="postgresqls-isolation-levels">PostgreSQL’s Isolation Levels</h3>
+<p>PostgreSQL supports the standard SQL isolation levels:</p>
+<ol>
+<li>
+<p><strong>Read Uncommitted</strong><br />
+PostgreSQL actually treats this the same as Read Committed, so dirty reads are
+never allowed.</p>
+</li>
+<li>
+<p><strong>Read Committed</strong> (default)<br />
+Each query sees a snapshot of the database taken at the start of that query.
+Changes committed by other transactions become visible to the next query in
+the same transaction.</p>
+</li>
+<li>
+<p><strong>Repeatable Read</strong><br />
+All queries in the transaction see the same snapshot taken when the
+transaction starts. You avoid non-repeatable reads, but phantom reads can
+still happen.</p>
+</li>
+<li>
+<p><strong>Serializable</strong><br />
+The strictest level. Transactions run as if they were executed one after
+another. PostgreSQL uses Serializable Snapshot Isolation (SSI) to make this
+work and may abort transactions that can’t be serialized.</p>
+</li>
+</ol>
+<h3 id="lets-see-isolation-in-action">Let’s See Isolation in Action</h3>
+<p>Here’s a simple table to experiment with:</p>
+<pre><code>CREATE TABLE inventory (  
+  id SERIAL PRIMARY KEY,  
+  stock INT  
 );
 
-INSERT INTO accounts (name, balance)  
-VALUES ('Alice', 1000), ('Bob', 1000);
+INSERT INTO inventory (stock) VALUES (100);
 </code></pre>
-<p>Now, we implement a basic transfer operation using an explicit transaction:</p>
-<pre><code>BEGIN;
+<p>Open two psql sessions: Session A and Session B.</p>
+<h3 id="read-committed-non-repeatable-reads">Read Committed: Non-Repeatable Reads</h3>
+<p>In Session A:</p>
+<pre><code>BEGIN;  
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
-UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice';  
-UPDATE accounts SET balance = balance + 200 WHERE name = 'Bob';
-
+SELECT stock FROM inventory WHERE id = 1;  
+-- stock = 100
+</code></pre>
+<p>In Session B:</p>
+<pre><code>UPDATE inventory SET stock = 50 WHERE id = 1;  
 COMMIT;
 </code></pre>
-<p>If both statements succeed, the transaction is committed and both updates
-become permanent.</p>
-<h3 id="simulating-a-failure">Simulating a Failure</h3>
-<p>Now let’s simulate an error that occurs in the second statement:</p>
-<pre><code>BEGIN;
+<p>Back in Session A:</p>
+<pre><code>SELECT stock FROM inventory WHERE id = 1;  
+-- stock = 50
+</code></pre>
+<p>The same row gave a different value within the same transaction. This is a
+non-repeatable read, and it’s allowed in Read Committed.</p>
+<h3 id="repeatable-read-same-snapshot">Repeatable Read: Same Snapshot</h3>
+<p>Now try Repeatable Read.</p>
+<p>Session A:</p>
+<pre><code>BEGIN;  
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
 
-UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice';  
--- Intentional typo: column name is misspelled  
-UPDATE accounts SET balnce = balance + 200 WHERE name = 'Bob';
-
+SELECT stock FROM inventory WHERE id = 1;  
+-- stock = 100
+</code></pre>
+<p>Session B:</p>
+<pre><code>UPDATE inventory SET stock = 30 WHERE id = 1;  
 COMMIT;
 </code></pre>
-<p>PostgreSQL will raise an error:</p>
-<pre><code>ERROR: column "balnce" does not exist
+<p>Back in Session A:</p>
+<pre><code>SELECT stock FROM inventory WHERE id = 1;  
+-- stock = 100
 </code></pre>
-<p>At this point, the transaction is marked as failed. No further operations are
-allowed until a rollback is issued:</p>
-<pre><code>ROLLBACK;
-</code></pre>
-<p>Although the first UPDATE ran without error, its effect is discarded because
-the transaction was never successfully committed. This is atomicity in
-practice.</p>
-<h3 id="what-if-you-dont-use-transactions">What If You Don’t Use Transactions?</h3>
-<p>When operations are issued individually without an explicit BEGIN block,
-PostgreSQL executes each as its own atomic unit:</p>
-<pre><code>UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice';  
--- This succeeds
+<p>This time, the value stays the same because Repeatable Read ensures you always
+see the same snapshot.</p>
+<h3 id="serializable-strictest-isolation">Serializable: Strictest Isolation</h3>
+<p>With Serializable, PostgreSQL checks whether your transactions could produce
+different results than if they ran one after the other.</p>
+<p>Session A:</p>
+<pre><code>BEGIN;  
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 
-UPDATE accounts SET balnce = balance + 200 WHERE name = 'Bob';  
--- This fails
-</code></pre>
-<p>Here, Alice’s balance is reduced, but Bob never receives the funds. This
-violates our consistency requirements and results in data loss.</p>
-<p><strong>Lesson:</strong> without explicit transactions, the database cannot enforce
-atomicity across multiple operations.</p>
-<h3 id="statement-level-atomicity">Statement-Level Atomicity</h3>
-<p>PostgreSQL does provide implicit transaction handling for single statements.
-If a single INSERT, UPDATE, or DELETE statement fails, it is discarded
-entirely and does not affect the database. However, for multiple operations
-that must succeed together, atomicity is not guaranteed unless you explicitly
-wrap them in a transaction.</p>
-<p>Relevant documentation: <a href="https://www.postgresql.org/docs/current/sql-begin.html">PostgreSQL
-BEGIN</a></p>
-<h3 id="constraint-failures-and-runtime-errors">Constraint Failures and Runtime Errors</h3>
-<p>PostgreSQL also enforces atomicity in the presence of constraint violations or
-other runtime errors. For example, suppose we enforce that balances cannot be
-negative:</p>
-<pre><code>ALTER TABLE accounts ADD CONSTRAINT non_negative_balance CHECK (balance &gt;= 0);
-</code></pre>
-<p>Then attempt:</p>
-<pre><code>BEGIN;
+SELECT stock FROM inventory WHERE id = 1;  
+-- 100
 
-UPDATE accounts SET balance = balance - 1100 WHERE name = 'Alice';  
-UPDATE accounts SET balance = balance + 1100 WHERE name = 'Bob';
+UPDATE inventory SET stock = stock - 10 WHERE id = 1;
+</code></pre>
+<p>Session B:</p>
+<pre><code>BEGIN;  
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 
+SELECT stock FROM inventory WHERE id = 1;  
+-- 100
+
+UPDATE inventory SET stock = stock - 20 WHERE id = 1;  
 COMMIT;
 </code></pre>
-<p>Alice only has 1000, so her balance would go negative. The first statement
-violates the constraint, and the entire transaction is aborted. No changes are
-applied.</p>
-<h3 id="handling-transactions-in-application-code">Handling Transactions in Application Code</h3>
-<p>Here’s how atomicity works in a real-world PostgreSQL client using Python with
-<a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3</a>:</p>
-<pre><code>import psycopg
-
-conn = psycopg.connect("postgresql://user:pass@localhost/db")
-
-try:  
-    with conn.transaction():  
-        with conn.cursor() as cur:  
-            cur.execute("UPDATE accounts SET balance = balance - 200 WHERE name = 'Alice'")  
-            cur.execute("UPDATE accounts SET balnce = balance + 200 WHERE name = 'Bob'")  # Bug
-
-except Exception as e:  
-    print(f"Transaction failed: {e}")
+<p>Back in Session A:</p>
+<pre><code>COMMIT;  
+-- ERROR: could not serialize access due to concurrent update
 </code></pre>
-<p>In this case, conn.transaction() ensures that the entire block is treated as
-atomic. When the second query fails, psycopg3 automatically rolls back the
-transaction. No data is persisted.</p>
-<h3 id="summary-of-cases">Summary of Cases</h3>
+<p>PostgreSQL detects that running these transactions together could lead to
+inconsistencies, so it rolls one back. Better safe than sorry.</p>
+<h3 id="choosing-the-right-level">Choosing the Right Level</h3>
 <ul>
-<li><strong>Single</strong><strong>UPDATE</strong> : Executed without an explicit transaction block, PostgreSQL treats it as an implicit transaction. It either succeeds or fails as a single atomic operation.</li>
-<li><strong>Multiple</strong><strong>UPDATEs without</strong><strong>BEGIN</strong> : When multiple operations are issued individually without wrapping them in a transaction, atomicity is not guaranteed. If one statement succeeds and another fails, partial state changes can persist.</li>
-<li><strong>BEGIN /</strong><strong>COMMIT with syntax or runtime error</strong> : When using an explicit transaction, any error- be it a syntax issue or constraint violation- causes the entire transaction to be rolled back. This ensures atomicity across all enclosed operations.</li>
-<li><strong>Using psycopg3 with</strong><strong>with conn.transaction()</strong> : In application code, using this context manager ensures atomicity. If any exception is raised during the block, psycopg3 automatically rolls back the transaction.</li>
+<li><strong>Read Committed</strong> works well for most use cases where short transactions don’t need repeatable reads.</li>
+<li><strong>Repeatable Read</strong> is useful for consistent reads in longer transactions or reports.</li>
+<li><strong>Serializable</strong> is the safest but can lead to transaction rollbacks, so you need to handle retries.</li>
 </ul>
 <h3 id="final-thoughts">Final Thoughts</h3>
-<p>PostgreSQL provides strong atomicity guarantees, but they’re only effective
-when transactions are used intentionally and correctly. Multi-statement
-operations should <strong>always</strong> be wrapped in an explicit transaction, and
-developers must anticipate rollback paths as part of the application’s normal
-flow.</p>
-<p>Failing to do so can result in partial writes, corrupted state, and long-tail
-data integrity bugs that are difficult to trace.</p>
-<p>For more details, refer to the official documentation:</p>
+<p>Isolation is about making sure your transactions don’t see each other’s work
+half-finished. It’s not something you think about every day- until things go
+wrong because of subtle race conditions.</p>
+<p>Getting Isolation right is key to safe and predictable data in multi-user
+systems. Now you know what each level does and how PostgreSQL keeps your data
+consistent even when things get busy.</p>
+<h3 id="references">References</h3>
 <ul>
-<li><a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL Transactions</a></li>
-<li><a href="https://www.postgresql.org/docs/current/sql-begin.html">BEGIN</a></li>
-<li><a href="https://www.postgresql.org/docs/current/sql-commit.html">COMMIT</a></li>
-<li><a href="https://www.postgresql.org/docs/current/sql-rollback.html">ROLLBACK</a></li>
-<li><a href="https://www.psycopg.org/psycopg3/docs/basic/transactions.html">psycopg3 Transactions</a></li>
+<li><a href="https://www.postgresql.org/docs/current/transaction-iso.html">PostgreSQL: Isolation Levels</a></li>
+<li><a href="https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE">PostgreSQL: Serializable Isolation</a></li>
 </ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=5bde6fd042e3" /></p>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c493d635a35b" /></p>
 <hr />
-<p><a href="https://levelup.gitconnected.com/understanding-atomicity-in-postgresql-
-a-deep-dive-into-the-a-in-acid-5bde6fd042e3">Understanding Atomicity in PostgreSQL: A Deep Dive into the “A” in
+<p><a href="https://levelup.gitconnected.com/understanding-isolation-in-postgresql-
+a-deep-dive-into-the-i-in-acid-c493d635a35b">Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in
 ACID</a> was originally published in
 <a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium, where people
 are continuing the conversation by highlighting and responding to this story.</p>
@@ -1335,10 +1406,10 @@ are continuing the conversation by highlighting and responding to this story.</p
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>

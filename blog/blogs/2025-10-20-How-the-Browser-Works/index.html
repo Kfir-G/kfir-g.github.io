@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-10-20-How-the-Browser-Works/">
       
       
-        <link rel="prev" href="../2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/">
+        <link rel="prev" href="../2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/">
       
       
-        <link rel="next" href="../2025-10-20-How-the-Browser-Works/">
+        <link rel="next" href="../2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway - Kfir's Site</title>
+        <title>How the Browser Works - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../../../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-nginx-is-more-than-a-web-server" class="md-skip">
+        <a href="#the-browser-is-almost-an-operating-system" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway
+              How the Browser Works
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -220,7 +220,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -240,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -444,6 +444,63 @@
   
 
               
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -589,6 +646,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -606,7 +691,7 @@
   <span class="md-ellipsis">
     
   
-    2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway
+    How the Browser Works
   
 
     
@@ -624,7 +709,7 @@
   <span class="md-ellipsis">
     
   
-    2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway
+    How the Browser Works
   
 
     
@@ -648,10 +733,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-nginx-is-more-than-a-web-server" class="md-nav__link">
+  <a href="#the-browser-is-almost-an-operating-system" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Nginx is more than a web server
+        The Browser Is Almost an Operating System
       
     </span>
   </a>
@@ -659,10 +744,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-reverse-proxying-is-all-about-headers-and-trust" class="md-nav__link">
+  <a href="#browser-capabilities" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Reverse proxying is all about headers and trust
+        Browser Capabilities
       
     </span>
   </a>
@@ -670,10 +755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-https-is-not-optional" class="md-nav__link">
+  <a href="#behind-the-scenes-browser-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. HTTPS is not optional
+        Behind the Scenes: Browser Architecture
       
     </span>
   </a>
@@ -681,10 +766,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-security-headers-are-free-wins" class="md-nav__link">
+  <a href="#the-html-journey" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Security headers are free wins
+        The HTML Journey
       
     </span>
   </a>
@@ -692,10 +777,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-docker-networking-just-works-if-you-name-things-right" class="md-nav__link">
+  <a href="#css-and-the-render-tree" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Docker networking just works- if you name things right
+        CSS and the Render Tree
       
     </span>
   </a>
@@ -703,10 +788,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-the-moment-it-all-worked" class="md-nav__link">
+  <a href="#javascript-the-dom-manipulator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. The moment it all worked
+        JavaScript: The DOM Manipulator
       
     </span>
   </a>
@@ -714,10 +799,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-final-takeaway" class="md-nav__link">
+  <a href="#putting-it-all-together" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7. Final takeaway
+        Putting It All Together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-it-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why It Matters
       
     </span>
   </a>
@@ -728,34 +824,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2025-10-20-How-the-Browser-Works/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    How the Browser Works
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -851,6 +919,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -913,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -941,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="../../../podcast/example/" class="md-nav__link">
         
   
   
@@ -1030,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -1058,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1103,123 +1179,117 @@
 
 
 
-  <h1>2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway</h1>
-
-<hr />
-<p>title: Demystifying Nginx: From Reverse Proxy to Secure Gateway
-date: 2025-10-14
-original_url: https://levelup.gitconnected.com/demystifying-nginx-from-reverse-proxy-to-secure-gateway-149c75b99ad8?source=rss-e0d89d1af01d------2</p>
-<hr />
 <p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*5v3hP9YGA3i-1K5f9gVDFA.jpeg" />Photo by
-RealToughCandy.com: <a href="https://www.pexels.com/photo/person-holding-a-sticker-
-with-green-letters-11035538/">https://www.pexels.com/photo/person-holding-a-sticker-
-with-green-letters-11035538/</a></p>
-<p>When I started building <strong>TinyURL</strong> , a simple FastAPI + PostgreSQL service
-for shortening URLs, I thought Nginx would just “serve traffic.” Turns out, it
-became the most critical piece of my deployment — the gatekeeper that made
-everything behind it work smoothly and securely.</p>
-<p>In this post, I’ll share what I actually learned while wiring Nginx into my
-FastAPI backend and Streamlit frontend, both running in Docker.</p>
-<h3 id="1-nginx-is-more-than-a-web-server">1. Nginx is more than a web server</h3>
-<p>Before this project, I mostly thought of Nginx as something you use to “host
-static files.” In reality, it’s a powerful <strong>reverse proxy</strong> — it sits in
-front of your app, receives every incoming request, and decides where it
-should go.</p>
-<p>In my stack:</p>
-<pre><code>Client → Nginx → FastAPI (backend) → Postgres  
-                     ↳ Streamlit (UI)
-</code></pre>
-<p>Nginx doesn’t just forward traffic- it also:</p>
+images-1.medium.com/max/1024/1*3Xb7AfsfKRsYb24mo3f3Ww.jpeg" />Photo by <a href="https://unsplash.com/@jonnyuiux?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Jonny
+Caspari</a>
+on <a href="https://unsplash.com/photos/a-computer-that-is-sitting-on-a-
+table-d21CGQKtJh8?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<p>Most of us use browsers every day, but few understand how they actually work
+under the hood.<br />
+Knowing this helps us write more efficient, predictable web applications —
+and, honestly, it’s just fascinating.</p>
+<p>Let’s take a look at what happens when you open a webpage, step by step.</p>
+<h3 id="the-browser-is-almost-an-operating-system">The Browser Is Almost an Operating System</h3>
+<p>A modern browser isn’t just a window to the web- it’s a small operating
+system.<br />
+It manages memory, processes, file storage, networking, rendering, JavaScript
+execution, and a user interface layer.</p>
+<h3 id="browser-capabilities">Browser Capabilities</h3>
 <ul>
-<li>Handles HTTPS termination</li>
-<li>Adds security headers</li>
-<li>Manages WebSocket upgrades for Streamlit</li>
-<li>Hides internal services (FastAPI and Postgres) from the public internet</li>
+<li><strong>Networking:</strong> Fetch resources over HTTP(S).</li>
+<li><strong>Data storage:</strong> Cookies, localStorage, IndexedDB.</li>
+<li><strong>Execution:</strong> Run JavaScript securely in a sandboxed environment.</li>
+<li><strong>Rendering:</strong> Parse and paint HTML and CSS.</li>
+<li><strong>UI:</strong> Manage tabs, buttons, and the visual interface.</li>
 </ul>
-<p>Once I saw that flow working inside Docker Compose, it finally clicked how
-production apps are structured.</p>
-<h3 id="2-reverse-proxying-is-all-about-headers-and-trust">2. Reverse proxying is all about headers and trust</h3>
-<p>Here’s a simplified version of my production config:</p>
-<pre><code>location /api/ {  
-    proxy_pass http://fastapi:8000;  
-    proxy_set_header Host $host;  
-    proxy_set_header X-Real-IP $remote_addr;  
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
-    proxy_set_header X-Forwarded-Proto $scheme;  
-}
-</code></pre>
-<p>These headers are crucial. Without them, FastAPI would have no idea what the
-original client’s IP or scheme was.<br />
-X-Forwarded-Proto in particular tells the backend if the original request came
-over HTTPS- that’s how FastAPI can generate correct redirect URLs or absolute
-links.</p>
-<p>This part made me appreciate how Nginx “translates” external requests for
-internal services while preserving client context.</p>
-<h3 id="3-https-is-not-optional">3. HTTPS is not optional</h3>
-<p>The first time I tried running my app on an EC2 instance, Chrome immediately
-complained: <em>“Not secure.”</em></p>
-<p>That’s when I integrated <strong>Let’s Encrypt</strong> with Nginx. The setup was
-surprisingly simple once I understood what was happening:</p>
+<p>Each of these parts works together seamlessly- and it all starts with fetching
+and parsing data.</p>
+<h3 id="behind-the-scenes-browser-architecture">Behind the Scenes: Browser Architecture</h3>
+<p>At a high level, a browser consists of:</p>
 <ul>
-<li>The /.well-known/acme-challenge/ path lets Certbot verify domain ownership.</li>
-<li>Once validated, Let’s Encrypt issues free SSL certificates.</li>
-<li>
-<p>Nginx then terminates HTTPS using those certs:</p>
-<p>ssl_certificate /etc/letsencrypt/live/kg-tiny-url.xyz/fullchain.pem;<br />
-ssl_certificate_key /etc/letsencrypt/live/kg-tiny-url.xyz/privkey.pem;<br />
-ssl_protocols TLSv1.2 TLSv1.3;</p>
-</li>
+<li><strong>UI Layer:</strong> What you interact with- address bar, tabs, etc.</li>
+<li><strong>Data Storage Layer:</strong> Where cookies, cache, and site data live.</li>
+<li><strong>Browser Engine:</strong> The core that coordinates everything. It’s divided into two main parts:</li>
+<li><strong>Rendering Engine:</strong> Parses HTML and CSS, creates the visual output.</li>
+<li><strong>JavaScript Engine:</strong> Parses, compiles, and executes JS code.</li>
 </ul>
-<p>I also learned to add a separate HTTP server block just to redirect everything
-to HTTPS. Small detail, big difference.</p>
-<h3 id="4-security-headers-are-free-wins">4. Security headers are free wins</h3>
-<p>I wanted to understand what real production configs look like, so I dug into
-HTTP security headers. Adding these took one line each in Nginx but instantly
-hardened the app:</p>
-<pre><code>add_header Strict-Transport-Security "max-age=31536000" always;  
-add_header X-Frame-Options "DENY" always;  
-add_header X-Content-Type-Options "nosniff" always;  
-add_header Content-Security-Policy "default-src 'self'" always;
+<p>Examples:</p>
+<ul>
+<li><strong>Blink</strong> (used by Chrome, Edge, Opera)</li>
+<li><strong>WebKit</strong> (used by Safari)</li>
+<li><strong>Gecko</strong> (used by Firefox)</li>
+</ul>
+<h3 id="the-html-journey">The HTML Journey</h3>
+<p>When you load a webpage, here’s what happens to the <strong>HTML</strong> file:</p>
+<ol>
+<li><strong>Get raw bytes</strong> from the network.</li>
+<li><strong>Convert bytes → characters</strong> using the correct encoding (e.g., UTF-8).</li>
+<li><strong>Tokenize</strong> the characters into meaningful pieces — e.g., <h1>, <p>, <div>.</li>
+<li><strong>Build objects</strong> for each element (with parent/child/sibling relationships).</li>
+<li><strong>Construct the DOM (Document Object Model)</strong> — a live tree structure representing the page.</li>
+</ol>
+<p>The DOM isn’t just a static representation- it’s <em>interactive</em>.<br />
+JavaScript can modify it, and the browser will update the display accordingly.</p>
+<p>Reference: <a href="https://html.spec.whatwg.org/multipage/">HTML Living Standard</a></p>
+<h3 id="css-and-the-render-tree">CSS and the Render Tree</h3>
+<p>CSS follows a similar process:</p>
+<ol>
+<li><strong>Parse raw bytes → characters → tokens → nodes</strong>.</li>
+<li>Build the <strong>CSSOM (CSS Object Model)-</strong> representing all style rules.</li>
+<li>Combine the <strong>DOM</strong> + <strong>CSSOM</strong> → <strong>Render Tree</strong>.</li>
+<li>The render tree goes through:</li>
+</ol>
+<ul>
+<li><strong>Layout:</strong> Calculating sizes and positions.</li>
+<li><strong>Painting:</strong> Filling pixels on the screen.</li>
+</ul>
+<p>The <strong>rendering engine</strong> handles this- running complex optimizations to
+repaint only what’s needed.</p>
+<p>Reference: <a href="https://drafts.csswg.org/cssom/">CSSOM Specification</a></p>
+<h3 id="javascript-the-dom-manipulator">JavaScript: The DOM Manipulator</h3>
+<p>When the browser encounters a <script> tag, it <strong>pauses</strong> HTML and CSS parsing
+to execute JavaScript.</p>
+<p>That’s because JavaScript can modify the DOM or request additional resources,
+so the browser needs to know the final structure before continuing.</p>
+<p>However, this can block rendering if the <strong>CSSOM</strong> isn’t ready yet- since the
+script might depend on styles.</p>
+<p>To avoid blocking, we can use:</p>
+<pre><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;
 </code></pre>
-<p>You don’t notice them in daily use, but tools like Mozilla Observatory or
-Lighthouse will thank you.</p>
-<h3 id="5-docker-networking-just-works-if-you-name-things-right">5. Docker networking just works- if you name things right</h3>
-<p>Inside Docker Compose, every container gets a DNS name. My proxy_pass
-http://fastapi:8000 line works because the FastAPI container is literally
-named <strong>fastapi</strong> in the YAML file.</p>
-<p>That’s how Nginx can find it without any IP addresses.<br />
-Once I realized that Docker’s internal DNS makes service discovery effortless,
-networking suddenly felt simple instead of scary.</p>
-<h3 id="6-the-moment-it-all-worked">6. The moment it all worked</h3>
-<p>After wiring it all up, I opened my browser to:</p>
-<pre><code>https://kg-tiny-url.xyz/ui/
+<ul>
+<li><strong>defer</strong> tells the browser to continue parsing HTML and execute JS <em>after</em> the DOM is ready.</li>
+<li><strong>async</strong> executes JS as soon as it’s downloaded, independently of DOM parsing.</li>
+</ul>
+<p>Reference: <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-
+element">HTML Spec- Script
+Element</a></p>
+<h3 id="putting-it-all-together">Putting It All Together</h3>
+<p>Here’s a simplified flow:</p>
+<pre><code>HTML → DOM  
+CSS → CSSOM  
+DOM + CSSOM → Render Tree → Layout → Paint  
+JS → Can manipulate DOM/CSSOM → Re-render
 </code></pre>
-<p>The Streamlit UI loaded. When I shortened a link, it called the FastAPI
-backend through /api/.<br />
-Everything was encrypted, routed, and logged properly- all through Nginx.</p>
-<p>That was the moment I understood why every real-world deployment uses a
-reverse proxy.</p>
-<h3 id="7-final-takeaway">7. Final takeaway</h3>
-<p>Nginx isn’t just a traffic router- it’s the <strong>security layer, performance
-booster, and network translator</strong> that makes containerized apps production-
-ready.</p>
-<p>By the end of this project, I didn’t just “set up Nginx.” I learned how the
-internet actually talks to my code.</p>
-<p>If you’re new to Nginx or just want to deepen your understanding, I highly
-recommend pairing this write-up with <strong>this free YouTube tutorial</strong>
-(<a href="https://www.youtube.com/watch?v=7VAI73roXaY">https://www.youtube.com/watch?v=7VAI73roXaY</a>) for a hands-on introduction,
-and <strong>the Udemy “NGINX Crash Course”</strong> (<a href="https://www.udemy.com/course/nginx-crash-
-course/?kw=ngi&amp;src=sac">https://www.udemy.com/course/nginx-
-crash-course/?kw=ngi&amp;src=sac</a>) for a more structured, in-depth path. These two
-resources helped me grasp concepts like reverse proxying, SSL termination,
-WebSocket upgrades, and scaling more confidently — and I think they’ll help
-you too.</p>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=149c75b99ad8" /></p>
+<p>Every click, scroll, or animation triggers a careful dance between these
+systems.</p>
+<h3 id="why-it-matters">Why It Matters</h3>
+<p>Understanding how browsers work helps you:</p>
+<ul>
+<li>Write non-blocking, performant code.</li>
+<li>Optimize paint and layout cycles.</li>
+<li>Debug complex rendering or loading issues.</li>
+<li>Appreciate just how much happens before your app even loads.</li>
+</ul>
+<p>Browsers are one of the most sophisticated pieces of software on your machine-
+and now you know why.</p>
+<p><strong>Further Reading:</strong></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">MDN: How browsers work</a></li>
+</ul>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=4026ab114d78" /></p>
 <hr />
-<p><a href="https://levelup.gitconnected.com/demystifying-nginx-from-reverse-
-proxy-to-secure-gateway-149c75b99ad8">Demystifying Nginx: From Reverse Proxy to Secure
-Gateway</a> was originally published in <a href="https://levelup.gitconnected.com">Level Up
+<p><a href="https://levelup.gitconnected.com/how-the-browser-
+works-4026ab114d78">How the Browser Works</a> was originally published in <a href="https://levelup.gitconnected.com">Level Up
 Coding</a> on Medium, where people are
 continuing the conversation by highlighting and responding to this story.</p>
 
@@ -1228,6 +1298,9 @@ continuing the conversation by highlighting and responding to this story.</p>
 
 
 
+
+  
+  
 
 
 
@@ -1276,10 +1349,10 @@ continuing the conversation by highlighting and responding to this story.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>

@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/">
       
       
-        <link rel="prev" href="../2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/">
+        <link rel="prev" href="../2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/">
       
       
-        <link rel="next" href="../2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/">
+        <link rel="next" href="../2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025 11 10 Why I Use curl Instead of Postman: Learning HTTP by Feel - Kfir's Site</title>
+        <title>Understanding Durability in PostgreSQL -A Deep Dive into the “D” in ACID - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -48,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../overrides/main.css">
+      <link rel="stylesheet" href="../../../overrides/main.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#learning-through-the-fingertips" class="md-skip">
+        <a href="#what-does-durability-really-mean" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 11 10 Why I Use curl Instead of Postman: Learning HTTP by Feel
+              Understanding Durability in PostgreSQL -A Deep Dive into the “D” in ACID
             
           </span>
         </div>
@@ -178,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -197,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -220,7 +220,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -240,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -296,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="../../assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -313,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -424,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -444,6 +444,63 @@
   
 
               
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -533,10 +590,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Durability in PostgreSQL -A Deep Dive into the “D” in ACID
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -552,6 +634,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-durability-really-mean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does Durability Really Mean?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-wal-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Does WAL Work?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-see-durability-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Let’s See Durability in Action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-crash-recovery-safe-experiment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test: Crash Recovery (Safe Experiment)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-durability-can-be-tuned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Durability Can Be Tuned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-World Takeaway
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -673,35 +850,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 11 10 Why I Use curl Instead of Postman: Learning HTTP by Feel
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/" class="md-nav__link">
         
   
   
@@ -717,200 +869,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#learning-through-the-fingertips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Learning Through the Fingertips
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#seeing-the-protocol-not-the-ui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Seeing the Protocol, Not the UI
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discovering-more" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discovering More
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-curl-fits-in-everyday-dev-life" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How curl Fits in Everyday Dev Life
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-health-checks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Health checks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-quick-response-code-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Quick response code check
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-debugging-with-headers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Debugging with headers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-testing-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Testing authentication
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-sending-json-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Sending JSON data
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-simulating-different-http-verbs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Simulating different HTTP verbs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-working-inside-docker-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Working inside Docker containers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-testing-redirects-and-caching" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        8. Testing redirects and caching
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-monitoring-endpoints-continuously" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        9. Monitoring endpoints continuously
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#10-downloading-and-uploading-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        10. Downloading and uploading files
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-terminal-teaches-clarity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Terminal Teaches Clarity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feel-the-protocol" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Feel the Protocol
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -939,6 +897,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1012,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -1040,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../podcast/example/" class="md-nav__link">
+      <a href="../../../podcast/example/" class="md-nav__link">
         
   
   
@@ -1129,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -1157,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -1202,154 +1168,97 @@
 
 
 
-  <h1>2025 11 10 Why I Use curl Instead of Postman: Learning HTTP by Feel</h1>
+  <h1>Understanding Durability in PostgreSQL -A Deep Dive into the “D” in ACID</h1>
 
-<hr />
-<p>title: Why I Use curl Instead of Postman: Learning HTTP by Feel
-date: 2025-11-10
-original_url: https://levelup.gitconnected.com/why-i-use-curl-instead-of-postman-learning-http-by-feel-2fd88ef90fb7?source=rss-e0d89d1af01d------2</p>
-<hr />
-<p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*1_8JXRQ6X6-4_JRU2rbibw.jpeg" />Photo by Kelly :
-<a href="https://www.pexels.com/photo/motor-bike-running-close-up-
-photography-2519374/">https://www.pexels.com/photo/motor-bike-running-close-up-
-photography-2519374/</a></p>
-<p>Sometimes you don’t need another GUI. You need to touch the protocol. While
-everyone opens Postman tabs, I open my terminal and type:</p>
-<pre><code>curl -X POST http://127.0.0.1:8000/api/shorten \  
-  -H "Content-Type: application/json" \  
-  -d '{"url": "https://example.com"}'
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1024/1*AL879AAET-
+OT13Q6l-1u3w.jpeg" />Photo by Matheus Viana:
+<a href="https://www.pexels.com/photo/person-on-bike-2372972/">https://www.pexels.com/photo/person-on-bike-2372972/</a></p>
+<p>So far in this series, we’ve looked at how PostgreSQL handles Atomicity,
+Consistency, and Isolation. But what happens <em>after</em> you commit a transaction?
+What if the power goes out, the server crashes, or someone trips over the
+plug?</p>
+<p>This is where <strong>Durability</strong> , the final letter in ACID, comes in. Durability
+means that once a transaction is committed, it will <em>not</em> be lost- no matter
+what.</p>
+<h3 id="what-does-durability-really-mean">What Does Durability Really Mean?</h3>
+<p>In practical terms, Durability means that when your application gets a COMMIT
+confirmation, the data is safely stored and recoverable even if the database
+crashes immediately afterward.</p>
+<p>PostgreSQL achieves this with its <strong>Write-Ahead Logging (WAL)</strong> mechanism.
+Instead of immediately rewriting table files on disk, PostgreSQL writes
+changes to a log file first. If the system crashes, PostgreSQL can replay this
+log to get back to a consistent state.</p>
+<h3 id="how-does-wal-work">How Does WAL Work?</h3>
+<p>Here’s the basic flow:</p>
+<ol>
+<li>You run a transaction that changes some data.</li>
+<li>PostgreSQL writes the changes to the WAL file on disk.</li>
+<li>Only <em>after</em> the WAL record is safely on disk does PostgreSQL acknowledge the COMMIT.</li>
+</ol>
+<p>So the WAL acts like a black box flight recorder for your database.</p>
+<h3 id="lets-see-durability-in-action">Let’s See Durability in Action</h3>
+<p>You can see WAL files in action in your data directory. Here’s a simple demo.</p>
+<p>First, check your WAL settings:</p>
+<pre><code>SHOW wal_level;  
+SHOW synchronous_commit;
 </code></pre>
-<p>That’s it- raw, direct, and honest. No buttons, no noise. Just HTTP, right
-under your fingertips.</p>
-<h3 id="learning-through-the-fingertips">Learning Through the Fingertips</h3>
-<p>Typing the request yourself makes every part of HTTP visible.</p>
+<p>By default, synchronous_commit is on. This means PostgreSQL waits until WAL
+changes are flushed to disk before confirming the commit.</p>
+<h3 id="test-crash-recovery-safe-experiment">Test: Crash Recovery (Safe Experiment)</h3>
+<p>Let’s simulate how WAL protects your data.</p>
+<ol>
+<li>
+<p>Create a test table:</p>
+<p>CREATE TABLE durability_test (id SERIAL PRIMARY KEY, data TEXT);</p>
+</li>
+</ol>
+<p>2. Insert some rows and commit:</p>
+<pre><code>INSERT INTO durability_test (data) VALUES ('Important Data 1'), ('Important Data 2'); COMMIT;
+</code></pre>
+<p>3. Now, force PostgreSQL to checkpoint to flush data to disk:</p>
+<pre><code>CHECKPOINT;
+</code></pre>
+<p>4. If the server crashes <em>after</em> the WAL is written but <em>before</em> data files
+are updated, PostgreSQL will replay the WAL on startup to make sure your rows
+are still there.</p>
+<p>Of course, don’t yank the power cord — but you can trust that WAL would
+restore the committed rows.</p>
+<h3 id="when-durability-can-be-tuned">When Durability Can Be Tuned</h3>
+<p>Sometimes, applications may want to trade off strict Durability for speed. For
+example, you can turn off synchronous_commit:</p>
+<pre><code>SET synchronous_commit = off;
+</code></pre>
+<p>Now PostgreSQL can acknowledge a commit <em>before</em> the WAL is flushed to disk.
+If the server crashes immediately, you could lose the last few transactions.</p>
+<p>This is faster but obviously less durable — so use it only when you’re okay
+with that risk (like bulk loads or cache tables).</p>
+<h3 id="real-world-takeaway">Real-World Takeaway</h3>
+<p>Durability is what lets you sleep at night knowing your committed data won’t
+vanish. PostgreSQL’s WAL and crash recovery have been battle-tested for
+decades. As long as you keep your WAL files safe (and your disks healthy),
+your data stays safe too.</p>
+<h3 id="references">References</h3>
 <ul>
-<li>-X POST chooses the verb with intent</li>
-<li>-H sets the headers precisely</li>
-<li>-d sends the data explicitly</li>
+<li><a href="https://www.postgresql.org/docs/current/wal-intro.html">PostgreSQL: Write-Ahead Logging (WAL)</a></li>
+<li><a href="https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT">PostgreSQL: Synchronous Commit</a></li>
+<li><a href="https://www.postgresql.org/docs/current/wal-reliability.html">PostgreSQL: Crash Recovery</a></li>
 </ul>
-<p>And when you hit enter, you see exactly what the server gives back:</p>
-<pre><code>{"short_url": "http://localhost:8000/000001"}
-</code></pre>
-<p>Every curl command teaches you the rhythm of request and response- the web’s
-real heartbeat.</p>
-<h3 id="seeing-the-protocol-not-the-ui">Seeing the Protocol, Not the UI</h3>
-<p>When you use curl -v, the terminal becomes your microscope:</p>
-<pre><code>curl -v http://127.0.0.1:8000/api/000001
-</code></pre>
-<p>You see every move:</p>
-<pre><code>&gt; GET /api/000001 HTTP/1.1  
-&gt; Host: 127.0.0.1:8000  
-&gt; User-Agent: curl/8.7.1  
-&gt; Accept: */*  
-&lt; HTTP/1.1 307 Temporary Redirect  
-&lt; location: https://example.com/
-</code></pre>
-<p>The protocol becomes transparent. You understand what’s happening, not just
-that something happened.</p>
-<h3 id="discovering-more">Discovering More</h3>
-<p>The beauty of curl is in its depth.<br />
-You don’t have to memorize- you explore.</p>
-<pre><code>curl --help  
-curl --help all | less
-</code></pre>
-<p>Each flag opens a new door like:</p>
-<ul>
-<li>-I fetch headers only</li>
-<li>-L follow redirects automatically</li>
-<li>-o save output to a file</li>
-<li>-w &ldquo;%{http_code}&rdquo; show only the response code</li>
-<li>-s silent mode (no progress bar)</li>
-<li>-S show errors even when silent</li>
-<li>-k ignore SSL certificate checks</li>
-<li>-x http://proxy:8080 use a proxy</li>
-</ul>
-<p>The official docs are an endless rabbit hole of discovery:
-<a href="https://curl.se/docs/manpage.html">https://curl.se/docs/manpage.html</a></p>
-<p>If you don’t want to leave the terminal, you can explore everything from the
-CLI itself. Here are a few ways to learn curl directly through your shell:</p>
-<pre><code># See all common options with short descriptions  
-curl --help
-
-# See every possible flag and advanced usage  
-curl --help all | less
-
-# Get a manual-style explanation (same as the website docs)  
-man curl
-
-# Search inside the manual for a specific flag  
-man curl | grep timeout
-
-# Quick reminder for a specific option  
-curl --help | grep -i header
-</code></pre>
-<p>This is the beauty of curl: the docs live right where you work. You don’t have
-to Google anything- the knowledge is built into the tool.</p>
-<h3 id="how-curl-fits-in-everyday-dev-life">How curl Fits in Everyday Dev Life</h3>
-<p>curl is not just for testing APIs. It’s a daily development companion.</p>
-<h3 id="1-health-checks">1. Health checks</h3>
-<pre><code>curl -fsSL http://localhost:8000/health || echo "Service down"
-</code></pre>
-<h3 id="2-quick-response-code-check">2. Quick response code check</h3>
-<pre><code>curl -s -o /dev/null -w "%{http_code}\n" http://localhost:8000
-</code></pre>
-<h3 id="3-debugging-with-headers">3. Debugging with headers</h3>
-<pre><code>curl -v -X GET http://localhost:8000/api/items  
-curl -i http://localhost:8000/api/status
-</code></pre>
-<h3 id="4-testing-authentication">4. Testing authentication</h3>
-<pre><code>curl -u admin:password http://localhost:8000/api/users
-</code></pre>
-<h3 id="5-sending-json-data">5. Sending JSON data</h3>
-<pre><code>curl -X POST http://localhost:8000/api/shorten \  
-  -H "Content-Type: application/json" \  
-  -d '{"url": "https://example.com"}'
-</code></pre>
-<h3 id="6-simulating-different-http-verbs">6. Simulating different HTTP verbs</h3>
-<pre><code>curl -X PUT http://localhost:8000/api/items/1 -d '{"name": "updated"}'  
-curl -X DELETE http://localhost:8000/api/items/1
-</code></pre>
-<h3 id="7-working-inside-docker-containers">7. Working inside Docker containers</h3>
-<pre><code>docker exec -it tinyurl-app-fastapi-1 curl http://redis:6379
-</code></pre>
-<h3 id="8-testing-redirects-and-caching">8. Testing redirects and caching</h3>
-<pre><code>curl -L http://localhost:8000/short/123  
-curl -I http://localhost:8000/static/style.css
-</code></pre>
-<h3 id="9-monitoring-endpoints-continuously">9. Monitoring endpoints continuously</h3>
-<pre><code>watch -n 2 'curl -s -o /dev/null -w "%{http_code}" http://localhost:8000/health'
-</code></pre>
-<h3 id="10-downloading-and-uploading-files">10. Downloading and uploading files</h3>
-<pre><code>curl -O https://example.com/file.zip  
-curl -T myfile.txt ftp://ftp.example.com/ --user user:password
-</code></pre>
-<h3 id="the-terminal-teaches-clarity">The Terminal Teaches Clarity</h3>
-<p>When you write requests in curl, you’re not hiding behind tools. You’re
-speaking to your server directly.</p>
-<p>Each request is a sentence. Each flag is a verb. Each header is a whisper
-between client and server.</p>
-<p>curl slows you down just enough to see what’s really happening. And once you
-see it, you never unsee it.</p>
-<h3 id="feel-the-protocol">Feel the Protocol</h3>
-<p>curl is how you think in HTTP. It’s how you debug, learn, and build with
-precision. It’s that small command you reach for when nothing else feels
-right.</p>
-<p>So the next time you open your terminal, type curl and listen. The protocol
-has been trying to talk to you all along.</p>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=2fd88ef90fb7" /></p>
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=af42ce13fb2b" /></p>
 <hr />
-<p><a href="https://levelup.gitconnected.com/why-i-use-curl-instead-of-postman-
-learning-http-by-feel-2fd88ef90fb7">Why I Use curl Instead of Postman: Learning HTTP by
-Feel</a> was originally published in <a href="https://levelup.gitconnected.com">Level Up
-Coding</a> on Medium, where people are
-continuing the conversation by highlighting and responding to this story.</p>
+<p><a href="https://levelup.gitconnected.com/understanding-durability-in-postgresql-
+a-deep-dive-into-the-d-in-acid-af42ce13fb2b">Understanding Durability in PostgreSQL -A Deep Dive into the “D” in
+ACID</a> was originally published in
+<a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium, where people
+are continuing the conversation by highlighting and responding to this story.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1398,10 +1307,10 @@ continuing the conversation by highlighting and responding to this story.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
