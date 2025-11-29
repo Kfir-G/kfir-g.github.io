@@ -19,24 +19,24 @@ I also write technical articles on Medium and Dev.to, contribute to open-source 
 ## Core Skills
 
 ### Backend
-- Python <img src="https://img.icons8.com/color/30/python.png" width="26">
-- FastAPI <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fastapi.svg" width="26">
+Python <img src="https://img.icons8.com/color/30/python.png" width="26">
+FastAPI <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fastapi.svg" width="26">
 
 ### Cloud & Infra
-- AWS <img src="https://img.icons8.com/color/30/amazon-web-services.png" width="26">
-- Docker <img src="https://img.icons8.com/color/30/docker.png" width="26">
-- Kubernetes <img src="https://img.icons8.com/color/30/kubernetes.png" width="26">
-- Terraform <img src="https://img.icons8.com/color/30/terraform.png" width="26">
+AWS <img src="https://img.icons8.com/color/30/amazon-web-services.png" width="26">
+Docker <img src="https://img.icons8.com/color/30/docker.png" width="26">
+Kubernetes <img src="https://img.icons8.com/color/30/kubernetes.png" width="26">
+Terraform <img src="https://img.icons8.com/color/30/terraform.png" width="26">
 
 ### Security
-- Keycloak <img src="https://img.icons8.com/fluency/30/key-cloak.png" width="26">
-- Vault <img src="https://img.icons8.com/ios/30/hashicorp.png" width="26">
-- JWT <img src="https://img.icons8.com/color/30/java-web-token.png" width="26">
+Keycloak <img src="https://img.icons8.com/fluency/30/key-cloak.png" width="26">
+Vault <img src="https://img.icons8.com/ios/30/hashicorp.png" width="26">
+JWT <img src="https://img.icons8.com/color/30/java-web-token.png" width="26">
 
 ### Databases
-- PostgreSQL <img src="https://img.icons8.com/color/30/postgreesql.png" width="26">
-- Redis <img src="https://img.icons8.com/color/30/redis.png" width="26">
-- RabbitMQ <img src="https://icon.icepanel.io/Technology/svg/RabbitMQ.svg" width="26">
+PostgreSQL <img src="https://img.icons8.com/color/30/postgreesql.png" width="26">
+Redis <img src="https://img.icons8.com/color/30/redis.png" width="26">
+RabbitMQ <img src="https://icon.icepanel.io/Technology/svg/RabbitMQ.svg" width="26">
 
 ---
 
