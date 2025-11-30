@@ -31,9 +31,6 @@ markdown_extensions:
   - pymdownx.extra
 
 plugins:
-  - mkdocs-audio
-  - mkdocs-audiotag
-  - mkdocs-wavesurfer
   - search
   # - rss:
   #     site_url: "https://kfir-g.github.io/"
