@@ -9,7 +9,10 @@ audio: "podcast/audio-files/episode1-jod35.mp3"
 
 # Episode 1 - Ssali Jonathan
 
-![:audio](https://raw.githubusercontent.com/Kfir-G/kfir-g.github.io/main/docs/podcast/audio-files/episode1-jod35.mp3)
+<audio controls>
+  <source src="https://raw.githubusercontent.com/Kfir-G/kfir-g.github.io/main/docs/podcast/audio-files/episode1-jod35.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 Episode 1 kicks off with Ssali Jonathan — software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
 
