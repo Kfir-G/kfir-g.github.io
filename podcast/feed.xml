@@ -3,9 +3,8 @@
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 
   <channel>
-    <!-- Podcast Info -->
     <title>Code with Mate</title>
-    <link>https://kfir-g.dev/docs/podcast</link>
+    <link>https://kfir-g.dev/podcast/</link>
     <description>Friendly dev talks with a cup of mate</description>
     <language>en-us</language>
 
@@ -13,9 +12,8 @@
     <itunes:subtitle>Friendly dev talks with a cup of mate</itunes:subtitle>
     <itunes:author>Kfir</itunes:author>
     <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="https://raw.githubusercontent.com/Kfir-G/kfir-g.github.io/main/docs/podcast/logo.png"/>
+    <itunes:image href="https://kfir-g.dev/podcast/logo.png"/>
 
-    <!-- EPISODE 1 -->
     <item>
       <title>Episode 1 - Ssali Jonathan</title>
 
@@ -37,9 +35,9 @@ Connect with Ssali Jonathan:
       ]]></description>
 
       <enclosure 
-        url="https://raw.githubusercontent.com/Kfir-G/kfir-g.github.io/main/docs/podcast/audio-files/episode1-jod35.mp3"
-        type="audio/wav"
-        length="301989888"/>
+        url="https://kfir-g.dev/podcast/audio-files/episode1-jod35.mp3"
+        type="audio/mpeg"
+        length="[YOU MUST INSERT THE NEW FILE SIZE IN BYTES HERE]"/>
 
       <guid>code-with-mate-episode-1</guid>
       <pubDate>Sun, 30 Nov 2025 12:00:00 +0000</pubDate>
