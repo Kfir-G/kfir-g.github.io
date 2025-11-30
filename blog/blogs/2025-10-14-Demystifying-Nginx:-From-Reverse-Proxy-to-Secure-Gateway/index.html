@@ -1232,13 +1232,15 @@
 
   <h1>2025 10 14 Demystifying Nginx: From Reverse Proxy to Secure Gateway</h1>
 
-<div><hr>
+<hr />
 <p>title: Demystifying Nginx: From Reverse Proxy to Secure Gateway
 date: 2025-10-14
 original_url: https://levelup.gitconnected.com/demystifying-nginx-from-reverse-proxy-to-secure-gateway-149c75b99ad8?source=rss-e0d89d1af01d------2</p>
-<hr>
-<p><img alt="" src="https://cdn-%0Aimages-1.medium.com/max/1024/1*5v3hP9YGA3i-1K5f9gVDFA.jpeg">Photo by
-RealToughCandy.com: <a href="https://www.pexels.com/photo/person-holding-a-sticker-%0Awith-green-letters-11035538/">https://www.pexels.com/photo/person-holding-a-sticker-
+<hr />
+<p><img alt="" src="https://cdn-
+images-1.medium.com/max/1024/1*5v3hP9YGA3i-1K5f9gVDFA.jpeg" />Photo by
+RealToughCandy.com: <a href="https://www.pexels.com/photo/person-holding-a-sticker-
+with-green-letters-11035538/">https://www.pexels.com/photo/person-holding-a-sticker-
 with-green-letters-11035538/</a></p>
 <p>When I started building <strong>TinyURL</strong> , a simple FastAPI + PostgreSQL service
 for shortening URLs, I thought Nginx would just “serve traffic.” Turns out, it
@@ -1275,7 +1277,7 @@ production apps are structured.</p>
 }
 </code></pre>
 <p>These headers are crucial. Without them, FastAPI would have no idea what the
-original client’s IP or scheme was.<br>
+original client’s IP or scheme was.<br />
 X-Forwarded-Proto in particular tells the backend if the original request came
 over HTTPS- that’s how FastAPI can generate correct redirect URLs or absolute
 links.</p>
@@ -1291,8 +1293,8 @@ surprisingly simple once I understood what was happening:</p>
 <li>Once validated, Let’s Encrypt issues free SSL certificates.</li>
 <li>
 <p>Nginx then terminates HTTPS using those certs:</p>
-<p>ssl_certificate /etc/letsencrypt/live/kg-tiny-url.xyz/fullchain.pem;<br>
-ssl_certificate_key /etc/letsencrypt/live/kg-tiny-url.xyz/privkey.pem;<br>
+<p>ssl_certificate /etc/letsencrypt/live/kg-tiny-url.xyz/fullchain.pem;<br />
+ssl_certificate_key /etc/letsencrypt/live/kg-tiny-url.xyz/privkey.pem;<br />
 ssl_protocols TLSv1.2 TLSv1.3;</p>
 </li>
 </ul>
@@ -1313,7 +1315,7 @@ Lighthouse will thank you.</p>
 <p>Inside Docker Compose, every container gets a DNS name. My proxy_pass
 http://fastapi:8000 line works because the FastAPI container is literally
 named <strong>fastapi</strong> in the YAML file.</p>
-<p>That’s how Nginx can find it without any IP addresses.<br>
+<p>That’s how Nginx can find it without any IP addresses.<br />
 Once I realized that Docker’s internal DNS makes service discovery effortless,
 networking suddenly felt simple instead of scary.</p>
 <h3 id="6-the-moment-it-all-worked">6. The moment it all worked</h3>
@@ -1321,7 +1323,7 @@ networking suddenly felt simple instead of scary.</p>
 <pre><code>https://kg-tiny-url.xyz/ui/
 </code></pre>
 <p>The Streamlit UI loaded. When I shortened a link, it called the FastAPI
-backend through /api/.<br>
+backend through /api/.<br />
 Everything was encrypted, routed, and logged properly- all through Nginx.</p>
 <p>That was the moment I understood why every real-world deployment uses a
 reverse proxy.</p>
@@ -1334,17 +1336,19 @@ internet actually talks to my code.</p>
 <p>If you’re new to Nginx or just want to deepen your understanding, I highly
 recommend pairing this write-up with <strong>this free YouTube tutorial</strong>
 (<a href="https://www.youtube.com/watch?v=7VAI73roXaY">https://www.youtube.com/watch?v=7VAI73roXaY</a>) for a hands-on introduction,
-and <strong>the Udemy “NGINX Crash Course”</strong> (<a href="https://www.udemy.com/course/nginx-crash-%0Acourse/?kw=ngi&amp;src=sac">https://www.udemy.com/course/nginx-
+and <strong>the Udemy “NGINX Crash Course”</strong> (<a href="https://www.udemy.com/course/nginx-crash-
+course/?kw=ngi&amp;src=sac">https://www.udemy.com/course/nginx-
 crash-course/?kw=ngi&amp;src=sac</a>) for a more structured, in-depth path. These two
 resources helped me grasp concepts like reverse proxying, SSL termination,
 WebSocket upgrades, and scaling more confidently — and I think they’ll help
 you too.</p>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=149c75b99ad8"></p>
-<hr>
-<p><a href="https://levelup.gitconnected.com/demystifying-nginx-from-reverse-%0Aproxy-to-secure-gateway-149c75b99ad8">Demystifying Nginx: From Reverse Proxy to Secure
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=149c75b99ad8" /></p>
+<hr />
+<p><a href="https://levelup.gitconnected.com/demystifying-nginx-from-reverse-
+proxy-to-secure-gateway-149c75b99ad8">Demystifying Nginx: From Reverse Proxy to Secure
 Gateway</a> was originally published in <a href="https://levelup.gitconnected.com">Level Up
 Coding</a> on Medium, where people are
-continuing the conversation by highlighting and responding to this story.</p></div>
+continuing the conversation by highlighting and responding to this story.</p>
 
 
 

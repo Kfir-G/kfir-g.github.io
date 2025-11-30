@@ -1254,13 +1254,15 @@
 
   <h1>2025 07 07 Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID</h1>
 
-<div><hr>
+<hr />
 <p>title: Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in ACID
 date: 2025-07-07
 original_url: https://levelup.gitconnected.com/understanding-isolation-in-postgresql-a-deep-dive-into-the-i-in-acid-c493d635a35b?source=rss-e0d89d1af01d------2</p>
-<hr>
-<p><img alt="" src="https://cdn-%0Aimages-1.medium.com/max/1024/1*w8bYYfVQxfSZuy1dzA07Ng.jpeg">Photo by Matheus
-Viana: <a href="https://www.pexels.com/photo/open-locker-in-wooden-locker-%0Aroom-31220117/">https://www.pexels.com/photo/open-locker-in-wooden-locker-
+<hr />
+<p><img alt="" src="https://cdn-
+images-1.medium.com/max/1024/1*w8bYYfVQxfSZuy1dzA07Ng.jpeg" />Photo by Matheus
+Viana: <a href="https://www.pexels.com/photo/open-locker-in-wooden-locker-
+room-31220117/">https://www.pexels.com/photo/open-locker-in-wooden-locker-
 room-31220117/</a></p>
 <p>When we talk about PostgreSQL being <em>ACID-compliant</em> , Isolation is the “I”
 that quietly does a lot of heavy lifting. In my previous articles, we explored
@@ -1289,24 +1291,24 @@ correctness and performance.</p>
 <p>PostgreSQL supports the standard SQL isolation levels:</p>
 <ol>
 <li>
-<p><strong>Read Uncommitted</strong><br>
+<p><strong>Read Uncommitted</strong><br />
 PostgreSQL actually treats this the same as Read Committed, so dirty reads are
 never allowed.</p>
 </li>
 <li>
-<p><strong>Read Committed</strong> (default)<br>
+<p><strong>Read Committed</strong> (default)<br />
 Each query sees a snapshot of the database taken at the start of that query.
 Changes committed by other transactions become visible to the next query in
 the same transaction.</p>
 </li>
 <li>
-<p><strong>Repeatable Read</strong><br>
+<p><strong>Repeatable Read</strong><br />
 All queries in the transaction see the same snapshot taken when the
 transaction starts. You avoid non-repeatable reads, but phantom reads can
 still happen.</p>
 </li>
 <li>
-<p><strong>Serializable</strong><br>
+<p><strong>Serializable</strong><br />
 The strictest level. Transactions run as if they were executed one after
 another. PostgreSQL uses Serializable Snapshot Isolation (SSI) to make this
 work and may abort transactions that can’t be serialized.</p>
@@ -1405,12 +1407,13 @@ consistent even when things get busy.</p>
 <li><a href="https://www.postgresql.org/docs/current/transaction-iso.html">PostgreSQL: Isolation Levels</a></li>
 <li><a href="https://www.postgresql.org/docs/current/transaction-iso.html#XACT-SERIALIZABLE">PostgreSQL: Serializable Isolation</a></li>
 </ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c493d635a35b"></p>
-<hr>
-<p><a href="https://levelup.gitconnected.com/understanding-isolation-in-postgresql-%0Aa-deep-dive-into-the-i-in-acid-c493d635a35b">Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=c493d635a35b" /></p>
+<hr />
+<p><a href="https://levelup.gitconnected.com/understanding-isolation-in-postgresql-
+a-deep-dive-into-the-i-in-acid-c493d635a35b">Understanding Isolation in PostgreSQL: A Deep Dive into the “I” in
 ACID</a> was originally published in
 <a href="https://levelup.gitconnected.com">Level Up Coding</a> on Medium, where people
-are continuing the conversation by highlighting and responding to this story.</p></div>
+are continuing the conversation by highlighting and responding to this story.</p>
 
 
 
