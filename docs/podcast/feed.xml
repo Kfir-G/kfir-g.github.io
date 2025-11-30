@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+
+  <channel>
+    <!-- Podcast Info -->
+    <title>Code with Mate</title>
+    <link>https://kfir-g.dev/docs/podcast</link>
+    <description>Friendly dev talks with a cup of mate</description>
+    <language>en-us</language>
+
+    <itunes:title>Code with Mate</itunes:title>
+    <itunes:subtitle>Friendly dev talks with a cup of mate</itunes:subtitle>
+    <itunes:author>Kfir</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:image href="https://raw.githubusercontent.com/Kfir-G/kfir-g.github.io/main/docs/podcast/logo.png"/>
+
+    <!-- EPISODE 1 -->
+    <item>
+      <title>Episode 1 - Ssali Jonathan</title>
+
+      <description><![CDATA[
+Episode 1 kicks off with Ssali Jonathan — software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
+
+Topics we cover:
+- Exploring Python web frameworks
+- Diving into FastAPI and Starlette
+- Database choices and real-world experiences
+- Redis beyond a simple key-value store
+- Learning and growth as a software engineer
+
+Connect with Ssali Jonathan:
+- GitHub: https://github.com/jod35  
+- Website: https://jod35.github.io/site/  
+- YouTube: https://www.youtube.com/@SsaliJonathan  
+- Twitter (X): https://twitter.com/jod35_
+      ]]></description>
+
+      <enclosure 
+        url="https://raw.githubusercontent.com/Kfir-G/kfir-g.github.io/main/docs/podcast/audio-files/episode1-jod35.wav"
+        type="audio/wav"
+        length="301989888"/>
+
+      <guid>code-with-mate-episode-1</guid>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0000</pubDate>
+
+      <itunes:duration>00:54:25</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+  </channel>
+</rss>
