@@ -27,7 +27,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material mkdocs-rss-plugin python-frontmatter pyyaml feedparser html2text
-          pip install mkdocs-wavesurfer beautifulsoup4
+          pip install mkdocs-wavesurfer mkdocs-audio beautifulsoup4
           
       # 4️⃣ Fetch Medium posts
       - name: Fetch Medium posts
