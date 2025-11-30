@@ -9,7 +9,7 @@ audio: "podcast/audio-files/episode1-jod35.mp3"
 
 # Episode 1 - Ssali Jonathan
 
-<audio controls style="width: 100%;">
+<audio controls>
   <source src="../audio-files/episode1-jod35.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
