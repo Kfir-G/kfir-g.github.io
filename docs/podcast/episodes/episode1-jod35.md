@@ -10,8 +10,9 @@ audio: "podcast/audio-files/episode1-jod35.mp3"
 # Episode 1 - Ssali Jonathan
 
 <audio controls style="width: 100%;">
-  <source src="/podcast/audio-files/episode1-jod35.mp3" type="audio/mpeg">
-</audio controls style="width: 100%;">
+  <source src="../../audio-files/episode1-jod35.mp3" type="audio/mpeg">
+  <source src="../audio-files/episode1-jod35.mp3" type="audio/mpeg"> 
+</audio>
 
 Episode 1 kicks off with Ssali Jonathan — software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
 
