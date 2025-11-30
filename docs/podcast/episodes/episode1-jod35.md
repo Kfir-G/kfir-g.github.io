@@ -10,7 +10,7 @@ audio: "podcast/audio-files/episode1-jod35.mp3"
 # Episode 1 - Ssali Jonathan
 
 <audio controls>
-  <source src="https://kfir-g.github.io/podcast/audio-files/episode1-jod35.mp3" type="audio/mpeg">
+  <source src="https://kfir-g.dev/docs/podcast/audio-files/episode1-jod35.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
