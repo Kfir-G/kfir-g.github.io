@@ -1353,13 +1353,12 @@
 
   <h1>2025 11 21 From Passive FastAPI Developer to Real FastAPI Engineer  Part 1: ASGI</h1>
 
-<hr />
+<div><hr>
 <p>title: From Passive FastAPI Developer to Real FastAPI Engineer- Part 1: ASGI
 date: 2025-11-21
 original_url: https://levelup.gitconnected.com/from-passive-fastapi-developer-to-real-fastapi-engineer-part-1-asgi-059a588a54ae?source=rss-e0d89d1af01d------2</p>
-<hr />
-<p><img alt="" src="https://cdn-
-images-1.medium.com/max/1024/1*0aGbK5MJNAkF0XKM0hV3zA.jpeg" />Photo by Kaue
+<hr>
+<p><img alt="" src="https://cdn-%0Aimages-1.medium.com/max/1024/1*0aGbK5MJNAkF0XKM0hV3zA.jpeg">Photo by Kaue
 Barbier: <a href="https://www.pexels.com/photo/28182842/">https://www.pexels.com/photo/28182842/</a></p>
 <h3 id="understanding-asgi-by-breaking-down-an-http-request">Understanding ASGI by Breaking Down an HTTP Request</h3>
 <p>Modern Python web frameworks feel effortless- you write a function, return
@@ -1380,7 +1379,7 @@ HTTP/2, and WebSockets.</p>
 <pre><code>Transport  -&gt;  Protocol  -&gt;  Application Logic  
 TCP/SSL        HTTP/WS        Your FastAPI code
 </code></pre>
-<p>The problem:<br />
+<p>The problem:<br>
 If every framework had to re-implement TCP handling, HTTP parsing, connection
 lifecycle, etc., we’d live in a world of endless duplicated code and subtle
 bugs.</p>
@@ -1489,7 +1488,7 @@ Your app emits events:
 <h3 id="1-concurrency">1. Concurrency</h3>
 <p>Async I/O = thousands of simultaneous connections.</p>
 <h3 id="2-websockets-support">2. WebSockets Support</h3>
-<p>WSGI can’t do WebSockets.<br />
+<p>WSGI can’t do WebSockets.<br>
 ASGI makes WebSockets just another protocol supported by events.</p>
 <h3 id="3-full-duplex-communication">3. Full-Duplex Communication</h3>
 <p>Send and receive independently- essential for:</p>
@@ -1522,7 +1521,7 @@ ASGI makes WebSockets just another protocol supported by events.</p>
       │ (Protocol Layer) │  
       └──────────────────┘
 </code></pre>
-<p>You “inject” your application into the protocol server.<br />
+<p>You “inject” your application into the protocol server.<br>
 The server handles all low-level details- your app just reacts to events.</p>
 <h3 id="final-summary">Final Summary</h3>
 <p>ASGI gives us:</p>
@@ -1544,13 +1543,12 @@ reason you never have to manipulate raw HTTP bytes yourself.</p>
 <li>The <strong>Starlette framework</strong> documentation at <a href="https://www.starlette.io/">https://www.starlette.io/</a></li>
 <li>Tmhe <strong>HTTP/1.1 protocol</strong> definition at <a href="https://www.rfc-editor.org/rfc/rfc7230">https://www.rfc-editor.org/rfc/rfc7230</a>, and the <strong>WebSocket protocol spec</strong> at <a href="https://www.rfc-editor.org/rfc/rfc6455">https://www.rfc-editor.org/rfc/rfc6455</a></li>
 </ul>
-<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=059a588a54ae" /></p>
-<hr />
-<p><a href="https://levelup.gitconnected.com/from-passive-fastapi-developer-to-real-
-fastapi-engineer-part-1-asgi-059a588a54ae">From Passive FastAPI Developer to Real FastAPI Engineer- Part 1:
+<p><img alt="" src="https://medium.com/_/stat?event=post.clientViewed&amp;referrerSource=full_rss&amp;postId=059a588a54ae"></p>
+<hr>
+<p><a href="https://levelup.gitconnected.com/from-passive-fastapi-developer-to-real-%0Afastapi-engineer-part-1-asgi-059a588a54ae">From Passive FastAPI Developer to Real FastAPI Engineer- Part 1:
 ASGI</a> was originally published in <a href="https://levelup.gitconnected.com">Level
 Up Coding</a> on Medium, where people are
-continuing the conversation by highlighting and responding to this story.</p>
+continuing the conversation by highlighting and responding to this story.</p></div>
 
 
 

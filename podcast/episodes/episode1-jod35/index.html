@@ -60,7 +60,8 @@
 
     
     
-  </head>
+  <script src="https://unpkg.com/wavesurfer.js@7"></script>
+</head>
   
   
     <body dir="ltr">
@@ -1120,24 +1121,22 @@
 
 
 
-<p><img src="/podcast/logo.png" alt="Code with Mate Logo" width="200"/></p>
+<div><p><img src="/podcast/logo.png" alt="Code with Mate Logo" width="200"></p>
 <h1 id="episode-1-ssali-jonathan">Episode 1 - Ssali Jonathan</h1>
-<p><audio controls>
-  <source src="/podcast/audio-files/episode1-jod35.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio></p>
+<div class="audio-container" id="audio-container-0"><audio preload="metadata" id="audio-tag0" style="width:100%" controls=""><source src="../../audio-files/episode1-jod35.mp3" type="audio/mpeg" class="mpeg"></source></audio></div>
+
 <p>Episode 1 kicks off with Ssali Jonathan — software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.</p>
-<p><strong>Topics we cover:</strong> <br/>
-- Exploring Python web frameworks.<br/>
-- Diving into FastAPI and Starlette.<br/>
-- Database choices and real-world experiences.<br/>
-- Redis beyond a simple key-value store.<br/>
-- Learning and growth as a software engineer.<br/></p>
-<p><strong>Connect with Ssali Jonathan:</strong> <br/>
-- GitHub: <a href="https://github.com/jod35">https://github.com/jod35</a><br />
-- Website: <a href="https://jod35.github.io/site/">https://jod35.github.io/site/</a><br />
-- YouTube: <a href="https://www.youtube.com/@SsaliJonathan">https://www.youtube.com/@SsaliJonathan</a><br />
-- Twitter (X): <a href="https://twitter.com/jod35_">https://twitter.com/jod35_</a></p>
+<p><strong>Topics we cover:</strong> <br>
+- Exploring Python web frameworks.<br>
+- Diving into FastAPI and Starlette.<br>
+- Database choices and real-world experiences.<br>
+- Redis beyond a simple key-value store.<br>
+- Learning and growth as a software engineer.<br></p>
+<p><strong>Connect with Ssali Jonathan:</strong> <br>
+- GitHub: <a href="https://github.com/jod35">https://github.com/jod35</a><br>
+- Website: <a href="https://jod35.github.io/site/">https://jod35.github.io/site/</a><br>
+- YouTube: <a href="https://www.youtube.com/@SsaliJonathan">https://www.youtube.com/@SsaliJonathan</a><br>
+- Twitter (X): <a href="https://twitter.com/jod35_">https://twitter.com/jod35_</a></p></div>
 
 
 
@@ -1201,5 +1200,51 @@
       <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
-  </body>
+  <script>
+window.addEventListener('load', e => {
+const options = {
+  height: 128,
+  width: '100%',
+  splitChannels: false,
+  normalize: false,
+  waveColor: '#ff4e00',
+  progressColor: '#dd5e98',
+  cursorColor: '#ddd5e9',
+  cursorWidth: 2,
+  barWidth: NaN,
+  barGap: NaN,
+  barRadius: NaN,
+  barHeight: NaN,
+  barAlign: '',
+  minPxPerSec: 1,
+  fillParent: true,
+  autoplay: false,
+  interact: true,
+  dragToSeek: false,
+  hideScrollbar: false,
+  audioRate: 1.0,
+  autoScroll: true,
+  autoCenter: true,
+  sampleRate: 8000
+};
+
+const surfers = []
+
+function calcWaveformColors() {
+    return { }
+}
+
+surfer0 = WaveSurfer.create({ ...options, ...calcWaveformColors(), ...{
+    container: document.querySelector('#audio-container-0'),
+    media: document.querySelector('#audio-tag0'),
+    url: '../../audio-files/episode1-jod35.mp3',
+} })
+surfer0.on('click', () => {
+    surfer0.play()
+})
+surfers.push(surfer0)
+
+});
+</script>
+</body>
 </html>
