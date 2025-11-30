@@ -36,6 +36,6 @@ plugins:
   #     site_url: "https://kfir-g.github.io/"
 
 extra_css:
-  - assets/stylesheets/colors.css
-  - assets/css/custom.css
-  - overrides/main.css
+  - ./assets/stylesheets/colors.css
+  - ./assets/css/custom.css
+  - ./overrides/main.css
