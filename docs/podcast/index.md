@@ -6,7 +6,7 @@ Welcome to **Code with Mate** - friendly software engineering talks with a cup o
 
 ### Subscribe to the Podcast
 
-[![RSS Feed](https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white)](https://kfir-g.dev/docs/podcast/feed.xml){:target="_blank"}
+[![RSS Feed](https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white)](https://kfir-g.dev/podcast/feed.xml){:target="_blank"}
 
 ## Episodes
 
