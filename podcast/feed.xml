@@ -35,9 +35,9 @@ Connect with Ssali Jonathan:
       ]]></description>
 
       <enclosure 
-        url="https://kfir-g.dev/podcast/audio-files/episode1-jod35.mp3"
+        url="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode1-jod35.mp3"
         type="audio/mpeg"
-        length="[YOU MUST INSERT THE NEW FILE SIZE IN BYTES HERE]"/>
+        length="27367834"/>
 
       <guid>code-with-mate-episode-1</guid>
       <pubDate>Sun, 30 Nov 2025 12:00:00 +0000</pubDate>
