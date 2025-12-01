@@ -38,4 +38,4 @@ plugins:
 extra_css:
   - assets/stylesheets/colors.css
   - assets/css/custom.css
-  - ./overrides/main.css
+  - /main.css
