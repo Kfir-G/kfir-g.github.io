@@ -2,7 +2,7 @@
 title: "Episode 1 - Ssali Jonathan"
 date: 2025-11-30
 tags: [podcast, software, dev]
-audio: "podcast/audio-files/episode1-jod35.mp3"
+audio: "/podcast/audio-files/episode1-jod35.mp3"
 ---
 
 <img src="/podcast/logo.png" alt="Code with Mate Logo" width="200"/>
