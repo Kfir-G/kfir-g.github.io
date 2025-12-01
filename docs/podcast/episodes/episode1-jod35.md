@@ -20,27 +20,28 @@ audio: "/podcast/audio-files/episode1-jod35.mp3"
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const audio = document.getElementById('episode-audio');
-
-        // Check for decoding errors after the file attempts to load metadata
+        
+        // This handler fires when the browser fails to load the audio metadata
         audio.addEventListener('error', (e) => {
             const error = audio.error;
             let message = '';
             
-            // Code 4 is MEDIA_ERR_SRC_NOT_SUPPORTED (which includes decoding errors)
+            // Check for the source not supported error (which covers decoding issues)
             if (error && error.code === error.MEDIA_ERR_SRC_NOT_SUPPORTED) {
-                message = 'The media resource could not be decoded. (MIME/Header Error)';
+                message = 'Media Decoding Error Detected (NS_ERROR_DOM_MEDIA_METADATA_ERR)';
             } else if (error) {
-                message = `Media error code: ${error.code} (Check console for NS_ERROR_DOM_MEDIA_METADATA_ERR)`;
+                message = `Media error code: ${error.code}.`;
             }
 
             if (message) {
                 console.error("Audio Playback Failed:", message);
                 
-                // CRITICAL WORKAROUND: Force a specific source change to trigger reload
+                // CRITICAL WORKAROUND: Force the player to reset and reload the file.
+                // This sometimes clears the corrupted header state.
                 audio.pause();
                 audio.src = '/podcast/audio-files/episode1-jod35.mp3';
                 audio.load();
-                console.log('Attempting second load with forced source.');
+                console.log('Attempting second load with forced source to bypass decoding error.');
             }
         });
         
