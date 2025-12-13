@@ -2,70 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://kfir-g.github.io/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/about/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/</loc>
-         <lastmod>2025-12-06</lastmod>
-    </url>
-    <url>
-         <loc>https://kfir-g.github.io/blog/blogs/2025-04-15-7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-05-12-Understanding-Atomicity-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CA%E2%80%9D-in-ACID/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-06-01-Understanding-Consistency-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CC%E2%80%9D-in-ACID/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-07-07-Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the-%E2%80%9CD%E2%80%9D-in-ACID/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-07-07-Understanding-Isolation-in-PostgreSQL%3A-A-Deep-Dive-into-the-%E2%80%9CI%E2%80%9D-in-ACID/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-10-14-Demystifying-Nginx%3A-From-Reverse-Proxy-to-Secure-Gateway/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-10-20-How-the-Browser-Works/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-11-02-Shipping-FastAPI-Like-a-Pro%3A-My-CI-CD-Pipeline-for-TinyURL/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-11-10-Why-I-Use-curl-Instead-of-Postman%3A-Learning-HTTP-by-Feel/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/blog/blogs/2025-11-21-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1%3A-ASGI/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://kfir-g.github.io/blog/blogs/2025-12-08-From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2/</loc>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/podcast/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/podcast/episodes/episode1-jod35/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
+    </url>
+    <url>
+         <loc>https://kfir-g.github.io/podcast/episodes/episode2-martin/</loc>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/videos/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
     <url>
          <loc>https://kfir-g.github.io/videos/spain-devsecops/</loc>
-         <lastmod>2025-12-06</lastmod>
+         <lastmod>2025-12-13</lastmod>
     </url>
 </urlset>

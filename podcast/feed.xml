@@ -15,6 +15,39 @@
     <itunes:image href="https://kfir-g.dev/podcast/logo.png"/>
 
     <item>
+      <title>Episode 2 - Martín Torre Castro</title>
+
+      <description><![CDATA[
+Episode 2 features Martín Torre Castro — software architect, performance engineer, and organizer of the Python Coruña community. We talk about performance engineering in real systems, software architecture in practice, Python communities in Spain, and lessons learned from building and scaling production systems. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
+
+Topics we cover:
+- The Python Coruña community and local tech ecosystems
+- Performance engineering and load testing in real-world systems
+- Software architecture decisions and common mistakes
+- Observability with metrics, logs, and traces (OpenTelemetry)
+- Databases, caching strategies, and scalability trade-offs
+- Career growth, learning, and sharing knowledge
+
+Connect with Martín Torre Castro:
+- LinkedIn: https://www.linkedin.com/in/martin-torre-castro/
+      ]]></description>
+
+      <enclosure 
+        url="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode2-martin.mp3"
+        type="audio/mpeg"
+        length="0"/>
+
+      <guid>code-with-mate-episode-2</guid>
+      <pubDate>Sat, 13 Dec 2025 12:00:00 +0000</pubDate>
+
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>2</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <item>
       <title>Episode 1 - Ssali Jonathan</title>
 
       <description><![CDATA[
