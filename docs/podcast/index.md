@@ -6,7 +6,7 @@ Welcome to **Code with Mate** - friendly software engineering talks with a cup o
 
 ### Subscribe to the Podcast
 
-[![RSS Feed](https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white)](https://kfir-g.dev/podcast/feed.xml){:target="_blank"}`
+[![RSS Feed](https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white)](https://kfir-g.dev/podcast/feed.xml){:target="_blank"}
 
 You can subscribe to my podcast using this RSS link:
 
@@ -26,6 +26,11 @@ These step-by-step guides (with screenshots) will show you exactly how:
 Adding the feed above is the **minimum step needed** to start listening. Give it a try!
 
 ## Episodes
+
+### [Episode 2 - Martín Torre Castro](episodes/episode2-martin.md)
+**Date:** 2025-12-13
+Episode 2 features Martín Torre Castro — software architect, performance engineer, and Python Coruña community lead. We talk about performance testing in real systems, software architecture in practice, Python communities in Spain, and lessons learned from building and scaling production systems.
+
 
 ### [Episode 1 - Ssali Jonathan](episodes/episode1-jod35.md)
 **Date:** 2025-11-30  
