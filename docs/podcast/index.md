@@ -25,6 +25,8 @@ These step-by-step guides (with screenshots) will show you exactly how:
 
 Adding the feed above is the **minimum step needed** to start listening. Give it a try!
 
+<img src="../assets/applepodcast.jpeg" alt="Apple Podcast" width="200">
+
 ## Episodes
 
 ### [Episode 2 - Martín Torre Castro](episodes/episode2-martin.md)
