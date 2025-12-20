@@ -29,11 +29,11 @@ jobs:
           pip install mkdocs mkdocs-material mkdocs-rss-plugin python-frontmatter pyyaml feedparser html2text
           pip install mkdocs-wavesurfer mkdocs-audio beautifulsoup4
           
-      # 4️⃣ Fetch Medium posts
-      - name: Fetch Medium posts
-        run: python scripts/fetch_medium_posts.py
-        env:
-          MEDIUM_USERNAME: "Kfir-G"  # optional if your script needs it
+      # # 4️⃣ Fetch Medium posts
+      # - name: Fetch Medium posts
+      #   run: python scripts/fetch_medium_posts.py
+      #   env:
+      #     MEDIUM_USERNAME: "Kfir-G"  # optional if your script needs it
 
       # 5️⃣ Build MkDocs site
       - name: Build site
