@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Why IMDSv1 is a Security Risk for Cloud Infrastructure</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Why IMDSv1 is a Security Risk for Cloud Infrastructure</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Amazon’s Instance Metadata Service (IMDS) provides a way for applications running on Amazon Elastic Compute Cloud (EC2) instances to access…
+</section>
+<section data-field="body" class="e-content">
+<section name="68bb" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="32db" id="32db" class="graf graf--h3 graf--leading graf--title">Why IMDSv1 is a Security Risk for Cloud Infrastructure</h3><figure name="d36f" id="d36f" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="0*3dHB5-eZ7bHmcuTe.jpeg" data-width="875" data-height="875" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*3dHB5-eZ7bHmcuTe.jpeg"></figure><p name="dd29" id="dd29" class="graf graf--p graf-after--figure">Amazon’s Instance Metadata Service (IMDS) provides a way for applications running on Amazon Elastic Compute Cloud (EC2) instances to access instance metadata and user data. However, the first version of this service, IMDSv1, has been shown to be vulnerable to server-side request forgery (SSRF) attacks. In this blog post, we will explore the security risks associated with using IMDSv1 and why it is important to update to the more secure IMDSv2.</p><h3 name="94c7" id="94c7" class="graf graf--h3 graf-after--p">What is the difference between the protocol?</h3><p name="1f97" id="1f97" class="graf graf--p graf-after--h3">IMDSv1 and IMDSv2 are two versions of the Instance Metadata Service (IMDS) provided by AWS. IMDS is a service that allows EC2 instances to access metadata and credentials from a local endpoint.</p><p name="ed64" id="ed64" class="graf graf--p graf-after--p">The main difference between IMDSv1 and IMDSv2 is that IMDSv2 uses <code class="markup--code markup--p-code">session authentication</code> to protect against open firewalls, reverse proxies, and SSRF vulnerabilities. IMDSv2 requires the software running on the EC2 instance to obtain a <code class="markup--code markup--p-code">secret token</code> using a PUT request before making any GET requests to the IMDS. The token expires after a maximum of six hours and can be used for subsequent requests within the same session.</p><p name="a56e" id="a56e" class="graf graf--p graf-after--p">IMDSv1, on the other hand, uses <strong class="markup--strong markup--p-strong">unauthenticated</strong> GET requests and is more susceptible to SSRF attacks. IMDSv1 does not require any tokens or session management.</p><p name="0a3c" id="0a3c" class="graf graf--p graf-after--p">AWS recommends adopting IMDSv2 and restricting access to IMDSv2 only for added security. You can use AWS Systems Manager to enforce IMDSv2 on your EC2 instances. You can also use the latest versions of AWS SDKs and CLIs that support IMDSv2.</p><p name="ef24" id="ef24" class="graf graf--p graf-after--p"><a href="https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/" data-href="https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/</a></p><h3 name="6ac3" id="6ac3" class="graf graf--h3 graf-after--p">How to enforce IMDSv2 on Terraform yaml file</h3><p name="6cfe" id="6cfe" class="graf graf--p graf-after--h3">You can enforce the use of IMDSv2 on an EC2 instance launched by Terraform by setting the <code class="markup--code markup--p-code">metadata_options</code> block within the <code class="markup--code markup--p-code">aws_instance </code>resource. Within this block, you can set the <code class="markup--code markup--p-code">http_tokens</code> attribute to <code class="markup--code markup--p-code">required</code>, which will enforce the use of IMDSv2 on the instance.</p><p name="ca57" id="ca57" class="graf graf--p graf-after--p">Here’s an example:</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="yaml" name="0bcc" id="0bcc" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-string">resource</span> <span class="hljs-string">&quot;aws_instance&quot;</span> <span class="hljs-string">&quot;example&quot;</span> {<br />  <span class="hljs-string">ami</span>           <span class="hljs-string">=</span> <span class="hljs-string">&quot;ami-0c94855ba95c71c99&quot;</span> <span class="hljs-comment"># This is an example Amazon Linux 2 AMI ID; replace with the desired AMI ID for your region</span><br />  <span class="hljs-string">instance_type</span> <span class="hljs-string">=</span> <span class="hljs-string">&quot;t2.micro&quot;</span><br /><br />  <span class="hljs-string">metadata_options</span> {<br />    <span class="hljs-string">http_tokens</span> <span class="hljs-string">=</span> <span class="hljs-string">&quot;required&quot;</span><br />  }<br />}</span></pre><p name="e7e6" id="e7e6" class="graf graf--p graf-after--pre">This configuration will launch an EC2 instance that requires the use of IMDSv2 to access its metadata.</p><h3 name="a5df" id="a5df" class="graf graf--h3 graf-after--p"><strong class="markup--strong markup--h3-strong">How to enforce IMDSv2 with AWS CLI</strong></h3><p name="8ad5" id="8ad5" class="graf graf--p graf-after--h3">You can use the <code class="markup--code markup--p-code">modify-instance-metadata-options</code> command of the AWS CLI to enforce the use of IMDSv2 on an existing EC2 instance. This command allows you to modify the instance metadata parameters on a running or stopped instance. Here’s an example command that enforces the use of IMDSv2 on a specified instance:</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="css" name="2e5a" id="2e5a" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">aws ec2 modify-instance-metadata-options <span class="hljs-attr">--instance-id</span> <span class="hljs-selector-tag">i</span>-<span class="hljs-number">0123456789</span>abcdef <span class="hljs-attr">--http-tokens</span> required <span class="hljs-attr">--http-endpoint</span> enabled</span></pre><p name="af57" id="af57" class="graf graf--p graf-after--pre">In this example, replace <code class="markup--code markup--p-code">i-0123456789abcdef</code> with the ID of the instance you want to modify. The<code class="markup--code markup--p-code">--http-tokens required</code> option enforces the use of IMDSv2 on the instance, while the<code class="markup--code markup--p-code">--http-endpoint enabled</code> option ensures that the instance metadata service remains enabled.</p><h3 name="3cf5" id="3cf5" class="graf graf--h3 graf-after--p">What are noticeable thing that happened in the past</h3><p name="fea1" id="fea1" class="graf graf--p graf-after--h3">In June 2021, a threat actor known as UNC2903 <a href="https://www.breaches.cloud/incidents/unc2903/" data-href="https://www.breaches.cloud/incidents/unc2903/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">exploited</a> a vulnerability in the Adminer database management tool to harvest and abuse credentials using Amazon’s Instance Metadata Service (IMDS). The attacker used a relay box with a 301 redirect script to fool the victim’s server into following the redirect and returning an error that contained AWS API credentials. The attacker then used these credentials to access the victim’s AWS account. This attack highlights the importance of updating to IMDSv2, which would have mitigated this attack.</p><h3 name="d86b" id="d86b" class="graf graf--h3 graf-after--p">Conclusion</h3><p name="da47" id="da47" class="graf graf--p graf-after--h3">In conclusion, IMDSv1 is a security risk for cloud infrastructure due to its vulnerability to server-side request forgery (SSRF) attacks. IMDSv2, on the other hand, uses session authentication and requires a secret token to be obtained before making any requests to the IMDS, providing added security against SSRF attacks. It is important to update to IMDSv2 and enforce its use on EC2 instances, either through Terraform configuration or by using the AWS CLI. Notable incidents, such as the one carried out by UNC2903, highlight the importance of updating to IMDSv2 to mitigate the risk of credential harvesting and abuse.</p><h3 name="d78c" id="d78c" class="graf graf--h3 graf-after--p">References:</h3><p name="d711" id="d711" class="graf graf--p graf-after--h3">Use IMDSv2 — Amazon Elastic Compute Cloud. <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html." data-href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html." class="markup--anchor markup--p-anchor" rel="noopener ugc nofollow noopener" target="_blank">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html</a></p><p name="6bef" id="6bef" class="graf graf--p graf-after--p">How can I use Systems Manager automation to enforce that only IMDSv2 is used to access instance metadata from my Amazon EC2 instance? <a href="https://repost.aws/knowledge-center/ssm-ec2-enforce-imdsv2" data-href="https://repost.aws/knowledge-center/ssm-ec2-enforce-imdsv2" class="markup--anchor markup--p-anchor" rel="noopener ugc nofollow noopener" target="_blank">https://repost.aws/knowledge-center/ssm-ec2-enforce-imdsv2</a></p><p name="1758" id="1758" class="graf graf--p graf-after--p graf--trailing">Add defense in depth against open firewalls, reverse proxies, and SSRF vulnerabilities with enhancements to the EC2 Instance Metadata Service <a href="https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/" data-href="https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/" class="markup--anchor markup--p-anchor" rel="noopener ugc nofollow noopener" target="_blank">https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/</a></p></div></div></section><section name="2af7" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="a8e4" id="a8e4" class="graf graf--p graf--leading graf--trailing"><strong class="markup--strong markup--p-strong">Read it on Spanish:</strong> <a href="https://medium.com/@kfir_g/por-qu%C3%A9-imdsv1-es-un-riesgo-de-seguridad-para-la-infraestructura-en-nube-891c3668efc5" data-href="https://medium.com/@kfir_g/por-qu%C3%A9-imdsv1-es-un-riesgo-de-seguridad-para-la-infraestructura-en-nube-891c3668efc5" class="markup--anchor markup--p-anchor" target="_blank">Por qué IMDSv1 es un riesgo de seguridad para la infraestructura en nube</a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@Kfir-G" class="p-author h-card">Kfir Gisman</a> on <a href="https://medium.com/p/350bbe4e8c94"><time class="dt-published" datetime="2023-08-06T09:34:19.495Z">August 6, 2023</time></a>.</p><p><a href="https://medium.com/@Kfir-G/why-imdsv1-is-a-security-risk-for-cloud-infrastructure-350bbe4e8c94" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on December 20, 2025.</p></footer></article></body></html>

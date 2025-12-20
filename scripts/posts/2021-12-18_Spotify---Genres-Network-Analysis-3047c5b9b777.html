@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Spotify — Genres Network Analysis</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Spotify — Genres Network Analysis</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Spotify is the largest music streaming service in the world serving more than 381 million users in over 180+ countries around the world…
+</section>
+<section data-field="body" class="e-content">
+<section name="717d" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3d3d" id="3d3d" class="graf graf--h3 graf--leading graf--title">Spotify — Genres Network Analysis</h3><p name="4cea" id="4cea" class="graf graf--p graf-after--h3">Spotify is the largest music streaming service in the world serving more than <a href="https://www.statista.com/statistics/367739/spotify-global-mau/" data-href="https://www.statista.com/statistics/367739/spotify-global-mau/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">381 million users</a> in over <a href="https://support.spotify.com/us/article/where-spotify-is-available/" data-href="https://support.spotify.com/us/article/where-spotify-is-available/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">180+ countries</a> around the world. with millions of active users, and a huge variety of music genres, Spotify creates a great database that I was interested to explore.</p><p name="bd79" id="bd79" class="graf graf--p graf-after--p">I was curious to see if by creating a genres network I could find a correlation between the number of artists playing a genre to its betweenness centrality in the network.<br>To do so, I gathered the data using <a href="https://developer.spotify.com/documentation/web-api/" data-href="https://developer.spotify.com/documentation/web-api/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Spotify API</a> and “<a href="https://spotipy.readthedocs.io/en/2.19.0/" data-href="https://spotipy.readthedocs.io/en/2.19.0/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Spotipy</a>” Python library. I used the <a href="https://netanomics.com/ora-commercial-version/" data-href="https://netanomics.com/ora-commercial-version/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">ORA network software</a> to analyze and visualize the data.</p><p name="7aa8" id="7aa8" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Collecting Data</strong></p><p name="da78" id="da78" class="graf graf--p graf-after--p">The Spotify genres couldn’t all be pulled at once. Therefore, I collected all 1256 playlists from the <a href="https://open.spotify.com/user/spotify?si=055269231ff94a99&amp;nd=1" data-href="https://open.spotify.com/user/spotify?si=055269231ff94a99&amp;nd=1" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Spotify official</a> account. The reason I chose to use the official Spotify account playlists is the lack of influence by a particular genre, a particular era, or a certain country.</p><p name="e24a" id="e24a" class="graf graf--p graf-after--p">For every song in the playlists, I took its artist, then for every artist I used the ‘<a href="https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artists-related-artists" data-href="https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artists-related-artists" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">related-artist</a>’ function on Spotify API which gave me 20 more related artists to each one of the artists on my list. This step allowed me to expand my dataset. The next step was to determine how many artists shared the same genre duo. Through the Spotify API, I gathered information on each artist’s related genres. These 1937 genres were inputted into a matrix.</p><p name="4966" id="4966" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Network Analysis</strong></p><p name="7f9b" id="7f9b" class="graf graf--p graf-after--p">Using the matrix I built, I created the genres network. My approach was to create a genre-based network in which every node consists of one musical genre. The edge weight is the number of artists who play both genres.</p></div><div class="section-inner sectionLayout--fullWidth"><figure name="16da" id="16da" class="graf graf--figure graf--layoutFillWidth graf-after--p"><img class="graf-image" data-image-id="1*O-UNhWx1otwXJ7coPwSd4g.png" data-width="1974" data-height="824" data-is-featured="true" src="https://cdn-images-1.medium.com/max/2560/1*O-UNhWx1otwXJ7coPwSd4g.png"><figcaption class="imageCaption">Left- Genres Network Graph, Bode Color by Louvain Algorithm. Right- Zoom In</figcaption></figure></div><div class="section-inner sectionLayout--insetColumn"><p name="9a81" id="9a81" class="graf graf--p graf-after--figure">I discovered that the number of artists related to a genre is distributed in a power-law distribution. This means that a few genres are played by a lot of artists, while many other genres are played by a fewer number of artists.</p><p name="72f4" id="72f4" class="graf graf--p graf-after--p">Among all genres, Rock, Dance-Pop, and Classic-Rock have the largest number of musicians who played those genres.</p><figure name="5a6e" id="5a6e" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*jUlsShPG8rsaVaxL7gSBSA.png" data-width="831" data-height="518" src="https://cdn-images-1.medium.com/max/800/1*jUlsShPG8rsaVaxL7gSBSA.png"></figure><p name="c1c2" id="c1c2" class="graf graf--p graf-after--figure">Dance-Pop, Pop, and Pop-Rap for example, had the larger <a href="https://www.sci.unich.it/~francesc/teaching/network/betweeness.html#:~:text=Betweenness%20centrality%20measures%20the%20extent,over%20information%20passing%20between%20others" data-href="https://www.sci.unich.it/~francesc/teaching/network/betweeness.html#:~:text=Betweenness%20centrality%20measures%20the%20extent,over%20information%20passing%20between%20others" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">betweenness</a> rate (Normalized betweenness measures how often one node acts as a bridge between two other nodes).</p><figure name="f3ca" id="f3ca" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*2nZzQo5lOV9dUhDBnRULJg.png" data-width="830" data-height="526" src="https://cdn-images-1.medium.com/max/800/1*2nZzQo5lOV9dUhDBnRULJg.png"></figure><p name="017c" id="017c" class="graf graf--p graf-after--figure"><strong class="markup--strong markup--p-strong">Conclusion</strong></p><p name="c6d9" id="c6d9" class="graf graf--p graf-after--p">In the linear line function, the X axis represents the degree betweenness of a genre. The Y axis represents the total degree of a genre.</p><figure name="6d58" id="6d58" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*sxAukeJVMIF5vS7Mk4JGyA.png" data-width="831" data-height="555" src="https://cdn-images-1.medium.com/max/800/1*sxAukeJVMIF5vS7Mk4JGyA.png"></figure><p name="a6a2" id="a6a2" class="graf graf--p graf-after--figure">The coefficient of determination is 0.4, which indicates a low positive correlation. It shows that when more artists play a genre, that genre will have more connections with other genres in the network.</p><p name="659d" id="659d" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Final Notes</strong></p><p name="c499" id="c499" class="graf graf--p graf-after--p">This was my first attempt to understand and analyze a data network. As an active Spotify user, I enjoyed learning about Spotify’s genre network Since the platform gives a lot of data from many perspectives. I feel that I have only touched the tip of the iceberg.</p><p name="fce5" id="fce5" class="graf graf--p graf-after--p graf--trailing">Contact me : <a href="mailto:kfir.gisman@gmail.com" data-href="mailto:kfir.gisman@gmail.com" class="markup--anchor markup--p-anchor" target="_blank">Gmail</a> <a href="http://bit.ly/37C0vth" data-href="http://bit.ly/37C0vth" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GitHub</a> <a href="http://bit.ly/2VMjsaf" data-href="http://bit.ly/2VMjsaf" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">LinkedIn</a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@Kfir-G" class="p-author h-card">Kfir Gisman</a> on <a href="https://medium.com/p/3047c5b9b777"><time class="dt-published" datetime="2021-12-18T08:32:33.103Z">December 18, 2021</time></a>.</p><p><a href="https://medium.com/@Kfir-G/spotify-genres-network-analysis-3047c5b9b777" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on December 20, 2025.</p></footer></article></body></html>

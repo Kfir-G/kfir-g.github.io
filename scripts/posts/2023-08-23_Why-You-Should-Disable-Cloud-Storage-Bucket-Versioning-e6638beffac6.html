@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Why You Should Disable Cloud Storage Bucket Versioning</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Why You Should Disable Cloud Storage Bucket Versioning</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Cloud Storage is a service that allows you to store and access your data on Google’s infrastructure. It offers high availability…
+</section>
+<section data-field="body" class="e-content">
+<section name="4f5d" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="96bb" id="96bb" class="graf graf--h3 graf--leading graf--title">Why You Should Disable Cloud Storage Bucket Versioning</h3><p name="9b67" id="9b67" class="graf graf--p graf-after--h3">Cloud Storage is a service that allows you to store and access your data on Google’s infrastructure. It offers high availability, durability, scalability, and performance for your data. One of the features that Cloud Storage provides is Bucket Versioning, which lets you keep multiple versions of an object in the same bucket. This can be useful for recovering from accidental deletions or overwrites, as well as preserving historical versions of your data. However, in this blog post, I will explain why you might want to disable Cloud Storage Bucket Versioning, and how to do it.</p><h3 name="8dc0" id="8dc0" class="graf graf--h3 graf-after--p">The Drawbacks of Cloud Storage Bucket Versioning</h3><p name="387e" id="387e" class="graf graf--p graf-after--h3">While Cloud Storage Bucket Versioning can have some benefits, it also comes with some drawbacks that you should be aware of. Here are some of the reasons why you might want to disable Cloud Storage Bucket Versioning:</p><ul class="postList"><li name="a4c3" id="a4c3" class="graf graf--li graf-after--p"><strong class="markup--strong markup--li-strong">Cost</strong>: Each version of an object is charged at the same rate as when it was live, so keeping multiple versions can increase your storage costs. You can use Object Lifecycle Management to delete older versions automatically, but this may not be sufficient for your needs. For example, if you have a large number of objects that change frequently, you might end up with a lot of versions that you don’t need. Moreover, if you enable Bucket Versioning on a bucket that already contains objects, all the existing objects will be treated as live versions, and you will be charged for them as well.</li><li name="d62c" id="d62c" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">Complexity</strong>: Managing multiple versions of an object can add complexity to your application logic and workflows. You need to specify the generation number of the version you want to access, and handle cases where there are no live or noncurrent versions available. For example, if you want to list all the objects in a bucket, you need to use the <code class="markup--code markup--li-code">versions</code> parameter to include both live and noncurrent versions, or use the <code class="markup--code markup--li-code">prefixes</code> parameter to group them by name. If you want to download or delete an object, you need to use the <code class="markup--code markup--li-code">generation</code> parameter to specify which version you want. If you don’t specify a generation number, Cloud Storage will use the latest live version by default.</li><li name="50f1" id="50f1" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">Security</strong>: If you have sensitive data that you want to delete permanently, disabling Cloud Storage Bucket Versioning can ensure that no traces of the data remain in the bucket. Otherwise, you need to delete each version individually by specifying the generation number, or use Object Lifecycle Management to delete them after a certain period of time. However, this may not be enough to guarantee that your data is completely erased from Google’s servers. According to Google’s <a href="https://cloud.google.com/storage/docs/object-versioning#permanently_delete" data-href="https://cloud.google.com/storage/docs/object-versioning#permanently_delete" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">documentation</a>- Google may retain deleted versions for some time after deletion and those deleted versions may still be accessible by authorized users until they are permanently erased. Therefore, if you want to avoid any potential risks of data leakage or breach, disabling Cloud Storage Bucket Versioning might be a better option.</li></ul><h3 name="47b5" id="47b5" class="graf graf--h3 graf-after--li">How to Disable Cloud Storage Bucket Versioning</h3><p name="a92e" id="a92e" class="graf graf--p graf-after--h3">If you decide that Cloud Storage Bucket Versioning is not suitable for your needs, you can disable it easily using one of the following methods:</p><p name="969e" id="969e" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Google Cloud Console</strong>: You can use the Google Cloud Console to manage your buckets and objects. To disable Cloud Storage Bucket Versioning for a bucket, follow these steps:</p><ol class="postList"><li name="e726" id="e726" class="graf graf--li graf-after--p">Go to the [Cloud Storage Browser] page in the Google Cloud Console.</li><li name="5e3c" id="5e3c" class="graf graf--li graf-after--li">Select the bucket that you want to disable Cloud Storage Bucket Versioning for.</li><li name="c15f" id="c15f" class="graf graf--li graf-after--li">Click on the <strong class="markup--strong markup--li-strong">Edit bucket</strong> button at the top of the page.</li><li name="f355" id="f355" class="graf graf--li graf-after--li">Under the <strong class="markup--strong markup--li-strong">Versioning</strong> section, uncheck the box next to <strong class="markup--strong markup--li-strong">Enable versioning</strong>.</li><li name="0bff" id="0bff" class="graf graf--li graf-after--li">Click on <strong class="markup--strong markup--li-strong">Save</strong> to apply the changes.</li></ol><p name="26f5" id="26f5" class="graf graf--p graf-after--li"><strong class="markup--strong markup--p-strong">gsutil</strong>: You can use the gsutil command-line tool to perform various operations on your buckets and objects. To disable Cloud Storage Bucket Versioning for a bucket, use this command:</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="eed0" id="eed0" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">gsutil versioning <span class="hljs-built_in">set</span> off gs://&lt;bucket_name&gt;</span></pre><p name="1766" id="1766" class="graf graf--p graf-after--pre">Replace <code class="markup--code markup--p-code">&lt;bucket_name&gt;</code> with the name of your bucket.</p><p name="24d5" id="24d5" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Cloud Storage API</strong>: You can use the Cloud Storage API to programmatically interact with your buckets and objects. To disable Cloud Storage Bucket Versioning for a bucket, send a PATCH request to this endpoint:</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="bash" name="1c90" id="1c90" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">PATCH https://storage.googleapis.com/storage/v1/b/&lt;bucket_name&gt;</span></pre><p name="c7af" id="c7af" class="graf graf--p graf-after--pre">Replace <code class="markup--code markup--p-code">bucket_name</code> with the name of your bucket. In the request body, set the <code class="markup--code markup--p-code">versioning.enabled</code> property to <code class="markup--code markup--p-code">false</code>. For example:</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="json" name="2c68" id="2c68" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-punctuation">{</span><br />  <span class="hljs-attr">&quot;versioning&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br />    <span class="hljs-attr">&quot;enabled&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">false</span></span><br />  <span class="hljs-punctuation">}</span><br /><span class="hljs-punctuation">}</span></span></pre><p name="8021" id="8021" class="graf graf--p graf-after--pre"><strong class="markup--strong markup--p-strong">Terraform</strong>:</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="bash" name="1ef1" id="1ef1" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">resource <span class="hljs-string">&quot;google_storage_bucket&quot;</span> <span class="hljs-string">&quot;bucket_name&quot;</span> {<br />  ...<br />  versioning {<br />    enabled = <span class="hljs-literal">false</span><br />  }<br />}</span></pre><h3 name="6e68" id="6e68" class="graf graf--h3 graf-after--pre">Conclusion</h3><p name="895e" id="895e" class="graf graf--p graf-after--h3 graf--trailing">Cloud Storage Bucket Versioning is a feature that can help you preserve and restore multiple versions of your objects in the same bucket. However, it also has some drawbacks that might outweigh its benefits, such as cost, complexity, and security. Therefore, you might want to disable Cloud Storage Bucket Versioning for your buckets, depending on your use case and requirements. You can use the Google Cloud Console, the gsutil command-line tool, or the Cloud Storage API to disable Cloud Storage Bucket Versioning easily and quickly.</p></div></div></section><section name="005b" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d1e0" id="d1e0" class="graf graf--h3 graf--leading"><strong class="markup--strong markup--h3-strong">References</strong></h3><ol class="postList"><li name="28e8" id="28e8" class="graf graf--li graf-after--h3"><a href="https://cloud.google.com/storage/docs/using-versioned-objects" data-href="https://cloud.google.com/storage/docs/using-versioned-objects" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cloud.google.com/storage/docs/using-versioned-objects</a></li><li name="8994" id="8994" class="graf graf--li graf-after--li"><a href="https://cloud.google.com/storage/docs/object-versioning#permanently_delete" data-href="https://cloud.google.com/storage/docs/object-versioning#permanently_delete" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cloud.google.com/storage/docs/object-versioning#permanently_delete</a></li><li name="8200" id="8200" class="graf graf--li graf-after--li"><a href="https://cloud.google.com/storage/docs/samples/storage-disable-versioning" data-href="https://cloud.google.com/storage/docs/samples/storage-disable-versioning" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://cloud.google.com/storage/docs/samples/storage-disable-versioning</a></li><li name="aa69" id="aa69" class="graf graf--li graf-after--li graf--trailing"><a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#enabled" data-href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#enabled" class="markup--anchor markup--li-anchor" rel="nofollow noopener" target="_blank">https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket#enabled</a></li></ol></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@Kfir-G" class="p-author h-card">Kfir Gisman</a> on <a href="https://medium.com/p/e6638beffac6"><time class="dt-published" datetime="2023-08-23T14:34:14.550Z">August 23, 2023</time></a>.</p><p><a href="https://medium.com/@Kfir-G/why-you-should-disable-cloud-storage-bucket-versioning-e6638beffac6" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on December 20, 2025.</p></footer></article></body></html>
