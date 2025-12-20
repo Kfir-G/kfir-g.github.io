@@ -1,5 +1,11 @@
 # Blogs
 
+<a href="https://kfir-g.dev/blog/rss.xml" target="_blank" title="RSS Feed">
+  <img src="https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white" alt="RSS">
+</a> You can subscribe to my Blogs using this RSS link: [https://kfir-g.dev/blog/rss.xml](https://kfir-g.dev/blog/rss.xml)
+
+---
+
 I regularly publish in some of Medium’s top engineering publications, reaching a global audience of hundreds of thousands of developers every month. My work appears in:
 
 * **[Level Up Coding](https://levelup.gitconnected.com/)** — One of the most-read dev publications, home to tutorials, engineering deep-dives, and practical coding guides.

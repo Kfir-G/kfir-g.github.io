@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Kfir Gisman Blogs</title>
+    <link>https://kfir-g.dev/blog/</link>
+    <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Dec 2025 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 1 -->
+    <item>
+      <title>From Passive FastAPI Developer to Real FastAPI Engineer - Part 1</title>
+      <link>https://kfir-g.dev/blog/old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae.md</link>
+      <pubDate>Fri, 21 Nov 2025 00:00:00 GMT</pubDate>
+      <description>Understanding ASGI by Breaking Down an HTTP Request. Learn how FastAPI uses ASGI for async web development.</description>
+      <guid>https://kfir-g.dev/blog/old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae.md</guid>
+    </item>
+
+    <!-- Post 2 -->
+    <item>
+      <title>From Passive FastAPI Developer to Real FastAPI Engineer - Part 2</title>
+      <link>https://kfir-g.dev/blog/old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad.md</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate>
+      <description>Continuing the series on FastAPI and ASGI. Advanced concepts, best practices, and performance tips.</description>
+      <guid>https://kfir-g.dev/blog/old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad.md</guid>
+    </item>
+
+    <!-- Add more items here -->
+  </channel>
+</rss>

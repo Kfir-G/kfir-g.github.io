@@ -39,3 +39,7 @@ extra_css:
   - assets/stylesheets/colors.css
   - assets/css/custom.css
   - /main.css
+
+extra:
+  rss_url: blog/rss.xml
+  
