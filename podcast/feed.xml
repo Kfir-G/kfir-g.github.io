@@ -15,6 +15,37 @@
     <itunes:image href="https://kfir-g.dev/podcast/logo.png"/>
 
     <item>
+      <title>Episode 3 - Dev Diary: Building TinyURL in Production</title>
+
+      <description><![CDATA[
+Episode 3 takes you behind the scenes of building TinyURL — a URL shortener deployed in a production environment. We cover the full journey from designing the FastAPI backend and PostgreSQL database to implementing Redis caching and configuring Nginx as a reverse proxy. I share the challenges of CI/CD pipelines, SSL setup, and deploying with Gunicorn, as well as the lessons learned about distributed systems, caching strategies, and scaling web services. This episode gives a hands-on view of turning code into a reliable, real-world web application.
+
+Topics we cover:
+- Designing and deploying a FastAPI backend
+- PostgreSQL database modeling and migrations
+- Redis caching for high-speed URL lookups
+- Nginx configuration as reverse proxy and SSL setup
+- CI/CD pipeline for production shipping
+- Gunicorn deployment and process management
+- Challenges and lessons learned from production issues
+          ]]></description>
+
+      <enclosure 
+        url="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode3-tinyurl.mp3"
+        type="audio/mpeg"
+        length="0"/>
+
+      <guid>code-with-mate-episode-3</guid>
+      <pubDate>Sun, 21 Dec 2025 12:00:00 +0000</pubDate>
+
+      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>3</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <item>
       <title>Episode 2 - Martín Torre Castro</title>
 
       <description><![CDATA[
