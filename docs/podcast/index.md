@@ -31,11 +31,13 @@ Adding the feed above is the **minimum step needed** to start listening. Give it
 
 ### [Episode 3- Dev Diary: Building TinyURL in Production](episodes/episode3-tinyurl.md)
 **Date:** 2025-12-21
+
 Episode 3 takes you behind the scenes of building TinyURL — a URL shortener deployed in a production environment. We cover the full journey from designing the FastAPI backend and PostgreSQL database to implementing Redis caching and configuring Nginx as a reverse proxy. I share the challenges of CI/CD pipelines, SSL setup, and deploying with Gunicorn, as well as the lessons learned about distributed systems, caching strategies, and scaling web services. This episode gives a hands-on view of turning code into a reliable, real-world web application.
 
 
 ### [Episode 2 - Martín Torre Castro](episodes/episode2-martin.md)
 **Date:** 2025-12-13
+
 Episode 2 features Martín Torre Castro — software architect, performance engineer, and Python Coruña community lead. We talk about performance testing in real systems, software architecture in practice, Python communities in Spain, and lessons learned from building and scaling production systems.
 
 

@@ -23,7 +23,7 @@ I start with a simple idea - shorten a URL - and end up deep inside system desig
 
 ---
 
-## What We Talk About
+## What I Talk About
 
 **Goals behind the project**
 - Learning how to ship a real system to production
