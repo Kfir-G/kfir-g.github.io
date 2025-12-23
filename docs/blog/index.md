@@ -6,17 +6,6 @@
 
 ---
 
-I regularly publish in some of Medium’s top engineering publications, reaching a global audience of hundreds of thousands of developers every month. My work appears in:
-
-* **[Level Up Coding](https://levelup.gitconnected.com/)** — One of the most-read dev publications, home to tutorials, engineering deep-dives, and practical coding guides.
-* **[Python in Plain English](https://python.plainenglish.io/)** — New Python content daily, read by over 3.5M+ monthly readers.
-* **[Stackademic](https://stackademic.com/)** — A major learning hub focused on democratizing high-quality programming education.
-* **[CodeToDeploy](https://codetodeploy.com/)** — A unique publication blending technical insights with real-world engineering job opportunities.
-
-My articles consistently attract strong engagement — thousands of reads, likes, and shares - thanks to a focus on clear, hands-on engineering content that developers can apply immediately.
-
----
-
 <!-- Blogs -->
 #### Blog Series
 
@@ -26,6 +15,8 @@ My articles consistently attract strong engagement — thousands of reads, likes
 2. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 1: ASGI](old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae.md)  
 
 3. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 2](old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad.md)  
+
+4. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 3: Middleware and Background Tasks](blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3.md)
 
 
 ##### Memory Topics
@@ -72,5 +63,15 @@ My articles consistently attract strong engagement — thousands of reads, likes
 - [7 Quick Tips to Get Started with HashiCorp Vault](old-blogs/2025-04-15_---7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault-9e56e42251bf.md)  
   Practical beginner-friendly guide to mastering HashiCorp Vault and securely managing secrets.
 
-
 <!-- End Blogs -->
+
+---
+
+I regularly publish in some of Medium’s top engineering publications, reaching a global audience of hundreds of thousands of developers every month. My work appears in:
+
+* **[Level Up Coding](https://levelup.gitconnected.com/)** — One of the most-read dev publications, home to tutorials, engineering deep-dives, and practical coding guides.
+* **[Python in Plain English](https://python.plainenglish.io/)** — New Python content daily, read by over 3.5M+ monthly readers.
+* **[Stackademic](https://stackademic.com/)** — A major learning hub focused on democratizing high-quality programming education.
+* **[CodeToDeploy](https://codetodeploy.com/)** — A unique publication blending technical insights with real-world engineering job opportunities.
+
+My articles consistently attract strong engagement — thousands of reads, likes, and shares - thanks to a focus on clear, hands-on engineering content that developers can apply immediately.
