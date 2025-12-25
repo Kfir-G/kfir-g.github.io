@@ -18,7 +18,7 @@
 
     <!-- Post 2 -->
     <item>
-      <title>From Passive FastAPI Developer to Real FastAPI Engineer - Part 2</title>
+      <title>From Passive FastAPI Developer to Real FastAPI Engineer - Part 2: Your First Raw ASGI App</title>
       <link>https://kfir-g.dev/blog/old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad</link>
       <pubDate>Mon, 08 Dec 2025 00:00:00 GMT</pubDate>
       <description>Continuing the series on FastAPI and ASGI. Advanced concepts, best practices, and performance tips.</description>
@@ -38,13 +38,13 @@
 
     <!-- Post 4 -->
     <item>
-      <title>From Passive FastAPI Developer to Real FastAPI Engineer – Part 4</title>
-      <link>https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4</link>
-      <pubDate>Fri, 25 Dec 2025 00:00:00 GMT</pubDate>
+      <title>From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifespan, Startup, Shutdown, and State</title>
+      <link>https://kfir-g.dev/blog/blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 GMT</pubDate>
       <description>
         Wrapping up advanced ASGI concepts with real-world FastAPI patterns. Focused insights on improving performance, middleware, and background tasks.
       </description>
-      <guid>https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4</guid>
+      <guid>https://kfir-g.dev/blog/blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4</guid>
     </item>
 
   </channel>
