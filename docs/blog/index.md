@@ -18,6 +18,8 @@
 
 4. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 3: Middleware and Background Tasks](blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3.md)
 
+5. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 4](blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4.md)
+
 
 ##### Memory Topics
 1. [Understanding Python Memory and Garbage Collection Through Hands-On Experiments](old-blogs/2025-01-06_Understanding-Python-Memory-and-Garbage-Collection-Through-Hands-On-Experiments-86f25aa6b5d5.md)  

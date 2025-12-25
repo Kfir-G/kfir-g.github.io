@@ -1,7 +1,7 @@
 ---
 title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 3: Middleware and Background Tasks
 published: true
-date: 2025-12-20 03:28:33 UTC
+date: 2025-12-20 00:00:00 UTC
 tags: fastapi,starlette,asgi,python,softwareengineering
 canonical_url: https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3.md
 ---
@@ -30,7 +30,7 @@ class SimpleMiddleware(BaseHTTPMiddleware):
         return response
 
 app.add_middleware(SimpleMiddleware)
-````
+```
 
 Middleware can be used for:
 
