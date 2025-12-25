@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/">
       
       
-        <link rel="prev" href="../../">
+        <link rel="prev" href="../2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/">
       
       
-        <link rel="next" href="../2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/">
+        <link rel="next" href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>2025 12 20 From Passive FastAPI Developer to Real FastAPI Engineer Part 3 - Kfir's Site</title>
+        <title>2025 12 25 From Passive FastAPI Developer to Real FastAPI Engineer Part 4 - Kfir's Site</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#from-passive-fastapi-developer-to-real-fastapi-engineer-part-3-middleware-and-background-tasks" class="md-skip">
+        <a href="#from-passive-fastapi-developer-to-real-fastapi-engineer-part-4-lifespan-startup-shutdown-and-state" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025 12 20 From Passive FastAPI Developer to Real FastAPI Engineer  Part 3
+              2025 12 25 From Passive FastAPI Developer to Real FastAPI Engineer  Part 4
             
           </span>
         </div>
@@ -506,6 +506,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 12 20 From Passive FastAPI Developer to Real FastAPI Engineer  Part 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -525,7 +553,7 @@
   <span class="md-ellipsis">
     
   
-    2025 12 20 From Passive FastAPI Developer to Real FastAPI Engineer  Part 3
+    2025 12 25 From Passive FastAPI Developer to Real FastAPI Engineer  Part 4
   
 
     
@@ -543,7 +571,7 @@
   <span class="md-ellipsis">
     
   
-    2025 12 20 From Passive FastAPI Developer to Real FastAPI Engineer  Part 3
+    2025 12 25 From Passive FastAPI Developer to Real FastAPI Engineer  Part 4
   
 
     
@@ -569,10 +597,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#asgi-middleware-in-fastapi" class="md-nav__link">
+  <a href="#the-asgi-lifespan-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ASGI Middleware in FastAPI
+        The ASGI Lifespan Protocol
       
     </span>
   </a>
@@ -580,10 +608,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#background-tasks" class="md-nav__link">
+  <a href="#startup-and-shutdown-in-fastapi-the-old-way" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Background Tasks
+        Startup and Shutdown in FastAPI (The Old Way)
       
     </span>
   </a>
@@ -591,10 +619,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#request-and-response-lifecycle" class="md-nav__link">
+  <a href="#the-modern-way-lifespan-context-manager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Request and Response Lifecycle
+        The Modern Way: Lifespan Context Manager
       
     </span>
   </a>
@@ -602,10 +630,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#combining-middleware-and-background-tasks" class="md-nav__link">
+  <a href="#what-belongs-in-startup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Combining Middleware and Background Tasks
+        What Belongs in Startup?
       
     </span>
   </a>
@@ -613,10 +641,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#application-state-appstate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Application State (app.state)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-not-global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Not Global Variables?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutdown-cleaning-up-correctly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown: Cleaning Up Correctly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-this-fits-with-middleware-and-background-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How This Fits with Middleware and Background Tasks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-real-world-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Real-World Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Mistakes to Avoid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model-upgrade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model Upgrade
       
     </span>
   </a>
@@ -638,34 +732,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025 12 25 From Passive FastAPI Developer to Real FastAPI Engineer  Part 4
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2157,101 +2223,235 @@
 
 
 <hr />
-<p>title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 3: Middleware and Background Tasks
+<p>title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifespan, Startup, Shutdown, and State
 published: true
-date: 2025-12-20 00:00:00 UTC
+date: 2025-12-25 00:00:00 UTC
 tags: fastapi,starlette,asgi,python,softwareengineering
-canonical_url: https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer&ndash;Part-3.md</p>
+canonical_url: https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer&ndash;Part-4.md</p>
 <hr />
-<h1 id="from-passive-fastapi-developer-to-real-fastapi-engineer-part-3-middleware-and-background-tasks">From Passive FastAPI Developer to Real FastAPI Engineer – Part 3: Middleware and Background Tasks</h1>
-<p>Exploring ASGI middleware, background tasks, and advanced request/response patterns in FastAPI.</p>
+<h1 id="from-passive-fastapi-developer-to-real-fastapi-engineer-part-4-lifespan-startup-shutdown-and-state">From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifespan, Startup, Shutdown, and State</h1>
+<p>If you truly want to think in <strong>ASGI</strong>, you must understand what happens <strong>outside</strong> request handling.</p>
+<p>Requests are only one part of the application lifecycle.<br />
+In this part, we’ll dive into <strong>ASGI lifespan events</strong>, application <strong>startup/shutdown</strong>, and how <strong>state</strong> is managed correctly in FastAPI.</p>
 <hr />
-<h3 id="asgi-middleware-in-fastapi">ASGI Middleware in FastAPI</h3>
-<p>Middleware is a layer that sits between the server and your application. In ASGI, middleware is <strong>an async callable</strong> that can intercept requests and responses:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">starlette.middleware.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseHTTPMiddleware</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">Request</span>
+<h2 id="the-asgi-lifespan-protocol">The ASGI Lifespan Protocol</h2>
+<p>ASGI defines a <strong>lifespan scope</strong> that is separate from HTTP and WebSocket scopes.</p>
+<p>At a protocol level, the server sends events like:</p>
+<div class="highlight"><pre><span></span><code>lifespan.startup
+lifespan.shutdown
+</code></pre></div>
+<p>Your application must respond with:</p>
+<div class="highlight"><pre><span></span><code>lifespan.startup.complete
+lifespan.shutdown.complete
+</code></pre></div>
+<p>This is how the server knows when your app is <strong>ready to accept traffic</strong> or <strong>safe to terminate</strong>.</p>
+<p>FastAPI (via Starlette) abstracts this-but understanding it matters.</p>
+<hr />
+<h2 id="startup-and-shutdown-in-fastapi-the-old-way">Startup and Shutdown in FastAPI (The Old Way)</h2>
+<p>You may already know this pattern:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
 
 <span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">SimpleMiddleware</span><span class="p">(</span><span class="n">BaseHTTPMiddleware</span><span class="p">):</span>
-    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">call_next</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Request URL: </span><span class="si">{</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">call_next</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-        <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;X-Custom-Header&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Hello from Middleware&#39;</span>
-        <span class="k">return</span> <span class="n">response</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">on_event</span><span class="p">(</span><span class="s2">&quot;startup&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">startup_event</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;App is starting&quot;</span><span class="p">)</span>
 
-<span class="n">app</span><span class="o">.</span><span class="n">add_middleware</span><span class="p">(</span><span class="n">SimpleMiddleware</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">on_event</span><span class="p">(</span><span class="s2">&quot;shutdown&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">shutdown_event</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;App is shutting down&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Middleware can be used for:</p>
+<p>This works, but it has limitations:</p>
 <ul>
-<li>Logging requests and responses</li>
-<li>Adding custom headers</li>
-<li>Handling authentication and authorization</li>
-<li>Measuring performance or request duration</li>
+<li>Harder to test</li>
+<li>Less explicit lifecycle control</li>
+<li>Being gradually replaced by the <strong>lifespan context manager</strong></li>
 </ul>
 <hr />
-<h3 id="background-tasks">Background Tasks</h3>
-<p>FastAPI supports running tasks <strong>after sending the response</strong>, which is essential for operations that don’t need to block the request:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">BackgroundTasks</span>
+<h2 id="the-modern-way-lifespan-context-manager">The Modern Way: Lifespan Context Manager</h2>
+<p>FastAPI now recommends using an <strong>async context manager</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">contextlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">asynccontextmanager</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+<span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Startup logic here&quot;</span><span class="p">)</span>
+    <span class="k">yield</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shutdown logic here&quot;</span><span class="p">)</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">write_log</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;log.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/send-data/&quot;</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">send_data</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">background_tasks</span><span class="p">:</span> <span class="n">BackgroundTasks</span><span class="p">):</span>
-    <span class="n">background_tasks</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">write_log</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Received: </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Data received. Logging in background.&quot;</span><span class="p">}</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">lifespan</span><span class="o">=</span><span class="n">lifespan</span><span class="p">)</span>
 </code></pre></div>
-<p>Benefits:</p>
+<p>Why this is better:</p>
 <ul>
-<li>Improves response time for users</li>
-<li>Allows long-running tasks to run asynchronously</li>
-<li>Integrates cleanly with async applications</li>
+<li>Clear lifecycle boundaries</li>
+<li>One place for resource management</li>
+<li>Easier to reason about startup vs shutdown</li>
+<li>Aligns directly with ASGI lifespan semantics</li>
+</ul>
+<p>Think of it as:</p>
+<div class="highlight"><pre><span></span><code>enter → app runs → exit
+</code></pre></div>
+<hr />
+<h2 id="what-belongs-in-startup">What Belongs in Startup?</h2>
+<p>Startup is for <strong>process-level resources</strong>, not request-level work.</p>
+<p>Good examples:</p>
+<ul>
+<li>Database connections</li>
+<li>Redis clients</li>
+<li>HTTP client pools</li>
+<li>Loading ML models</li>
+<li>Initializing caches</li>
+<li>Starting background consumers</li>
+</ul>
+<p>Bad examples:</p>
+<ul>
+<li>Per-user logic</li>
+<li>Request validation</li>
+<li>Anything depending on request data</li>
 </ul>
 <hr />
-<h3 id="request-and-response-lifecycle">Request and Response Lifecycle</h3>
-<p>Understanding the request/response lifecycle is key for advanced FastAPI applications:</p>
-<div class="highlight"><pre><span></span><code>Client → ASGI Server → Middleware → Path Operation → Response → Middleware → ASGI Server → Client
+<h2 id="application-state-appstate">Application State (<code>app.state</code>)</h2>
+<p>FastAPI exposes a shared state object:</p>
+<div class="highlight"><pre><span></span><code><span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">db_connection</span>
+<span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redis_client</span>
 </code></pre></div>
-<ul>
-<li><strong>Request passes through middleware first</strong></li>
-<li><strong>Path operation executes next</strong></li>
-<li><strong>Response goes back through middleware before returning to client</strong></li>
-</ul>
-<p>Middleware can <strong>mutate request or response</strong>, while background tasks run <strong>after the response is sent</strong>.</p>
-<hr />
-<h3 id="combining-middleware-and-background-tasks">Combining Middleware and Background Tasks</h3>
-<p>You can combine these features for advanced use cases:</p>
-<ul>
-<li>Logging requests and saving metrics in background</li>
-<li>Authenticating users and sending notifications asynchronously</li>
-<li>Transforming requests and caching responses</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/upload/&quot;</span><span class="p">)</span>
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">upload_file</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">background_tasks</span><span class="p">:</span> <span class="n">BackgroundTasks</span><span class="p">):</span>
-    <span class="n">background_tasks</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">process_file</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;File received, processing in background&quot;</span><span class="p">}</span>
+<p>You can then access it inside requests:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/items&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_items</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">db</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ok&quot;</span><span class="p">}</span>
 </code></pre></div>
-<p>This pattern is essential for <strong>high-performance, real-world FastAPI apps</strong>.</p>
+<p>Important properties of <code>app.state</code>:</p>
+<ul>
+<li>Shared across all requests</li>
+<li>Lives for the entire app lifetime</li>
+<li><strong>Not request-safe by default</strong></li>
+<li>Must hold thread-safe / async-safe objects</li>
+</ul>
+<p>This is <strong>not</strong> global variables - it’s explicit, controlled state.</p>
 <hr />
-<h3 id="best-practices">Best Practices</h3>
+<h2 id="why-not-global-variables">Why Not Global Variables?</h2>
+<p>Globals seem easy:</p>
+<div class="highlight"><pre><span></span><code><span class="n">db</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<p>But they break down when:</p>
+<ul>
+<li>Running multiple workers</li>
+<li>Reloading with Uvicorn</li>
+<li>Testing with TestClient</li>
+<li>Sharing state across async tasks</li>
+</ul>
+<p><code>app.state</code> ties the resource lifecycle to the ASGI app, not the Python module.</p>
+<hr />
+<h2 id="shutdown-cleaning-up-correctly">Shutdown: Cleaning Up Correctly</h2>
+<p>Shutdown is where you <strong>release resources</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="k">await</span> <span class="n">create_client</span><span class="p">()</span>
+    <span class="k">yield</span>
+    <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">aclose</span><span class="p">()</span>
+</code></pre></div>
+<p>If you don’t close:</p>
+<ul>
+<li>Connections leak</li>
+<li>File descriptors accumulate</li>
+<li>Containers fail graceful shutdown</li>
+<li>Kubernetes SIGTERM handling breaks</li>
+</ul>
+<p>This is where <strong>real production bugs</strong> often hide.</p>
+<hr />
+<h2 id="how-this-fits-with-middleware-and-background-tasks">How This Fits with Middleware and Background Tasks</h2>
+<p>Let’s connect the dots:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Runs When</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lifespan</td>
+<td>App start/stop</td>
+<td>Manage global resources</td>
+</tr>
+<tr>
+<td>Middleware</td>
+<td>Every request</td>
+<td>Cross-cutting concerns</td>
+</tr>
+<tr>
+<td>Background tasks</td>
+<td>After response</td>
+<td>Deferred per-request work</td>
+</tr>
+<tr>
+<td>Path operation</td>
+<td>During request</td>
+<td>Business logic</td>
+</tr>
+</tbody>
+</table>
+<p>Each layer has a <strong>clear responsibility</strong>.</p>
+<p>Mixing them leads to fragile systems.</p>
+<hr />
+<h2 id="a-real-world-pattern">A Real-World Pattern</h2>
+<div class="highlight"><pre><span></span><code><span class="nd">@asynccontextmanager</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">lifespan</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">FastAPI</span><span class="p">):</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">http</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">()</span>
+    <span class="k">yield</span>
+    <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">aclose</span><span class="p">()</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">lifespan</span><span class="o">=</span><span class="n">lifespan</span><span class="p">)</span>
+</code></pre></div>
+<p>Used with:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/external&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">call_external</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">):</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">http</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://example.com&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">}</span>
+</code></pre></div>
+<p>This avoids:</p>
+<ul>
+<li>Creating clients per request</li>
+<li>Global variables</li>
+<li>Resource leaks</li>
+</ul>
+<p>This is <strong>ASGI thinking</strong>.</p>
+<hr />
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
 <ol>
-<li><strong>Keep middleware lightweight</strong> – avoid blocking operations.</li>
-<li><strong>Use background tasks for I/O-heavy operations</strong>.</li>
-<li><strong>Leverage ASGI features for streaming and WebSocket scenarios</strong>.</li>
-<li><strong>Monitor performance</strong> – middleware can introduce latency if overused.</li>
+<li>❌ Doing I/O inside middleware startup logic</li>
+<li>❌ Storing request data in <code>app.state</code></li>
+<li>❌ Forgetting to close connections on shutdown</li>
+<li>❌ Using globals instead of lifespan-managed state</li>
+<li>❌ Mixing background tasks with startup logic</li>
 </ol>
 <hr />
-<h3 id="references">References</h3>
+<h2 id="mental-model-upgrade">Mental Model Upgrade</h2>
+<p>Stop thinking:</p>
+<blockquote>
+<p>“FastAPI runs my function when a request arrives”</p>
+</blockquote>
+<p>Start thinking:</p>
+<blockquote>
+<p>“I am writing an ASGI application with a defined lifecycle”</p>
+</blockquote>
+<p>That shift is what separates <strong>framework users</strong> from <strong>engineers</strong>.</p>
+<hr />
+<p>Conclusion</p>
+<p>Using middleware and background tasks wisely keeps your FastAPI app fast and maintainable. Even small improvements here pay off in overall performance and clarity.</p>
+<hr />
+<h2 id="references">References</h2>
 <ul>
-<li><a href="https://fastapi.tiangolo.com/tutorial/middleware/">FastAPI Middleware Documentation</a></li>
-<li><a href="https://www.starlette.io/middleware/">Starlette ASGI Middleware</a></li>
-<li><a href="https://fastapi.tiangolo.com/tutorial/background-tasks/">Background Tasks in FastAPI</a></li>
+<li><a href="https://asgi.readthedocs.io/en/latest/specs/lifespan.html">https://asgi.readthedocs.io/en/latest/specs/lifespan.html</a></li>
+<li><a href="https://fastapi.tiangolo.com/advanced/events/">https://fastapi.tiangolo.com/advanced/events/</a></li>
+<li><a href="https://www.starlette.io/lifespan/">https://www.starlette.io/lifespan/</a></li>
 </ul>
-<p><a href="https://kfir-g.dev/blog/old-blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3.md">Canonical link</a></p>
+<p><a href="https://kfir-g.dev/blog/blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4.md">Canonical link</a></p>
 
 
 
