@@ -166,5 +166,3 @@ Feel free to fork, share, or leave questions. And if you’ve got your own tips-
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [April 15, 2025](https://medium.com/p/9e56e42251bf).
 
 [Canonical link](https://medium.com/@Kfir-G/7-quick-tips-to-get-started-with-hashicorp-vault-9e56e42251bf)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

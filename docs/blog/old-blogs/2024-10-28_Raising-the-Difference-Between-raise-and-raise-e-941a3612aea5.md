@@ -155,5 +155,3 @@ Thank you for reading until the end. Before you go:
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [October 28, 2024](https://medium.com/p/941a3612aea5).
 
 [Canonical link](https://medium.com/@Kfir-G/raising-the-difference-between-raise-and-raise-e-941a3612aea5)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

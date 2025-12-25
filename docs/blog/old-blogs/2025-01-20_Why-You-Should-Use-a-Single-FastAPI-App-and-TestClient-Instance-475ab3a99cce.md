@@ -162,5 +162,3 @@ By following these guidelines, you ensure your FastAPI project is consistent, ef
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [January 20, 2025](https://medium.com/p/475ab3a99cce).
 
 [Canonical link](https://medium.com/@Kfir-G/why-you-should-use-a-single-fastapi-app-and-testclient-instance-475ab3a99cce)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

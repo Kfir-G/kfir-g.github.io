@@ -117,5 +117,3 @@ Stay tuned for more FastAPI deep dives, and happy coding!
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [September 23, 2024](https://medium.com/p/7ec80edb7320).
 
 [Canonical link](https://medium.com/@Kfir-G/unleash-the-power-of-fastapi-async-vs-blocking-i-o-7ec80edb7320)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

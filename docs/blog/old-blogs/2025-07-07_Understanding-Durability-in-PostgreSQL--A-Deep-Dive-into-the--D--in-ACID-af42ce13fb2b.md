@@ -117,5 +117,3 @@ Durability is what lets you sleep at night knowing your committed data won’t v
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [July 7, 2025](https://medium.com/p/af42ce13fb2b).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-durability-in-postgresql-a-deep-dive-into-the-d-in-acid-af42ce13fb2b)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

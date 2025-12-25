@@ -286,5 +286,3 @@ It’s the foundation that makes **Starlette** and **FastAPI** so fast and the r
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [November 21, 2025](https://medium.com/p/059a588a54ae).
 
 [Canonical link](https://medium.com/@Kfir-G/from-passive-fastapi-developer-to-real-fastapi-engineer-part-1-asgi-059a588a54ae)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

@@ -159,5 +159,3 @@ In summary, leveraging Pydantic with FastAPI enhances your ability to create rob
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [October 12, 2024](https://medium.com/p/a99e34532241).
 
 [Canonical link](https://medium.com/@Kfir-G/building-robust-components-with-fastapi-and-pydantic-a99e34532241)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

@@ -166,5 +166,3 @@ Browsers are one of the most sophisticated pieces of software on your machine- a
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [October 20, 2025](https://medium.com/p/4026ab114d78).
 
 [Canonical link](https://medium.com/@Kfir-G/how-the-browser-works-4026ab114d78)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

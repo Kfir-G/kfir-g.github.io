@@ -171,5 +171,3 @@ For more details, refer to the official documentation:
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [May 12, 2025](https://medium.com/p/5bde6fd042e3).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-atomicity-in-postgresql-a-deep-dive-into-the-a-in-acid-5bde6fd042e3)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

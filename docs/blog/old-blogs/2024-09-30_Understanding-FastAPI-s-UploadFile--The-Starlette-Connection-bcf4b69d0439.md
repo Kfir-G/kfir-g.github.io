@@ -88,5 +88,3 @@ To further explore the topics discussed in this blog, consider the following lin
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [September 30, 2024](https://medium.com/p/bcf4b69d0439).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-fastapis-uploadfile-the-starlette-connection-bcf4b69d0439)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

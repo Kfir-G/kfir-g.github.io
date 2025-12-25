@@ -210,5 +210,3 @@ Run the Python snippets above to see the process in action!
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [March 30, 2025](https://medium.com/p/c33e8c2e6eed).
 
 [Canonical link](https://medium.com/@Kfir-G/what-really-happens-when-you-type-google-com-in-your-browser-c33e8c2e6eed)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

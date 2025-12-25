@@ -146,5 +146,3 @@ Thank you for reading until the end. Before you go:
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [August 12, 2024](https://medium.com/p/9db00b203f15).
 
 [Canonical link](https://medium.com/@Kfir-G/mastering-error-handling-a-comprehensive-guide-9db00b203f15)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

@@ -138,5 +138,3 @@ Como desarrolladores, incorporar estas prácticas es fundamental para mitigar ri
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [January 4, 2024](https://medium.com/p/aafb40f7766b).
 
 [Canonical link](https://medium.com/@Kfir-G/asegurando-docker-mejores-pr%C3%A1cticas-para-usuarios-non-root-aafb40f7766b)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

@@ -192,5 +192,3 @@ Getting Isolation right is key to safe and predictable data in multi-user system
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [July 7, 2025](https://medium.com/p/c493d635a35b).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-isolation-in-postgresql-a-deep-dive-into-the-i-in-acid-c493d635a35b)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

@@ -54,5 +54,3 @@ References:
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [July 9, 2023](https://medium.com/p/dc137317bc9).
 
 [Canonical link](https://medium.com/@Kfir-G/shell-injection-in-github-actions-ci-cd-dc137317bc9)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

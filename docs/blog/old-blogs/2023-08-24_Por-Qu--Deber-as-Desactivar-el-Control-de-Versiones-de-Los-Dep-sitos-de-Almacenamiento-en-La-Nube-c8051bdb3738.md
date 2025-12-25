@@ -95,5 +95,3 @@ El versionado de depósitos de Cloud Storage es una característica que puede ay
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [August 24, 2023](https://medium.com/p/c8051bdb3738).
 
 [Canonical link](https://medium.com/@Kfir-G/por-qu%C3%A9-deber%C3%ADas-desactivar-el-control-de-versiones-de-los-dep%C3%B3sitos-de-almacenamiento-en-la-nube-c8051bdb3738)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

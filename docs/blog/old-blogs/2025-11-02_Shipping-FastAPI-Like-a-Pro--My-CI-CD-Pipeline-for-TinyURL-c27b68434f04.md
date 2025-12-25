@@ -180,5 +180,3 @@ And before you go, don’t forget to **clap** and **follow** the writer️!
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [November 2, 2025](https://medium.com/p/c27b68434f04).
 
 [Canonical link](https://medium.com/@Kfir-G/shipping-fastapi-like-a-pro-my-ci-cd-pipeline-for-tinyurl-c27b68434f04)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

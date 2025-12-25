@@ -196,5 +196,3 @@ So the next time you open your terminal, type `curl` and listen. The protocol ha
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [November 10, 2025](https://medium.com/p/2fd88ef90fb7).
 
 [Canonical link](https://medium.com/@Kfir-G/why-i-use-curl-instead-of-postman-learning-http-by-feel-2fd88ef90fb7)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

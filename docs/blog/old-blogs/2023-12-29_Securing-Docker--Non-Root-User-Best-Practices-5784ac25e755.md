@@ -138,5 +138,3 @@ As developers, incorporating these practices is paramount for mitigating securit
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [December 29, 2023](https://medium.com/p/5784ac25e755).
 
 [Canonical link](https://medium.com/@Kfir-G/securing-docker-non-root-user-best-practices-5784ac25e755)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

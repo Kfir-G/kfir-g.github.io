@@ -80,5 +80,3 @@ Add defense in depth against open firewalls, reverse proxies, and SSRF vulnerabi
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [August 6, 2023](https://medium.com/p/350bbe4e8c94).
 
 [Canonical link](https://medium.com/@Kfir-G/why-imdsv1-is-a-security-risk-for-cloud-infrastructure-350bbe4e8c94)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

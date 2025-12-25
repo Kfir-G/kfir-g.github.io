@@ -371,5 +371,3 @@ These are the _authoritative sources_ behind everything in this blog:
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [December 8, 2025](https://medium.com/p/c02de4a20dad).
 
 [Canonical link](https://medium.com/@Kfir-G/from-passive-fastapi-developer-to-real-fastapi-engineer-part-2-c02de4a20dad)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

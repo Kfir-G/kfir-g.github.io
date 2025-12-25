@@ -246,5 +246,3 @@ With these core fundamentals in place, you’re now equipped to dive deeper into
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [November 4, 2024](https://medium.com/p/1a377ee5b9a6).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-fastapi-fundamentals-a-guide-to-fastapi-uvicorn-starlette-swagger-ui-and-1a377ee5b9a6)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

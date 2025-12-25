@@ -106,5 +106,3 @@ Understanding the relationship between memory, CPU, and concurrency has a signif
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [November 26, 2024](https://medium.com/p/077a2a066273).
 
 [Canonical link](https://medium.com/@Kfir-G/this-small-python-script-improved-understanding-of-low-level-programming-077a2a066273)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

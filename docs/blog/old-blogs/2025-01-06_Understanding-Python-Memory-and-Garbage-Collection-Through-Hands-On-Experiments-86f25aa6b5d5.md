@@ -194,5 +194,3 @@ This knowledge helps you write more efficient and optimized Python code, particu
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [January 6, 2025](https://medium.com/p/86f25aa6b5d5).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-python-memory-and-garbage-collection-through-hands-on-experiments-86f25aa6b5d5)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

@@ -198,5 +198,3 @@ By using a **shared memory dictionary** , Python **reuses objects** instead of a
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [March 10, 2025](https://medium.com/p/87024446c93e).
 
 [Canonical link](https://medium.com/@Kfir-G/memory-allocation-in-python-understanding-arenas-pools-and-blocks-87024446c93e)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

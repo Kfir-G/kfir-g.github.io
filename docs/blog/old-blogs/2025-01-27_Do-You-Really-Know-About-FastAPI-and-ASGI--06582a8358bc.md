@@ -151,5 +151,3 @@ By appreciating their distinct yet interconnected roles, you can make more infor
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [January 27, 2025](https://medium.com/p/06582a8358bc).
 
 [Canonical link](https://medium.com/@Kfir-G/do-you-really-know-about-fastapi-and-asgi-06582a8358bc)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

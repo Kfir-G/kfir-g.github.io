@@ -89,5 +89,3 @@ Cloud Storage Bucket Versioning is a feature that can help you preserve and rest
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [August 23, 2023](https://medium.com/p/e6638beffac6).
 
 [Canonical link](https://medium.com/@Kfir-G/why-you-should-disable-cloud-storage-bucket-versioning-e6638beffac6)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

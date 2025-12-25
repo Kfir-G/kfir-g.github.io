@@ -186,5 +186,3 @@ If you’re building systems where correctness matters, you must treat consisten
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [June 1, 2025](https://medium.com/p/82ed2d1093ec).
 
 [Canonical link](https://medium.com/@Kfir-G/understanding-consistency-in-postgresql-a-deep-dive-into-the-c-in-acid-82ed2d1093ec)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

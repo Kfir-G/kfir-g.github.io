@@ -89,5 +89,3 @@ Thank you for reading until the end. Before you go:
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [June 19, 2024](https://medium.com/p/09a9618c0532).
 
 [Canonical link](https://medium.com/@Kfir-G/how-to-write-an-effective-readme-file-a-guide-for-software-engineers-09a9618c0532)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

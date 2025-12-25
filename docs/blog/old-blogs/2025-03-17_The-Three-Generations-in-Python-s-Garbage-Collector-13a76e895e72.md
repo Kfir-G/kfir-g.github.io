@@ -230,5 +230,3 @@ A FastAPI app **creates too many short-lived request objects** , increasing Gen 
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [March 17, 2025](https://medium.com/p/13a76e895e72).
 
 [Canonical link](https://medium.com/@Kfir-G/the-three-generations-in-pythons-garbage-collector-13a76e895e72)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.

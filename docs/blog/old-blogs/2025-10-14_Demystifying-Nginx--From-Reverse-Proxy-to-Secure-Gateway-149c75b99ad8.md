@@ -136,5 +136,3 @@ If you’re new to Nginx or just want to deepen your understanding, I highly rec
 By [Kfir Gisman](https://medium.com/@Kfir-G) on [October 14, 2025](https://medium.com/p/149c75b99ad8).
 
 [Canonical link](https://medium.com/@Kfir-G/demystifying-nginx-from-reverse-proxy-to-secure-gateway-149c75b99ad8)
-
-Exported from [Medium](https://medium.com) on December 20, 2025.
