@@ -20,15 +20,16 @@ I also write technical articles on Medium and Dev.to, contribute to open-source 
 
 ### Backend
 Python <img src="https://img.icons8.com/color/30/python.png" width="26">
-FastAPI <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fastapi.svg" width="26">
+FastAPI <img src="https://icon.icepanel.io/Technology/svg/FastAPI.svg" width="26">
 
 ### Cloud & Infra
+Nginx <img src="https://www.svgrepo.com/show/373924/nginx.svg" width="26">
 AWS <img src="https://img.icons8.com/color/30/amazon-web-services.png" width="26">
 Docker <img src="https://img.icons8.com/color/30/docker.png" width="26">
 Kubernetes <img src="https://img.icons8.com/color/30/kubernetes.png" width="26">
 Terraform <img src="https://img.icons8.com/color/30/terraform.png" width="26">
 
-### Security
+### Security & Auth
 Keycloak <img src="https://img.icons8.com/fluency/30/key-cloak.png" width="26">
 Vault <img src="https://img.icons8.com/ios/30/hashicorp.png" width="26">
 JWT <img src="https://img.icons8.com/color/30/java-web-token.png" width="26">
