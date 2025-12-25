@@ -31,7 +31,7 @@ Your application must respond with:
 ```
 lifespan.startup.complete
 lifespan.shutdown.complete
-````
+```
 
 This is how the server knows when your app is **ready to accept traffic** or **safe to terminate**.
 
@@ -55,7 +55,7 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     print("App is shutting down")
-````
+```
 
 This works, but it has limitations:
 
