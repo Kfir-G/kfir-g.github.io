@@ -14,11 +14,11 @@
 
 2. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 1: ASGI](old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae.md)  
 
-3. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 2](old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad.md)  
+3. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 2: Your First Raw ASGI App](old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad.md)  
 
 4. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 3: Middleware and Background Tasks](blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3.md)
 
-5. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 4](blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4.md)
+5. [From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifespan, Startup, Shutdown, and State](blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4.md)
 
 
 ##### Memory Topics
