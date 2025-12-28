@@ -9,6 +9,10 @@
 <!-- Blogs -->
 #### Blog Series
 
+##### New
+
+[How Software Engineers Should Do Good Research: The D in R&D](blogs/2025-12-27_how-swes-should-do-daily-research.md)
+
 ##### Dives into ASGI Series' Articles
 1. [Do You Really Know About FastAPI and ASGI?](old-blogs/2025-01-27_Do-You-Really-Know-About-FastAPI-and-ASGI--06582a8358bc.md)  
 
