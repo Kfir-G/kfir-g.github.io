@@ -11,6 +11,8 @@
 
 ##### New
 
+[Podcasts as a Supply Chain: A Missing Security Model](blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model.md)
+
 [How Software Engineers Should Do Good Research: The D in R&D](blogs/2025-12-27_how-swes-should-do-daily-research.md)
 
 ##### Dives into ASGI Series' Articles
