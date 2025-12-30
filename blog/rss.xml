@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Dec 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Dec 2025 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -56,6 +56,17 @@
         Research is a daily discipline, not a one-time task. This post breaks down how strong software engineers research tools, products, topics, and trends—and why consistent, ongoing research quietly compounds over time.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2025-12-27_how-swes-should-do-daily-research/</guid>
+    </item>
+
+    <!-- Post 6 -->
+    <item>
+      <title>Podcasts as a Supply Chain: A Missing Security Model</title>
+      <link>https://kfir-g.dev/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model/</link>
+      <pubDate>Sun, 30 Dec 2025 00:00:00 GMT</pubDate>
+      <description>
+        Podcasting operates as a large-scale, automated content distribution system, yet lacks the security properties commonly expected from supply chains. This article examines implicit trust assumptions in podcast RSS, content provenance, integrity, and why security modeling matters as podcasts grow in influence, monetization, and scale.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model/</guid>
     </item>
 
   </channel>
