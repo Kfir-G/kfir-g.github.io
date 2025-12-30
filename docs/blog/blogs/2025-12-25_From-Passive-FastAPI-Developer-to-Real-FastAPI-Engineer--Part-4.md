@@ -3,7 +3,7 @@ title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifes
 published: true
 date: 2025-12-25 00:00:00 UTC
 tags: fastapi,starlette,asgi,python,softwareengineering
-canonical_url: https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4
+canonical_url: https://kfir-g.dev/blog/blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/
 ---
 
 # From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifespan, Startup, Shutdown, and State
