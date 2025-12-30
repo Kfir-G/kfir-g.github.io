@@ -1,5 +1,5 @@
 ---
-title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 4: Lifespan, Startup, Shutdown, and State
+title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 4 Lifespan, Startup, Shutdown, and State
 published: true
 date: 2025-12-25 00:00:00 UTC
 tags: fastapi,starlette,asgi,python,softwareengineering
