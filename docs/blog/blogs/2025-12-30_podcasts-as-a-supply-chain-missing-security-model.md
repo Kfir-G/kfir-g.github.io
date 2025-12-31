@@ -3,7 +3,7 @@ title: Podcasts as a Supply Chain A Missing Security Model
 published: true
 date: 2025-12-30 00:00:00 UTC
 tags: podcasting,security,rss,supply-chain,infosec,media,protocols
-canonical_url: https://kfir-g.dev/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model.md
+canonical_url: https://kfir-g.dev/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model
 ---
 
 # Podcasts as a Supply Chain: A Missing Security Model
