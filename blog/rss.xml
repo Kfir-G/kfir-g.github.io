@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -62,12 +62,23 @@
     <item>
       <title>Podcasts as a Supply Chain: A Missing Security Model</title>
       <link>https://kfir-g.dev/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model/</link>
-      <pubDate>Sun, 30 Dec 2025 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 GMT</pubDate>
       <description>
         Podcasting operates as a large-scale, automated content distribution system, yet lacks the security properties commonly expected from supply chains. This article examines implicit trust assumptions in podcast RSS, content provenance, integrity, and why security modeling matters as podcasts grow in influence, monetization, and scale.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model/</guid>
     </item>
+
+    <!-- Post 7 -->
+    <item>
+      <title>Appendix - Feed Identity vs Content Integrity</title>
+      <link>https://kfir-g.dev/blog/blogs/2025-12-31_feed-identity-vs-content-integrity/</link>
+      <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
+      <description>
+        A concise explanation of the distinction between feed identity and content integrity in podcasting, highlighting their roles in ensuring listeners access the correct content.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2025-12-31_feed-identity-vs-content-integrity/</guid>
+    </item> 
 
   </channel>
 </rss>
