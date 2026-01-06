@@ -11,6 +11,8 @@
 
 ##### New
 
+[Async Tasks in Python- Why FastAPI Isn’t Enough and When You Need Celery](blogs/2026-01-06_async-tasks-fastapi-celery.md)
+
 [Appendix - Feed Identity vs Content Integrity](blogs/2025-12-31_feed-identity-vs-content-integrity.md)
 
 [Podcasts as a Supply Chain: A Missing Security Model](blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model.md)
