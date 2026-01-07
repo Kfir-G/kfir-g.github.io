@@ -11,6 +11,8 @@
 
 ##### New
 
+[AMQP Explained for Backend Engineers](blogs/2026-01-07_amqp-explained.md)
+
 [Async Tasks in Python- Why FastAPI Isn’t Enough and When You Need Celery](blogs/2026-01-06_async-tasks-fastapi-celery.md)
 
 [Appendix - Feed Identity vs Content Integrity](blogs/2025-12-31_feed-identity-vs-content-integrity.md)
