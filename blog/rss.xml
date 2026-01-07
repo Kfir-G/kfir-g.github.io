@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 Dec 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -84,11 +84,22 @@
     <item>
       <title>Async Tasks in Python: Why FastAPI Isn’t Enough and When You Need Celery</title>
       <link>https://kfir-g.dev/blog/blogs/2026-01-06_async-tasks-fastapi-celery</link>
-      <pubDate>Tue, 06 Jan 2026 00:00:00 GMT</pubDate>
+      <pubDate>Mon, 06 Jan 2026 00:00:00 GMT</pubDate>
       <description>
         A backend-focused deep dive into async task execution in Python. Explains the limits of FastAPI background tasks and why mature systems rely on Celery, message brokers, and distributed workers.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-06_async-tasks-fastapi-celery</guid>
+    </item>
+
+    <!-- Post 5 -->
+    <item>
+      <title>Understanding AMQP: The Protocol Behind Reliable Messaging</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</link>
+      <pubDate>Tue, 07 Jan 2026 00:00:00 GMT</pubDate>
+      <description>
+        A practical deep dive into the AMQP protocol. Learn how brokers, exchanges, queues, and acknowledgements work together—and why AMQP quietly powers reliable backend systems at scale.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</guid>
     </item>
 
   </channel>

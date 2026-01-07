@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/old-blogs/2024-09-23_Unleash-the-Power-of--FastAPI--Async-vs-Blocking-I-O-7ec80edb7320/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2026-01-07_amqp-explained/">
       
       
-        <link rel="prev" href="../2024-08-12_Mastering-Error-Handling--A-Comprehensive-Guide-9db00b203f15/">
+        <link rel="prev" href="../2026-01-06_async-tasks-fastapi-celery/">
       
       
-        <link rel="next" href="../2024-09-30_Understanding-FastAPI-s-UploadFile--The-Starlette-Connection-bcf4b69d0439/">
+        <link rel="next" href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Unleash The Power Of  Fastapi  Async Vs Blocking I O - Kfir's Site</title>
+        <title>AMQP Explained for Backend Engineers - Kfir's Site</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#unleash-the-power-of-fastapi-async-vs-blocking-io" class="md-skip">
+        <a href="#amqp-explained-for-backend-engineers" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unleash The Power Of  Fastapi  Async Vs Blocking I O
+              AMQP Explained for Backend Engineers
             
           </span>
         </div>
@@ -449,8 +449,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -464,13 +466,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
@@ -491,7 +491,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -509,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/" class="md-nav__link">
+      <a href="../2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/" class="md-nav__link">
         
   
   
@@ -537,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/" class="md-nav__link">
+      <a href="../2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/" class="md-nav__link">
         
   
   
@@ -565,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blogs/2025-12-27_how-swes-should-do-daily-research/" class="md-nav__link">
+      <a href="../2025-12-27_how-swes-should-do-daily-research/" class="md-nav__link">
         
   
   
@@ -593,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model/" class="md-nav__link">
+      <a href="../2025-12-30_podcasts-as-a-supply-chain-missing-security-model/" class="md-nav__link">
         
   
   
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blogs/2025-12-31_feed-identity-vs-content-integrity/" class="md-nav__link">
+      <a href="../2025-12-31_feed-identity-vs-content-integrity/" class="md-nav__link">
         
   
   
@@ -649,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blogs/2026-01-06_async-tasks-fastapi-celery/" class="md-nav__link">
+      <a href="../2026-01-06_async-tasks-fastapi-celery/" class="md-nav__link">
         
   
   
@@ -657,491 +657,6 @@
     
   
     Async Tasks in Python- Why FastAPI Isn’t Enough and When You Need Celery
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../blogs/2026-01-07_amqp-explained/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AMQP Explained for Backend Engineers
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-          
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Old blogs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Old blogs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Spotify   Genres Network Analysis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2022-03-20_Spotify--Genres-Network-Analysis-by-Through-Decades-b7d325f9677a/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Spotify  Genres Network Analysis By Through Decades
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-07-04_Inyecci-n-de-Shell-en-CI-CD-de-GitHub-Actions-83f03a7252ce/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Inyecci N De Shell En Ci Cd De Github Actions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-07-09_Shell-injection-in-GitHub-Actions-CI-CD-dc137317bc9/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Shell Injection In Github Actions Ci Cd
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-07-20_Por-qu--IMDSv1-es-un-riesgo-de-seguridad-para-la-infraestructura-en-nube-891c3668efc5/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Por Qu  Imdsv1 Es Un Riesgo De Seguridad Para La Infraestructura En Nube
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-08-06_Why-IMDSv1-is-a-Security-Risk-for-Cloud-Infrastructure-350bbe4e8c94/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Why Imdsv1 Is A Security Risk For Cloud Infrastructure
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-08-23_Why-You-Should-Disable-Cloud-Storage-Bucket-Versioning-e6638beffac6/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Why You Should Disable Cloud Storage Bucket Versioning
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-08-24_Por-Qu--Deber-as-Desactivar-el-Control-de-Versiones-de-Los-Dep-sitos-de-Almacenamiento-en-La-Nube-c8051bdb3738/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Por Qu  Deber As Desactivar El Control De Versiones De Los Dep Sitos De Almacenamiento En La Nube
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2023-12-29_Securing-Docker--Non-Root-User-Best-Practices-5784ac25e755/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Securing Docker  Non Root User Best Practices
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2024-01-04_Asegurando-Docker--Mejores-Pr-cticas-para-Usuarios-Non-Root-aafb40f7766b/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Asegurando Docker  Mejores Pr Cticas Para Usuarios Non Root
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2024-04-15_Solving-Logs-Woes--A-Dive-into-Singleton-Design-Pattern-1f77e70bd498/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Solving Logs Woes  A Dive Into Singleton Design Pattern
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2024-05-22_Enhancing-Software-Architecture-through-Comprehensive-Testing-in-Backend-Development-26555424f7a0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Enhancing Software Architecture Through Comprehensive Testing In Backend Development
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2024-06-19_How-to-Write-an-Effective-README-File---A-Guide-for-Software-Engineers-09a9618c0532/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    How To Write An Effective Readme File   A Guide For Software Engineers
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2024-08-12_Mastering-Error-Handling--A-Comprehensive-Guide-9db00b203f15/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mastering Error Handling  A Comprehensive Guide
   
 
     
@@ -1178,7 +693,7 @@
   <span class="md-ellipsis">
     
   
-    Unleash The Power Of  Fastapi  Async Vs Blocking I O
+    AMQP Explained for Backend Engineers
   
 
     
@@ -1196,7 +711,7 @@
   <span class="md-ellipsis">
     
   
-    Unleash The Power Of  Fastapi  Async Vs Blocking I O
+    AMQP Explained for Backend Engineers
   
 
     
@@ -1222,22 +737,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#unleash-the-power-of-fastapi-async-vs-blocking-io_1" class="md-nav__link">
+  <a href="#what-is-amqp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Unleash the Power of FastAPI: Async vs Blocking I/O
+        What Is AMQP?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Unleash the Power of FastAPI: Async vs Blocking I/O">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-amqp-exists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why AMQP Exists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-amqp-concepts-the-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core AMQP Concepts (The Mental Model)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core AMQP Concepts (The Mental Model)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#why-does-concurrency-matter" class="md-nav__link">
+  <a href="#producer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Does Concurrency Matter?
+        Producer
       
     </span>
   </a>
@@ -1245,10 +782,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#code-example" class="md-nav__link">
+  <a href="#exchange" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Code Example
+        Exchange
       
     </span>
   </a>
@@ -1256,10 +793,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blocking-io-in-fastapi" class="md-nav__link">
+  <a href="#queue" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Blocking I/O in FastAPI
+        Queue
       
     </span>
   </a>
@@ -1267,10 +804,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#non-blocking-io-fastapis-strength" class="md-nav__link">
+  <a href="#consumer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Non-Blocking I/O: FastAPI’s Strength
+        Consumer
       
     </span>
   </a>
@@ -1278,32 +815,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#when-to-use-def-vs-async-def-in-fastapi" class="md-nav__link">
+  <a href="#broker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When to Use def vs async def in FastAPI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#concurrency-in-action" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Concurrency in Action
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#handling-multiple-requests-concurrently" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Handling Multiple Requests Concurrently
+        Broker
       
     </span>
   </a>
@@ -1316,10 +831,71 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
+  <a href="#exchange-types-routing-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Final Thoughts
+        Exchange Types (Routing Rules)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exchange Types (Routing Rules)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fanout-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fanout Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#topic-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topic Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headers-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headers Exchange
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Message Lifecycle
       
     </span>
   </a>
@@ -1327,10 +903,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#delivery-guarantees" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        Delivery Guarantees
       
     </span>
   </a>
@@ -1338,10 +914,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#in-plain-english" class="md-nav__link">
+  <a href="#durability-and-persistence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        In Plain English 🚀
+        Durability and Persistence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amqp-vs-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMQP vs HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amqp-in-real-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMQP in Real Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-amqp-is-the-right-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When AMQP Is the Right Choice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing Thought
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#official-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Official References
       
     </span>
   </a>
@@ -1357,6 +988,71 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Old blogs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Old blogs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -1364,7 +1060,427 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024-09-30_Understanding-FastAPI-s-UploadFile--The-Starlette-Connection-bcf4b69d0439/" class="md-nav__link">
+      <a href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify   Genres Network Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2022-03-20_Spotify--Genres-Network-Analysis-by-Through-Decades-b7d325f9677a/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify  Genres Network Analysis By Through Decades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-07-04_Inyecci-n-de-Shell-en-CI-CD-de-GitHub-Actions-83f03a7252ce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inyecci N De Shell En Ci Cd De Github Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-07-09_Shell-injection-in-GitHub-Actions-CI-CD-dc137317bc9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shell Injection In Github Actions Ci Cd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-07-20_Por-qu--IMDSv1-es-un-riesgo-de-seguridad-para-la-infraestructura-en-nube-891c3668efc5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Por Qu  Imdsv1 Es Un Riesgo De Seguridad Para La Infraestructura En Nube
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-08-06_Why-IMDSv1-is-a-Security-Risk-for-Cloud-Infrastructure-350bbe4e8c94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Imdsv1 Is A Security Risk For Cloud Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-08-23_Why-You-Should-Disable-Cloud-Storage-Bucket-Versioning-e6638beffac6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why You Should Disable Cloud Storage Bucket Versioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-08-24_Por-Qu--Deber-as-Desactivar-el-Control-de-Versiones-de-Los-Dep-sitos-de-Almacenamiento-en-La-Nube-c8051bdb3738/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Por Qu  Deber As Desactivar El Control De Versiones De Los Dep Sitos De Almacenamiento En La Nube
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2023-12-29_Securing-Docker--Non-Root-User-Best-Practices-5784ac25e755/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Securing Docker  Non Root User Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-01-04_Asegurando-Docker--Mejores-Pr-cticas-para-Usuarios-Non-Root-aafb40f7766b/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Asegurando Docker  Mejores Pr Cticas Para Usuarios Non Root
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-04-15_Solving-Logs-Woes--A-Dive-into-Singleton-Design-Pattern-1f77e70bd498/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solving Logs Woes  A Dive Into Singleton Design Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-05-22_Enhancing-Software-Architecture-through-Comprehensive-Testing-in-Backend-Development-26555424f7a0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enhancing Software Architecture Through Comprehensive Testing In Backend Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-06-19_How-to-Write-an-Effective-README-File---A-Guide-for-Software-Engineers-09a9618c0532/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How To Write An Effective Readme File   A Guide For Software Engineers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-08-12_Mastering-Error-Handling--A-Comprehensive-Guide-9db00b203f15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mastering Error Handling  A Comprehensive Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-09-23_Unleash-the-Power-of--FastAPI--Async-vs-Blocking-I-O-7ec80edb7320/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unleash The Power Of  Fastapi  Async Vs Blocking I O
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../old-blogs/2024-09-30_Understanding-FastAPI-s-UploadFile--The-Starlette-Connection-bcf4b69d0439/" class="md-nav__link">
         
   
   
@@ -1392,7 +1508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024-10-12_Building-Robust-Components-with-FastAPI-and-Pydantic-a99e34532241/" class="md-nav__link">
+      <a href="../../old-blogs/2024-10-12_Building-Robust-Components-with-FastAPI-and-Pydantic-a99e34532241/" class="md-nav__link">
         
   
   
@@ -1420,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024-10-28_Raising-the-Difference-Between-raise-and-raise-e-941a3612aea5/" class="md-nav__link">
+      <a href="../../old-blogs/2024-10-28_Raising-the-Difference-Between-raise-and-raise-e-941a3612aea5/" class="md-nav__link">
         
   
   
@@ -1448,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024-11-04_Understanding-FastAPI-Fundamentals--A-Guide-to-FastAPI--Uvicorn--Starlette--Swagger-UI--and--1a377ee5b9a6/" class="md-nav__link">
+      <a href="../../old-blogs/2024-11-04_Understanding-FastAPI-Fundamentals--A-Guide-to-FastAPI--Uvicorn--Starlette--Swagger-UI--and--1a377ee5b9a6/" class="md-nav__link">
         
   
   
@@ -1476,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2024-11-26_This-Small-Python-Script-Improved-Understanding-of-Low-Level-Programming-077a2a066273/" class="md-nav__link">
+      <a href="../../old-blogs/2024-11-26_This-Small-Python-Script-Improved-Understanding-of-Low-Level-Programming-077a2a066273/" class="md-nav__link">
         
   
   
@@ -1504,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-01-06_Understanding-Python-Memory-and-Garbage-Collection-Through-Hands-On-Experiments-86f25aa6b5d5/" class="md-nav__link">
+      <a href="../../old-blogs/2025-01-06_Understanding-Python-Memory-and-Garbage-Collection-Through-Hands-On-Experiments-86f25aa6b5d5/" class="md-nav__link">
         
   
   
@@ -1532,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-01-20_Why-You-Should-Use-a-Single-FastAPI-App-and-TestClient-Instance-475ab3a99cce/" class="md-nav__link">
+      <a href="../../old-blogs/2025-01-20_Why-You-Should-Use-a-Single-FastAPI-App-and-TestClient-Instance-475ab3a99cce/" class="md-nav__link">
         
   
   
@@ -1560,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-01-27_Do-You-Really-Know-About-FastAPI-and-ASGI--06582a8358bc/" class="md-nav__link">
+      <a href="../../old-blogs/2025-01-27_Do-You-Really-Know-About-FastAPI-and-ASGI--06582a8358bc/" class="md-nav__link">
         
   
   
@@ -1588,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-03-10_Memory-Allocation-in-Python--Understanding-Arenas--Pools--and-Blocks-87024446c93e/" class="md-nav__link">
+      <a href="../../old-blogs/2025-03-10_Memory-Allocation-in-Python--Understanding-Arenas--Pools--and-Blocks-87024446c93e/" class="md-nav__link">
         
   
   
@@ -1616,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-03-17_The-Three-Generations-in-Python-s-Garbage-Collector-13a76e895e72/" class="md-nav__link">
+      <a href="../../old-blogs/2025-03-17_The-Three-Generations-in-Python-s-Garbage-Collector-13a76e895e72/" class="md-nav__link">
         
   
   
@@ -1644,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-03-30_What-Really-Happens-When-You-Type-google-com-in-Your-Browser--c33e8c2e6eed/" class="md-nav__link">
+      <a href="../../old-blogs/2025-03-30_What-Really-Happens-When-You-Type-google-com-in-Your-Browser--c33e8c2e6eed/" class="md-nav__link">
         
   
   
@@ -1672,7 +1788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-04-15_---7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault-9e56e42251bf/" class="md-nav__link">
+      <a href="../../old-blogs/2025-04-15_---7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault-9e56e42251bf/" class="md-nav__link">
         
   
   
@@ -1700,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-05-12_Understanding-Atomicity-in-PostgreSQL--A-Deep-Dive-into-the--A--in-ACID-5bde6fd042e3/" class="md-nav__link">
+      <a href="../../old-blogs/2025-05-12_Understanding-Atomicity-in-PostgreSQL--A-Deep-Dive-into-the--A--in-ACID-5bde6fd042e3/" class="md-nav__link">
         
   
   
@@ -1728,7 +1844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-06-01_Understanding-Consistency-in-PostgreSQL--A-Deep-Dive-into-the--C--in-ACID-82ed2d1093ec/" class="md-nav__link">
+      <a href="../../old-blogs/2025-06-01_Understanding-Consistency-in-PostgreSQL--A-Deep-Dive-into-the--C--in-ACID-82ed2d1093ec/" class="md-nav__link">
         
   
   
@@ -1756,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-07-07_Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the--D--in-ACID-af42ce13fb2b/" class="md-nav__link">
+      <a href="../../old-blogs/2025-07-07_Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the--D--in-ACID-af42ce13fb2b/" class="md-nav__link">
         
   
   
@@ -1784,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-07-07_Understanding-Isolation-in-PostgreSQL--A-Deep-Dive-into-the--I--in-ACID-c493d635a35b/" class="md-nav__link">
+      <a href="../../old-blogs/2025-07-07_Understanding-Isolation-in-PostgreSQL--A-Deep-Dive-into-the--I--in-ACID-c493d635a35b/" class="md-nav__link">
         
   
   
@@ -1812,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-10-14_Demystifying-Nginx--From-Reverse-Proxy-to-Secure-Gateway-149c75b99ad8/" class="md-nav__link">
+      <a href="../../old-blogs/2025-10-14_Demystifying-Nginx--From-Reverse-Proxy-to-Secure-Gateway-149c75b99ad8/" class="md-nav__link">
         
   
   
@@ -1840,7 +1956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-10-20_How-the-Browser-Works-4026ab114d78/" class="md-nav__link">
+      <a href="../../old-blogs/2025-10-20_How-the-Browser-Works-4026ab114d78/" class="md-nav__link">
         
   
   
@@ -1868,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-11-02_Shipping-FastAPI-Like-a-Pro--My-CI-CD-Pipeline-for-TinyURL-c27b68434f04/" class="md-nav__link">
+      <a href="../../old-blogs/2025-11-02_Shipping-FastAPI-Like-a-Pro--My-CI-CD-Pipeline-for-TinyURL-c27b68434f04/" class="md-nav__link">
         
   
   
@@ -1896,7 +2012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-11-10_Why-I-Use-curl-Instead-of-Postman--Learning-HTTP-by-Feel-2fd88ef90fb7/" class="md-nav__link">
+      <a href="../../old-blogs/2025-11-10_Why-I-Use-curl-Instead-of-Postman--Learning-HTTP-by-Feel-2fd88ef90fb7/" class="md-nav__link">
         
   
   
@@ -1924,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae/" class="md-nav__link">
+      <a href="../../old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae/" class="md-nav__link">
         
   
   
@@ -1952,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad/" class="md-nav__link">
+      <a href="../../old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad/" class="md-nav__link">
         
   
   
@@ -2357,73 +2473,172 @@
 
 
 
-<h1 id="unleash-the-power-of-fastapi-async-vs-blocking-io">Unleash the Power of FastAPI: Async vs Blocking I/O</h1>
-<p>Discover how to optimize FastAPI by using async functions for concurrent request handling </p>
-<hr />
-<h3 id="unleash-the-power-of-fastapi-async-vs-blocking-io_1">Unleash the Power of FastAPI: Async vs Blocking I/O</h3>
-<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*nET639qEQVDGFtet1KBZVQ.jpeg" /></p>
-<p>Are you ready to maximize your FastAPI application’s performance? In this article, we’ll explore how FastAPI handles concurrent requests and how you can optimize your app by leveraging async functions over traditional blocking I/O. By the end, you’ll have a deeper understanding of when to use <code>async def</code> versus <code>def</code> and how to make your FastAPI APIs run blazingly fast!</p>
-<h4 id="why-does-concurrency-matter">Why Does Concurrency Matter?</h4>
-<p>Handling multiple requests concurrently can dramatically improve the responsiveness of your web applications. A web server that can handle multiple requests at once is crucial in modern applications, especially when serving numerous users simultaneously.</p>
-<p>FastAPI, powered by Python’s <code>asyncio</code> library, makes concurrent request handling a breeze with its support for asynchronous programming. The question is: how do we compare blocking and non-blocking I/O, and how does that impact our FastAPI applications?</p>
-<h4 id="code-example">Code Example</h4>
-<p>To demonstrate how FastAPI handles concurrent requests and to understand the performance differences between <code>async def</code> and <code>def</code>, we’ll create a simple example where we compare blocking I/O with non-blocking I/O using <code>time.sleep</code> and <code>asyncio.sleep</code>. Visit the Code example <a href="https://gist.github.com/Kfir-G/c04659467de03dfe90b32356a4a11ea5"><strong>here</strong></a>.</p>
-<h4 id="blocking-io-in-fastapi">Blocking I/O in FastAPI</h4>
-<p>Let’s first take a look at how traditional blocking I/O works in FastAPI. For this, we’ll use Python’s built-in <code>time.sleep()</code> to simulate an I/O-bound task that blocks the thread for 5 seconds:</p>
-<pre><code>@app.get("/blocking")  
-def blocking_io():  
- time.sleep(5)  
- return {"message": "Blocking I/O completed"}
-</code></pre>
-<p>This blocks the entire application’s thread, meaning no other requests can be processed while this one is running. This is highly inefficient if your application needs to handle many simultaneous users.</p>
-<h4 id="non-blocking-io-fastapis-strength">Non-Blocking I/O: FastAPI’s Strength</h4>
-<p>With FastAPI, you can easily switch to non-blocking I/O using <code>async def</code> functions and <code>asyncio.sleep()</code>:</p>
-<pre><code>@app.get("/non-blocking")  
-async def non_blocking_io():  
- await asyncio.sleep(5)  
- return {"message": "Non-blocking I/O completed"}
-</code></pre>
-<p>In this case, while one request is waiting, other requests can be processed because <code>asyncio.sleep()</code> doesn’t block the server’s main thread. This improves performance and allows FastAPI to handle more requests concurrently.</p>
-<h4 id="when-to-use-def-vs-async-def-in-fastapi">When to Use <code>def</code> vs async def in FastAPI</h4>
-<p>- Use <code>def</code> for CPU-bound tasks where the operation can benefit from parallel execution using a thread pool.</p>
-<p>- Use <code>async def</code> for I/O-bound tasks like waiting on a database, API calls, or file I/O, where non-blocking behavior is essential to maximize performance.</p>
-<h4 id="concurrency-in-action">Concurrency in Action</h4>
-<p>FastAPI excels in handling concurrent requests. You can simulate concurrent execution using <code>asyncio.gather()</code>:</p>
-<pre><code>@app.get("/compare")  
-async def compare():  
- await asyncio.gather(non_blocking_io(), non_blocking_io())  
- return {"message": "Both async operations completed concurrently"}
-</code></pre>
-<p>Here, two asynchronous functions are executed concurrently, allowing your application to handle multiple tasks at the same time.</p>
-<h4 id="handling-multiple-requests-concurrently">Handling Multiple Requests Concurrently</h4>
-<p>The real power of async becomes evident when you need to handle many requests concurrently. With FastAPI, it’s easy to spin up multiple non-blocking tasks:</p>
-<pre><code>@app.get("/benchmark")  
-async def benchmark():  
- tasks = [non_blocking_io() for _ in range(10)]  
- await asyncio.gather(*tasks)  
- return {"message": "Handled 10 concurrent requests!"}
-</code></pre>
-<p>This approach scales well, enabling your application to serve more users without being held back by blocking I/O operations.</p>
-<h3 id="final-thoughts">Final Thoughts</h3>
-<p>FastAPI, with its native support for asynchronous programming, empowers you to build high-performance applications. By understanding the differences between blocking and non-blocking I/O, and when to use <code>async def</code> vs <code>def</code>, you can optimize your API’s performance to handle concurrent requests efficiently.</p>
-<p>Stay tuned for more FastAPI deep dives, and happy coding!</p>
-<hr />
-<h3 id="references">References</h3>
-<p>1. <a href="https://fastapi.tiangolo.com/">FastAPI Official Documentation</a></p>
-<p>2. <a href="https://docs.python.org/3/library/asyncio.html">Python’s asyncio Documentation</a></p>
-<p>3. <a href="https://docs.python.org/3/library/threading.html">Threading in Python</a></p>
-<p>4. <a href="https://realpython.com/python-concurrency/">Concurrency in Python: Understanding Async and Threading</a></p>
-<p>5. <a href="https://fastapi.tiangolo.com/async/">FastAPI Performance Benchmark</a></p>
-<h3 id="in-plain-english">In Plain English 🚀</h3>
-<p><em>Thank you for being a part of the</em><a href="https://plainenglish.io">** <em>In Plain English</em>**</a> <em>community! Before you go:</em></p>
+<h1 id="amqp-explained-for-backend-engineers">AMQP Explained for Backend Engineers</h1>
+<p>At some point, every backend system outgrows direct request–response flows.</p>
+<p>You add background jobs.<br />
+You decouple services.<br />
+You need reliability when processes crash.</p>
+<p>This is where <strong>message-oriented architectures</strong> appear-and AMQP is one of the most important protocols behind them.</p>
+<p>This post explains <strong>what AMQP actually is</strong>, how it works, and why backend engineers should understand it-even if they never implement a broker themselves.</p>
+<h2 id="what-is-amqp">What Is AMQP?</h2>
+<p><strong>AMQP (Advanced Message Queuing Protocol)</strong> is an open, binary, application-layer protocol designed for <strong>reliable, asynchronous message passing</strong> between distributed systems.</p>
+<p>AMQP is not:
+- A message broker
+- A queue implementation
+- A library</p>
+<p>It is a <strong>protocol</strong>-a contract that defines how producers, brokers, and consumers communicate.</p>
+<p>RabbitMQ is the most common AMQP implementation, but the protocol itself is independent of any vendor.</p>
+<h2 id="why-amqp-exists">Why AMQP Exists</h2>
+<p>HTTP is great for synchronous communication.</p>
+<p>It’s terrible when:
+- The consumer is down
+- Work takes minutes or hours
+- You need retries, ordering, or durability
+- You want to decouple producers from consumers</p>
+<p>AMQP was designed to solve these problems by:
+- Decoupling senders and receivers
+- Persisting messages
+- Supporting routing and fan-out
+- Enabling fault tolerance by design</p>
+<h2 id="core-amqp-concepts-the-mental-model">Core AMQP Concepts (The Mental Model)</h2>
+<p>If you only remember one thing, remember this:</p>
+<blockquote>
+<p><strong>Producers never talk directly to queues.</strong></p>
+</blockquote>
+<h3 id="producer">Producer</h3>
+<p>A service that <strong>publishes messages</strong> to an exchange.</p>
+<h3 id="exchange">Exchange</h3>
+<p>A routing layer that decides <strong>where messages go</strong>.
+It receives messages and routes them to queues based on rules.</p>
+<h3 id="queue">Queue</h3>
+<p>A buffer that <strong>stores messages</strong> until a consumer processes them.</p>
+<h3 id="consumer">Consumer</h3>
+<p>A process that <strong>pulls messages</strong> from a queue and handles them.</p>
+<h3 id="broker">Broker</h3>
+<p>The server that hosts exchanges, queues, and routing logic.</p>
+<h2 id="exchange-types-routing-rules">Exchange Types (Routing Rules)</h2>
+<p>AMQP routing happens inside exchanges.</p>
+<h3 id="direct-exchange">Direct Exchange</h3>
 <ul>
-<li>Be sure to <strong>clap</strong> and <strong>follow</strong> the writer ️👏<strong>️️</strong></li>
-<li>Follow us: <a href="https://twitter.com/inPlainEngHQ"><strong>X</strong></a> | <a href="https://www.linkedin.com/company/inplainenglish/"><strong>LinkedIn</strong></a> | <a href="https://www.youtube.com/channel/UCtipWUghju290NWcn8jhyAw"><strong>YouTube</strong></a> | <a href="https://discord.gg/in-plain-english-709094664682340443"><strong>Discord</strong></a> | <a href="https://newsletter.plainenglish.io/"><strong>Newsletter</strong></a></li>
-<li>Visit our other platforms: <a href="https://cofeed.app/"><strong>CoFeed</strong></a> | <a href="https://differ.blog/"><strong>Differ</strong></a></li>
-<li>More content at <a href="https://plainenglish.io"><strong>PlainEnglish.io</strong></a></li>
+<li>Routes messages by exact routing key match</li>
+<li>Common for task queues</li>
 </ul>
-<p>By <a href="https://medium.com/@Kfir-G">Kfir Gisman</a> on <a href="https://medium.com/p/7ec80edb7320">September 23, 2024</a>.</p>
-<p><a href="https://medium.com/@Kfir-G/unleash-the-power-of-fastapi-async-vs-blocking-i-o-7ec80edb7320">Canonical link</a></p>
+<h3 id="fanout-exchange">Fanout Exchange</h3>
+<ul>
+<li>Broadcasts messages to all bound queues</li>
+<li>Used for pub/sub events</li>
+</ul>
+<h3 id="topic-exchange">Topic Exchange</h3>
+<ul>
+<li>Pattern-based routing (<code>order.*</code>, <code>*.created</code>)</li>
+<li>Very common in event-driven systems</li>
+</ul>
+<h3 id="headers-exchange">Headers Exchange</h3>
+<ul>
+<li>Routes based on message headers</li>
+<li>Rare, but flexible</li>
+</ul>
+<p>Routing logic is explicit and predictable-this is one of AMQP’s strengths.</p>
+<h2 id="message-lifecycle">Message Lifecycle</h2>
+<p>A typical flow looks like this:</p>
+<ol>
+<li>Producer publishes a message to an exchange</li>
+<li>Exchange routes the message to one or more queues</li>
+<li>Broker persists the message (if durable)</li>
+<li>Consumer receives the message</li>
+<li>Consumer acknowledges processing</li>
+<li>Broker removes the message</li>
+</ol>
+<p>If the consumer crashes before acknowledgment, the message <strong>returns to the queue</strong>.</p>
+<p>This is reliability by protocol, not by convention.</p>
+<h2 id="delivery-guarantees">Delivery Guarantees</h2>
+<p>AMQP supports multiple delivery semantics:</p>
+<ul>
+<li><strong>At-most-once</strong> – fast, but messages can be lost</li>
+<li><strong>At-least-once</strong> – reliable, but requires idempotency</li>
+<li><strong>Exactly-once</strong> – not truly achievable in distributed systems</li>
+</ul>
+<p>Most production systems use <strong>at-least-once delivery</strong> and handle duplicates at the application level.</p>
+<h2 id="durability-and-persistence">Durability and Persistence</h2>
+<p>AMQP allows you to configure:
+- Durable exchanges
+- Durable queues
+- Persistent messages</p>
+<p>Together, these ensure messages survive:
+- Broker restarts
+- Worker crashes
+- Temporary outages</p>
+<p>Without durability, AMQP behaves more like an in-memory event bus.</p>
+<h2 id="amqp-vs-http">AMQP vs HTTP</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>HTTP</th>
+<th>AMQP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Communication</td>
+<td>Synchronous</td>
+<td>Asynchronous</td>
+</tr>
+<tr>
+<td>Coupling</td>
+<td>Tight</td>
+<td>Loose</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>Client-managed</td>
+<td>Broker-managed</td>
+</tr>
+<tr>
+<td>Retries</td>
+<td>Manual</td>
+<td>Built-in</td>
+</tr>
+<tr>
+<td>Backpressure</td>
+<td>Poor</td>
+<td>Native</td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Vertical</td>
+<td>Horizontal</td>
+</tr>
+</tbody>
+</table>
+<p>They solve different problems-and often coexist.</p>
+<h2 id="amqp-in-real-systems">AMQP in Real Systems</h2>
+<p>You rarely “use AMQP directly”.</p>
+<p>You use it through:
+- <strong>Celery</strong> (task queues)
+- <strong>RabbitMQ</strong> (message broker)
+- <strong>MassTransit / Kombu</strong> (client libraries)</p>
+<p>FastAPI handles HTTP.
+AMQP handles <strong>everything that shouldn’t block HTTP</strong>.</p>
+<h2 id="when-amqp-is-the-right-choice">When AMQP Is the Right Choice</h2>
+<p>AMQP shines when:
+- Tasks take longer than a request lifecycle
+- Reliability matters more than latency
+- You need retries, delays, or scheduling
+- Systems must survive partial failure
+- Services should not know about each other</p>
+<p>If you’re building serious backend infrastructure, AMQP is not optional knowledge.</p>
+<h2 id="closing-thought">Closing Thought</h2>
+<p>AMQP isn’t exciting, and you probably won’t think about it most days.
+But when systems fail under load, during deploys, or at 3 a.m., it’s often the difference between lost work and a system that recovers quietly.
+Knowing how it works makes you a better backend engineer, even if you never touch the broker directly.</p>
+<h2 id="official-references">Official References</h2>
+<ul>
+<li>AMQP 0-9-1 Specification<br />
+  https://www.rabbitmq.com/resources/specs/amqp0-9-1.pdf</li>
+<li>RabbitMQ AMQP Concepts<br />
+  https://www.rabbitmq.com/tutorials/amqp-concepts.html</li>
+</ul>
 
 
 
