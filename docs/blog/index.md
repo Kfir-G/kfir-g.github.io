@@ -11,6 +11,8 @@
 
 ##### New
 
+[The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks](blogs/2026-01-10_the-ultimate-celery-internals-guide.md)
+
 [AMQP Explained for Backend Engineers](blogs/2026-01-07_amqp-explained.md)
 
 [Async Tasks in Python- Why FastAPI Isn’t Enough and When You Need Celery](blogs/2026-01-06_async-tasks-fastapi-celery.md)
