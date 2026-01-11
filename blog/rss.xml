@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 10:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -91,7 +91,7 @@
       <guid>https://kfir-g.dev/blog/blogs/2026-01-06_async-tasks-fastapi-celery</guid>
     </item>
 
-    <!-- Post 5 -->
+    <!-- Post 9 -->
     <item>
       <title>Understanding AMQP: The Protocol Behind Reliable Messaging</title>
       <link>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</link>
@@ -100,6 +100,17 @@
         A practical deep dive into the AMQP protocol. Learn how brokers, exchanges, queues, and acknowledgements work together—and why AMQP quietly powers reliable backend systems at scale.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</guid>
+    </item>
+    
+    <!-- Post 10 -->
+    <item>
+      <title>The Ultimate Celery Internals Guide</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+      <description>
+        A deep, end-to-end breakdown of Celery’s architecture — from FastAPI task calls, AMQP routing, serialization, worker pools, retries, scheduling, and result backends. This guide explains how Celery actually works under the hood and how to build reliable distributed task systems in Python.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide</guid>
     </item>
 
   </channel>

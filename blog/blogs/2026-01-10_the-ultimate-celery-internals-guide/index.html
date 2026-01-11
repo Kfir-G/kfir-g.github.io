@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2026-01-07_amqp-explained/">
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide/">
       
       
-        <link rel="prev" href="../2026-01-06_async-tasks-fastapi-celery/">
+        <link rel="prev" href="../2026-01-07_amqp-explained/">
       
       
-        <link rel="next" href="../2026-01-10_the-ultimate-celery-internals-guide/">
+        <link rel="next" href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>AMQP Explained for Backend Engineers - Kfir's Site</title>
+        <title>The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks - Kfir's Site</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#amqp-explained-for-backend-engineers" class="md-skip">
+        <a href="#the-ultimate-celery-internals-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AMQP Explained for Backend Engineers
+              The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks
             
           </span>
         </div>
@@ -674,6 +674,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../2026-01-07_amqp-explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMQP Explained for Backend Engineers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -693,7 +721,7 @@
   <span class="md-ellipsis">
     
   
-    AMQP Explained for Backend Engineers
+    The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks
   
 
     
@@ -711,7 +739,7 @@
   <span class="md-ellipsis">
     
   
-    AMQP Explained for Backend Engineers
+    The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks
   
 
     
@@ -737,10 +765,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-amqp" class="md-nav__link">
+  <a href="#1-architecture-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Is AMQP?
+        1. Architecture Overview
       
     </span>
   </a>
@@ -748,10 +776,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-amqp-exists" class="md-nav__link">
+  <a href="#2-serialization-deserialization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why AMQP Exists
+        2. Serialization &amp; Deserialization
       
     </span>
   </a>
@@ -759,143 +787,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-amqp-concepts-the-mental-model" class="md-nav__link">
+  <a href="#3-task-options-strategies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core AMQP Concepts (The Mental Model)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core AMQP Concepts (The Mental Model)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#producer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Producer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exchange
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Queue
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#consumer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Consumer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#broker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Broker
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exchange-types-routing-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exchange Types (Routing Rules)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Exchange Types (Routing Rules)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#direct-exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Direct Exchange
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fanout-exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fanout Exchange
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#topic-exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Topic Exchange
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#headers-exchange" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Headers Exchange
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#message-lifecycle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Message Lifecycle
+        3. Task Options &amp; Strategies
       
     </span>
   </a>
@@ -903,10 +798,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#delivery-guarantees" class="md-nav__link">
+  <a href="#4-broker-queue-internals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery Guarantees
+        4. Broker &amp; Queue Internals
       
     </span>
   </a>
@@ -914,10 +809,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#durability-and-persistence" class="md-nav__link">
+  <a href="#5-workers-concurrency" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Durability and Persistence
+        5. Workers &amp; Concurrency
       
     </span>
   </a>
@@ -925,10 +820,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#amqp-vs-http" class="md-nav__link">
+  <a href="#6-context-propagation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AMQP vs HTTP
+        6. Context Propagation
       
     </span>
   </a>
@@ -936,10 +831,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#amqp-in-real-systems" class="md-nav__link">
+  <a href="#7-retries-error-handling-timeouts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AMQP in Real Systems
+        7. Retries, Error Handling, &amp; Timeouts
       
     </span>
   </a>
@@ -947,10 +842,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-amqp-is-the-right-choice" class="md-nav__link">
+  <a href="#8-periodic-tasks-celery-beat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When AMQP Is the Right Choice
+        8. Periodic Tasks: Celery Beat
       
     </span>
   </a>
@@ -958,10 +853,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#closing-thought" class="md-nav__link">
+  <a href="#9-result-backends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Closing Thought
+        9. Result Backends
       
     </span>
   </a>
@@ -969,10 +864,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#official-references" class="md-nav__link">
+  <a href="#10-real-world-example-with-fastapi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Official References
+        10. Real-World Example with FastAPI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-scaling-distributed-design-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Scaling &amp; Distributed Design Patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagram
       
     </span>
   </a>
@@ -983,34 +922,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2026-01-10_the-ultimate-celery-internals-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2501,172 +2412,313 @@
 
 
 
-<h1 id="amqp-explained-for-backend-engineers">AMQP Explained for Backend Engineers</h1>
-<p>At some point, every backend system outgrows direct request–response flows.</p>
-<p>You add background jobs.<br />
-You decouple services.<br />
-You need reliability when processes crash.</p>
-<p>This is where <strong>message-oriented architectures</strong> appear-and AMQP is one of the most important protocols behind them.</p>
-<p>This post explains <strong>what AMQP actually is</strong>, how it works, and why backend engineers should understand it-even if they never implement a broker themselves.</p>
-<h2 id="what-is-amqp">What Is AMQP?</h2>
-<p><strong>AMQP (Advanced Message Queuing Protocol)</strong> is an open, binary, application-layer protocol designed for <strong>reliable, asynchronous message passing</strong> between distributed systems.</p>
-<p>AMQP is not:
-- A message broker
-- A queue implementation
-- A library</p>
-<p>It is a <strong>protocol</strong>-a contract that defines how producers, brokers, and consumers communicate.</p>
-<p>RabbitMQ is the most common AMQP implementation, but the protocol itself is independent of any vendor.</p>
-<h2 id="why-amqp-exists">Why AMQP Exists</h2>
-<p>HTTP is great for synchronous communication.</p>
-<p>It’s terrible when:
-- The consumer is down
-- Work takes minutes or hours
-- You need retries, ordering, or durability
-- You want to decouple producers from consumers</p>
-<p>AMQP was designed to solve these problems by:
-- Decoupling senders and receivers
-- Persisting messages
-- Supporting routing and fan-out
-- Enabling fault tolerance by design</p>
-<h2 id="core-amqp-concepts-the-mental-model">Core AMQP Concepts (The Mental Model)</h2>
-<p>If you only remember one thing, remember this:</p>
-<blockquote>
-<p><strong>Producers never talk directly to queues.</strong></p>
-</blockquote>
-<h3 id="producer">Producer</h3>
-<p>A service that <strong>publishes messages</strong> to an exchange.</p>
-<h3 id="exchange">Exchange</h3>
-<p>A routing layer that decides <strong>where messages go</strong>.
-It receives messages and routes them to queues based on rules.</p>
-<h3 id="queue">Queue</h3>
-<p>A buffer that <strong>stores messages</strong> until a consumer processes them.</p>
-<h3 id="consumer">Consumer</h3>
-<p>A process that <strong>pulls messages</strong> from a queue and handles them.</p>
-<h3 id="broker">Broker</h3>
-<p>The server that hosts exchanges, queues, and routing logic.</p>
-<h2 id="exchange-types-routing-rules">Exchange Types (Routing Rules)</h2>
-<p>AMQP routing happens inside exchanges.</p>
-<h3 id="direct-exchange">Direct Exchange</h3>
+<h1 id="the-ultimate-celery-internals-guide">The Ultimate Celery Internals Guide</h1>
+<p>Celery is <strong>more than async tasks</strong> - it’s a <strong>distributed execution engine</strong> with brokers, workers, and context propagation baked in.<br />
+Understanding it deeply lets you <strong>design robust backend systems</strong> without bottlenecks or surprises.</p>
+<p>This guide covers:</p>
 <ul>
-<li>Routes messages by exact routing key match</li>
-<li>Common for task queues</li>
+<li>Task serialization and deserialization</li>
+<li>Brokers, queues, and routing</li>
+<li>Workers and concurrency models</li>
+<li>Task context and strategies</li>
+<li>Retry policies, rate limits, and timeouts</li>
+<li>Celery Beat for periodic tasks</li>
+<li>Result backends</li>
+<li>Real-world FastAPI integration</li>
+<li>ASCII diagrams</li>
+<li>Official documentation references</li>
 </ul>
-<h3 id="fanout-exchange">Fanout Exchange</h3>
+<h2 id="1-architecture-overview">1. Architecture Overview</h2>
+<p><strong>Celery’s flow</strong>:</p>
+<div class="highlight"><pre><span></span><code>Producer (app) → Broker (RabbitMQ/Redis) → Worker(s) → Result Backend
+</code></pre></div>
 <ul>
-<li>Broadcasts messages to all bound queues</li>
-<li>Used for pub/sub events</li>
+<li><strong>Producer</strong>: Calls <code>task.delay()</code> or <code>task.apply_async()</code></li>
+<li><strong>Broker</strong>: Stores messages (tasks) temporarily</li>
+<li><strong>Worker</strong>: Picks tasks, deserializes, executes, and optionally stores results</li>
+<li><strong>Result Backend</strong>: Optional storage of return value, status, exceptions</li>
 </ul>
-<h3 id="topic-exchange">Topic Exchange</h3>
+<h2 id="2-serialization-deserialization">2. Serialization &amp; Deserialization</h2>
+<p>Celery tasks are <strong>serialized</strong> into messages before sending to brokers.</p>
+<p>Supported formats:</p>
 <ul>
-<li>Pattern-based routing (<code>order.*</code>, <code>*.created</code>)</li>
-<li>Very common in event-driven systems</li>
+<li><code>json</code> (default for simplicity)</li>
+<li><code>pickle</code> (supports arbitrary Python objects, security risk), <a href="https://docs.python.org/3/library/pickle.html">docs</a></li>
+<li><code>msgpack</code> (efficient binary format), <a href="https://github.com/msgpack/msgpack-python">docs</a></li>
+<li><code>yaml</code> (rarely used)</li>
 </ul>
-<h3 id="headers-exchange">Headers Exchange</h3>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">celery</span><span class="w"> </span><span class="kn">import</span> <span class="n">Celery</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s1">&#39;tasks&#39;</span><span class="p">,</span> <span class="n">broker</span><span class="o">=</span><span class="s1">&#39;redis://localhost&#39;</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">&#39;redis://localhost&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">serializer</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</code></pre></div>
+<p><strong>Key points</strong>:</p>
 <ul>
-<li>Routes based on message headers</li>
-<li>Rare, but flexible</li>
+<li>Serialization converts Python objects → bytes</li>
+<li>Deserialization converts bytes → Python objects in workers</li>
+<li>Context (task_id, retries, ETA) is passed with the serialized message</li>
 </ul>
-<p>Routing logic is explicit and predictable-this is one of AMQP’s strengths.</p>
-<h2 id="message-lifecycle">Message Lifecycle</h2>
-<p>A typical flow looks like this:</p>
-<ol>
-<li>Producer publishes a message to an exchange</li>
-<li>Exchange routes the message to one or more queues</li>
-<li>Broker persists the message (if durable)</li>
-<li>Consumer receives the message</li>
-<li>Consumer acknowledges processing</li>
-<li>Broker removes the message</li>
-</ol>
-<p>If the consumer crashes before acknowledgment, the message <strong>returns to the queue</strong>.</p>
-<p>This is reliability by protocol, not by convention.</p>
-<h2 id="delivery-guarantees">Delivery Guarantees</h2>
-<p>AMQP supports multiple delivery semantics:</p>
+<p>Docs: <a href="https://docs.celeryq.dev/en/stable/userguide/configuration.html#task-serializer">https://docs.celeryq.dev/en/stable/userguide/configuration.html#task-serializer</a> , <a href="https://docs.celeryq.dev/en/stable/internals/reference/celery.utils.serialization.html">https://docs.celeryq.dev/en/stable/internals/reference/celery.utils.serialization.html</a></p>
+<h2 id="3-task-options-strategies">3. Task Options &amp; Strategies</h2>
+<p>Celery tasks support multiple <strong>execution strategies</strong>:</p>
 <ul>
-<li><strong>At-most-once</strong> – fast, but messages can be lost</li>
-<li><strong>At-least-once</strong> – reliable, but requires idempotency</li>
-<li><strong>Exactly-once</strong> – not truly achievable in distributed systems</li>
+<li><code>delay()</code>: Shortcut for default async</li>
+<li><code>apply_async()</code>: Full control (ETA, countdown, retries)</li>
+<li><code>apply()</code>: Synchronous execution (local call)</li>
 </ul>
-<p>Most production systems use <strong>at-least-once delivery</strong> and handle duplicates at the application level.</p>
-<h2 id="durability-and-persistence">Durability and Persistence</h2>
-<p>AMQP allows you to configure:
-- Durable exchanges
-- Durable queues
-- Persistent messages</p>
-<p>Together, these ensure messages survive:
-- Broker restarts
-- Worker crashes
-- Temporary outages</p>
-<p>Without durability, AMQP behaves more like an in-memory event bus.</p>
-<h2 id="amqp-vs-http">AMQP vs HTTP</h2>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>HTTP</th>
-<th>AMQP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Communication</td>
-<td>Synchronous</td>
-<td>Asynchronous</td>
-</tr>
-<tr>
-<td>Coupling</td>
-<td>Tight</td>
-<td>Loose</td>
-</tr>
-<tr>
-<td>Reliability</td>
-<td>Client-managed</td>
-<td>Broker-managed</td>
-</tr>
-<tr>
-<td>Retries</td>
-<td>Manual</td>
-<td>Built-in</td>
-</tr>
-<tr>
-<td>Backpressure</td>
-<td>Poor</td>
-<td>Native</td>
-</tr>
-<tr>
-<td>Scalability</td>
-<td>Vertical</td>
-<td>Horizontal</td>
-</tr>
-</tbody>
-</table>
-<p>They solve different problems-and often coexist.</p>
-<h2 id="amqp-in-real-systems">AMQP in Real Systems</h2>
-<p>You rarely “use AMQP directly”.</p>
-<p>You use it through:
-- <strong>Celery</strong> (task queues)
-- <strong>RabbitMQ</strong> (message broker)
-- <strong>MassTransit / Kombu</strong> (client libraries)</p>
-<p>FastAPI handles HTTP.
-AMQP handles <strong>everything that shouldn’t block HTTP</strong>.</p>
-<h2 id="when-amqp-is-the-right-choice">When AMQP Is the Right Choice</h2>
-<p>AMQP shines when:
-- Tasks take longer than a request lifecycle
-- Reliability matters more than latency
-- You need retries, delays, or scheduling
-- Systems must survive partial failure
-- Services should not know about each other</p>
-<p>If you’re building serious backend infrastructure, AMQP is not optional knowledge.</p>
-<h2 id="closing-thought">Closing Thought</h2>
-<p>AMQP isn’t exciting, and you probably won’t think about it most days.
-But when systems fail under load, during deploys, or at 3 a.m., it’s often the difference between lost work and a system that recovers quietly.
-Knowing how it works makes you a better backend engineer, even if you never touch the broker directly.</p>
-<h2 id="official-references">Official References</h2>
+<p>Task options:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">time_limit</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">rate_limit</span><span class="o">=</span><span class="s1">&#39;10/m&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div>
 <ul>
-<li>AMQP 0-9-1 Specification<br />
-  https://www.rabbitmq.com/resources/specs/amqp0-9-1.pdf</li>
-<li>RabbitMQ AMQP Concepts<br />
-  https://www.rabbitmq.com/tutorials/amqp-concepts.html</li>
+<li><code>bind=True</code> gives access to <code>self</code> (task context)</li>
+<li><code>max_retries</code> sets retry attempts</li>
+<li><code>time_limit</code> prevents runaway tasks</li>
+<li><code>rate_limit</code> throttles execution</li>
 </ul>
+<p>Docs: <a href="https://docs.celeryq.dev/en/stable/userguide/tasks.html">https://docs.celeryq.dev/en/stable/userguide/tasks.html</a></p>
+<hr />
+<h2 id="4-broker-queue-internals">4. Broker &amp; Queue Internals</h2>
+<p>Celery supports multiple brokers:</p>
+<ul>
+<li><strong>RabbitMQ (AMQP)</strong>: full-featured, exchanges, fanout, routing keys</li>
+<li><strong>Redis</strong>: simple FIFO queue</li>
+<li><strong>SQS, Kafka</strong>: other backends</li>
+</ul>
+<p><strong>Queue routing example</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">task_routes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;tasks.add&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;queue&#39;</span><span class="p">:</span> <span class="s1">&#39;math&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;tasks.send_email&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;queue&#39;</span><span class="p">:</span> <span class="s1">&#39;emails&#39;</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Docs: <a href="https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/index.html#broker-overview">https://docs.celeryq.dev/en/stable/getting-started/backends-and-brokers/index.html</a></p>
+<h2 id="5-workers-concurrency">5. Workers &amp; Concurrency</h2>
+<p>Workers pull tasks from queues and execute them.</p>
+<p>Concurrency options:</p>
+<ul>
+<li><code>prefork</code> (multiprocessing, default)</li>
+<li><code>threads</code></li>
+<li><code>solo</code> (single-threaded)</li>
+<li><code>gevent</code> (greenlets)</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>celery<span class="w"> </span>-A<span class="w"> </span>tasks<span class="w"> </span>worker<span class="w"> </span>--loglevel<span class="o">=</span>info<span class="w"> </span>--concurrency<span class="o">=</span><span class="m">4</span>
+</code></pre></div>
+<p>Workers handle:</p>
+<ul>
+<li>Task execution</li>
+<li>Retry scheduling</li>
+<li>Task acknowledgment</li>
+<li>Heartbeats to broker</li>
+</ul>
+<p>Docs: <a href="https://docs.celeryq.dev/en/main/reference/celery.worker.html#module-celery.worker">https://docs.celeryq.dev/en/main/reference/celery.worker.html#module-celery.worker</a></p>
+<h2 id="6-context-propagation">6. Context Propagation</h2>
+<p>Celery propagates metadata:</p>
+<ul>
+<li><code>task_id</code></li>
+<li><code>args</code> / <code>kwargs</code></li>
+<li><code>retries</code></li>
+<li><code>ETA</code> / countdown</li>
+<li>Custom headers via <code>task.request</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">show_context</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Task ID: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Docs: <a href="https://docs.celeryq.dev/en/main/reference/celery.app.task.html#celery.app.task.Task.request">https://docs.celeryq.dev/en/main/reference/celery.app.task.html#celery.app.task.Task.request</a></p>
+<hr />
+<h2 id="7-retries-error-handling-timeouts">7. Retries, Error Handling, &amp; Timeouts</h2>
+<p>Retry:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fetch_url</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="o">...</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">retry</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span> <span class="n">countdown</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+<p>Docs: <a href="https://docs.celeryq.dev/en/main/userguide/tasks.html#std-state-RETRY">https://docs.celeryq.dev/en/main/userguide/tasks.html#std-state-RETRY</a></p>
+<p>Time limits:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@app</span><span class="o">.</span><span class="n">task</span><span class="p">(</span><span class="n">time_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">soft_time_limit</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">long_task</span><span class="p">():</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>Docs <a href="https://docs.celeryq.dev/en/main/userguide/tasks.html#Task.time_limit">https://docs.celeryq.dev/en/main/userguide/tasks.html#Task.time_limit</a></p>
+<h2 id="8-periodic-tasks-celery-beat">8. Periodic Tasks: Celery Beat</h2>
+<p>Beat schedules tasks:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">celery.schedules</span><span class="w"> </span><span class="kn">import</span> <span class="n">crontab</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">beat_schedule</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;cleanup-daily&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;tasks.cleanup&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;schedule&quot;</span><span class="p">:</span> <span class="n">crontab</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Run: <code>celery -A tasks beat --loglevel=info</code></p>
+<p>Docs: <a href="https://docs.celeryq.dev/en/main/reference/celery.schedules.html#celery.schedules.crontab">https://docs.celeryq.dev/en/main/reference/celery.schedules.html#celery.schedules.crontab</a> , <a href="https://docs.celeryq.dev/en/main/userguide/periodic-tasks.html">https://docs.celeryq.dev/en/main/userguide/periodic-tasks.html</a></p>
+<h2 id="9-result-backends">9. Result Backends</h2>
+<p>Stores:</p>
+<ul>
+<li><code>SUCCESS</code> / <code>FAILURE</code></li>
+<li>Return values</li>
+<li>Tracebacks</li>
+<li>Async retrieval</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</code></pre></div>
+<p>Docs: <a href="https://docs.celeryq.dev/en/main/reference/celery.result.html#celery-result"></a></p>
+<h2 id="10-real-world-example-with-fastapi">10. Real-World Example with FastAPI</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">fastapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tasks</span><span class="w"> </span><span class="kn">import</span> <span class="n">add</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;/add&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">enqueue_add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">task</span> <span class="o">=</span> <span class="n">add</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;task_id&quot;</span><span class="p">:</span> <span class="n">task</span><span class="o">.</span><span class="n">id</span><span class="p">}</span>
+</code></pre></div>
+<p>Run worker:</p>
+<div class="highlight"><pre><span></span><code>celery<span class="w"> </span>-A<span class="w"> </span>tasks<span class="w"> </span>worker<span class="w"> </span>--loglevel<span class="o">=</span>info
+</code></pre></div>
+<h2 id="11-monitoring">11. Monitoring</h2>
+<ul>
+<li><strong>Flower UI</strong>: web dashboard</li>
+</ul>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>flower
+celery<span class="w"> </span>-A<span class="w"> </span>tasks<span class="w"> </span>flower
+</code></pre></div>
+<ul>
+<li>CLI introspection:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>celery<span class="w"> </span>-A<span class="w"> </span>tasks<span class="w"> </span>inspect<span class="w"> </span>active
+celery<span class="w"> </span>-A<span class="w"> </span>tasks<span class="w"> </span>inspect<span class="w"> </span>scheduled
+</code></pre></div>
+<p>Docs: <a href="https://docs.celeryq.dev/en/main/userguide/monitoring.html#flower-real-time-celery-web-monitor">https://docs.celeryq.dev/en/main/userguide/monitoring.html#flower-real-time-celery-web-monitor</a></p>
+<h2 id="12-scaling-distributed-design-patterns">12. Scaling &amp; Distributed Design Patterns</h2>
+<ul>
+<li>Multiple queues → dedicated workers</li>
+<li>Autoscaling worker pools</li>
+<li>Prefetch limit tuning</li>
+<li>Retry policies per queue</li>
+<li>Task chaining &amp; groups (<code>chain</code>, <code>group</code>, <code>chord</code>)</li>
+</ul>
+<p>Docs: <a href="https://docs.celeryq.dev/en/stable/userguide/canvas.html">https://docs.celeryq.dev/en/stable/userguide/canvas.html</a></p>
+<hr />
+<h2 id="other-references">Other References</h2>
+<ul>
+<li>Official Celery Docs: <a href="https://docs.celeryq.dev/en/stable/">https://docs.celeryq.dev/en/stable/</a></li>
+<li>RabbitMQ Docs: <a href="https://www.rabbitmq.com/documentation.html">https://www.rabbitmq.com/documentation.html</a></li>
+<li>Redis Docs: <a href="https://redis.io/documentation">https://redis.io/documentation</a></li>
+</ul>
+<h2 id="diagram">Diagram</h2>
+<p>I couldn’t find a diagram that accurately captured how all the moving parts fit together, so I built one based on the actual Celery execution flow and common production setups.</p>
+<p>The diagram below is intentionally opinionated—it reflects how Celery is typically used in real systems, not just how it’s described in isolation.</p>
+<div class="highlight"><pre><span></span><code><span class="w">                    </span>┌──────────────────────────────┐
+<span class="w">                    </span>│<span class="w">        </span>Client<span class="w"> </span>/<span class="w"> </span>FastAPI<span class="w">      </span>│
+<span class="w">                    </span>│<span class="w">  </span>-<span class="w"> </span>calls<span class="w"> </span>task.delay<span class="o">()</span><span class="w">        </span>│
+<span class="w">                    </span>│<span class="w">  </span>-<span class="w"> </span>sends<span class="w"> </span>headers<span class="w"> </span>+<span class="w"> </span>args<span class="w">      </span>│
+<span class="w">                    </span>└──────────────┬───────────────┘
+<span class="w">                                    </span>│
+<span class="w">                                    </span>│<span class="w"> </span><span class="m">1</span>.<span class="w"> </span>Task<span class="w"> </span>call
+<span class="w">                                    </span>▼
+<span class="w">                    </span>┌──────────────────────────────┐
+<span class="w">                    </span>│<span class="w">      </span>Celery<span class="w"> </span>Client<span class="w"> </span>Library<span class="w">   </span>│
+<span class="w">                    </span>│<span class="w"> </span>-<span class="w"> </span>Builds<span class="w"> </span>task<span class="w"> </span>message<span class="w">        </span>│
+<span class="w">                    </span>│<span class="w"> </span>-<span class="w"> </span>Applies<span class="w"> </span>routing<span class="w"> </span>rules<span class="w">      </span>│
+<span class="w">                    </span>│<span class="w"> </span>-<span class="w"> </span>Sets<span class="w"> </span>ETA,<span class="w"> </span>retries,<span class="w"> </span>priority│
+<span class="w">                    </span>│<span class="w"> </span>-<span class="w"> </span>Adds<span class="w"> </span>context<span class="w"> </span><span class="o">(</span>task<span class="w"> </span>id,<span class="w"> </span>app<span class="o">)</span>│
+<span class="w">                    </span>└──────────────┬───────────────┘
+<span class="w">                                    </span>│
+<span class="w">                                    </span>│<span class="w"> </span><span class="m">2</span>.<span class="w"> </span>Serialize
+<span class="w">                                    </span>▼
+<span class="w">                    </span>┌──────────────────────────────┐
+<span class="w">                    </span>│<span class="w">        </span>Serializer<span class="w">            </span>│
+<span class="w">                    </span>│<span class="w">  </span>JSON<span class="w"> </span><span class="p">|</span><span class="w"> </span>msgpack<span class="w"> </span><span class="p">|</span><span class="w"> </span>pickle<span class="w">     </span>│
+<span class="w">                    </span>│<span class="w">  </span><span class="o">(</span>args,<span class="w"> </span>kwargs,<span class="w"> </span>headers<span class="o">)</span><span class="w">     </span>│
+<span class="w">                    </span>└──────────────┬───────────────┘
+<span class="w">                                    </span>│
+<span class="w">                                    </span>│<span class="w"> </span><span class="m">3</span>.<span class="w"> </span>AMQP<span class="w"> </span>message
+<span class="w">                                    </span>▼
+┌────────────────────────────────────────────────────────────────────────┐
+│<span class="w">                               </span>Broker<span class="w"> </span><span class="o">(</span>AMQP<span class="o">)</span><span class="w">                            </span>│
+│<span class="w">                             </span>RabbitMQ<span class="w"> </span>/<span class="w"> </span>Redis<span class="w">                           </span>│
+│<span class="w">                                                                        </span>│
+│<span class="w">                   </span>Exchange<span class="w">  </span>──►<span class="w">  </span>Routing<span class="w"> </span>Key<span class="w">  </span>──►<span class="w">  </span>Queue<span class="w">               </span>│
+│<span class="w">                                                                        </span>│
+│<span class="w">  </span>-<span class="w"> </span>Stores<span class="w"> </span>messages<span class="w">                                                     </span>│
+│<span class="w">  </span>-<span class="w"> </span>Handles<span class="w"> </span>fanout<span class="w"> </span>/<span class="w"> </span>topics<span class="w"> </span>/<span class="w"> </span>direct<span class="w">                                    </span>│
+│<span class="w">  </span>-<span class="w"> </span>Manages<span class="w"> </span>priority,<span class="w"> </span>TTL,<span class="w"> </span>redelivery<span class="w">                                   </span>│
+│<span class="w">  </span>-<span class="w"> </span>No<span class="w"> </span>task<span class="w"> </span>execution<span class="w"> </span>happens<span class="w"> </span>here<span class="w">                                      </span>│
+└──────────────┬──────────────────────────────┬───────────────────────────┘
+<span class="w">               </span>│<span class="w">                              </span>│
+<span class="w">               </span>│<span class="w">                              </span>│
+<span class="w">               </span>▼<span class="w">                              </span>▼
+<span class="w">   </span>┌──────────────────────┐<span class="w">       </span>┌──────────────────────┐
+<span class="w">   </span>│<span class="w">  </span>Celery<span class="w"> </span>Worker<span class="w"> </span>A<span class="w">     </span>│<span class="w">       </span>│<span class="w">   </span>Celery<span class="w"> </span>Worker<span class="w"> </span>B<span class="w">    </span>│
+<span class="w">   </span>│<span class="w">  </span><span class="o">(</span>Process<span class="w"> </span>Pool<span class="w"> </span>/<span class="w">     </span>│<span class="w">       </span>│<span class="w">  </span><span class="o">(</span>Thread<span class="w"> </span>/<span class="w"> </span>Eventlet<span class="o">)</span><span class="w"> </span>│
+<span class="w">   </span>│<span class="w">  </span>Thread<span class="w"> </span>Pool<span class="w"> </span>/<span class="w"> </span>Async<span class="o">)</span>│<span class="w">       </span>│<span class="w">                      </span>│
+<span class="w">   </span>└───────────┬──────────┘<span class="w">       </span>└───────────┬──────────┘
+<span class="w">               </span>│<span class="w">                              </span>│
+<span class="w">               </span>│<span class="w"> </span><span class="m">4</span>.<span class="w"> </span>Fetch<span class="w"> </span>message<span class="w"> </span><span class="o">(</span>ACK/LATE<span class="o">)</span><span class="w">  </span>│
+<span class="w">               </span>▼<span class="w">                              </span>▼
+<span class="w">    </span>┌──────────────────────┐<span class="w">       </span>┌──────────────────────┐
+<span class="w">    </span>│<span class="w">      </span>Consumer<span class="w"> </span>Loop<span class="w">   </span>│<span class="w">       </span>│<span class="w">      </span>Consumer<span class="w"> </span>Loop<span class="w">   </span>│
+<span class="w">    </span>│<span class="w"> </span>-<span class="w"> </span>Pull<span class="w"> </span>from<span class="w"> </span>queue<span class="w">    </span>│<span class="w">       </span>│<span class="w"> </span>-<span class="w"> </span>Pull<span class="w"> </span>from<span class="w"> </span>queue<span class="w">    </span>│
+<span class="w">    </span>│<span class="w"> </span>-<span class="w"> </span>Prefetch<span class="w">           </span>│<span class="w">       </span>│<span class="w"> </span>-<span class="w"> </span>Prefetch<span class="w">           </span>│
+<span class="w">    </span>└───────────┬──────────┘<span class="w">       </span>└───────────┬──────────┘
+<span class="w">                </span>│<span class="w">                              </span>│
+<span class="w">                </span>▼<span class="w">                              </span>▼
+<span class="w">        </span>┌──────────────────────┐<span class="w">       </span>┌──────────────────────┐
+<span class="w">        </span>│<span class="w">    </span>Deserializer<span class="w">      </span>│<span class="w">       </span>│<span class="w">    </span>Deserializer<span class="w">      </span>│
+<span class="w">        </span>│<span class="w"> </span>-<span class="w"> </span>JSON<span class="w"> </span>/<span class="w"> </span>pickle<span class="w">      </span>│<span class="w">       </span>│<span class="w"> </span>-<span class="w"> </span>JSON<span class="w"> </span>/<span class="w"> </span>pickle<span class="w">      </span>│
+<span class="w">        </span>│<span class="w"> </span>-<span class="w"> </span>Rebuild<span class="w"> </span>Python<span class="w"> </span>args│<span class="w">       </span>│<span class="w"> </span>-<span class="w"> </span>Rebuild<span class="w"> </span>Python<span class="w"> </span>args│
+<span class="w">        </span>└───────────┬──────────┘<span class="w">       </span>└───────────┬──────────┘
+<span class="w">                    </span>│<span class="w">                              </span>│
+<span class="w">                    </span>▼<span class="w">                              </span>▼
+<span class="w">         </span>┌──────────────────────┐<span class="w">      </span>┌──────────────────────┐
+<span class="w">         </span>│<span class="w">      </span>Task<span class="w"> </span>Context<span class="w">    </span>│<span class="w">      </span>│<span class="w">      </span>Task<span class="w"> </span>Context<span class="w">    </span>│
+<span class="w">         </span>│<span class="w"> </span>-<span class="w"> </span>request.id<span class="w">         </span>│<span class="w">      </span>│<span class="w"> </span>-<span class="w"> </span>retries<span class="w">            </span>│
+<span class="w">         </span>│<span class="w"> </span>-<span class="w"> </span>ETA<span class="w">                </span>│<span class="w">      </span>│<span class="w"> </span>-<span class="w"> </span>headers<span class="w">            </span>│
+<span class="w">         </span>│<span class="w"> </span>-<span class="w"> </span>retries,<span class="w"> </span>timeouts<span class="w">  </span>│<span class="w">      </span>│<span class="w"> </span>-<span class="w"> </span>routing<span class="w"> </span>info<span class="w">       </span>│
+<span class="w">         </span>└───────────┬──────────┘<span class="w">      </span>└───────────┬──────────┘
+<span class="w">                     </span>│<span class="w">                              </span>│
+<span class="w">                     </span>▼<span class="w">                              </span>▼
+<span class="w">              </span>┌──────────────────────┐<span class="w">      </span>┌──────────────────────┐
+<span class="w">              </span>│<span class="w">     </span>Task<span class="w"> </span>Function<span class="w">    </span>│<span class="w">      </span>│<span class="w">     </span>Task<span class="w"> </span>Function<span class="w">    </span>│
+<span class="w">              </span>│<span class="w">   </span>your<span class="w"> </span>Python<span class="w"> </span>code<span class="w">   </span>│<span class="w">      </span>│<span class="w">   </span>your<span class="w"> </span>Python<span class="w"> </span>code<span class="w">   </span>│
+<span class="w">              </span>└───────────┬──────────┘<span class="w">      </span>└───────────┬──────────┘
+<span class="w">                          </span>│<span class="w">                              </span>│
+<span class="w">          </span>┌───────────────┴───────────────┐<span class="w">   </span>┌──────────┴──────────┐
+<span class="w">          </span>│<span class="w">        </span>Success<span class="w"> </span>/<span class="w"> </span>Failure<span class="w">      </span>│<span class="w">   </span>│<span class="w">  </span>Retry<span class="w"> </span>/<span class="w"> </span>Countdown<span class="w">  </span>│
+<span class="w">          </span>│<span class="w"> </span>-<span class="w"> </span>result<span class="w">                      </span>│<span class="w">   </span>│<span class="w"> </span>-<span class="w"> </span>requeue<span class="w">           </span>│
+<span class="w">          </span>│<span class="w"> </span>-<span class="w"> </span>exception<span class="w">                   </span>│<span class="w">   </span>│<span class="w"> </span>-<span class="w"> </span>backoff<span class="w">           </span>│
+<span class="w">          </span>└───────────────┬───────────────┘<span class="w">   </span>└──────────┬──────────┘
+<span class="w">                          </span>│<span class="w">                              </span>│
+<span class="w">                          </span>▼<span class="w">                              </span>▼
+<span class="w">                            </span>┌──────────────────────────────┐
+<span class="w">                            </span>│<span class="w">        </span>Result<span class="w"> </span>Backend<span class="w">        </span>│
+<span class="w">                            </span>│<span class="w">  </span>Redis<span class="w"> </span>/<span class="w"> </span>DB<span class="w"> </span>/<span class="w"> </span>RPC<span class="w"> </span>/<span class="w"> </span>S3<span class="w">       </span>│
+<span class="w">                            </span>│<span class="w">  </span>-<span class="w"> </span>stores<span class="w"> </span>state:<span class="w">             </span>│
+<span class="w">                            </span>│<span class="w">    </span>PENDING<span class="w"> </span>/<span class="w"> </span>STARTED<span class="w">         </span>│
+<span class="w">                            </span>│<span class="w">    </span>SUCCESS<span class="w"> </span>/<span class="w"> </span>FAILURE<span class="w">         </span>│
+<span class="w">                            </span>│<span class="w">  </span>-<span class="w"> </span>stores<span class="w"> </span><span class="k">return</span><span class="w"> </span>value<span class="w">       </span>│
+<span class="w">                            </span>└──────────────────────────────┘
+<span class="w">                                        </span>▲
+<span class="w">                                        </span>│
+<span class="w">                            </span>┌──────────────────────────────┐
+<span class="w">                            </span>│<span class="w">         </span>Celery<span class="w"> </span>Beat<span class="w">          </span>│
+<span class="w">                            </span>│<span class="w">  </span>-<span class="w"> </span>periodic<span class="w"> </span>schedule<span class="w">         </span>│
+<span class="w">                            </span>│<span class="w">  </span>-<span class="w"> </span>cron<span class="w"> </span>/<span class="w"> </span>interval<span class="w">           </span>│
+<span class="w">                            </span>│<span class="w">  </span>-<span class="w"> </span>emits<span class="w"> </span>tasks<span class="w"> </span>into<span class="w"> </span>broker<span class="w">   </span>│
+<span class="w">                            </span>└──────────────────────────────┘
+</code></pre></div>
 
 
 
