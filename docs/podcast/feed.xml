@@ -18,7 +18,7 @@
       <title>Episode 4 - Roberto J. García Navarro</title>
 
       <description><![CDATA[
-Episode 4 features Roberto J. García Navarro — Senior Backend Engineer at Facephi. We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into FastAPI, Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters — with mate on the side.
+Episode 4 features Roberto J. García Navarro - Senior Backend Engineer at Facephi. We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into FastAPI, Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters - with mate on the side.
 
 Topics we cover:
 - Growing from a junior developer into a backend architect
@@ -51,7 +51,7 @@ Connect with Roberto J. García Navarro:
       <title>Episode 3 - Dev Diary: Building TinyURL in Production</title>
 
       <description><![CDATA[
-Episode 3 takes you behind the scenes of building TinyURL — a URL shortener deployed in a production environment. We cover the full journey from designing the FastAPI backend and PostgreSQL database to implementing Redis caching and configuring Nginx as a reverse proxy. I share the challenges of CI/CD pipelines, SSL setup, and deploying with Gunicorn, as well as the lessons learned about distributed systems, caching strategies, and scaling web services. This episode gives a hands-on view of turning code into a reliable, real-world web application.
+Episode 3 takes you behind the scenes of building TinyURL - a URL shortener deployed in a production environment. We cover the full journey from designing the FastAPI backend and PostgreSQL database to implementing Redis caching and configuring Nginx as a reverse proxy. I share the challenges of CI/CD pipelines, SSL setup, and deploying with Gunicorn, as well as the lessons learned about distributed systems, caching strategies, and scaling web services. This episode gives a hands-on view of turning code into a reliable, real-world web application.
 
 Topics we cover:
 - Designing and deploying a FastAPI backend
@@ -82,7 +82,7 @@ Topics we cover:
       <title>Episode 2 - Martín Torre Castro</title>
 
       <description><![CDATA[
-Episode 2 features Martín Torre Castro — software architect, performance engineer, and organizer of the Python Coruña community. We talk about performance engineering in real systems, software architecture in practice, Python communities in Spain, and lessons learned from building and scaling production systems. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
+Episode 2 features Martín Torre Castro - software architect, performance engineer, and organizer of the Python Coruña community. We talk about performance engineering in real systems, software architecture in practice, Python communities in Spain, and lessons learned from building and scaling production systems. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
 
 Topics we cover:
 - The Python Coruña community and local tech ecosystems
@@ -115,7 +115,7 @@ Connect with Martín Torre Castro:
       <title>Episode 1 - Ssali Jonathan</title>
 
       <description><![CDATA[
-Episode 1 kicks off with Ssali Jonathan — software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
+Episode 1 kicks off with Ssali Jonathan - software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
 
 Topics we cover:
 - Exploring Python web frameworks

@@ -16,7 +16,7 @@ audio: "/podcast/audio-files/episode4-roberto.mp3"
 </audio>
 
 Episode 4 features Roberto J. García Navarro - Senior Backend Engineer.  
-We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters — with mate on the side.
+We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters - with mate on the side.
 
 **Topics we cover:** <br/>
 - Growing from a junior developer into a backend architect.
