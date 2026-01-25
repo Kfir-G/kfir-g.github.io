@@ -15,6 +15,39 @@
     <itunes:image href="https://kfir-g.dev/podcast/newlogo.png"/>
 
     <item>
+      <title>Episode 4 - Roberto J. García Navarro</title>
+
+      <description><![CDATA[
+Episode 4 features Roberto J. García Navarro — Senior Backend Engineer at Facephi. We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into FastAPI, Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters — with mate on the side.
+
+Topics we cover:
+- Growing from a junior developer into a backend architect
+- Python and Go: when and why to expand your stack
+- Event-driven architecture in practice.
+- Architectural decision-making.
+- Career growth, mentoring, and sharing knowledge as an engineer
+
+Connect with Roberto J. García Navarro:
+- GitHub: https://github.com/soulcodex  
+- LinkedIn: https://www.linkedin.com/in/roberto-garcia-navarro/  
+      ]]></description>
+
+      <enclosure 
+        url="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode4-roberto.mp3"
+        type="audio/mpeg"
+        length="0"/>
+
+      <guid>code-with-mate-episode-4</guid>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 +0000</pubDate>
+
+      <itunes:duration>00:47:51</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>4</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <item>
       <title>Episode 3 - Dev Diary: Building TinyURL in Production</title>
 
       <description><![CDATA[
@@ -71,7 +104,7 @@ Connect with Martín Torre Castro:
       <guid>code-with-mate-episode-2</guid>
       <pubDate>Sat, 13 Dec 2025 12:00:00 +0000</pubDate>
 
-      <itunes:duration>00:00:00</itunes:duration>
+      <itunes:duration>00:36:16</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episode>2</itunes:episode>
       <itunes:season>1</itunes:season>
