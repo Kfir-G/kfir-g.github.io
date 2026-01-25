@@ -5,7 +5,7 @@ tags: [podcast, software, python, architecture, performance]
 audio: "/podcast/audio-files/episode2-martin.mp3"
 ---
 
-<img src="/podcast/logo.png" alt="Code with Mate Logo" width="200"/>
+<img src="/podcast/newlogo.png" alt="Code with Mate Logo" width="200"/>
 
 # Episode 2 - Martín Torre Castro
 

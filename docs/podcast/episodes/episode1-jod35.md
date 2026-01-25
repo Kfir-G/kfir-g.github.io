@@ -5,7 +5,7 @@ tags: [podcast, software, dev]
 audio: "/podcast/audio-files/episode1-jod35.mp3"
 ---
 
-<img src="/podcast/logo.png" alt="Code with Mate Logo" width="200"/>
+<img src="/podcast/newlogo.png" alt="Code with Mate Logo" width="200"/>
 
 # Episode 1 - Ssali Jonathan
 

@@ -1,6 +1,6 @@
 # Podcast
 
-<img src="logo.png" alt="Code with Mate Logo" width="200"/>
+<img src="newlogo.png" alt="Code with Mate Logo" width="200"/>
 
 Welcome to **Code with Mate** - friendly software engineering talks with a cup of mate.  <br/>
 
@@ -10,7 +10,9 @@ Welcome to **Code with Mate** - friendly software engineering talks with a cup o
 
 You can subscribe to my podcast using this RSS link:
 
-**https://kfir-g.dev/podcast/feed.xml**
+```bash
+https://kfir-g.dev/podcast/feed.xml
+```
 
 If your podcast app (not include Spotify) allows adding an RSS feed manually, this is the easiest way to follow new episodes.
 

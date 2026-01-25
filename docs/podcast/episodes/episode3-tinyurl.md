@@ -5,7 +5,7 @@ tags: [podcast, backend, fastapi, redis, nginx, devops, system-design]
 audio: "/podcast/audio-files/episode3-tinyurl.mp3"
 ---
 
-<img src="/podcast/logo.png" alt="Code with Mate Logo" width="200"/>
+<img src="/podcast/newlogo.png" alt="Code with Mate Logo" width="200"/>
 
 # Episode 3 – Dev Diary: Building TinyURL in Production
 

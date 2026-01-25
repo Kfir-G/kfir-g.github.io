@@ -12,7 +12,7 @@
     <itunes:subtitle>Friendly dev talks with a cup of mate</itunes:subtitle>
     <itunes:author>Kfir</itunes:author>
     <itunes:explicit>no</itunes:explicit>
-    <itunes:image href="https://kfir-g.dev/podcast/logo.png"/>
+    <itunes:image href="https://kfir-g.dev/podcast/newlogo.png"/>
 
     <item>
       <title>Episode 3 - Dev Diary: Building TinyURL in Production</title>
