@@ -31,6 +31,11 @@ Adding the feed above is the **minimum step needed** to start listening. Give it
 
 ## Episodes
 
+### [Episode 4 - Roberto J. García Navarro](episodes/episode4-roberto.md)
+**Date:** 2026-01-25
+
+Episode 4 features Roberto J. García Navarro — Senior Backend Engineer. We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into Python, Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters — with mate on the side.
+
 ### [Episode 3- Dev Diary: Building TinyURL in Production](episodes/episode3-tinyurl.md)
 **Date:** 2025-12-21
 
