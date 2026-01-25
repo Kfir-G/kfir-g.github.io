@@ -11,6 +11,8 @@
 
 ##### New
 
+[Event-Driven Architecture vs Request/Response: Designing Reactive Backends](blogs/2026-01-25_eda-vs-request-response.md)
+
 [The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks](blogs/2026-01-10_the-ultimate-celery-internals-guide.md)
 
 [AMQP Explained for Backend Engineers](blogs/2026-01-07_amqp-explained.md)

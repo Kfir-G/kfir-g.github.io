@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Jan 2026 10:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jan 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -101,7 +101,7 @@
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</guid>
     </item>
-    
+
     <!-- Post 10 -->
     <item>
       <title>The Ultimate Celery Internals Guide</title>
@@ -111,6 +111,17 @@
         A deep, end-to-end breakdown of Celery’s architecture — from FastAPI task calls, AMQP routing, serialization, worker pools, retries, scheduling, and result backends. This guide explains how Celery actually works under the hood and how to build reliable distributed task systems in Python.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide</guid>
+    </item>
+
+    <!-- Post 11 -->
+    <item>
+      <title>Event-Driven Architecture vs Request/Response: Designing Reactive Backends</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-01-25_eda-vs-request-response</link>
+      <pubDate>Sun, 25 Jan 2026 00:00:00 GMT</pubDate>
+      <description>
+        A deep, practical comparison between Event-Driven Architecture and classic Request/Response systems. Covers coupling, data reuse, reactivity, architectural flexibility, and real-world backend design trade-offs with concrete examples and diagrams.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-01-25_eda-vs-request-response</guid>
     </item>
 
   </channel>
