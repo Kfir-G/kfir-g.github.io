@@ -28,3 +28,17 @@ We talk about how a junior developer can grow into a backend architect, using Ro
 **Connect with Roberto J. García Navarro:** <br/>
 - GitHub: https://github.com/soulcodex  
 - LinkedIn: https://www.linkedin.com/in/roberto-garcia-navarro/  
+
+---
+
+**References & Resources Mentioned:** <br/>
+
+* Carlos Buenosvinos: [https://github.com/carlosbuenosvinos](https://github.com/carlosbuenosvinos)
+
+* Christian Soronellas: [https://theunic.github.io/](https://theunic.github.io/)
+
+* *Event-Driven Architecture in Golang: Building Complex Systems* - Michael Stack
+  Google Books: [https://share.google/6CkeVn39vePYZdfkZ](https://share.google/6CkeVn39vePYZdfkZ)
+
+* *Mastering Domain-Driven Design: Collaborative Modeling with Domain Storytelling, Event Storming, and Context Mapping* - Annegret Junker
+  Amazon: [https://amzn.eu/d/0RUZzvM](https://amzn.eu/d/0RUZzvM)
