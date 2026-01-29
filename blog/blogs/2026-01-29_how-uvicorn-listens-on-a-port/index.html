@@ -843,6 +843,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#step-1-binding-and-listening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Binding and Listening
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#step-2-tcp-handshake-where-queues-begin" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2543,28 +2554,20 @@
 <h2 id="the-high-level-flow">The High-Level Flow</h2>
 <p>At a high level, this is what happens:</p>
 <div class="highlight"><pre><span></span><code>Client → TCP Handshake → Kernel Queues → accept() → Uvicorn → ASGI → FastAPI
-````
-
-FastAPI only enters **very late** in this process.
-
-## Step 1: Binding and Listening
-
-When you start Uvicorn:
-
-```bash
-uvicorn app:app --host 0.0.0.0 --port 8000
-````
-
-Internally, Uvicorn:
-
-1. Creates a socket
-2. Binds it to an IP and port
-3. Calls `listen(backlog)`
-
-This is a **kernel-level operation**.
-
-```text
-socket()
+</code></pre></div>
+<p>FastAPI only enters <strong>very late</strong> in this process.</p>
+<h2 id="step-1-binding-and-listening">Step 1: Binding and Listening</h2>
+<p>When you start Uvicorn:</p>
+<div class="highlight"><pre><span></span><code>uvicorn<span class="w"> </span>app:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</code></pre></div>
+<p>Internally, Uvicorn:</p>
+<ol>
+<li>Creates a socket</li>
+<li>Binds it to an IP and port</li>
+<li>Calls <code>listen(backlog)</code></li>
+</ol>
+<p>This is a <strong>kernel-level operation</strong>.</p>
+<div class="highlight"><pre><span></span><code>socket()
 bind()
 listen(backlog)
 </code></pre></div>
