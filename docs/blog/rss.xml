@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -122,6 +122,17 @@
         A deep, practical comparison between Event-Driven Architecture and classic Request/Response systems. Covers coupling, data reuse, reactivity, architectural flexibility, and real-world backend design trade-offs with concrete examples and diagrams.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-25_eda-vs-request-response</guid>
+    </item>
+
+    <!-- Post 12 -->
+    <item>
+      <title>From SYN Queue to FastAPI: How Uvicorn Listens on an Open Port</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-01-29_how-uvicorn-listens-on-a-port</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 GMT</pubDate>
+      <description>
+        A deep dive into what happens before a FastAPI request reaches your code. This post explains how Uvicorn binds to a port, how the Linux TCP stack handles SYN and accept queues, and why backend engineers must understand the TCP accept path to debug load issues, timeouts, and dropped connections in production.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-01-29_how-uvicorn-listens-on-a-port</guid>
     </item>
 
   </channel>
