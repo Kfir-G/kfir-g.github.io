@@ -7,6 +7,7 @@ canonical_url: https://kfir-g.dev/blog/blogs/2026-01-29_how-uvicorn-listens-on-a
 ---
 
 # How Uvicorn Listens on an Open Port  
+
 ### From SYN Queue to FastAPI
 
 For a backend engineer, understanding how Uvicorn listens on an open port is not an implementation detail - it’s a reliability skill.
@@ -19,9 +20,9 @@ This post breaks down how Uvicorn binds to a port, what happens during the TCP h
 
 At a high level, this is what happens:
 
-```
+```text
 Client → TCP Handshake → Kernel Queues → accept() → Uvicorn → ASGI → FastAPI
-````
+```
 
 FastAPI only enters **very late** in this process.
 
@@ -31,7 +32,7 @@ When you start Uvicorn:
 
 ```bash
 uvicorn app:app --host 0.0.0.0 --port 8000
-````
+```
 
 Internally, Uvicorn:
 
@@ -53,7 +54,7 @@ From this point on, the **kernel owns incoming connections**, not Uvicorn.
 
 A TCP connection requires a **three-way handshake**:
 
-```
+```text
 Client → SYN
 Server → SYN-ACK
 Client → ACK
