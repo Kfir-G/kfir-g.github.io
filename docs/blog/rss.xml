@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -133,6 +133,17 @@
         A deep dive into what happens before a FastAPI request reaches your code. This post explains how Uvicorn binds to a port, how the Linux TCP stack handles SYN and accept queues, and why backend engineers must understand the TCP accept path to debug load issues, timeouts, and dropped connections in production.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-29_how-uvicorn-listens-on-a-port</guid>
+    </item>
+
+    <!-- Post 13 -->
+    <item>
+      <title>The Complete Guide to Protocol Buffers in FastAPI</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-02-07_protobuf-fastapi-guide</link>
+      <pubDate>Sun, 07 Feb 2026 00:00:00 GMT</pubDate>
+      <description>
+        An in-depth exploration of using Protocol Buffers with FastAPI. This guide covers everything from installation and setup to advanced usage patterns, performance considerations, and best practices for integrating Protocol Buffers into your FastAPI applications.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-02-07_protobuf-fastapi-guide</guid>
     </item>
 
   </channel>

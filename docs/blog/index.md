@@ -11,6 +11,8 @@
 
 ##### New
 
+[The Complete Guide to Protocol Buffers in FastAPI](blogs/2026-02-07_protobuf-fastapi-guide.md)
+
 [How Uvicorn Listens on an Open Port](blogs/2026-01-29_how-uvicorn-listens-on-a-port.md)
 
 [Event-Driven Architecture vs Request/Response: Designing Reactive Backends](blogs/2026-01-25_eda-vs-request-response.md)
