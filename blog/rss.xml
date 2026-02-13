@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Feb 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -144,6 +144,17 @@
         An in-depth exploration of using Protocol Buffers with FastAPI. This guide covers everything from installation and setup to advanced usage patterns, performance considerations, and best practices for integrating Protocol Buffers into your FastAPI applications.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-02-07_protobuf-fastapi-guide</guid>
+    </item>
+
+    <!-- Post 14 -->
+    <item>
+      <title>Redis Internals &amp; Data Structures - The In-Memory Backbone</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-02-13_redis-internals-and-data-structures</link>
+      <pubDate>Fri, 13 Feb 2026 00:00:00 GMT</pubDate>
+      <description>
+        A deep dive into the high-performance world of Redis. This guide explores the single-threaded event loop, specialized data structures like SkipLists and ZipLists, and how to leverage Redis beyond simple caching to build scalable, low-latency backend systems.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-02-13_redis-internals-and-data-structures</guid>
     </item>
 
   </channel>
