@@ -31,6 +31,11 @@ Adding the feed above is the **minimum step needed** to start listening. Give it
 
 ## Episodes
 
+### [Episode 5 - Paula Medina Mora](episodes/episode5-paula.md)
+**Date: 2026-02-21**
+
+Episode 5 features Paula Medina Mora - HR Expert and Founder of MakingHR. We peel back the curtain on the hiring world to see what actually happens "on the other side" of the desk. We talk about how to build a CV that stands out, the reality of the Spanish tech market, and how to navigate the recruitment process from the first LinkedIn message to signing the contract. An honest look at the human side of software engineering, with practical advice for developers at any level - with mate on the side.
+
 ### [Episode 4 - Roberto J. García Navarro](episodes/episode4-roberto.md)
 **Date:** 2026-01-25
 
