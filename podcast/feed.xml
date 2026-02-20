@@ -15,6 +15,36 @@
     <itunes:image href="https://kfir-g.dev/podcast/newlogo.png"/>
 
     <item>
+      <title>Episode 5 - Paula Medina Mora</title>
+      <description><![CDATA[
+Episode 5 features Paula Medina Mora - HR expert and Founder of MakingHR. We peel back the curtain on the hiring world to see what actually happens "on the other side" of the desk. We talk about how to build a CV that stands out, the reality of the Spanish tech market, and how to navigate the recruitment process from the first LinkedIn message to signing the contract.
+
+Topics we cover:
+- Fractional HR: what it means and how it helps startups in A Coruña.
+- The "Recruiter's Lens": why searching for talent isn't like "Football Manager."
+- CV & LinkedIn: Balancing technical depth with impact to be "found."
+- The Screening Call: What HR looks for in those first 15 minutes.
+- Negotiation & Contracts: Salary ranges and more.
+- Regional Context: The tech market in Galicia vs. the rest of Spain.
+
+Connect with Paula Medina Mora:
+- Website: https://makinghr.es/
+- LinkedIn: https://www.linkedin.com/in/paulamedinamora/
+      ]]></description>
+      <enclosure 
+        url="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode5-paula.mp3"
+        type="audio/mpeg"
+        length="0"/>
+      <guid>code-with-mate-episode-5</guid>
+      <pubDate>Sat, 21 Feb 2026 00:00:00 +0000</pubDate>
+      <itunes:duration>01:10:53</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>5</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <item>
       <title>Episode 4 - Roberto J. García Navarro</title>
 
       <description><![CDATA[
