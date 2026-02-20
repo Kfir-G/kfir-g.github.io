@@ -33,5 +33,5 @@ We peel back the curtain on the hiring world to see what actually happens "on th
 
 **Connect with Paula Medina Mora:** <br/>
 
-* Website: https://makinghr.com/ 
-* LinkedIn: https://www.linkedin.com/in/paulamedinamora/
+* Website: [https://makinghr.com/](https://makinghr.com/)
+* LinkedIn: [https://www.linkedin.com/in/paulamedinamora/](https://www.linkedin.com/in/paulamedinamora/)
