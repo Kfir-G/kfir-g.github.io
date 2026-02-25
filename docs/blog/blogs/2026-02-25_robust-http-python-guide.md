@@ -3,7 +3,7 @@ title: The Robust HTTP Client - Beyond simple requests.get
 published: true 
 date: 2026-02-25 00:00:00 UTC 
 tags: python,http,networking,performance,backend,architecture 
-canonical_url: [https://kfir-g.dev/blog/blogs/2026-02-25_robust-http-python-guide](https://kfir-g.dev/blog/blogs/2026-02-25_robust-http-python-guide)
+canonical_url: https://kfir-g.dev/blog/blogs/2026-02-25_robust-http-python-guide
 ---
 
 # The Robust HTTP Client Guide
