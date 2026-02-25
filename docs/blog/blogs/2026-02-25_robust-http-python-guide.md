@@ -1,5 +1,5 @@
 ---
-title: The Robust HTTP Client - Beyond simple requests.get()
+title: The Robust HTTP Client - Beyond simple requests.get
 published: true 
 date: 2026-02-25 00:00:00 UTC 
 tags: python,http,networking,performance,backend,architecture 
