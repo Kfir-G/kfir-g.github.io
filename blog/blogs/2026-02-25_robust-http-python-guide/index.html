@@ -8,22 +8,28 @@
       
       
       
+        <link rel="canonical" href="https://kfir-g.github.io/blog/blogs/2026-02-25_robust-http-python-guide/">
       
+      
+        <link rel="prev" href="../2026-02-13_redis-internals-and-data-structures/">
+      
+      
+        <link rel="next" href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/">
       
       
         
       
       
-      <link rel="icon" href="/assets/logo.jpg">
+      <link rel="icon" href="../../../assets/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>Kfir's Site</title>
+        <title>2026 02 25 robust http python guide - Kfir's Site</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,13 +48,13 @@
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/colors.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/colors.css">
     
-      <link rel="stylesheet" href="/assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
       <link rel="stylesheet" href="/main.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#the-robust-http-client-guide" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-header__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="/assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -94,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              2026 02 25 robust http python guide
             
           </span>
         </div>
@@ -167,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -186,7 +197,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -203,11 +214,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/blog/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -227,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/podcast/" class="md-tabs__link">
+        <a href="../../../podcast/" class="md-tabs__link">
           
   
   
@@ -247,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/videos/" class="md-tabs__link">
+        <a href="../../../videos/" class="md-tabs__link">
           
   
   
@@ -283,9 +296,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
+    <a href="../../.." title="Kfir&#39;s Site" class="md-nav__button md-logo" aria-label="Kfir's Site" data-md-component="logo">
       
-  <img src="/assets/logo.jpg" alt="logo">
+  <img src="../../../assets/logo.jpg" alt="logo">
 
     </a>
     Kfir's Site
@@ -300,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -327,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -351,28 +364,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -390,7 +406,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -408,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   
@@ -433,28 +449,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   
@@ -472,7 +491,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -490,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/" class="md-nav__link">
+      <a href="../2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3/" class="md-nav__link">
         
   
   
@@ -518,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/" class="md-nav__link">
+      <a href="../2025-12-25_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-4/" class="md-nav__link">
         
   
   
@@ -546,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2025-12-27_how-swes-should-do-daily-research/" class="md-nav__link">
+      <a href="../2025-12-27_how-swes-should-do-daily-research/" class="md-nav__link">
         
   
   
@@ -574,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2025-12-30_podcasts-as-a-supply-chain-missing-security-model/" class="md-nav__link">
+      <a href="../2025-12-30_podcasts-as-a-supply-chain-missing-security-model/" class="md-nav__link">
         
   
   
@@ -602,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2025-12-31_feed-identity-vs-content-integrity/" class="md-nav__link">
+      <a href="../2025-12-31_feed-identity-vs-content-integrity/" class="md-nav__link">
         
   
   
@@ -630,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-01-06_async-tasks-fastapi-celery/" class="md-nav__link">
+      <a href="../2026-01-06_async-tasks-fastapi-celery/" class="md-nav__link">
         
   
   
@@ -658,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-01-07_amqp-explained/" class="md-nav__link">
+      <a href="../2026-01-07_amqp-explained/" class="md-nav__link">
         
   
   
@@ -686,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide/" class="md-nav__link">
+      <a href="../2026-01-10_the-ultimate-celery-internals-guide/" class="md-nav__link">
         
   
   
@@ -714,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-01-25_eda-vs-request-response/" class="md-nav__link">
+      <a href="../2026-01-25_eda-vs-request-response/" class="md-nav__link">
         
   
   
@@ -742,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-01-29_how-uvicorn-listens-on-a-port/" class="md-nav__link">
+      <a href="../2026-01-29_how-uvicorn-listens-on-a-port/" class="md-nav__link">
         
   
   
@@ -770,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-02-07_protobuf-fastapi-guide/" class="md-nav__link">
+      <a href="../2026-02-07_protobuf-fastapi-guide/" class="md-nav__link">
         
   
   
@@ -798,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/blogs/2026-02-13_redis-internals-and-data-structures/" class="md-nav__link">
+      <a href="../2026-02-13_redis-internals-and-data-structures/" class="md-nav__link">
         
   
   
@@ -823,10 +842,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/blog/blogs/2026-02-25_robust-http-python-guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 02 25 robust http python guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -842,6 +888,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-library-battle-requests-vs-aiohttp-vs-httpx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Library Battle: Requests vs. AIOHTTP vs. HTTPX
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-understanding-the-protocols-rfc-91109113" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Understanding the Protocols (RFC 9110/9113)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-resilience-retries-backoff-and-jitter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Resilience: Retries, Backoff, and Jitter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-memory-discipline-streaming-vs-buffering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Memory Discipline: Streaming vs. Buffering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-header-discipline-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Header Discipline &amp; Tracing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-implementation-a-production-ready-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Implementation: A Production-Ready Client
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helpful-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helpful Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -868,10 +1011,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -880,7 +1026,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   
@@ -916,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/" class="md-nav__link">
+      <a href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/" class="md-nav__link">
         
   
   
@@ -944,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2022-03-20_Spotify--Genres-Network-Analysis-by-Through-Decades-b7d325f9677a/" class="md-nav__link">
+      <a href="../../old-blogs/2022-03-20_Spotify--Genres-Network-Analysis-by-Through-Decades-b7d325f9677a/" class="md-nav__link">
         
   
   
@@ -972,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-07-04_Inyecci-n-de-Shell-en-CI-CD-de-GitHub-Actions-83f03a7252ce/" class="md-nav__link">
+      <a href="../../old-blogs/2023-07-04_Inyecci-n-de-Shell-en-CI-CD-de-GitHub-Actions-83f03a7252ce/" class="md-nav__link">
         
   
   
@@ -1000,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-07-09_Shell-injection-in-GitHub-Actions-CI-CD-dc137317bc9/" class="md-nav__link">
+      <a href="../../old-blogs/2023-07-09_Shell-injection-in-GitHub-Actions-CI-CD-dc137317bc9/" class="md-nav__link">
         
   
   
@@ -1028,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-07-20_Por-qu--IMDSv1-es-un-riesgo-de-seguridad-para-la-infraestructura-en-nube-891c3668efc5/" class="md-nav__link">
+      <a href="../../old-blogs/2023-07-20_Por-qu--IMDSv1-es-un-riesgo-de-seguridad-para-la-infraestructura-en-nube-891c3668efc5/" class="md-nav__link">
         
   
   
@@ -1056,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-08-06_Why-IMDSv1-is-a-Security-Risk-for-Cloud-Infrastructure-350bbe4e8c94/" class="md-nav__link">
+      <a href="../../old-blogs/2023-08-06_Why-IMDSv1-is-a-Security-Risk-for-Cloud-Infrastructure-350bbe4e8c94/" class="md-nav__link">
         
   
   
@@ -1084,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-08-23_Why-You-Should-Disable-Cloud-Storage-Bucket-Versioning-e6638beffac6/" class="md-nav__link">
+      <a href="../../old-blogs/2023-08-23_Why-You-Should-Disable-Cloud-Storage-Bucket-Versioning-e6638beffac6/" class="md-nav__link">
         
   
   
@@ -1112,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-08-24_Por-Qu--Deber-as-Desactivar-el-Control-de-Versiones-de-Los-Dep-sitos-de-Almacenamiento-en-La-Nube-c8051bdb3738/" class="md-nav__link">
+      <a href="../../old-blogs/2023-08-24_Por-Qu--Deber-as-Desactivar-el-Control-de-Versiones-de-Los-Dep-sitos-de-Almacenamiento-en-La-Nube-c8051bdb3738/" class="md-nav__link">
         
   
   
@@ -1140,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2023-12-29_Securing-Docker--Non-Root-User-Best-Practices-5784ac25e755/" class="md-nav__link">
+      <a href="../../old-blogs/2023-12-29_Securing-Docker--Non-Root-User-Best-Practices-5784ac25e755/" class="md-nav__link">
         
   
   
@@ -1168,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-01-04_Asegurando-Docker--Mejores-Pr-cticas-para-Usuarios-Non-Root-aafb40f7766b/" class="md-nav__link">
+      <a href="../../old-blogs/2024-01-04_Asegurando-Docker--Mejores-Pr-cticas-para-Usuarios-Non-Root-aafb40f7766b/" class="md-nav__link">
         
   
   
@@ -1196,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-04-15_Solving-Logs-Woes--A-Dive-into-Singleton-Design-Pattern-1f77e70bd498/" class="md-nav__link">
+      <a href="../../old-blogs/2024-04-15_Solving-Logs-Woes--A-Dive-into-Singleton-Design-Pattern-1f77e70bd498/" class="md-nav__link">
         
   
   
@@ -1224,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-05-22_Enhancing-Software-Architecture-through-Comprehensive-Testing-in-Backend-Development-26555424f7a0/" class="md-nav__link">
+      <a href="../../old-blogs/2024-05-22_Enhancing-Software-Architecture-through-Comprehensive-Testing-in-Backend-Development-26555424f7a0/" class="md-nav__link">
         
   
   
@@ -1252,7 +1398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-06-19_How-to-Write-an-Effective-README-File---A-Guide-for-Software-Engineers-09a9618c0532/" class="md-nav__link">
+      <a href="../../old-blogs/2024-06-19_How-to-Write-an-Effective-README-File---A-Guide-for-Software-Engineers-09a9618c0532/" class="md-nav__link">
         
   
   
@@ -1280,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-08-12_Mastering-Error-Handling--A-Comprehensive-Guide-9db00b203f15/" class="md-nav__link">
+      <a href="../../old-blogs/2024-08-12_Mastering-Error-Handling--A-Comprehensive-Guide-9db00b203f15/" class="md-nav__link">
         
   
   
@@ -1308,7 +1454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-09-23_Unleash-the-Power-of--FastAPI--Async-vs-Blocking-I-O-7ec80edb7320/" class="md-nav__link">
+      <a href="../../old-blogs/2024-09-23_Unleash-the-Power-of--FastAPI--Async-vs-Blocking-I-O-7ec80edb7320/" class="md-nav__link">
         
   
   
@@ -1336,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-09-30_Understanding-FastAPI-s-UploadFile--The-Starlette-Connection-bcf4b69d0439/" class="md-nav__link">
+      <a href="../../old-blogs/2024-09-30_Understanding-FastAPI-s-UploadFile--The-Starlette-Connection-bcf4b69d0439/" class="md-nav__link">
         
   
   
@@ -1364,7 +1510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-10-12_Building-Robust-Components-with-FastAPI-and-Pydantic-a99e34532241/" class="md-nav__link">
+      <a href="../../old-blogs/2024-10-12_Building-Robust-Components-with-FastAPI-and-Pydantic-a99e34532241/" class="md-nav__link">
         
   
   
@@ -1392,7 +1538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-10-28_Raising-the-Difference-Between-raise-and-raise-e-941a3612aea5/" class="md-nav__link">
+      <a href="../../old-blogs/2024-10-28_Raising-the-Difference-Between-raise-and-raise-e-941a3612aea5/" class="md-nav__link">
         
   
   
@@ -1420,7 +1566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-11-04_Understanding-FastAPI-Fundamentals--A-Guide-to-FastAPI--Uvicorn--Starlette--Swagger-UI--and--1a377ee5b9a6/" class="md-nav__link">
+      <a href="../../old-blogs/2024-11-04_Understanding-FastAPI-Fundamentals--A-Guide-to-FastAPI--Uvicorn--Starlette--Swagger-UI--and--1a377ee5b9a6/" class="md-nav__link">
         
   
   
@@ -1448,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2024-11-26_This-Small-Python-Script-Improved-Understanding-of-Low-Level-Programming-077a2a066273/" class="md-nav__link">
+      <a href="../../old-blogs/2024-11-26_This-Small-Python-Script-Improved-Understanding-of-Low-Level-Programming-077a2a066273/" class="md-nav__link">
         
   
   
@@ -1476,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-01-06_Understanding-Python-Memory-and-Garbage-Collection-Through-Hands-On-Experiments-86f25aa6b5d5/" class="md-nav__link">
+      <a href="../../old-blogs/2025-01-06_Understanding-Python-Memory-and-Garbage-Collection-Through-Hands-On-Experiments-86f25aa6b5d5/" class="md-nav__link">
         
   
   
@@ -1504,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-01-20_Why-You-Should-Use-a-Single-FastAPI-App-and-TestClient-Instance-475ab3a99cce/" class="md-nav__link">
+      <a href="../../old-blogs/2025-01-20_Why-You-Should-Use-a-Single-FastAPI-App-and-TestClient-Instance-475ab3a99cce/" class="md-nav__link">
         
   
   
@@ -1532,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-01-27_Do-You-Really-Know-About-FastAPI-and-ASGI--06582a8358bc/" class="md-nav__link">
+      <a href="../../old-blogs/2025-01-27_Do-You-Really-Know-About-FastAPI-and-ASGI--06582a8358bc/" class="md-nav__link">
         
   
   
@@ -1560,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-03-10_Memory-Allocation-in-Python--Understanding-Arenas--Pools--and-Blocks-87024446c93e/" class="md-nav__link">
+      <a href="../../old-blogs/2025-03-10_Memory-Allocation-in-Python--Understanding-Arenas--Pools--and-Blocks-87024446c93e/" class="md-nav__link">
         
   
   
@@ -1588,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-03-17_The-Three-Generations-in-Python-s-Garbage-Collector-13a76e895e72/" class="md-nav__link">
+      <a href="../../old-blogs/2025-03-17_The-Three-Generations-in-Python-s-Garbage-Collector-13a76e895e72/" class="md-nav__link">
         
   
   
@@ -1616,7 +1762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-03-30_What-Really-Happens-When-You-Type-google-com-in-Your-Browser--c33e8c2e6eed/" class="md-nav__link">
+      <a href="../../old-blogs/2025-03-30_What-Really-Happens-When-You-Type-google-com-in-Your-Browser--c33e8c2e6eed/" class="md-nav__link">
         
   
   
@@ -1644,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-04-15_---7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault-9e56e42251bf/" class="md-nav__link">
+      <a href="../../old-blogs/2025-04-15_---7-Quick-Tips-to-Get-Started-with-HashiCorp-Vault-9e56e42251bf/" class="md-nav__link">
         
   
   
@@ -1672,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-05-12_Understanding-Atomicity-in-PostgreSQL--A-Deep-Dive-into-the--A--in-ACID-5bde6fd042e3/" class="md-nav__link">
+      <a href="../../old-blogs/2025-05-12_Understanding-Atomicity-in-PostgreSQL--A-Deep-Dive-into-the--A--in-ACID-5bde6fd042e3/" class="md-nav__link">
         
   
   
@@ -1700,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-06-01_Understanding-Consistency-in-PostgreSQL--A-Deep-Dive-into-the--C--in-ACID-82ed2d1093ec/" class="md-nav__link">
+      <a href="../../old-blogs/2025-06-01_Understanding-Consistency-in-PostgreSQL--A-Deep-Dive-into-the--C--in-ACID-82ed2d1093ec/" class="md-nav__link">
         
   
   
@@ -1728,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-07-07_Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the--D--in-ACID-af42ce13fb2b/" class="md-nav__link">
+      <a href="../../old-blogs/2025-07-07_Understanding-Durability-in-PostgreSQL--A-Deep-Dive-into-the--D--in-ACID-af42ce13fb2b/" class="md-nav__link">
         
   
   
@@ -1756,7 +1902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-07-07_Understanding-Isolation-in-PostgreSQL--A-Deep-Dive-into-the--I--in-ACID-c493d635a35b/" class="md-nav__link">
+      <a href="../../old-blogs/2025-07-07_Understanding-Isolation-in-PostgreSQL--A-Deep-Dive-into-the--I--in-ACID-c493d635a35b/" class="md-nav__link">
         
   
   
@@ -1784,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-10-14_Demystifying-Nginx--From-Reverse-Proxy-to-Secure-Gateway-149c75b99ad8/" class="md-nav__link">
+      <a href="../../old-blogs/2025-10-14_Demystifying-Nginx--From-Reverse-Proxy-to-Secure-Gateway-149c75b99ad8/" class="md-nav__link">
         
   
   
@@ -1812,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-10-20_How-the-Browser-Works-4026ab114d78/" class="md-nav__link">
+      <a href="../../old-blogs/2025-10-20_How-the-Browser-Works-4026ab114d78/" class="md-nav__link">
         
   
   
@@ -1840,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-11-02_Shipping-FastAPI-Like-a-Pro--My-CI-CD-Pipeline-for-TinyURL-c27b68434f04/" class="md-nav__link">
+      <a href="../../old-blogs/2025-11-02_Shipping-FastAPI-Like-a-Pro--My-CI-CD-Pipeline-for-TinyURL-c27b68434f04/" class="md-nav__link">
         
   
   
@@ -1868,7 +2014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-11-10_Why-I-Use-curl-Instead-of-Postman--Learning-HTTP-by-Feel-2fd88ef90fb7/" class="md-nav__link">
+      <a href="../../old-blogs/2025-11-10_Why-I-Use-curl-Instead-of-Postman--Learning-HTTP-by-Feel-2fd88ef90fb7/" class="md-nav__link">
         
   
   
@@ -1896,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae/" class="md-nav__link">
+      <a href="../../old-blogs/2025-11-21_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-1--ASGI-059a588a54ae/" class="md-nav__link">
         
   
   
@@ -1924,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/blog/old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad/" class="md-nav__link">
+      <a href="../../old-blogs/2025-12-08_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-2-c02de4a20dad/" class="md-nav__link">
         
   
   
@@ -2021,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/podcast/" class="md-nav__link">
+      <a href="../../../podcast/" class="md-nav__link">
         
   
   
@@ -2103,7 +2249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/podcast/episodes/episode1-jod35/" class="md-nav__link">
+      <a href="../../../podcast/episodes/episode1-jod35/" class="md-nav__link">
         
   
   
@@ -2131,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/podcast/episodes/episode2-martin/" class="md-nav__link">
+      <a href="../../../podcast/episodes/episode2-martin/" class="md-nav__link">
         
   
   
@@ -2159,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/podcast/episodes/episode3-tinyurl/" class="md-nav__link">
+      <a href="../../../podcast/episodes/episode3-tinyurl/" class="md-nav__link">
         
   
   
@@ -2187,7 +2333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/podcast/episodes/episode4-roberto/" class="md-nav__link">
+      <a href="../../../podcast/episodes/episode4-roberto/" class="md-nav__link">
         
   
   
@@ -2215,7 +2361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/podcast/episodes/episode5-paula/" class="md-nav__link">
+      <a href="../../../podcast/episodes/episode5-paula/" class="md-nav__link">
         
   
   
@@ -2312,7 +2458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/videos/" class="md-nav__link">
+      <a href="../../../videos/" class="md-nav__link">
         
   
   
@@ -2340,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/videos/spain-devsecops/" class="md-nav__link">
+      <a href="../../../videos/spain-devsecops/" class="md-nav__link">
         
   
   
@@ -2381,8 +2527,156 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<hr />
+<p>title: The Robust HTTP Client - Beyond simple requests.get()
+published: true 
+date: 2026-02-25 00:00:00 UTC 
+tags: python,http,networking,performance,backend,architecture 
+canonical_url: <a href="https://kfir-g.dev/blog/blogs/2026-02-25_robust-http-python-guide">https://kfir-g.dev/blog/blogs/2026-02-25_robust-http-python-guide</a></p>
+<hr />
+<h1 id="the-robust-http-client-guide">The Robust HTTP Client Guide</h1>
+<p>In a perfect world, APIs never fail. In the real world, the <strong>API call is a crucial component</strong> of your architecture. It is the bridge between your service and the outside world. If that bridge is fragile, your entire system is at risk of cascading failures.</p>
+<p>To build production-grade backends, we must move beyond simple scripts and treat HTTP calls as first-class citizens that require resilience, resource management, and strict protocol adherence.</p>
+<hr />
+<h2 id="1-the-library-battle-requests-vs-aiohttp-vs-httpx">1. The Library Battle: Requests vs. AIOHTTP vs. HTTPX</h2>
+<p>Before writing a single line of logic, you have to choose your transport engine.</p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Paradigm</th>
+<th>Protocol</th>
+<th>The Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Requests</strong></td>
+<td>Synchronous</td>
+<td>HTTP/1.1</td>
+<td>Simple, but blocks threads. No HTTP/2. <a href="https://requests.readthedocs.io/">Docs</a></td>
+</tr>
+<tr>
+<td><strong>AIOHTTP</strong></td>
+<td>Asynchronous</td>
+<td>HTTP/1.1</td>
+<td>High performance for async loops. No sync API. <a href="https://docs.aiohttp.org/">Docs</a></td>
+</tr>
+<tr>
+<td><strong>HTTPX</strong></td>
+<td>Sync + Async</td>
+<td><strong>HTTP/2</strong></td>
+<td>The modern standard. Supports multiplexing. <a href="https://www.python-httpx.org/">Docs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-understanding-the-protocols-rfc-91109113">2. Understanding the Protocols (RFC 9110/9113)</h2>
+<ul>
+<li><strong>HTTP/1.1 (<a href="https://www.rfc-editor.org/rfc/rfc9112">RFC 9112</a>)</strong>: Reliable but suffers from <strong>Head-of-Line (HOL) blocking</strong>. One request must finish before the next starts on the same connection.</li>
+<li><strong>HTTP/2 (<a href="https://www.rfc-editor.org/rfc/rfc9113">RFC 9113</a>)</strong>: Uses <strong>Multiplexing</strong> to send multiple requests/responses over a single TCP connection simultaneously.</li>
+<li><strong>HTTP/3 (<a href="https://www.rfc-editor.org/rfc/rfc9114">RFC 9114</a>)</strong>: Built on QUIC (UDP). Solves HOL blocking at the packet level.</li>
+</ul>
+<h2 id="3-resilience-retries-backoff-and-jitter">3. Resilience: Retries, Backoff, and Jitter</h2>
+<p>If an API call fails, your recovery strategy determines your system&rsquo;s survival.</p>
+<ol>
+<li><strong>Exponential Backoff (<a href="https://www.rfc-editor.org/rfc/rfc7231">RFC 7231</a>)</strong>: Increase the wait time between retries ($2^{attempt}$) to give the downstream service room to breathe.</li>
+<li><strong>Jitter</strong>: Add randomness to your backoff. This prevents the <strong>&ldquo;Thundering Herd&rdquo;</strong> effect, where all your workers retry at the exact same microsecond, effectively DDoS-ing your own internal service.</li>
+</ol>
+<h2 id="4-memory-discipline-streaming-vs-buffering">4. Memory Discipline: Streaming vs. Buffering</h2>
+<p>Never use <code>response.json()</code> or <code>response.content</code> for large payloads. This loads the entire object into RAM. Instead, use <strong>Chunked Transfer Encoding (<a href="https://www.google.com/search?q=https://www.rfc-editor.org/rfc/rfc7230%23section-4.1">RFC 7230</a>)</strong> to process data as it arrives.</p>
+<h2 id="5-header-discipline-tracing">5. Header Discipline &amp; Tracing</h2>
+<ul>
+<li><strong>X-Request-ID</strong>: Crucial for distributed tracing. Link your logs to the downstream logs.</li>
+<li><strong>Accept-Encoding</strong>: Use <code>br</code> (Brotli) or <code>gzip</code> to reduce payload size.</li>
+<li><strong>Idempotency-Key (<a href="https://www.google.com/search?q=https://www.rfc-editor.org/rfc/rfc9110%23section-9.2.2">RFC 9110 Section 9.2.2</a>)</strong>: Required for safe <code>POST</code> retries.</li>
+</ul>
+<hr />
+<h2 id="the-implementation-a-production-ready-client">The Implementation: A Production-Ready Client</h2>
+<p>Here is the full code for a robust, asynchronous client using <strong>HTTPX</strong> and <strong>Tenacity</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tenacity</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">retry</span><span class="p">,</span> 
+    <span class="n">stop_after_attempt</span><span class="p">,</span> 
+    <span class="n">wait_exponential_jitter</span><span class="p">,</span> 
+    <span class="n">retry_if_exception_type</span>
+<span class="p">)</span>
+
+<span class="c1"># Configuration</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;RobustClient&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">RobustHTTPClient</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># 1. Connection Pool &amp; HTTP/2 Support</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span>
+            <span class="n">http2</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">timeout</span><span class="o">=</span><span class="n">httpx</span><span class="o">.</span><span class="n">Timeout</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">connect</span><span class="o">=</span><span class="mf">5.0</span><span class="p">),</span>
+            <span class="n">limits</span><span class="o">=</span><span class="n">httpx</span><span class="o">.</span><span class="n">Limits</span><span class="p">(</span><span class="n">max_keepalive_connections</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_connections</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="c1"># 2. Resilience: Retry only on network noise or server 5xx</span>
+    <span class="nd">@retry</span><span class="p">(</span>
+        <span class="n">retry</span><span class="o">=</span><span class="n">retry_if_exception_type</span><span class="p">((</span><span class="n">httpx</span><span class="o">.</span><span class="n">ConnectError</span><span class="p">,</span> <span class="n">httpx</span><span class="o">.</span><span class="n">TimeoutException</span><span class="p">)),</span>
+        <span class="n">stop</span><span class="o">=</span><span class="n">stop_after_attempt</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">wait</span><span class="o">=</span><span class="n">wait_exponential_jitter</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+        <span class="n">reraise</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">request_id</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;X-Request-ID&quot;</span><span class="p">:</span> <span class="n">request_id</span><span class="p">,</span>
+            <span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;CodeWithMate/1.0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span> <span class="s2">&quot;gzip, br&quot;</span>
+        <span class="p">}</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sending Request: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2"> | ID: </span><span class="si">{</span><span class="n">request_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+        <span class="c1"># 3. Validation: RFC 9110 Status Check</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="c1"># 4. Memory Efficiency: Chunked streaming</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">download_large_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">stream</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">destination</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">async</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">aiter_bytes</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">8192</span><span class="p">):</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">aclose</span><span class="p">()</span>
+
+<span class="c1"># Example Usage with FastAPI/Lifespan</span>
+<span class="c1"># async with RobustHTTPClient() as client:</span>
+<span class="c1">#     data = await client.get_json(&quot;https://api.example.com/data&quot;)</span>
+</code></pre></div>
+<hr />
+<h2 id="helpful-tools">Helpful Tools</h2>
+<ul>
+<li><strong><a href="https://tenacity.readthedocs.io/">Tenacity</a></strong>: Declarative retry logic.</li>
+<li><strong><a href="https://lundberg.github.io/respx/">RESPX</a></strong>: Mocking HTTPX for unit tests.</li>
+<li><strong><a href="https://httpie.io/">HTTPie</a></strong>: Modern CLI for manual API testing.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2424,10 +2718,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "content.code.copy", "content.tabs.link", "content.grid", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
