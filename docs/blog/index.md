@@ -11,6 +11,8 @@
 
 ##### New
 
+The Robust HTTP Client - Beyond simple requests.get()[](blogs/2026-02-25_robust-http-python-guide.md)
+
 [Redis Internals & Data Structures - The In-Memory Backbone](blogs/2026-02-13_redis-internals-and-data-structures.md)
 
 [The Complete Guide to Protocol Buffers in FastAPI](blogs/2026-02-07_protobuf-fastapi-guide.md)
