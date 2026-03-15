@@ -31,6 +31,11 @@ Adding the feed above is the **minimum step needed** to start listening. Give it
 
 ## Episodes
 
+### [Episode 6 - Antonio Juanilla (Specter)](episodes/episode6-antonio.md)
+**Date: 2026-03-15**
+
+Episode 6 features Antonio Juanilla, better known as Specter a DevSecOps leader. In this technical deep-dive, we explore how to bake security directly into the backend development lifecycle. From the OSDO framework to hardening Kubernetes clusters and streamlining CI/CD pipelines with SAST, Antonio shares a pragmatic, engineer-to-engineer approach to staying secure in 2026. A must-listen for any developer looking to bridge the gap between "code that works" and "code that is safe."
+
 ### [Episode 5 - Paula Medina Mora](episodes/episode5-paula.md)
 **Date: 2026-02-21**
 
