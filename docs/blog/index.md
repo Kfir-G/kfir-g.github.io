@@ -10,6 +10,9 @@
 #### Blog Series
 
 ##### New
+
+[The Modern Python + PostgreSQL Stack- From Psycopg3 to Advanced Scaling](blogs/2026-04-04_modern-python-postgres-stack.md)
+
 [The Robust HTTP Client - Beyond simple requests.get](blogs/2026-02-25_robust-http-python-guide.md)
 
 [Redis Internals & Data Structures - The In-Memory Backbone](blogs/2026-02-13_redis-internals-and-data-structures.md)
