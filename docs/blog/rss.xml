@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -177,6 +177,16 @@
         Master the relational backbone of modern backends. This guide covers the transition to Psycopg3, implementing high-performance connection pooling with async support, transaction integrity patterns, and leveraging PostgreSQL's JSONB for hybrid SQL/NoSQL architectures.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-04-04_modern-python-postgres-stack</guid>
+    </item>
+
+    <item>
+      <title>Stop Using upload_file(): S3 Engineering for High-Throughput Systems</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-04-13_s3-engineering-guide</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 GMT</pubDate>
+      <description>
+        Move beyond basic S3 uploads. Learn to engineer a resilient file-handling pipeline using chunked streaming to save RAM, server-side MD5 verification for data integrity, and non-blocking async wrappers to keep your FastAPI event loop responsive under heavy load.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-04-13_s3-engineering-guide</guid>
     </item>
 
   </channel>

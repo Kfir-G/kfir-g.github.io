@@ -11,6 +11,8 @@
 
 ##### New
 
+[AWS S3 Engineering Guide](blogs/2026-04-13_s3-engineering-guide.md)
+
 [The Modern Python + PostgreSQL Stack- From Psycopg3 to Advanced Scaling](blogs/2026-04-04_modern-python-postgres-stack.md)
 
 [The Robust HTTP Client - Beyond simple requests.get](blogs/2026-02-25_robust-http-python-guide.md)
