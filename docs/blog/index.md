@@ -11,6 +11,8 @@
 
 ##### New
 
+[The Hidden Secrets in Python: Making Your Program Really Efficient](blogs/2026-05-01_anyio-hidden-secrets.md)
+
 [AWS S3 Engineering Guide](blogs/2026-04-13_s3-engineering-guide.md)
 
 [The Modern Python + PostgreSQL Stack- From Psycopg3 to Advanced Scaling](blogs/2026-04-04_modern-python-postgres-stack.md)

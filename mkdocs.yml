@@ -25,13 +25,18 @@ markdown_extensions:
   - md_in_html
 
   # Pymdown Extensions 
-  - pymdownx.superfences
   - pymdownx.details
   - pymdownx.tabbed
   - pymdownx.extra
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
 
 plugins:
   - search
+  - mermaid2
   # - rss:
   #     site_url: "https://kfir-g.github.io/"
 
