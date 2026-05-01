@@ -28,6 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material mkdocs-rss-plugin python-frontmatter pyyaml feedparser html2text
           pip install mkdocs-wavesurfer mkdocs-audio beautifulsoup4
+          pip install mkdocs-mermaid2-plugin pymdown-extensions
           
       # # 4️⃣ Fetch Medium posts
       # - name: Fetch Medium posts
