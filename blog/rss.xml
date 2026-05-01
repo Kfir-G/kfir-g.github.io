@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -179,6 +179,7 @@
       <guid>https://kfir-g.dev/blog/blogs/2026-04-04_modern-python-postgres-stack</guid>
     </item>
 
+    <!-- Post 17 -->
     <item>
       <title>Stop Using upload_file(): S3 Engineering for High-Throughput Systems</title>
       <link>https://kfir-g.dev/blog/blogs/2026-04-13_s3-engineering-guide</link>
@@ -187,6 +188,17 @@
         Move beyond basic S3 uploads. Learn to engineer a resilient file-handling pipeline using chunked streaming to save RAM, server-side MD5 verification for data integrity, and non-blocking async wrappers to keep your FastAPI event loop responsive under heavy load.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-04-13_s3-engineering-guide</guid>
+    </item>
+
+    <!-- Post 19 -->
+    <item>
+      <title>The Hidden Secrets in Python: Making Your Program Truly Efficient with AnyIO</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-05-01_anyio-hidden-secrets</link>
+      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
+      <description>
+        Efficiency isn't just about speed; it's about reliability. Dive deep into Structured Concurrency with AnyIO. Learn how to eliminate "zombie tasks," bridge the gap between sync and async code, and build resilient Python backends using Task Groups and thread offloading.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-05-01_anyio-hidden-secrets</guid>
     </item>
 
   </channel>
