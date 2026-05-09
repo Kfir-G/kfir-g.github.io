@@ -5,12 +5,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://kfir-g.github.io/blog/blogs/2026-05-01_anyio-hidden-secrets/" rel="canonical"/>
-<link href="../2026-04-13_s3-engineering-guide/" rel="prev"/>
-<link href="../2026-05-09_strawberry-graphql/" rel="next"/>
+<link href="https://kfir-g.github.io/blog/blogs/2026-05-09_strawberry-graphql/" rel="canonical"/>
+<link href="../2026-05-01_anyio-hidden-secrets/" rel="prev"/>
+<link href="../../old-blogs/2021-12-18_Spotify---Genres-Network-Analysis-3047c5b9b777/" rel="next"/>
 <link href="../../../assets/logo.jpg" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>The Hidden Secrets in Python Making Your Program Truly Efficient with AnyIO - Kfir's Site</title>
+<title>The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry - Kfir's Site</title>
 <link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -25,7 +25,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#the-hidden-secrets-in-python-making-your-program-really-efficient">
+<a class="md-skip" href="#the-modern-graphql-stack-engineering-type-safe-apis-with-strawberry">
           Skip to content
         </a>
 </div>
@@ -49,7 +49,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              The Hidden Secrets in Python Making Your Program Truly Efficient with AnyIO
+              The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry
             
           </span>
 </div>
@@ -419,13 +419,25 @@
   </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2026-05-01_anyio-hidden-secrets/">
+<span class="md-ellipsis">
+    
+  
+    The Hidden Secrets in Python Making Your Program Truly Efficient with AnyIO
+  
+
+    
+  </span>
+</a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
     
   
-    The Hidden Secrets in Python Making Your Program Truly Efficient with AnyIO
+    The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry
   
 
     
@@ -436,7 +448,7 @@
 <span class="md-ellipsis">
     
   
-    The Hidden Secrets in Python Making Your Program Truly Efficient with AnyIO
+    The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry
   
 
     
@@ -449,46 +461,46 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#1-the-bottom-up-why-do-we-care">
+<a class="md-nav__link" href="#1-the-protocol-no-magic-just-json-over-http">
 <span class="md-ellipsis">
       
-        1. The Bottom-Up: Why do we care?
+        1. The Protocol: No Magic, Just JSON over HTTP
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#2-the-anyio-edge-structured-concurrency">
+<a class="md-nav__link" href="#2-the-internal-meat-lexing-and-execution">
 <span class="md-ellipsis">
       
-        2. The AnyIO Edge: Structured Concurrency
+        2. The Internal “Meat”: Lexing and Execution
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#3-day-to-day-usage-the-engineers-toolkit">
+<a class="md-nav__link" href="#3-strawberry-architecture-types-vs-resolvers">
 <span class="md-ellipsis">
       
-        3. Day-to-Day Usage: The Engineer’s Toolkit
+        3. Strawberry Architecture: Types vs. Resolvers
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-anyio-secret-implementation">
+<a class="md-nav__link" href="#4-performance-meat-batching-and-dataloaders">
 <span class="md-ellipsis">
       
-        The “AnyIO Secret” Implementation
+        4. Performance Meat: Batching and DataLoaders
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#4-pro-tips-for-efficiency">
+<a class="md-nav__link" href="#5-why-strawberry-is-the-engineers-choice">
 <span class="md-ellipsis">
       
-        4. Pro Tips for Efficiency
+        5. Why Strawberry is the Engineer’s Choice
       
     </span>
 </a>
@@ -503,19 +515,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-concurrency-evolution-stack">
+<a class="md-nav__link" href="#the-execution-flow">
 <span class="md-ellipsis">
       
-        The Concurrency Evolution Stack
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the-lifecycle-of-a-task-group">
-<span class="md-ellipsis">
-      
-        The Lifecycle of a Task Group
+        The Execution Flow
       
     </span>
 </a>
@@ -531,18 +534,6 @@
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../2026-05-09_strawberry-graphql/">
-<span class="md-ellipsis">
-    
-  
-    The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry
-  
-
-    
-  </span>
-</a>
 </li>
 </ul>
 </nav>
@@ -1213,133 +1204,82 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="the-hidden-secrets-in-python-making-your-program-really-efficient">The Hidden Secrets in Python: Making Your Program Really Efficient</h1>
-<p>If you’ve been building backends in Python, you’ve likely hit the “Async Wall.” You want the speed of <code>asyncio</code>, but you’re tired of the boilerplate, the fragile event loops, and the struggle of making libraries play nice together. </p>
-<p>Enter <strong>AnyIO</strong>. </p>
-<p>Most developers think AnyIO is just another wrapper. It isn’t. It is the high-level engineering bridge that lets you write code that works on any asynchronous backend (asyncio or trio) while fixing the structural flaws of standard concurrency.</p>
-<h3 id="1-the-bottom-up-why-do-we-care"><strong>1. The Bottom-Up: Why do we care?</strong></h3>
-<p>To understand why AnyIO is a “secret weapon,” we have to look at the stack:</p>
+<h1 id="the-modern-graphql-stack-engineering-type-safe-apis-with-strawberry">The Modern GraphQL Stack: Engineering Type-Safe APIs with Strawberry</h1>
+<p>If you’re moving from <a href="https://www.rfc-editor.org/rfc/rfc9205.html">REST</a> to <a href="https://graphql.org/learn/">GraphQL</a>, you’re moving from a <strong>Resource-based</strong> world to a <strong>Graph-based</strong> world. In REST, the URL is the boss. In GraphQL, the <strong>Schema</strong> is the boss. </p>
+<p><a href="https://strawberry.rocks/docs">Strawberry</a> is the modern Python engine that sits between your network and your data. It doesn’t use “magic” class properties; it leverages the Python type system you already know to build a strictly validated execution tree.</p>
+<h3 id="1-the-protocol-no-magic-just-json-over-http"><strong>1. The Protocol: No Magic, Just JSON over HTTP</strong></h3>
+<p><a href="https://rfcs.graphql.org/">GraphQL</a> is strictly an <strong>Application Layer</strong> concern. It doesn’t invent a new networking layer; it usually rides on <strong>HTTP/1.1 or HTTP/2</strong>.</p>
 <ul>
-<li><strong>Sync (Synchronous):</strong> The “one thing at a time” model. Your CPU sits idle while waiting for a database to respond. High latency, low throughput.</li>
-<li><strong>Parallelism:</strong> Running tasks on multiple CPU cores simultaneously. Great for heavy math, but overkill for most web I/O.</li>
-<li><strong>Async (Asynchronous):</strong> One core, many tasks. When one task waits for I/O, the loop switches to another. This is the heart of high-performance servers.</li>
-<li><strong>Asyncio:</strong> Python’s built-in engine. It’s powerful but notoriously “low-level” and easy to break if you don’t handle task lifecycles perfectly.</li>
+<li><strong>The Single Endpoint:</strong> You don’t have <code>/api/users</code> and <code>/api/posts</code>. You have <code>/graphql</code>.</li>
+<li><strong>The Method:</strong> Almost everything is a <strong>POST</strong>. You are sending a JSON payload that contains a <code>query</code> string and an optional <code>variables</code> object.</li>
+<li><strong>The Conversation:</strong> The client sends a string; the server validates it against your Python types and returns a JSON response that mirrors the request’s shape exactly.</li>
 </ul>
-<h3 id="2-the-anyio-edge-structured-concurrency"><strong>2. The AnyIO Edge: Structured Concurrency</strong></h3>
-<p>The biggest secret in AnyIO is <strong>Structured Concurrency</strong>. In standard <code>asyncio</code>, you can “fire and forget” a task, but if it crashes or hangs, it becomes a zombie. </p>
-<p>AnyIO uses <strong>Task Groups</strong>. If one task in the group fails, they all get cleaned up. No leaked resources. No orphaned sockets. It forces you to write code that is clean by design.</p>
-<h3 id="3-day-to-day-usage-the-engineers-toolkit"><strong>3. Day-to-Day Usage: The Engineer’s Toolkit</strong></h3>
-<p>AnyIO simplifies the complex. Instead of worrying about <code>loop.run_in_executor</code>, you use simple, readable primitives:</p>
-<ul>
-<li><strong>Task Groups:</strong> Run multiple async functions and wait for all to finish (or one to fail).</li>
-<li><strong>Blocking Portal:</strong> Call async code from sync code without losing your mind.</li>
-<li><strong>Synchronization:</strong> High-level Locks and Semaphores that actually behave predictably.</li>
-</ul>
-<h3 id="the-anyio-secret-implementation"><strong>The “AnyIO Secret” Implementation</strong></h3>
-<p>Here is how you handle concurrent tasks like an engineer, ensuring that if your S3 upload fails, your Database cleanup still happens correctly.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># --- THE ANYIO BLUEPRINT (PSEUDO-CODE) ---</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">anyio</span>
-
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">fetch_data</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
-    <span class="c1"># Simulate I/O call</span>
-    <span class="k">await</span> <span class="n">anyio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s2">"id"</span><span class="p">:</span> <span class="nb">id</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">:</span> <span class="s2">"ok"</span><span class="p">}</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">heavy_sync_computation</span><span class="p">():</span>
-    <span class="c1"># Simulate a CPU-bound or blocking call</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">process_heavy_payload</span><span class="p">():</span>
-    <span class="c1"># 1. STRUCTURED CONCURRENCY: The Task Group</span>
-    <span class="c1"># This ensures that if ONE task fails, the entire group is managed.</span>
-    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="k">async</span> <span class="k">with</span> <span class="n">anyio</span><span class="o">.</span><span class="n">create_task_group</span><span class="p">()</span> <span class="k">as</span> <span class="n">tg</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Starting concurrent operations..."</span><span class="p">)</span>
-
-            <span class="c1"># 2. SPARING TASKS: Non-blocking execution</span>
-            <span class="n">tg</span><span class="o">.</span><span class="n">start_soon</span><span class="p">(</span><span class="n">fetch_data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-            <span class="n">tg</span><span class="o">.</span><span class="n">start_soon</span><span class="p">(</span><span class="n">fetch_data</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-            <span class="c1"># 3. THREAD OFFLOADING: The AnyIO way</span>
-            <span class="c1"># Need to do something sync (like heavy crypto or old SDKs)? </span>
-            <span class="c1"># AnyIO handles the thread pool for you.</span>
-            <span class="k">await</span> <span class="n">anyio</span><span class="o">.</span><span class="n">to_thread</span><span class="o">.</span><span class="n">run_sync</span><span class="p">(</span><span class="n">heavy_sync_computation</span><span class="p">)</span>
-
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="c1"># 4. ERROR PROPAGATION: AnyIO catches issues across all tasks</span>
-        <span class="n">log_critical</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Task group failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">raise</span>
-
-    <span class="c1"># 5. RESULT: Clean exit, all tasks finished or cleaned up.</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"All tasks verified and complete."</span><span class="p">)</span>
-
-<span class="c1"># To run it on ANY backend (asyncio/trio):</span>
-<span class="c1"># anyio.run(process_heavy_payload, backend="asyncio")</span>
-</code></pre></div>
-<h3 id="4-pro-tips-for-efficiency"><strong>4. Pro Tips for Efficiency</strong></h3>
+<h3 id="2-the-internal-meat-lexing-and-execution"><strong>2. The Internal “Meat”: Lexing and Execution</strong></h3>
+<p>When a request hits your Strawberry server, it goes through a meat-grinder of processing before a single line of your business logic runs:</p>
 <ol>
-<li><strong>Stop using <code>asyncio.gather</code>:</strong> It doesn’t handle cancellations well. Use AnyIO Task Groups for better safety.</li>
-<li><strong>Use <code>anyio.to_thread</code>:</strong> Don’t manually manage <code>ThreadPoolExecutors</code>. AnyIO optimizes the thread count based on your system load.</li>
-<li><strong>Cross-Compatibility:</strong> Writing a library? Use AnyIO. It ensures your users can run your code whether they prefer <code>asyncio</code> or <code>trio</code>.</li>
+<li><strong>Lexical Analysis:</strong> The engine breaks the query string into tokens.</li>
+<li><strong>AST Generation:</strong> It builds an <strong>Abstract Syntax Tree (AST)</strong>—a nested object representing the client’s request.</li>
+<li><strong>Validation:</strong> Strawberry compares the AST to your Python <code>@strawberry.type</code> classes. If the client asks for <code>user_id</code> but your class defines it as <code>id</code>, the server kills the request with a <code>400 Bad Request</code> before the database is even touched.</li>
+<li><strong>Field Resolution:</strong> This is the execution phase. The engine walks the tree and calls a “Resolver”—the Python function that knows how to get that specific piece of data.</li>
 </ol>
+<h3 id="3-strawberry-architecture-types-vs-resolvers"><strong>3. Strawberry Architecture: Types vs. Resolvers</strong></h3>
+<p>In Strawberry, you define the <strong>Contract</strong> (the Type) and the <strong>Logic</strong> (the Resolver). This separation is what makes the system scale.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">strawberry</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span>
+
+<span class="c1"># THE CONTRACT: What can the client see?</span>
+<span class="nd">@strawberry</span><span class="o">.</span><span class="n">type</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Post</span><span class="p">:</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">strawberry</span><span class="o">.</span><span class="n">ID</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="c1"># THE LOGIC: How do we actually get the data?</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_latest_posts</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Post</span><span class="p">]:</span>
+    <span class="c1"># This is the "Meat." You talk to Postgres/Redis here.</span>
+    <span class="c1"># SELECT * FROM posts LIMIT 10</span>
+    <span class="n">raw_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT * FROM posts LIMIT 10"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">Post</span><span class="p">(</span><span class="o">**</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">]</span>
+
+<span class="nd">@strawberry</span><span class="o">.</span><span class="n">type</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Query</span><span class="p">:</span>
+    <span class="c1"># We map the field 'latestPosts' to the 'get_latest_posts' function</span>
+    <span class="n">latest_posts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Post</span><span class="p">]</span> <span class="o">=</span> <span class="n">strawberry</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">resolver</span><span class="o">=</span><span class="n">get_latest_posts</span><span class="p">)</span>
+
+<span class="n">schema</span> <span class="o">=</span> <span class="n">strawberry</span><span class="o">.</span><span class="n">Schema</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">Query</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="4-performance-meat-batching-and-dataloaders"><strong>4. Performance Meat: Batching and DataLoaders</strong></h3>
+<p>The biggest technical trap in GraphQL is the <strong>N+1 Problem</strong>. If a client asks for 10 posts and their authors, a naive implementation will run 1 query for the posts, and then 10 separate queries for each author.</p>
+<p><strong>The Solution: DataLoaders.</strong>
+Strawberry provides a <code>DataLoader</code> <a href="https://strawberry.rocks/docs/guides/dataloaders">class</a>. Instead of your resolver hitting the DB immediately, it “defers” the work. Strawberry collects all the requested IDs, batches them, and sends <strong>one</strong> single <code>SELECT ... WHERE id IN (1, 2, 3...)</code> query. This is non-negotiable for production-grade engineering.</p>
+<h3 id="5-why-strawberry-is-the-engineers-choice"><strong>5. Why Strawberry is the Engineer’s Choice</strong></h3>
+<ul>
+<li><strong>Zero Redundancy:</strong> You use standard Python <code>dataclasses</code> and <strong>Type Hints</strong>. No custom “Graphene-style” objects.</li>
+<li><strong>Async Native:</strong> Built from the ground up for <code>asyncio</code>. It handles concurrent field resolution out of the box.</li>
+<li><strong>Pydantic Integration:</strong> It can convert Pydantic models directly into GraphQL types, keeping your data validation in one place.</li>
+</ul>
 <h3 id="conclusion"><strong>Conclusion</strong></h3>
-<p>Efficiency isn’t just about execution speed; it’s about <strong>reliability</strong>. A program that crashes because of a leaked task isn’t efficient—it’s broken. </p>
-<p>AnyIO provides the high-level abstractions that turn “fragile” async code into “resilient” engineering. It’s the hidden secret that powers modern frameworks like <strong>HTTPX</strong> and <strong>Starlette</strong>. If you want to master the machine, you need to master the way tasks are grouped, managed, and executed.</p>
+<p>GraphQL with Strawberry isn’t about “better” APIs; it’s about <strong>reducing friction</strong>. It moves the burden of data shaping from the Backend Engineer to the Frontend Engineer, while keeping everything strictly typed and validated. </p>
+<p>If your frontend is a simple script, stick to REST. If your frontend is a complex React/Vue app, <strong>Strawberry is the move.</strong></p>
 <hr/>
-<h2 id="the-concurrency-evolution-stack">The Concurrency Evolution Stack</h2>
-<p>This diagram shows how AnyIO acts as a universal “Control Plane” over different backends, providing a consistent API for structured concurrency.</p>
-<pre class="mermaid"><code>graph TD
-    subgraph "Application Layer"
-        UserCode[Your AnyIO Code]
-    end
-
-    subgraph "The AnyIO Secret Sauce"
-        AnyIO[AnyIO Core API]
-        AnyIO --&gt; |Structured Concurrency| SC[Task Groups / Nurseries]
-        AnyIO --&gt; |Sync/Async Bridge| Workers[Worker Threads]
-    end
-
-    subgraph "Backend Engines"
-        AnyIO -.-&gt; |Adaptive Driver| Asyncio[Standard asyncio]
-        AnyIO -.-&gt; |Adaptive Driver| Trio[Trio Engine]
-    end
-
-    UserCode --&gt; AnyIO
-    style AnyIO fill:#2e7d32,color:#fff,stroke-width:2px
-    style UserCode fill:#1976d2,color:#fff
-</code></pre>
-<h2 id="the-lifecycle-of-a-task-group">The Lifecycle of a Task Group</h2>
-<p>This sequence diagram visualizes the “Shield” effect. It demonstrates how a Task Group supervises siblings and ensures no one is left behind when a failure occurs.</p>
-<pre class="mermaid"><code>sequenceDiagram
-    participant M as Main Task
-    participant TG as Task Group
-    participant T1 as Task 1 (DB)
-    participant T2 as Task 2 (API)
-
-    M-&gt;&gt;TG: async with create_task_group()
-    activate TG
-    TG-&gt;&gt;T1: tg.start_soon()
-    TG-&gt;&gt;T2: tg.start_soon()
-
-    Note over T1: Processing...
-    T1--&gt;&gt;TG: ❌ Exception (Failure)
-
-    Note over TG: Supervisor catches error
-    TG-&gt;&gt;T2: 🛑 Cancel remaining tasks
-    T2--&gt;&gt;TG: Graceful shutdown
-
-    deactivate TG
-    TG--&gt;&gt;M: Propagate Exception
-    Note over M: Resources cleaned up safely
+<h2 id="the-execution-flow">The Execution Flow</h2>
+<p>This diagram visualizes how Strawberry transforms a raw HTTP string into a typed Python response.</p>
+<pre class="mermaid"><code>graph LR
+    A[HTTP POST] --&gt; B[Lexer/Parser]
+    B --&gt; C[AST Generation]
+    C --&gt; D{Validation}
+    D --&gt;|Failure| E[400 Error]
+    D --&gt;|Success| F[Execution Engine]
+    F --&gt; G[Resolvers]
+    G --&gt; H[DataLoader/DB]
+    H --&gt; I[JSON Response]
 </code></pre>
 <hr/>
 <h2 id="references">References:</h2>
-<p><a href="https://anyio.readthedocs.io/en/stable/">Official AnyIO Documentation</a> <br/>
-<a href="https://realpython.com/async-io-python/">Real Python: Async IO in Python</a> <br/>
-<a href="https://www.youtube.com/watch?v=o850tKba3lg&amp;t=872s">Higher level Python asyncio with AnyIO - Talk Python to Me Ep.385</a></p>
+<p><a href="https://strawberry.rocks/docs">Official Strawberry Documentation</a> <br/>
+<a href="https://github.com/strawberry-graphql/strawberry">Strawberry GitHub Repository</a> <br/>
+<a href="https://github.com/graphql/dataloader">DataLoader Pattern by Meta</a> <br/>
+<a href="https://www.youtube.com/watch?v=12Lxsvyi7n0">PyCon Italia Strawberry Fields Forever: Enjoy building GraphQL Web APIs - Jonathan Marcel Ehwald</a></p>
 </article>
 </div>
 <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
