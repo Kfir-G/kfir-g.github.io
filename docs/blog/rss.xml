@@ -5,7 +5,7 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, DevOps, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2026 00:00:00 GMT</lastBuildDate>
 
     <!-- Post 1 -->
     <item>
@@ -199,6 +199,17 @@
         Efficiency isn't just about speed; it's about reliability. Dive deep into Structured Concurrency with AnyIO. Learn how to eliminate "zombie tasks," bridge the gap between sync and async code, and build resilient Python backends using Task Groups and thread offloading.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-05-01_anyio-hidden-secrets</guid>
+    </item>
+
+    <!-- Post 20 -->
+    <item>
+      <title>The Modern GraphQL Stack: Engineering Type-Safe APIs with Strawberry</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-05-09_strawberry-graphql-meat</link>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop over-fetching data and start engineering better contracts. This deep dive explores Strawberry GraphQL, a type-hint-driven library for Python. Learn about AST execution, solving the N+1 problem with DataLoaders, and why moving from REST to a Schema-first approach reduces architectural friction.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-05-09_strawberry-graphql-meat</guid>
     </item>
 
   </channel>
