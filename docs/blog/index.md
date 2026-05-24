@@ -11,6 +11,8 @@
 
 ##### New
 
+[The Pydantic Engine Deep-Dive](blogs/2026-05-22_pydantic-core-engine-deep-dive.md)
+
 [The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry](blogs/2026-05-09_strawberry-graphql.md)
 
 [The Hidden Secrets in Python: Making Your Program Really Efficient](blogs/2026-05-01_anyio-hidden-secrets.md)
