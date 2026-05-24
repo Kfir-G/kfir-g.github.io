@@ -8,7 +8,7 @@ canonical_url: https://kfir-g.dev/blog/blogs/2026-05-22_pydantic-core-engine-dee
 
 # The Pydantic Engine: Deep-Dive into Performance, Rust Core, and Enterprise Architecture
 
-In modern backend engineering, data validation is often treated as a secondary concern—a tedious layer of if/else boilerplate tucked away behind HTTP routing code. But in high-throughput, mission-critical systems, validation is the literal gatekeeper of your application state.
+In modern backend engineering, data validation is often treated as a secondary concern-a tedious layer of if/else boilerplate tucked away behind HTTP routing code. But in high-throughput, mission-critical systems, validation is the literal gatekeeper of your application state.
 
 Python is inherently dynamic. It treats data types as hints, not hard constraints. When untrusted JSON strings cross the network boundary into your runtime, you need an absolute guarantee that they conform to your application's expectations before they hit your database or memory store.
 
@@ -41,7 +41,7 @@ The architecture was split into two completely decoupled layers:
 1. [pydantic-core](https://github.com/pydantic/pydantic/tree/main/pydantic-core): A high-performance validation and parsing engine written in Rust. It operates directly on Python objects via PyO3, compiling down to native machine code. It handles all dictionary traversal, string matching, and type coercion at raw C-speeds.
 2. pydantic: The clean, elegant, and idiomatic Python interface that developers use day-to-day.
 
-By offloading the heavy algorithmic sorting to Rust, Pydantic achieved a **4x to 50x speedup** in serialization and parsing execution. It transformed Python's biggest weakness—slow CPU bound computation—into a highly optimized native pipeline.
+By offloading the heavy algorithmic sorting to Rust, Pydantic achieved a **4x to 50x speedup** in serialization and parsing execution. It transformed Python's biggest weakness-slow CPU bound computation-into a highly optimized native pipeline.
 
 ```python
 from pydantic import BaseModel, Field, EmailStr
