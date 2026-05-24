@@ -53,7 +53,7 @@
       <link>https://kfir-g.dev/blog/blogs/2025-12-27_how-swes-should-do-daily-research/</link>
       <pubDate>Fri, 27 Dec 2025 00:00:00 GMT</pubDate>
       <description>
-        Research is a daily discipline, not a one-time task. This post breaks down how strong software engineers research tools, products, topics, and trends—and why consistent, ongoing research quietly compounds over time.
+        Research is a daily discipline, not a one-time task. This post breaks down how strong software engineers research tools, products, topics, and trends-and why consistent, ongoing research quietly compounds over time.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2025-12-27_how-swes-should-do-daily-research/</guid>
     </item>
@@ -97,7 +97,7 @@
       <link>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</link>
       <pubDate>Tue, 07 Jan 2026 00:00:00 GMT</pubDate>
       <description>
-        A practical deep dive into the AMQP protocol. Learn how brokers, exchanges, queues, and acknowledgements work together—and why AMQP quietly powers reliable backend systems at scale.
+        A practical deep dive into the AMQP protocol. Learn how brokers, exchanges, queues, and acknowledgements work together-and why AMQP quietly powers reliable backend systems at scale.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-06_understanding-amqp-protocol</guid>
     </item>
@@ -108,7 +108,7 @@
       <link>https://kfir-g.dev/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
       <description>
-        A deep, end-to-end breakdown of Celery’s architecture — from FastAPI task calls, AMQP routing, serialization, worker pools, retries, scheduling, and result backends. This guide explains how Celery actually works under the hood and how to build reliable distributed task systems in Python.
+        A deep, end-to-end breakdown of Celery’s architecture - from FastAPI task calls, AMQP routing, serialization, worker pools, retries, scheduling, and result backends. This guide explains how Celery actually works under the hood and how to build reliable distributed task systems in Python.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide</guid>
     </item>
@@ -222,6 +222,6 @@
       </description>
       <guid>https://kfir-g.dev/blog/blogs/pydantic-core-engine-deep-dive</guid>
     </item>
-    
+
   </channel>
 </rss>
