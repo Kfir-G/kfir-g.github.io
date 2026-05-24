@@ -212,5 +212,16 @@
       <guid>https://kfir-g.dev/blog/blogs/2026-05-09_strawberry-graphql-meat</guid>
     </item>
 
+    <!-- Post 21 -->
+    <item>
+      <title>The Pydantic Engine: Deep-Dive into Performance, Rust Core, and Enterprise Architecture</title>
+      <link>https://kfir-g.dev/blog/blogs/pydantic-core-engine-deep-dive</link>
+      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop thinking of data validation as secondary boilerplate. Peel back the layers of Pydantic V2’s compiled Rust core (pydantic-core) to see how native machine-code type coercion operates at C-speeds, break down its exact structural ValidationError matrix, and explore the corporate expansion powering PydanticAI and Logfire.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/pydantic-core-engine-deep-dive</guid>
+    </item>
+    
   </channel>
 </rss>
