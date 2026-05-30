@@ -2,7 +2,10 @@
 title: How The Browser Works
 published: true
 date: 2025-10-20 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/4026ab114d78
 ---
 

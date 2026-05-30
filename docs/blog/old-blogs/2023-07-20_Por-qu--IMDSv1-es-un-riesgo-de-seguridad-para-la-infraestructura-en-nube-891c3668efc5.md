@@ -2,7 +2,10 @@
 title: Por Qu  Imdsv1 Es Un Riesgo De Seguridad Para La Infraestructura En Nube
 published: true
 date: 2023-07-20 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/891c3668efc5
 ---
 

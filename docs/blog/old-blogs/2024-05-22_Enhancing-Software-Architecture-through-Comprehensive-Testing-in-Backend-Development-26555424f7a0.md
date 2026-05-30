@@ -2,7 +2,10 @@
 title: Enhancing Software Architecture Through Comprehensive Testing In Backend Development
 published: true
 date: 2024-05-22 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/26555424f7a0
 ---
 

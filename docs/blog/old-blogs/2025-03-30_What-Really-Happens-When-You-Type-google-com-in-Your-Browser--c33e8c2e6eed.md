@@ -2,7 +2,10 @@
 title: What Really Happens When You Type Google Com In Your Browser
 published: true
 date: 2025-03-30 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/c33e8c2e6eed
 ---
 

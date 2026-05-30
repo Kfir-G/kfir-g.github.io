@@ -2,7 +2,13 @@
 title: Async Tasks in Python- Why FastAPI Isn’t Enough and When You Need Celery
 published: true
 date: 2025-01-06 00:00:00 UTC
-tags: python,fastapi,celery,backend,async,architecture
+tags:
+  - python
+  - fastapi
+  - celery
+  - backend
+  - async
+  - architecture
 canonical_url: https://kfir-g.dev/blog/blogs/2026-01-06_async-tasks-fastapi-celery
 ---
 

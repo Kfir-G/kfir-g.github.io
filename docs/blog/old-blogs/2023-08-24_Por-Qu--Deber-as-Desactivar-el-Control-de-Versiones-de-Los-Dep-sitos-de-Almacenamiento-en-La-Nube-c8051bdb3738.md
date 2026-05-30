@@ -2,7 +2,10 @@
 title: Por Qu  Deber As Desactivar El Control De Versiones De Los Dep Sitos De Almacenamiento En La Nube
 published: true
 date: 2023-08-24 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/c8051bdb3738
 ---
 

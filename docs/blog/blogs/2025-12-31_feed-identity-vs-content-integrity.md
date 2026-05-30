@@ -2,7 +2,12 @@
 title: Appendix - Feed Identity vs Content Integrity
 published: true
 date: 2025-12-31 00:00:00 UTC
-tags: podcasts,security,rss,feed,provenance
+tags:
+  - podcasts
+  - security
+  - rss
+  - feed
+  - provenance
 canonical_url: https://kfir-g.dev/blog/blogs/2025-12-31_feed-identity-vs-content-integrity
 ---
 

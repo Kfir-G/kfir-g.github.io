@@ -2,7 +2,10 @@
 title: Shipping Fastapi Like A Pro  My Ci Cd Pipeline For Tinyurl
 published: true
 date: 2025-11-02 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/c27b68434f04
 ---
 

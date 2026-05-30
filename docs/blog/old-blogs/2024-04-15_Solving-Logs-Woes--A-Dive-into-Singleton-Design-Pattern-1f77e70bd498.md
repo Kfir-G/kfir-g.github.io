@@ -2,7 +2,10 @@
 title: Solving Logs Woes  A Dive Into Singleton Design Pattern
 published: true
 date: 2024-04-15 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/1f77e70bd498
 ---
 

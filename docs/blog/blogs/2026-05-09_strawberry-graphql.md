@@ -2,7 +2,13 @@
 title: The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry
 published: true
 date: 2026-05-09 00:00:00 UTC
-tags: python, graphql, strawberry, fastapi, engineering, backend
+tags:
+  - python
+  - graphql
+  - strawberry
+  - fastapi
+  - engineering
+  - backend
 canonical_url: https://kfir-g.dev/blog/blogs/2026-05-09_strawberry-graphql-meat
 ---
 

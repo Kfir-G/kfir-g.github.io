@@ -2,7 +2,13 @@
 title: The Pydantic Engine Deep-Dive into Performance, Rust Core, and Enterprise Architecture
 published: true
 date: 2026-05-22 00:00:00 UTC
-tags: python, pydantic, rust, validation, software-engineering, architecture
+tags:
+  - python
+  - pydantic
+  - rust
+  - validation
+  - software-engineering
+  - architecture
 canonical_url: https://kfir-g.dev/blog/blogs/2026-05-22_pydantic-core-engine-deep-dive.md
 ---
 

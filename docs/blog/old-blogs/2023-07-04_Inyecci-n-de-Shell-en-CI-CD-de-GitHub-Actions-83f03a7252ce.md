@@ -2,7 +2,10 @@
 title: Inyecci N De Shell En Ci Cd De Github Actions
 published: true
 date: 2023-07-04 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/83f03a7252ce
 ---
 

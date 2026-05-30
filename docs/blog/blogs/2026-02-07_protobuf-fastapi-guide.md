@@ -2,7 +2,13 @@
 title: The Complete Guide to Protocol Buffers in FastAPI
 published: true
 date: 2026-02-07 00:00:00 UTC
-tags: fastapi,protobuf,grpc,performance,backend,architecture
+tags:
+  - fastapi
+  - protobuf
+  - grpc
+  - performance
+  - backend
+  - architecture
 canonical_url: https://kfir-g.dev/blog/blogs/2026-02-07_protobuf-fastapi-guide
 ---
 

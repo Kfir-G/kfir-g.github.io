@@ -2,7 +2,10 @@
 title: Building Robust Components With Fastapi And Pydantic
 published: true
 date: 2024-10-12 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/a99e34532241
 ---
 

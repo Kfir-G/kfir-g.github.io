@@ -2,7 +2,10 @@
 title: Understanding Python Memory And Garbage Collection Through Hands On Experiments
 published: true
 date: 2025-01-06 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/86f25aa6b5d5
 ---
 

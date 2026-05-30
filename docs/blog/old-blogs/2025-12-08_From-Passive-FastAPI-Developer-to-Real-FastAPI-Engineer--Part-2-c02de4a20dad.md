@@ -2,7 +2,10 @@
 title: From Passive Fastapi Developer To Real Fastapi Engineer  Part 2
 published: true
 date: 2025-12-08 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/c02de4a20dad
 ---
 

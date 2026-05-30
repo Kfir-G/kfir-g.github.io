@@ -2,7 +2,13 @@
 title: Event-Driven Architecture vs Request/Response - Designing Reactive Backends
 published: true
 date: 2026-01-25 00:00:00 UTC
-tags: backend,architecture,eda,request-response,reactivity,scalability
+tags:
+  - backend
+  - architecture
+  - eda
+  - request-response
+  - reactivity
+  - scalability
 canonical_url: https://kfir-g.dev/blog/blogs/2026-01-25_eda-vs-request-response
 ---
 

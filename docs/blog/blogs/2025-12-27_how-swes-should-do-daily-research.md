@@ -2,7 +2,12 @@
 title: How Software Engineers Should Do Good Research - The D in R&D
 published: true
 date: 2025-12-27 00:00:00 UTC
-tags: softwareengineering,research,learning,career,swe
+tags:
+  - softwareengineering
+  - research
+  - learning
+  - career
+  - swe
 canonical_url: https://kfir-g.dev/blog/blogs/2025-12-27_how-swes-should-do-daily-research
 ---
 

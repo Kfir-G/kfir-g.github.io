@@ -2,7 +2,10 @@
 title: This Small Python Script Improved Understanding Of Low Level Programming
 published: true
 date: 2024-11-26 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/077a2a066273
 ---
 

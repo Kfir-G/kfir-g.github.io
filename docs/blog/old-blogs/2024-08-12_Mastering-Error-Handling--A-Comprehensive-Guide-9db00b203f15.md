@@ -2,7 +2,10 @@
 title: Mastering Error Handling  A Comprehensive Guide
 published: true
 date: 2024-08-12 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/9db00b203f15
 ---
 

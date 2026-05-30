@@ -2,7 +2,12 @@
 title: AMQP Explained for Backend Engineers
 published: true
 date: 2026-01-07 00:00:00 UTC
-tags: amqp,messaging,distributed-systems,backend,architecture
+tags:
+  - amqp
+  - messaging
+  - distributed-systems
+  - backend
+  - architecture
 canonical_url: https://kfir-g.dev/blog/blogs/2026-01-07_amqp-explained
 ---
 

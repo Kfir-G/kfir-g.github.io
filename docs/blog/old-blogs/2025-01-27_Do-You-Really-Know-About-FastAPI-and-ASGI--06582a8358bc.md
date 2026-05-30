@@ -2,7 +2,10 @@
 title: Do You Really Know About Fastapi And Asgi
 published: true
 date: 2025-01-27 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/06582a8358bc
 ---
 

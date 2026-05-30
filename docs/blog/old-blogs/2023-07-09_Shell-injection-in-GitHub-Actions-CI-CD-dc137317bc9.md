@@ -2,7 +2,10 @@
 title: Shell Injection In Github Actions Ci Cd
 published: true
 date: 2023-07-09 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/-dc137317bc9
 ---
 

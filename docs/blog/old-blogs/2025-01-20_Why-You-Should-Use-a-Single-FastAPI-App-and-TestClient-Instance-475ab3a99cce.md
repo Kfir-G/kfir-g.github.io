@@ -2,7 +2,10 @@
 title: Why You Should Use A Single Fastapi App And Testclient Instance
 published: true
 date: 2025-01-20 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/475ab3a99cce
 ---
 

@@ -2,7 +2,10 @@
 title: Why You Should Disable Cloud Storage Bucket Versioning
 published: true
 date: 2023-08-23 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/e6638beffac6
 ---
 

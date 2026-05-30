@@ -2,7 +2,10 @@
 title: Raising The Difference Between Raise And Raise E
 published: true
 date: 2024-10-28 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/941a3612aea5
 ---
 

@@ -2,7 +2,13 @@
 title: The Hidden Secrets in Python Making Your Program Truly Efficient with AnyIO
 published: true
 date: 2026-05-01 00:00:00 UTC
-tags: python, anyio, asyncio, concurrency, performance, engineering
+tags:
+  - python
+  - anyio
+  - asyncio
+  - concurrency
+  - performance
+  - engineering
 canonical_url: https://kfir-g.dev/blog/blogs/2026-05-01_anyio-hidden-secrets
 ---
 

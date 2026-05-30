@@ -2,7 +2,10 @@
 title: Understanding Fastapi S Uploadfile  The Starlette Connection
 published: true
 date: 2024-09-30 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/bcf4b69d0439
 ---
 

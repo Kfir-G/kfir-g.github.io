@@ -2,7 +2,10 @@
 title: Securing Docker  Non Root User Best Practices
 published: true
 date: 2023-12-29 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/5784ac25e755
 ---
 

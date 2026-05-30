@@ -2,7 +2,10 @@
 title: Demystifying Nginx  From Reverse Proxy To Secure Gateway
 published: true
 date: 2025-10-14 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/149c75b99ad8
 ---
 

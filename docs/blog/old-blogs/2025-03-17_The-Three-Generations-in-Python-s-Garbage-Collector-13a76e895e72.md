@@ -2,7 +2,10 @@
 title: The Three Generations In Python S Garbage Collector
 published: true
 date: 2025-03-17 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/13a76e895e72
 ---
 

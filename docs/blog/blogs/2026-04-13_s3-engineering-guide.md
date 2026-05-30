@@ -2,7 +2,13 @@
 title: Stop Using upload_file()- S3 Engineering for High-Throughput Systems
 published: true
 date: 2026-04-13 00:00:00 UTC
-tags: python, aws, s3, performance, asyncio, engineering
+tags:
+  - python
+  - aws
+  - s3
+  - performance
+  - asyncio
+  - engineering
 canonical_url: https://kfir-g.dev/blog/blogs/2026-04-10_s3-engineering-guide
 ---
 

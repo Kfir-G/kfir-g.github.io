@@ -2,7 +2,10 @@
 title: Understanding Isolation In Postgresql  A Deep Dive Into The  I  In Acid
 published: true
 date: 2025-07-07 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/c493d635a35b
 ---
 

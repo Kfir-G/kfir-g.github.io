@@ -2,7 +2,10 @@
 title: 7 Quick Tips To Get Started With Hashicorp Vault
 published: true
 date: 2025-04-15 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/9e56e42251bf
 ---
 

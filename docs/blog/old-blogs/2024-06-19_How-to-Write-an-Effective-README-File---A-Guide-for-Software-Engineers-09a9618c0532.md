@@ -2,7 +2,10 @@
 title: How To Write An Effective Readme File   A Guide For Software Engineers
 published: true
 date: 2024-06-19 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/09a9618c0532
 ---
 

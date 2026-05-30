@@ -2,7 +2,10 @@
 title: Spotify  Genres Network Analysis By Through Decades
 published: true
 date: 2022-03-20 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/b7d325f9677a
 ---
 

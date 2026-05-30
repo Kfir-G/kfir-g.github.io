@@ -2,7 +2,10 @@
 title: Unleash The Power Of  Fastapi  Async Vs Blocking I O
 published: true
 date: 2024-09-23 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/7ec80edb7320
 ---
 

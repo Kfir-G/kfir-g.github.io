@@ -2,7 +2,14 @@
 title: How Uvicorn Listens on an Open Port – From SYN Queue to FastAPI
 published: true
 date: 2026-01-29 00:00:00 UTC
-tags: python,fastapi,uvicorn,asgi,linux,networking,backend
+tags:
+  - python
+  - fastapi
+  - uvicorn
+  - asgi
+  - linux
+  - networking
+  - backend
 canonical_url: https://kfir-g.dev/blog/blogs/2026-01-29_how-uvicorn-listens-on-a-port
 ---
 

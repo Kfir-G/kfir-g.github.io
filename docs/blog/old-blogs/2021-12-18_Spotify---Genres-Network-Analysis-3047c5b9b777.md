@@ -2,7 +2,10 @@
 title: Spotify   Genres Network Analysis
 published: true
 date: 2021-12-18 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/3047c5b9b777
 ---
 

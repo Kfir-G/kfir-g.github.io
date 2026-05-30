@@ -2,7 +2,13 @@
 title: The Modern Python + PostgreSQL Stack - From Psycopg3 to Advanced Scaling
 published: true
 date: 2026-04-04 00:00:00 UTC
-tags: python, postgresql, backend, performance, scalability, psycopg3
+tags:
+  - python
+  - postgresql
+  - backend
+  - performance
+  - scalability
+  - psycopg3
 canonical_url: https://kfir-g.dev/blog/blogs/2026-04-04_modern-python-postgres-stack
 ---
 

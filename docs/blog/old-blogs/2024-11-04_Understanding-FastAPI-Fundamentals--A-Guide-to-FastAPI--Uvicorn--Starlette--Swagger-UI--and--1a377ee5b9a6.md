@@ -2,7 +2,10 @@
 title: Understanding Fastapi Fundamentals  A Guide To Fastapi  Uvicorn  Starlette  Swagger Ui  And
 published: true
 date: 2024-11-04 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/1a377ee5b9a6
 ---
 

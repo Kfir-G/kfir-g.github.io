@@ -2,7 +2,10 @@
 title: Memory Allocation In Python  Understanding Arenas  Pools  And Blocks
 published: true
 date: 2025-03-10 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/87024446c93e
 ---
 

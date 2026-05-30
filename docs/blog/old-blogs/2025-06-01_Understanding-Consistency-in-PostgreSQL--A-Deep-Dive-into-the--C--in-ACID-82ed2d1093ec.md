@@ -2,7 +2,10 @@
 title: Understanding Consistency In Postgresql  A Deep Dive Into The  C  In Acid
 published: true
 date: 2025-06-01 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/82ed2d1093ec
 ---
 

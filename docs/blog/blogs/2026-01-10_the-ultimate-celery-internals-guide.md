@@ -2,7 +2,13 @@
 title: The Ultimate Celery Internals Guid- Serialization, Workers, Brokers, and Distributed Tasks
 published: true
 date: 2026-01-10 00:00:00 UTC
-tags: python,celery,async,distributed-systems,backend,architecture
+tags:
+  - python
+  - celery
+  - async
+  - distributed-systems
+  - backend
+  - architecture
 canonical_url: https://kfir-g.dev/blog/blogs/2026-01-10_the-ultimate-celery-internals-guide
 ---
 

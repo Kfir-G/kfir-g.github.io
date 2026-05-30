@@ -2,7 +2,10 @@
 title: Why Imdsv1 Is A Security Risk For Cloud Infrastructure
 published: true
 date: 2023-08-06 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/350bbe4e8c94
 ---
 

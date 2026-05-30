@@ -2,7 +2,10 @@
 title: Why I Use Curl Instead Of Postman  Learning Http By Feel
 published: true
 date: 2025-11-10 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/2fd88ef90fb7
 ---
 

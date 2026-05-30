@@ -2,7 +2,13 @@
 title: Redis Internals & Data Structures - The In-Memory Backbone
 published: true
 date: 2026-02-13 00:00:00 UTC 
-tags: redis,backend,architecture,performance,distributed-systems,data-structures
+tags:
+  - redis
+  - backend
+  - architecture
+  - performance
+  - distributed-systems
+  - data-structures
 canonical_url: https://kfir-g.dev/blog/blogs/2026-02-13_redis-internals-and-data-structures.md
 ---
 

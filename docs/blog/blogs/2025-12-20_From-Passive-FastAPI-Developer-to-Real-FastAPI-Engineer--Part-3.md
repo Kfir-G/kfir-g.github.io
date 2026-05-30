@@ -2,7 +2,12 @@
 title: From Passive FastAPI Developer to Real FastAPI Engineer – Part 3 Middleware and Background Tasks
 published: true
 date: 2025-12-20 00:00:00 UTC
-tags: fastapi,starlette,asgi,python,softwareengineering
+tags:
+  - fastapi
+  - starlette
+  - asgi
+  - python
+  - softwareengineering
 canonical_url: https://kfir-g.dev/blog/blogs/2025-12-20_From-Passive-FastAPI-Developer-to-Real-FastAPI-Engineer--Part-3
 ---
 

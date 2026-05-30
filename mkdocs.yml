@@ -10,6 +10,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
+    - content.meta.tags
     - content.code.copy
     - content.tabs.link
     - content.grid
@@ -37,6 +38,9 @@ markdown_extensions:
 plugins:
   - search
   - mermaid2
+  - tags
+  - blog:
+      categories: true
   # - rss:
   #     site_url: "https://kfir-g.github.io/"
 

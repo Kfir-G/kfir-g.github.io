@@ -2,7 +2,10 @@
 title: Understanding Atomicity In Postgresql  A Deep Dive Into The  A  In Acid
 published: true
 date: 2025-05-12 03:28:33 UTC
-tags: medium,blog,python
+tags:
+  - medium
+  - blog
+  - python
 canonical_url: https://medium.com/p/5bde6fd042e3
 ---
 
