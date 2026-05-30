@@ -223,5 +223,16 @@
       <guid>https://kfir-g.dev/blog/blogs/pydantic-core-engine-deep-dive</guid>
     </item>
 
+    <!-- Post 22 -->
+    <item>
+      <title>Exploiting CVE-2026-48710: A Deep Dive into Starlette's Host Injection and State Divergence</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-05-30_exploiting-starlette-host-injection</link>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop assuming your framework's high-level string properties represent network truth. Trace a live CVE-2026-48710 exploit pipeline using uv and curl to watch how a query delimiter (?) injected into the Host header splits global middleware logic from backend routing execution, and discover why a simple framework upgrade fails without migrating to low-level ASGI scopes.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-05-30_exploiting-starlette-host-injection</guid>
+    </item>
+
   </channel>
 </rss>
