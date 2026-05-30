@@ -11,6 +11,8 @@
 
 ##### New
 
+[Exploiting CVE-2026-48710: How Host Injections Bypass Global Middlewares](blogs/2026-05-30_exploiting-starlette-host-injection.md)
+
 [The Pydantic Engine Deep-Dive](blogs/2026-05-22_pydantic-core-engine-deep-dive.md)
 
 [The Modern GraphQL Stack Engineering Type-Safe APIs with Strawberry](blogs/2026-05-09_strawberry-graphql.md)
