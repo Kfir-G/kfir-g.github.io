@@ -15,6 +15,38 @@
     <itunes:image href="https://kfir-g.dev/podcast/newlogo.png"/>
 
     <item>
+      <title>Episode 7 - Sung Ju Yea</title>
+      <description><![CDATA[
+Episode 7 features Sung Ju Yea, a Python and backend developer based in Tokyo, Japan. We step away from standard syntax discussions to focus on the human side of engineering: the problem-solver mindset, rapid adaptation, and independent learning.
+
+We talk about how he transitioned from philosophy and statistics into building production systems, how he quickly adapts to codebases across different countries, and his recent dive into AI.
+
+Topics we cover:
+- The Adaptability Blueprint: Getting productive in new codebases within weeks.
+- The Problem-Solver Mindset: Shifting from just closing tickets to thinking like an architect.
+- Designing Data-Intensive Applications: Our take on the legendary book by Martin Kleppmann and Chris Riccomini.
+- Tech Culture (Tokyo vs. Seoul): Practical differences of working as an engineer.
+- AI Engineering for Backend Devs: Key takeaways.
+
+Connect with Sung Ju Yea:
+- LinkedIn: https://www.linkedin.com/in/sung-ju-yea-84b99920a/
+- GitHub: https://github.com/uponTheSky/
+- Dev.to Blog: https://dev.to/uponthesky/
+      ]]></description>
+      <enclosure 
+        url="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3"
+        type="audio/mpeg"
+        length="0"/>
+      <guid>code-with-mate-episode-7</guid>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0000</pubDate>
+      <itunes:duration>00:59:59</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>7</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+
+    <item>
       <title>Episode 6 - Antonio Juanilla (Specter)</title>
       <description><![CDATA[
 Episode 6 features Antonio Juanilla, better known as Specter - A DevSecOps leader. We explore how to bake security directly into the backend development lifecycle.

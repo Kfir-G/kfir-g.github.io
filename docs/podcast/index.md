@@ -31,6 +31,11 @@ Adding the feed above is the **minimum step needed** to start listening. Give it
 
 ## Episodes
 
+### [Episode 7 - Sung Ju Yea](episodes/episode7-sungju.md)
+**Date: 2026-06-14**
+
+Episode 7 features Sung Ju Yea, a Python and backend developer based in Tokyo. In this episode, we step away from standard framework tutorials to explore the human side of engineering: the problem-solver mindset, rapid adaptation, and independent learning. From transitioning into tech from a background in philosophy and statistics, to navigating engineering cultures, Sung Ju shares his blueprint for walking into unfamiliar codebases and immediately delivering value.
+
 ### [Episode 6 - Antonio Juanilla (Specter)](episodes/episode6-antonio.md)
 **Date: 2026-03-15**
 
