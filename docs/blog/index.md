@@ -11,6 +11,8 @@
 
 ##### New
 
+[The Astral Trilogy: How uv, ruff, and ty Completely Rebuilt My Python Workflow](blogs/2026-06-19_the-astral-trilogy-python-pipelines.md)
+
 [Exploiting CVE-2026-48710: How Host Injections Bypass Global Middlewares](blogs/2026-05-30_exploiting-starlette-host-injection.md)
 
 [The Pydantic Engine Deep-Dive](blogs/2026-05-22_pydantic-core-engine-deep-dive.md)

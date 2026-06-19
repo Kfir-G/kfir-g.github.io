@@ -234,5 +234,16 @@
       <guid>https://kfir-g.dev/blog/blogs/2026-05-30_exploiting-starlette-host-injection</guid>
     </item>
 
+    <!-- Post 23 -->
+    <item>
+      <title>The Astral Trilogy: Modernizing My Python Pipelines with uv, ruff, and ty</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-06-19_the-astral-trilogy-python-pipelines</link>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop wrestling with a fragmented, legacy soup of Python tooling. Learn how the modern Astral Trilogy—uv, ruff, and ty—completely unifies package management, PEP 8 linting, code formatting, and strict environment-aware type checking into a single pyproject.toml configuration and a blazing-fast 15-second GitHub Actions CI/CD pipeline.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-06-19_the-astral-trilogy-python-pipelines</guid>
+    </item>
+
   </channel>
 </rss>
