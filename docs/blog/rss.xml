@@ -5,7 +5,18 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 24 -->
+    <item>
+      <title>Rethinking System Architecture: Why Apache Kafka is More Than Just a Message Queue</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-07-03_rethinking-system-architecture-kafka</link>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop tangling your microservices in a messy web of direct API requests. Strip away the marketing complexity and dive into how Kafka leverages a dead-simple, append-only commit log, strict partition ordering, and low-level zero-copy optimizations to decouple backend systems with zero infrastructure debt.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-07-03_rethinking-system-architecture-kafka</guid>
+    </item>
 
     <!-- Post 23 -->
     <item>

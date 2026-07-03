@@ -11,6 +11,8 @@
 
 ##### New
 
+[Rethinking System Architecture - Why Apache Kafka is More Than Just a Message Queue](blogs/2026-07-03_rethinking-system-architecture-kafka.md)
+
 [The Astral Trilogy: How uv, ruff, and ty Completely Rebuilt My Python Workflow](blogs/2026-06-19_the-astral-trilogy-python-pipelines.md)
 
 [Exploiting CVE-2026-48710: How Host Injections Bypass Global Middlewares](blogs/2026-05-30_exploiting-starlette-host-injection.md)
