@@ -11,6 +11,8 @@
 
 ##### New
 
+[How Elasticsearch Searches Billions of Documents in 5ms](blogs/2026-07-26_elasticsearch-under-the-hood.md)
+
 [Rethinking System Architecture - Why Apache Kafka is More Than Just a Message Queue](blogs/2026-07-03_rethinking-system-architecture-kafka.md)
 
 [The Astral Trilogy: How uv, ruff, and ty Completely Rebuilt My Python Workflow](blogs/2026-06-19_the-astral-trilogy-python-pipelines.md)

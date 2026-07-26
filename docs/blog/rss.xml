@@ -5,7 +5,18 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 25 -->
+    <item>
+      <title>How Elasticsearch Searches Billions of Documents in 5ms</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-07-26_elasticsearch-under-the-hood</link>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop waiting on slow O(N) database scans. Peek under the hood of Elasticsearch and Apache Lucene to discover how inverted indexes, analyzer pipelines, immutable segment files, and two-phase scatter-gather distributed searches collapse billions of records into sub-10ms responses.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-07-26_elasticsearch-under-the-hood</guid>
+    </item>
 
     <!-- Post 24 -->
     <item>
