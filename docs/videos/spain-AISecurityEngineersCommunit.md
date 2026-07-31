@@ -68,7 +68,9 @@ You cannot protect the weights inside a model if the web server wrapping them is
 
 ---
 
-**Slides:** [kfir-g.dev/slides-BeyondPromptInjection.pdf](https://kfir-g.dev/slides-BeyondPromptInjection.pdf)
+**Slides:** [kfir-g.dev/assets/slides-BeyondPromptInjection.pdf](https://kfir-g.dev/assets/slides-BeyondPromptInjection.pdf)
+
+<iframe src="https://kfir-g.dev/assets/slides-BeyondPromptInjection.pdf" width="100%" height="600px"></iframe>
 
 ## References
 
