@@ -11,6 +11,8 @@
 
 ##### New
 
+[SQLite Under the Hood](blogs/2026-08-05_sqlite-under-the-hood.md)
+
 [How Elasticsearch Searches Billions of Documents in 5ms](blogs/2026-07-26_elasticsearch-under-the-hood.md)
 
 [Rethinking System Architecture - Why Apache Kafka is More Than Just a Message Queue](blogs/2026-07-03_rethinking-system-architecture-kafka.md)

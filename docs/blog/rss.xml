@@ -5,7 +5,18 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 26 -->
+    <item>
+      <title>How SQLite Packs a Full RDBMS into a Single File</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-08-05_sqlite-under-the-hood</link>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+      <description>
+        Discover how SQLite packs a full ACID-compliant database into a single file embedded inside your app. Learn about VDBE bytecode, flat B+ trees, and crash-safe WAL mode.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-08-05_sqlite-under-the-hood</guid>
+    </item>
 
     <!-- Post 25 -->
     <item>
