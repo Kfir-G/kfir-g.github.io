@@ -10,8 +10,8 @@ audio: "/podcast/audio-files/episode7-sungju.mp3"
 # Episode 7 - Sung Ju Yea
 
 <audio controls style="width: 100%;">
-  <source src="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3" type="audio/mpeg">
-  <source src="https://media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3" type="audio/mp3">
+  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3" type="audio/mpeg">
+  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3" type="audio/mp3">
   Your browser does not support the audio element.
 </audio>
 
