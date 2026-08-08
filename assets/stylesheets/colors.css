@@ -1,0 +1,23 @@
+/* Light theme */
+:root {
+  --md-primary-fg-color: #3b8984;   /* Main brand color */
+  --md-primary-bg-color: #fff8e7;   /* Light background */
+
+  --md-accent-fg-color: #ec5228;   /* Accent / highlights */
+
+  --md-default-bg-color: #fff8e7;  /* Main page bg */
+  --md-default-fg-color: #3b8984;  /* Text */
+
+  --md-code-bg-color: #f8ca75;     /* Code block bg */
+  --md-typeset-a-color: #779cf8;   /* Links */
+
+  --md-footer-bg-color: #d4e157;   /* Footer color */
+}
+
+/* Dark theme (optional — pick what you want) */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #779cf8;
+  --md-default-bg-color: #3b8984;
+  --md-default-fg-color: #fff8e7;
+  --md-accent-fg-color: #ec5228;
+}
