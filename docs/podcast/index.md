@@ -2,69 +2,71 @@
 
 <img src="newlogo.png" alt="Code with Mate Logo" width="200"/>
 
-Welcome to **Code with Mate** - friendly software engineering talks with a cup of mate.  <br/>
+Welcome to **Code with Mate** - friendly software engineering talks with a cup of mate.
 
 ### Subscribe to the Podcast
 
 [![RSS Feed](https://img.shields.io/badge/RSS-orange?style=for-the-badge&logo=rss&logoColor=white)](https://kfir-g.dev/podcast/feed.xml){:target="_blank"}
+[![Podcast Index](https://img.shields.io/badge/Podcast_Index-7985124-red?style=for-the-badge&logo=podcastindex&logoColor=red)](https://podcastindex.org/podcast/7985124){:target="_blank"}
 
 You can subscribe to my podcast using this RSS link:
 
 ```bash
 https://kfir-g.dev/podcast/feed.xml
+
 ```
 
-If your podcast app (not include Spotify) allows adding an RSS feed manually, this is the easiest way to follow new episodes.
+If your podcast app (excluding Spotify) allows adding an RSS feed manually, this is the easiest way to follow new episodes.
 
-Not sure how to add an RSS feed?  
+Not sure how to add an RSS feed?
+
 These step-by-step guides (with screenshots) will show you exactly how:
 
-- **How to manually add an RSS feed to any podcast app**  
-  [https://www.thepitch.show/blog/how-to-manually-add-an-rss-feed-to-your-podcast-app-on-desktop-ios-android/](https://www.thepitch.show/blog/how-to-manually-add-an-rss-feed-to-your-podcast-app-on-desktop-ios-android/)
+* [How to manually add an RSS feed to any podcast app](https://www.thepitch.show/blog/how-to-manually-add-an-rss-feed-to-your-podcast-app-on-desktop-ios-android/)
+* [How to add a podcast using an RSS link (Transistor.fm)](https://transistor.fm/add-podcast/)
 
-- **How to add a podcast using an RSS link (multiple apps supported)**  
-  [https://transistor.fm/add-podcast/](https://transistor.fm/add-podcast/)
-
-Adding the feed above is the **minimum step needed** to start listening. Give it a try!
-
-<img src="../assets/applepodcast.jpeg" alt="Apple Podcast" width="200">
+---
 
 ## Episodes
 
-### [Episode 7 - Sung Ju Yea](episodes/episode7-sungju.md)
+### [Episode 7 - Sung Ju Yea](https://www.google.com/search?q=episodes/episode7-sungju.md)
+
 **Date: 2026-06-14**
 
 Episode 7 features Sung Ju Yea, a Python and backend developer based in Tokyo. In this episode, we step away from standard framework tutorials to explore the human side of engineering: the problem-solver mindset, rapid adaptation, and independent learning. From transitioning into tech from a background in philosophy and statistics, to navigating engineering cultures, Sung Ju shares his blueprint for walking into unfamiliar codebases and immediately delivering value.
 
-### [Episode 6 - Antonio Juanilla (Specter)](episodes/episode6-antonio.md)
+### [Episode 6 - Antonio Juanilla (Specter)](https://www.google.com/search?q=episodes/episode6-antonio.md)
+
 **Date: 2026-03-15**
 
 Episode 6 features Antonio Juanilla, better known as Specter a DevSecOps leader. In this technical deep-dive, we explore how to bake security directly into the backend development lifecycle. From the OSDO framework to hardening Kubernetes clusters and streamlining CI/CD pipelines with SAST, Antonio shares a pragmatic, engineer-to-engineer approach to staying secure in 2026. A must-listen for any developer looking to bridge the gap between "code that works" and "code that is safe."
 
-### [Episode 5 - Paula Medina Mora](episodes/episode5-paula.md)
+### [Episode 5 - Paula Medina Mora](https://www.google.com/search?q=episodes/episode5-paula.md)
+
 **Date: 2026-02-21**
 
 Episode 5 features Paula Medina Mora - HR Expert and Founder of MakingHR. We peel back the curtain on the hiring world to see what actually happens "on the other side" of the desk. We talk about how to build a CV that stands out, the reality of the Spanish tech market, and how to navigate the recruitment process from the first LinkedIn message to signing the contract. An honest look at the human side of software engineering, with practical advice for developers at any level - with mate on the side.
 
-### [Episode 4 - Roberto J. García Navarro](episodes/episode4-roberto.md)
-**Date:** 2026-01-25
+### [Episode 4 - Roberto J. García Navarro](https://www.google.com/search?q=episodes/episode4-roberto.md)
+
+**Date: 2026-01-25**
 
 Episode 4 features Roberto J. García Navarro - Senior Backend Engineer. We talk about how a junior developer can grow into a backend architect, using Roberto’s real career path as a blueprint. We dive into Python, Go, event-driven architecture, and how to make good architectural decisions in real-world systems. A practical, honest conversation about career growth, system design, and learning what actually matters - with mate on the side.
 
-### [Episode 3- Dev Diary: Building TinyURL in Production](episodes/episode3-tinyurl.md)
-**Date:** 2025-12-21
+### [Episode 3 - Dev Diary: Building TinyURL in Production](https://www.google.com/search?q=episodes/episode3-tinyurl.md)
+
+**Date: 2025-12-21**
 
 Episode 3 takes you behind the scenes of building TinyURL - a URL shortener deployed in a production environment. We cover the full journey from designing the FastAPI backend and PostgreSQL database to implementing Redis caching and configuring Nginx as a reverse proxy. I share the challenges of CI/CD pipelines, SSL setup, and deploying with Gunicorn, as well as the lessons learned about distributed systems, caching strategies, and scaling web services. This episode gives a hands-on view of turning code into a reliable, real-world web application.
 
+### [Episode 2 - Martín Torre Castro](https://www.google.com/search?q=episodes/episode2-martin.md)
 
-### [Episode 2 - Martín Torre Castro](episodes/episode2-martin.md)
-**Date:** 2025-12-13
+**Date: 2025-12-13**
 
 Episode 2 features Martín Torre Castro - software architect, performance engineer, and Python Coruña community lead. We talk about performance testing in real systems, software architecture in practice, Python communities in Spain, and lessons learned from building and scaling production systems.
 
+### [Episode 1 - Ssali Jonathan](https://www.google.com/search?q=episodes/episode1-jod35.md)
 
-### [Episode 1 - Ssali Jonathan](episodes/episode1-jod35.md)
-**Date:** 2025-11-30  
+**Date: 2025-11-30**
 
 Episode 1 kicks off with Ssali Jonathan - software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. Topics include FastAPI, Starlette, databases, Redis, and learning as a software engineer.
-
