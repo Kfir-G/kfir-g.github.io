@@ -69,6 +69,7 @@ Connect with Sung Ju Yea:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/sung-ju-yea-84b99920a/">Sung Ju Yea</podcast:person>
+      <podcast:location geo="geo:35.6762,139.6503" osm="R1543125" country="JP">Tokyo, Japan</podcast:location>
       <podcast:txt purpose="comment">https://fosstodon.org/@kg/116748655648077873</podcast:txt>
     </item>
 
@@ -105,6 +106,7 @@ Connect with Antonio Juanilla (Specter):
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/spectertj/">Antonio Juanilla (Specter)</podcast:person>
+      <podcast:location geo="geo:25.2048,55.2708" osm="R447975" country="AE">Dubai, United Arab Emirates</podcast:location>
     </item>
 
     <item>
@@ -135,6 +137,7 @@ Connect with Paula Medina Mora:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/paulamedinamora/">Paula Medina Mora</podcast:person>
+      <podcast:location geo="geo:43.3623,-8.4115" osm="R342632" country="ES">A Coruña, Spain</podcast:location>
     </item>
 
     <item>
@@ -166,6 +169,7 @@ Connect with Roberto J. García Navarro:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/roberto-garcia-navarro/">Roberto J. García Navarro</podcast:person>
+      <podcast:location geo="geo:43.3623,-8.4115" osm="R342632" country="ES">A Coruña, Spain</podcast:location>
     </item>
 
     <item>
@@ -194,6 +198,7 @@ Topics we cover:
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
+      <podcast:location geo="geo:43.3623,-8.4115" osm="R342632" country="ES">A Coruña, Spain</podcast:location>
     </item>
 
     <item>
@@ -225,6 +230,7 @@ Connect with Martín Torre Castro:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/martin-torre-castro/">Martín Torre Castro</podcast:person>
+      <podcast:location geo="geo:43.3623,-8.4115" osm="R342632" country="ES">A Coruña, Spain</podcast:location>
     </item>
 
     <item>
@@ -258,6 +264,7 @@ Connect with Ssali Jonathan:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://github.com/jod35">Ssali Jonathan</podcast:person>
+      <podcast:location geo="geo:0.3476,32.5825" osm="R5532585" country="UG">Kampala, Uganda</podcast:location>
     </item>
 
   </channel>
