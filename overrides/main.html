@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {# Render the original content of the page (including the H1 title) #}
+  {{ super() }}
+
+  {# If this is an episode page with an audio key in frontmatter, inject the player #}
+  {% if page.meta.audio %}
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Find the main H1 heading and position the player immediately after it
+      const h1 = document.querySelector("article h1");
+      const player = document.getElementById("cwm-custom-player");
+      if (h1 && player) {
+        h1.after(player);
+        player.style.display = "block";
+      }
+    });
+  </script>
+
+  <div id="cwm-custom-player" style="display: none; background: #3b8984; border: 4px solid #f8ca75; border-radius: 16px; padding: 28px; color: #fff8e7; font-family: 'Courier New', monospace; max-width: 800px; width: 100%; margin: 28px 0; box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.4);">
+    
+    <!-- HEADER -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="{{ 'podcast/newlogo.png' | url }}" alt="Code with Mate Logo" style="width: 110px; height: 110px; border-radius: 12px; border: 3px solid #779cf8; object-fit: cover;" />
+        <div>
+          <div style="color: #f8ca75; font-weight: bold; font-size: 1.4rem; letter-spacing: 1.5px;">CODE WITH MATE</div>
+          <div style="color: #fff8e7; font-size: 1.1rem; margin-top: 4px; opacity: 0.9;">{{ page.title }}</div>
+        </div>
+      </div>
+      
+      <button onclick="shareEpisode()" style="background: rgba(255, 248, 231, 0.15); border: 1px solid #779cf8; color: #fff8e7; padding: 10px 18px; border-radius: 8px; font-family: inherit; font-size: 1rem; cursor: pointer; font-weight: bold;">
+        🔗 Share
+      </button>
+    </div>
+
+    <!-- AUDIO SOURCE -->
+    <audio id="cwm-audio">
+      <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs{{ page.meta.audio }}" type="audio/mpeg" />
+    </audio>
+
+    <!-- SEEK BAR -->
+    <div style="margin-bottom: 18px;">
+      <input type="range" id="cwm-seekbar" value="0" min="0" step="1" oninput="seekAudio(this.value)" style="width: 100%; height: 8px; accent-color: #ec5228; cursor: pointer;" />
+      <div style="display: flex; justify-content: space-between; font-size: 0.95rem; color: #d4e157; margin-top: 6px; font-weight: bold;">
+        <span id="cwm-current-time">00:00</span>
+        <span id="cwm-duration">00:00</span>
+      </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div style="display: flex; justify-content: center; align-items: center; gap: 18px;">
+      <button onclick="skipTime(-15)" style="background: rgba(0, 0, 0, 0.2); border: 1px solid #779cf8; color: #fff8e7; padding: 12px 20px; border-radius: 8px; font-family: inherit; font-size: 1.05rem; font-weight: bold; cursor: pointer;">
+        ⏪ -15s
+      </button>
+
+      <button id="cwm-play-btn" onclick="togglePlay()" style="background: #ec5228; border: none; color: #fff8e7; padding: 12px 32px; border-radius: 8px; font-family: inherit; font-size: 1.25rem; font-weight: bold; cursor: pointer; min-width: 130px; box-shadow: 0 4px 12px rgba(236, 82, 40, 0.4);">
+        ▶ Play
+      </button>
+
+      <button onclick="skipTime(15)" style="background: rgba(0, 0, 0, 0.2); border: 1px solid #779cf8; color: #fff8e7; padding: 12px 20px; border-radius: 8px; font-family: inherit; font-size: 1.05rem; font-weight: bold; cursor: pointer;">
+        +15s ⏩
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    const audio = document.getElementById('cwm-audio');
+    const playBtn = document.getElementById('cwm-play-btn');
+    const seekbar = document.getElementById('cwm-seekbar');
+    const currentTimeEl = document.getElementById('cwm-current-time');
+    const durationEl = document.getElementById('cwm-duration');
+
+    function formatTime(s){ if(isNaN(s)) return "00:00"; const m=Math.floor(s/60), sec=Math.floor(s%60); return `${m<10?'0':''}${m}:${sec<10?'0':''}${sec}`; }
+    function togglePlay(){ if(audio.paused){ audio.play(); playBtn.textContent='⏸ Pause'; } else { audio.pause(); playBtn.textContent='▶ Play'; } }
+    function skipTime(s){ audio.currentTime = Math.max(0, Math.min(audio.duration || 0, audio.currentTime + s)); }
+    function seekAudio(v){ audio.currentTime = v; }
+    
+    if(audio) {
+      audio.addEventListener('loadedmetadata', () => { seekbar.max = Math.floor(audio.duration); durationEl.textContent = formatTime(audio.duration); });
+      audio.addEventListener('timeupdate', () => { seekbar.value = Math.floor(audio.currentTime); currentTimeEl.textContent = formatTime(audio.currentTime); });
+      audio.addEventListener('ended', () => { playBtn.textContent = '▶ Play'; seekbar.value = 0; });
+    }
+
+    function shareEpisode() {
+      const shareData = { title: 'Code with Mate', text: 'Check out this episode on Code with Mate!', url: window.location.href };
+      if (navigator.share) { navigator.share(shareData).catch(()=>{}); } 
+      else { navigator.clipboard.writeText(window.location.href); alert('Episode link copied to clipboard!'); }
+    }
+  </script>
+  {% endif %}
+{% endblock %}

@@ -5,15 +5,7 @@ tags: [podcast, software, dev]
 audio: "/podcast/audio-files/episode1-jod35.mp3"
 ---
 
-<img src="/podcast/newlogo.png" alt="Code with Mate Logo" width="200"/>
-
 # Episode 1 - Ssali Jonathan
-
-<audio controls style="width: 100%;">
-  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode1-jod35.mp3" type="audio/mpeg">
-  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode1-jod35.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-</audio>
 
 Episode 1 kicks off with Ssali Jonathan — software engineer and open-source enthusiast. We talk about his journey in tech, his content creation, and Python web frameworks. A relaxed, honest conversation about building, learning, and growing in software - with mate on the side.
 

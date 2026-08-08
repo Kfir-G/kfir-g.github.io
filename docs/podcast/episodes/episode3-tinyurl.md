@@ -5,15 +5,7 @@ tags: [podcast, backend, fastapi, redis, nginx, devops, system-design]
 audio: "/podcast/audio-files/episode3-tinyurl.mp3"
 ---
 
-<img src="/podcast/newlogo.png" alt="Code with Mate Logo" width="200"/>
-
 # Episode 3 – Dev Diary: Building TinyURL in Production
-
-<audio controls style="width: 100%;">
-  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode3-tinyurl.mp3" type="audio/mpeg">
-  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode3-tinyurl.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-</audio>
 
 In this episode, I walk through the full journey of building and shipping a **TinyURL-like service** to a real production environment.
 

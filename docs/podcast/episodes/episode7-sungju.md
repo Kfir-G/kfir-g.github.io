@@ -5,15 +5,7 @@ tags: [podcast, python, fastapi, soft-skills, problem-solving, ai-engineering, c
 audio: "/podcast/audio-files/episode7-sungju.mp3"
 ---
 
-<img src="/podcast/newlogo.png" alt="Code with Mate Logo" width="200"/>
-
 # Episode 7 - Sung Ju Yea
-
-<audio controls style="width: 100%;">
-  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3" type="audio/mpeg">
-  <source src="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode7-sungju.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-</audio>
 
 [¡¡Click and add this episode to your podcast app!!](../index.md#subscribe-to-the-podcast) <br/>
 
