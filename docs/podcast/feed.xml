@@ -70,7 +70,7 @@ Connect with Sung Ju Yea:
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/sung-ju-yea-84b99920a/">Sung Ju Yea</podcast:person>
       <podcast:location geo="geo:35.6762,139.6503" osm="R1543125" country="JP">Tokyo, Japan</podcast:location>
-      <podcast:txt purpose="comment">https://fosstodon.org/@kg/116748655648077873</podcast:txt>
+      <podcast:socialInteract protocol="activitypub" uri="https://fosstodon.org/@kg/116748655648077873" accountId="@kg" accountUrl="https://fosstodon.org/@kg" />
     </item>
 
     <item>
