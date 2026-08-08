@@ -14,6 +14,7 @@
     <!-- Podcast Index & Platform Identifiers -->
     <podcast:guid>7985124</podcast:guid>
     <podcast:locked owner="kfir.gisman@gmail.com">yes</podcast:locked>
+    <podcast:txt purpose="verify">https://fosstodon.org/@kg</podcast:txt>
 
     <!-- iTunes Feed Settings -->
     <itunes:title>Code with Mate</itunes:title>
@@ -68,6 +69,7 @@ Connect with Sung Ju Yea:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest" href="https://www.linkedin.com/in/sung-ju-yea-84b99920a/">Sung Ju Yea</podcast:person>
+      <podcast:txt purpose="comment">https://fosstodon.org/@kg/116748655648077873</podcast:txt>
     </item>
 
     <item>
