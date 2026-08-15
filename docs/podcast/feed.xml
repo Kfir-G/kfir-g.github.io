@@ -15,7 +15,8 @@
     <podcast:guid>7985124</podcast:guid>
     <podcast:locked owner="kfir.gisman@gmail.com">yes</podcast:locked>
     <podcast:txt purpose="verify">https://fosstodon.org/@kg</podcast:txt>
-
+    <a rel="me" href="https://fosstodon.org/@kg">Mastodon</a>
+    
     <!-- iTunes Feed Settings -->
     <itunes:title>Code with Mate</itunes:title>
     <itunes:subtitle>Friendly dev talks with a cup of mate</itunes:subtitle>
