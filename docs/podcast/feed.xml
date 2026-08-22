@@ -54,6 +54,26 @@ Topics we cover:
 - Lazy imports, canonical imports, and the future of the Python ecosystem.
 - The role of sponsorship in Open Source.
 
+Chapters:
+00:00 - Introduction to Frank Hoffman's Journey
+02:46 - Exploring the Evolution of Python and Libraries
+05:40 - The Birth of Inline Snapshot
+08:39 - Maintaining and Growing Inline Snapshot
+11:39 - The Role of Sponsorship in Open Source
+14:36 - Understanding Abstract Syntax Trees
+17:24 - Contributions and Community Engagement
+20:26 - Future Aspirations and Projects
+28:29 - Enforcing API Call Best Practices
+30:10 - Exploring Code Crumbs Library
+32:20 - The Problem of Deprecation in Code
+34:50 - The Relevance of Code Crumbs Today
+35:59 - Overview of Frank's Libraries
+36:59 - Using PySource Minimize for Debugging
+40:06 - Lazy Imports and Their Relevance
+41:05 - Canonical Imports for Cleaner Code
+42:04 - Future of the Python Ecosystem
+49:19 - Final Thoughts and Aspirations
+
 Connect with Frank Hoffman:
 - LinkedIn: https://www.linkedin.com/in/15r10nk/
 - Twitter: https://x.com/15r10nk
@@ -68,7 +88,7 @@ Connect with Frank Hoffman:
         length="52428800"/>
       <guid>code-with-mate-episode-8</guid>
       <pubDate>Sun, 22 Aug 2026 00:00:00 +0000</pubDate>
-      <itunes:duration>00:52:00</itunes:duration>
+      <itunes:duration>00:52:01</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
       <itunes:episode>8</itunes:episode>
       <itunes:season>1</itunes:season>
@@ -77,6 +97,7 @@ Connect with Frank Hoffman:
       <podcast:chapters url="https://kfir-g.github.io/podcast/chapters/episode8-frank.json" type="application/json" />
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest">Frank Hoffman</podcast:person>
+      <podcast:location geo="geo:51.0504,13.7373" osm="R62721" country="DE">Dresden, Germany</podcast:location>
     </item>
 
     <item>
