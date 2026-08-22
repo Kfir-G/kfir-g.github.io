@@ -15,7 +15,6 @@
     <podcast:guid>7985124</podcast:guid>
     <podcast:locked owner="kfir.gisman@gmail.com">yes</podcast:locked>
     <podcast:txt purpose="verify">https://fosstodon.org/@kg</podcast:txt>
-    <a rel="me" href="https://fosstodon.org/@kg">Mastodon</a>
     
     <!-- iTunes Feed Settings -->
     <itunes:title>Code with Mate</itunes:title>
@@ -31,8 +30,6 @@
     </itunes:owner>
 
     <!-- Categories -->
-    <category>Technology</category>
-    <category>Software Development</category>
     <itunes:category text="Technology"/>
     <itunes:category text="Business">
       <itunes:category text="Careers"/>
@@ -55,24 +52,24 @@ Topics we cover:
 - The role of sponsorship in Open Source.
 
 Chapters:
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=00:00">00:00</a> - Introduction to Frank Hoffman's Journey
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=02:46">02:46</a> - Exploring the Evolution of Python and Libraries
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=05:40">05:40</a> - The Birth of Inline Snapshot
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=08:39">08:39</a> - Maintaining and Growing Inline Snapshot
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=11:39">11:39</a> - The Role of Sponsorship in Open Source
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=14:36">14:36</a> - Understanding Abstract Syntax Trees
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=17:24">17:24</a> - Contributions and Community Engagement
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=20:26">20:26</a> - Future Aspirations and Projects
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=28:29">28:29</a> - Enforcing API Call Best Practices
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=30:10">30:10</a> - Exploring Code Crumbs Library
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=32:20">32:20</a> - The Problem of Deprecation in Code
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=34:50">34:50</a> - The Relevance of Code Crumbs Today
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=35:59">35:59</a> - Overview of Frank's Libraries
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=36:59">36:59</a> - Using PySource Minimize for Debugging
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=40:06">40:06</a> - Lazy Imports and Their Relevance
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=41:05">41:05</a> - Canonical Imports for Cleaner Code
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=42:04">42:04</a> - Future of the Python Ecosystem
-- <a href="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3#t=49:19">49:19</a> - Final Thoughts and Aspirations
+- 00:00 - Introduction to Frank Hoffman's Journey
+- 02:46 - Exploring the Evolution of Python and Libraries
+- 05:40 - The Birth of Inline Snapshot
+- 08:39 - Maintaining and Growing Inline Snapshot
+- 11:39 - The Role of Sponsorship in Open Source
+- 14:36 - Understanding Abstract Syntax Trees
+- 17:24 - Contributions and Community Engagement
+- 20:26 - Future Aspirations and Projects
+- 28:29 - Enforcing API Call Best Practices
+- 30:10 - Exploring Code Crumbs Library
+- 32:20 - The Problem of Deprecation in Code
+- 34:50 - The Relevance of Code Crumbs Today
+- 35:59 - Overview of Frank's Libraries
+- 36:59 - Using PySource Minimize for Debugging
+- 40:06 - Lazy Imports and Their Relevance
+- 41:05 - Canonical Imports for Cleaner Code
+- 42:04 - Future of the Python Ecosystem
+- 49:19 - Final Thoughts and Aspirations
 
 Connect with Frank Hoffman:
 - LinkedIn: https://www.linkedin.com/in/15r10nk/
@@ -93,7 +90,6 @@ Connect with Frank Hoffman:
       <itunes:episode>8</itunes:episode>
       <itunes:season>1</itunes:season>
       <itunes:episodeType>full</itunes:episodeType>
-      <!-- Here is where the chapters JSON is linked! -->
       <podcast:chapters url="https://kfir-g.github.io/podcast/chapters/episode8-frank.json" type="application/json" />
       <podcast:person role="host">Kfir</podcast:person>
       <podcast:person role="guest">Frank Hoffman</podcast:person>
