@@ -39,6 +39,47 @@
     </itunes:category>
 
     <item>
+      <title>Episode 8 - Frank Hoffman</title>
+      <description><![CDATA[
+Episode 8 features Frank Hoffman, an open-source developer and the creator of Python libraries like Inline Snapshot, Code Crumbs, and PySource Minimize. We dive deep into the Python ecosystem, discussing how tools like Abstract Syntax Trees (AST) work under the hood and the challenges of maintaining open-source projects.
+
+We also explore the birth of Inline Snapshot, the importance of open-source sponsorship, debugging techniques, and best practices for cleaner code with canonical and lazy imports.
+
+Topics we cover:
+- The evolution of Python and its libraries.
+- The birth, maintenance, and growth of Inline Snapshot.
+- Understanding Abstract Syntax Trees (AST).
+- The problem of deprecation in code and how Code Crumbs solves it.
+- Using PySource Minimize for debugging.
+- Lazy imports, canonical imports, and the future of the Python ecosystem.
+- The role of sponsorship in Open Source.
+
+Connect with Frank Hoffman:
+- LinkedIn: https://www.linkedin.com/in/15r10nk/
+- Twitter: https://x.com/15r10nk
+- Mastodon: https://fosstodon.org/@15r10nk
+- GitHub: https://github.com/15r10
+- Inline Snapshot: https://15r10.github.io/inline-snapshot/
+- Other Python Libraries: https://github.com/15r10nk?tab=repositories
+      ]]></description>
+      <enclosure 
+        url="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3"
+        type="audio/mpeg"
+        length="52428800"/>
+      <guid>code-with-mate-episode-8</guid>
+      <pubDate>Sun, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <itunes:duration>00:52:00</itunes:duration>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:episode>8</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <itunes:episodeType>full</itunes:episodeType>
+      <!-- Here is where the chapters JSON is linked! -->
+      <podcast:chapters url="https://kfir-g.github.io/podcast/chapters/episode8-frank.json" type="application/json" />
+      <podcast:person role="host">Kfir</podcast:person>
+      <podcast:person role="guest">Frank Hoffman</podcast:person>
+    </item>
+
+    <item>
       <title>Episode 7 - Sung Ju Yea</title>
       <description><![CDATA[
 Episode 7 features Sung Ju Yea, a Python and backend developer based in Tokyo, Japan. We step away from standard syntax discussions to focus on the human side of engineering: the problem-solver mindset, rapid adaptation, and independent learning.

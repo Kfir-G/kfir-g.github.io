@@ -235,6 +235,15 @@
     function skipTime(s){ audio.currentTime = Math.max(0, Math.min(audio.duration || 0, audio.currentTime + s)); }
     function seekAudio(v){ audio.currentTime = v; }
     
+    // Jump to timestamp and play
+    function jumpToTime(seconds) {
+      if (audio) {
+        audio.currentTime = seconds;
+        audio.play();
+        if (playBtn) playBtn.textContent = '⏸ Pause';
+      }
+    }
+
     if(audio) {
       audio.addEventListener('loadedmetadata', () => { seekbar.max = Math.floor(audio.duration); durationEl.textContent = formatTime(audio.duration); });
       audio.addEventListener('timeupdate', () => { seekbar.value = Math.floor(audio.currentTime); currentTimeEl.textContent = formatTime(audio.currentTime); });

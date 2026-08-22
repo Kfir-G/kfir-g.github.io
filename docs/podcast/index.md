@@ -29,6 +29,12 @@ These step-by-step guides (with screenshots) will show you exactly how:
 
 ## Episodes
 
+### [Episode 8 - Frank Hoffman](episodes/episode8-frank.md)
+
+**Date: 2026-08-22**
+
+Episode 8 features Frank Hoffmann (known online as 15r10nk), an open-source software developer and maintainer based in Germany. In this episode, we dive deep into Python internals, the creation and growth of `inline-snapshot` and `codecrumbs`, working with Abstract Syntax Trees (AST), and what it takes to build and maintain developer tools that eliminate tedious work.
+
 ### [Episode 7 - Sung Ju Yea](episodes/episode7-sungju.md)
 
 **Date: 2026-06-14**
