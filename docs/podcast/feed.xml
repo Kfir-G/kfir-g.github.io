@@ -36,9 +36,9 @@
     </itunes:category>
 
     <item>
-      <title>Episode 8 - Frank Hoffman</title>
+      <title>Episode 8 - Frank Hoffmann</title>
       <description><![CDATA[
-Episode 8 features Frank Hoffman, an open-source developer and the creator of Python libraries like Inline Snapshot, Code Crumbs, and PySource Minimize. We dive deep into the Python ecosystem, discussing how tools like Abstract Syntax Trees (AST) work under the hood and the challenges of maintaining open-source projects.
+Episode 8 features Frank Hoffmann, an open-source developer and the creator of Python libraries like Inline Snapshot, Code Crumbs, and PySource Minimize. We dive deep into the Python ecosystem, discussing how tools like Abstract Syntax Trees (AST) work under the hood and the challenges of maintaining open-source projects.
 
 We also explore the birth of Inline Snapshot, the importance of open-source sponsorship, debugging techniques, and best practices for cleaner code with canonical and lazy imports.
 
@@ -52,32 +52,31 @@ Topics we cover:
 - The role of sponsorship in Open Source.
 
 Chapters:
-- 00:00 - Introduction to Frank Hoffman's Journey
-- 02:46 - Exploring the Evolution of Python and Libraries
-- 05:40 - The Birth of Inline Snapshot
-- 08:39 - Maintaining and Growing Inline Snapshot
-- 11:39 - The Role of Sponsorship in Open Source
-- 14:36 - Understanding Abstract Syntax Trees
-- 17:24 - Contributions and Community Engagement
-- 20:26 - Future Aspirations and Projects
-- 28:29 - Enforcing API Call Best Practices
-- 30:10 - Exploring Code Crumbs Library
-- 32:20 - The Problem of Deprecation in Code
-- 34:50 - The Relevance of Code Crumbs Today
-- 35:59 - Overview of Frank's Libraries
-- 36:59 - Using PySource Minimize for Debugging
-- 40:06 - Lazy Imports and Their Relevance
-- 41:05 - Canonical Imports for Cleaner Code
-- 42:04 - Future of the Python Ecosystem
-- 49:19 - Final Thoughts and Aspirations
+- 00:00:00 - Introduction to Frank Hoffmann's Journey
+- 00:02:46 - Exploring the Evolution of Python & Libraries
+- 00:05:40 - The Birth of Inline Snapshot
+- 00:08:39 - Maintaining and Growing Inline Snapshot
+- 00:11:39 - The Role of Sponsorship in Open Source
+- 00:14:36 - Understanding Abstract Syntax Trees (AST)
+- 00:17:24 - Contributions & Community Engagement
+- 00:20:26 - Future Aspirations and Projects
+- 00:28:29 - Enforcing API Call Best Practices
+- 00:30:10 - Exploring the Code Crumbs Library
+- 00:32:20 - The Problem of Deprecation in Code
+- 00:34:50 - The Relevance of Code Crumbs Today
+- 00:35:59 - Overview of Frank's Libraries
+- 00:36:59 - Using PySource Minimize for Debugging
+- 00:40:06 - Lazy Imports and Their Relevance
+- 00:41:05 - Canonical Imports for Cleaner Code
+- 00:42:04 - Future of the Python Ecosystem
+- 00:49:19 - Final Thoughts and Aspirations
 
-Connect with Frank Hoffman:
-- LinkedIn: https://www.linkedin.com/in/15r10nk/
-- Twitter: https://x.com/15r10nk
+Connect with Frank Hoffmann:
+- GitHub: https://github.com/15r10nk
+- Documentation: https://15r10nk.github.io/inline-snapshot
 - Mastodon: https://fosstodon.org/@15r10nk
-- GitHub: https://github.com/15r10
-- Inline Snapshot: https://15r10.github.io/inline-snapshot/
-- Other Python Libraries: https://github.com/15r10nk?tab=repositories
+- X / Twitter: https://x.com/15r10nk
+- PyCon DE Talk: https://www.youtube.com/watch?v=G2GMVfMrswg
       ]]></description>
       <enclosure 
         url="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3"
@@ -92,8 +91,9 @@ Connect with Frank Hoffman:
       <itunes:episodeType>full</itunes:episodeType>
       <podcast:chapters url="https://kfir-g.github.io/podcast/chapters/episode8-frank.json" type="application/json" />
       <podcast:person role="host">Kfir</podcast:person>
-      <podcast:person role="guest">Frank Hoffman</podcast:person>
+      <podcast:person role="guest" href="https://github.com/15r10nk">Frank Hoffmann</podcast:person>
       <podcast:location geo="geo:51.0504,13.7373" osm="R62721" country="DE">Dresden, Germany</podcast:location>
+      <podcast:socialInteract protocol="activitypub" uri="https://fosstodon.org/@kg/117138386495633658" accountId="@kg" accountUrl="https://fosstodon.org/@kg" />
     </item>
 
     <item>
