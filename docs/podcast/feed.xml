@@ -37,47 +37,59 @@
 
     <item>
       <title>Episode 8 - Frank Hoffmann</title>
-      <description><![CDATA[
-Episode 8 features Frank Hoffmann, an open-source developer and the creator of Python libraries like Inline Snapshot, Code Crumbs, and PySource Minimize. We dive deep into the Python ecosystem, discussing how tools like Abstract Syntax Trees (AST) work under the hood and the challenges of maintaining open-source projects.
-
-We also explore the birth of Inline Snapshot, the importance of open-source sponsorship, debugging techniques, and best practices for cleaner code with canonical and lazy imports.
+      <description><![CDATA[Episode 8 features Frank Hoffmann, an open-source developer and the creator of Python libraries like Inline Snapshot, Code Crumbs, and PySource Minimize...]]></description>
+      <pubDate>Sun, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <itunes:summary><![CDATA[Episode 8 features Frank Hoffmann, an open-source developer...
 
 Topics we cover:
-- The evolution of Python and its libraries.
-- The birth, maintenance, and growth of Inline Snapshot.
-- Understanding Abstract Syntax Trees (AST).
-- The problem of deprecation in code and how Code Crumbs solves it.
-- Using PySource Minimize for debugging.
-- Lazy imports, canonical imports, and the future of the Python ecosystem.
-- The role of sponsorship in Open Source.
+(00:00:00) Introduction to Frank Hoffmann's Journey
+(00:02:46) Exploring the Evolution of Python & Libraries
+(00:05:40) The Birth of Inline Snapshot
+(00:08:39) Maintaining and Growing Inline Snapshot
+(00:11:39) The Role of Sponsorship in Open Source
+(00:14:36) Understanding Abstract Syntax Trees (AST)
+(00:17:24) Contributions & Community Engagement
+(00:20:26) Future Aspirations and Projects
+(00:28:29) Enforcing API Call Best Practices
+(00:30:10) Exploring the Code Crumbs Library
+(00:32:20) The Problem of Deprecation in Code
+(00:34:50) The Relevance of Code Crumbs Today
+(00:35:59) Overview of Frank's Libraries
+(00:36:59) Using PySource Minimize for Debugging
+(00:40:06) Lazy Imports and Their Relevance
+(00:41:05) Canonical Imports for Cleaner Code
+(00:42:04) Future of the Python Ecosystem
+(00:49:19) Final Thoughts and Aspirations]]></itunes:summary>
+      <content:encoded><![CDATA[
+<p>Episode 8 features Frank Hoffmann, an open-source developer and the creator of Python libraries like Inline Snapshot, Code Crumbs, and PySource Minimize. We dive deep into the Python ecosystem, discussing how tools like Abstract Syntax Trees (AST) work under the hood and the challenges of maintaining open-source projects.</p>
 
-Chapters:
-- 00:00:00 - Introduction to Frank Hoffmann's Journey
-- 00:02:46 - Exploring the Evolution of Python & Libraries
-- 00:05:40 - The Birth of Inline Snapshot
-- 00:08:39 - Maintaining and Growing Inline Snapshot
-- 00:11:39 - The Role of Sponsorship in Open Source
-- 00:14:36 - Understanding Abstract Syntax Trees (AST)
-- 00:17:24 - Contributions & Community Engagement
-- 00:20:26 - Future Aspirations and Projects
-- 00:28:29 - Enforcing API Call Best Practices
-- 00:30:10 - Exploring the Code Crumbs Library
-- 00:32:20 - The Problem of Deprecation in Code
-- 00:34:50 - The Relevance of Code Crumbs Today
-- 00:35:59 - Overview of Frank's Libraries
-- 00:36:59 - Using PySource Minimize for Debugging
-- 00:40:06 - Lazy Imports and Their Relevance
-- 00:41:05 - Canonical Imports for Cleaner Code
-- 00:42:04 - Future of the Python Ecosystem
-- 00:49:19 - Final Thoughts and Aspirations
+<p><strong>Topics we cover:</strong></p>
+<p>(00:00:00) Introduction to Frank Hoffmann's Journey</p>
+<p>(00:02:46) Exploring the Evolution of Python & Libraries</p>
+<p>(00:05:40) The Birth of Inline Snapshot</p>
+<p>(00:08:39) Maintaining and Growing Inline Snapshot</p>
+<p>(00:11:39) The Role of Sponsorship in Open Source</p>
+<p>(00:14:36) Understanding Abstract Syntax Trees (AST)</p>
+<p>(00:17:24) Contributions & Community Engagement</p>
+<p>(00:20:26) Future Aspirations and Projects</p>
+<p>(00:28:29) Enforcing API Call Best Practices</p>
+<p>(00:30:10) Exploring the Code Crumbs Library</p>
+<p>(00:32:20) The Problem of Deprecation in Code</p>
+<p>(00:34:50) The Relevance of Code Crumbs Today</p>
+<p>(00:35:59) Overview of Frank's Libraries</p>
+<p>(00:36:59) Using PySource Minimize for Debugging</p>
+<p>(00:40:06) Lazy Imports and Their Relevance</p>
+<p>(00:41:05) Canonical Imports for Cleaner Code</p>
+<p>(00:42:04) Future of the Python Ecosystem</p>
+<p>(00:49:19) Final Thoughts and Aspirations</p>
 
-Connect with Frank Hoffmann:
-- GitHub: https://github.com/15r10nk
-- Documentation: https://15r10nk.github.io/inline-snapshot
-- Mastodon: https://fosstodon.org/@15r10nk
-- X / Twitter: https://x.com/15r10nk
-- PyCon DE Talk: https://www.youtube.com/watch?v=G2GMVfMrswg
-      ]]></description>
+<p><strong>Connect with Frank Hoffmann:</strong></p>
+<p>• LinkedIn: <a href="https://www.linkedin.com/in/frank-hoffmann-15r10nk">https://www.linkedin.com/in/frank-hoffmann-15r10nk</a></p>
+<p>• GitHub: <a href="https://github.com/15r10nk">https://github.com/15r10nk</a></p>
+<p>• GitHub: <a href="https://github.com/15r10nk">https://github.com/15r10nk</a></p>
+<p>• Documentation: <a href="https://15r10nk.github.io/inline-snapshot">https://15r10nk.github.io/inline-snapshot</a></p>
+<p>• Mastodon: <a href="https://fosstodon.org/@15r10nk">https://fosstodon.org/@15r10nk</a></p>
+      ]]></content:encoded>
       <enclosure 
         url="https://op3.dev/e/media.githubusercontent.com/media/Kfir-G/kfir-g.github.io/refs/heads/main/docs/podcast/audio-files/episode8-frank.mp3"
         type="audio/mpeg"
