@@ -183,3 +183,8 @@ Knowing how it works makes you a better backend engineer, even if you never touc
   https://www.rabbitmq.com/resources/specs/amqp0-9-1.pdf
 - RabbitMQ AMQP Concepts  
   https://www.rabbitmq.com/tutorials/amqp-concepts.html
+
+---
+
+[![RabbitMQ Architecture](../../assets/rabbitmq.png)](https://miro.medium.com/v2/resize:fit:1400/1*BO_W7XX5HIQg2Kfk-oJ4rg.png)
+<small>Source: [Medium](https://miro.medium.com/v2/resize:fit:1400/1*BO_W7XX5HIQg2Kfk-oJ4rg.png)</small>
