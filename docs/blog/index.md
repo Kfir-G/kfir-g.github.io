@@ -11,6 +11,8 @@
 
 ##### New
 
+[How to Debug Duplicate DB Records in a RabbitMQ System](blogs/2026-09-04_debug-duplicate-db-records-rabbitmq.md)
+
 [SQLite Under the Hood](blogs/2026-08-05_sqlite-under-the-hood.md)
 
 [How Elasticsearch Searches Billions of Documents in 5ms](blogs/2026-07-26_elasticsearch-under-the-hood.md)

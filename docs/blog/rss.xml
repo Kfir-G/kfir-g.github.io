@@ -5,7 +5,18 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 27 -->
+    <item>
+      <title>How to Debug Duplicate DB Records in a RabbitMQ System</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-09-04_debug-duplicate-db-records-rabbitmq</link>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
+      <description>
+        A systematic, database-first guide to finding and fixing duplicate DB records in a RabbitMQ pipeline. Learn how to isolate producer retries, broker redeliveries, and consumer concurrency bugs.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-09-04_debug-duplicate-db-records-rabbitmq</guid>
+    </item>
 
     <!-- Post 26 -->
     <item>
