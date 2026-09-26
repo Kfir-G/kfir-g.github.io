@@ -11,6 +11,8 @@
 
 ##### New
 
+[Adding the QUERY HTTP Method to Starlette](blogs/2026-09-26_adding-query-http-method-starlette.md)
+
 [How to Debug Duplicate DB Records in a RabbitMQ System](blogs/2026-09-04_debug-duplicate-db-records-rabbitmq.md)
 
 [SQLite Under the Hood](blogs/2026-08-05_sqlite-under-the-hood.md)

@@ -5,7 +5,18 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 28 -->
+    <item>
+      <title>Adding the QUERY HTTP Method to Starlette</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-09-26_adding-query-http-method-starlette</link>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
+      <description>
+        A walkthrough of adding RFC 10008's QUERY HTTP method to Starlette - routing, HTTPEndpoint dispatch, and OpenAPI 3.2 schema generation - plus a follow-up gap found after release through a public discussion.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-09-26_adding-query-http-method-starlette</guid>
+    </item>
 
     <!-- Post 27 -->
     <item>
@@ -57,7 +68,7 @@
       <link>https://kfir-g.dev/blog/blogs/2026-06-19_the-astral-trilogy-python-pipelines</link>
       <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
       <description>
-        Stop wrestling with a fragmented, legacy soup of Python tooling. Learn how the modern Astral Trilogy—uv, ruff, and ty—completely unifies package management, PEP 8 linting, code formatting, and strict environment-aware type checking into a single pyproject.toml configuration and a blazing-fast 15-second GitHub Actions CI/CD pipeline.
+        Stop wrestling with a fragmented, legacy soup of Python tooling. Learn how the modern Astral Trilogy-uv, ruff, and ty-completely unifies package management, PEP 8 linting, code formatting, and strict environment-aware type checking into a single pyproject.toml configuration and a blazing-fast 15-second GitHub Actions CI/CD pipeline.
       </description>
       <guid>https://kfir-g.dev/blog/blogs/2026-06-19_the-astral-trilogy-python-pipelines</guid>
     </item>
