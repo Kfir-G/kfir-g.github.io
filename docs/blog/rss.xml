@@ -5,7 +5,18 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 00:00:00 GMT</lastBuildDate>
+ 
+    <!-- Post 29 -->
+    <item>
+      <title>HTTP/2 in Python with httpx2: What It Really Means for Async FastAPI</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-10-10_http2-httpx2-fastapi</link>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop assuming http2=True just makes things faster. Learn what HTTP/2 actually changes on the wire - binary frames, multiplexed streams, HPACK, and ALPN negotiation - how Python HTTP clients compare, and why httpx2 only controls the outbound leg of a FastAPI app. Includes a shared AsyncClient via lifespan, concurrent fan-out with asyncio.gather, a benchmark you can run yourself, and a short migration guide from httpx.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-10-10_http2-httpx2-fastapi</guid>
+    </item>
 
     <!-- Post 28 -->
     <item>

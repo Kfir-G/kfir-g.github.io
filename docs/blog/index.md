@@ -11,6 +11,8 @@
 
 ##### New
 
+[HTTP/2 in Python with httpx2: What It Really Means for Async FastAP](blogs/2026-10-07_http2-httpx2-fastapi.md)
+
 [Adding the QUERY HTTP Method to Starlette](blogs/2026-09-26_adding-query-http-method-starlette.md)
 
 [How to Debug Duplicate DB Records in a RabbitMQ System](blogs/2026-09-04_debug-duplicate-db-records-rabbitmq.md)
