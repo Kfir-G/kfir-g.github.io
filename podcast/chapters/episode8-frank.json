@@ -1,0 +1,23 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    { "startTime": 0, "title": "Introduction to Frank Hoffman's Journey" },
+    { "startTime": 166, "title": "Exploring the Evolution of Python and Libraries" },
+    { "startTime": 340, "title": "The Birth of Inline Snapshot" },
+    { "startTime": 519, "title": "Maintaining and Growing Inline Snapshot" },
+    { "startTime": 699, "title": "The Role of Sponsorship in Open Source" },
+    { "startTime": 876, "title": "Understanding Abstract Syntax Trees" },
+    { "startTime": 1044, "title": "Contributions and Community Engagement" },
+    { "startTime": 1226, "title": "Future Aspirations and Projects" },
+    { "startTime": 1709, "title": "Enforcing API Call Best Practices" },
+    { "startTime": 1810, "title": "Exploring Code Crumbs Library" },
+    { "startTime": 1940, "title": "The Problem of Deprecation in Code" },
+    { "startTime": 2090, "title": "The Relevance of Code Crumbs Today" },
+    { "startTime": 2159, "title": "Overview of Frank's Libraries" },
+    { "startTime": 2219, "title": "Using PySource Minimize for Debugging" },
+    { "startTime": 2406, "title": "Lazy Imports and Their Relevance" },
+    { "startTime": 2465, "title": "Canonical Imports for Cleaner Code" },
+    { "startTime": 2524, "title": "Future of the Python Ecosystem" },
+    { "startTime": 2959, "title": "Final Thoughts and Aspirations" }
+  ]
+}
