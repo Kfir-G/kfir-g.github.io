@@ -11,6 +11,8 @@
 
 ##### New
 
+[The eMudhra CA Incident Your pip Trusted a Key Anyone Could Guess](blogs/2026-10-22_emudhra-emsign-ca-incident-python.md)
+
 [HTTP/2 in Python with httpx2: What It Really Means for Async FastAP](blogs/2026-10-07_http2-httpx2-fastapi.md)
 
 [Adding the QUERY HTTP Method to Starlette](blogs/2026-09-26_adding-query-http-method-starlette.md)

@@ -5,8 +5,19 @@
     <link>https://kfir-g.dev/blog/</link>
     <description>Technical articles about Python, FastAPI, Cybersecurity, and more by Kfir Gisman.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2026 00:00:00 GMT</lastBuildDate>
- 
+    <lastBuildDate>Thu, 22 Oct 2026 00:00:00 GMT</lastBuildDate>
+
+    <!-- Post 30 -->
+    <item>
+      <title>The eMudhra CA Incident: Your pip Trusted a Key Anyone Could Guess (and How to Patch It)</title>
+      <link>https://kfir-g.dev/blog/blogs/2026-10-22_emudhra-emsign-ca-incident-python</link>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>
+        Stop assuming your OS trust store protects your Python tooling. Learn how a handful of eMudhra intermediate CA keys with guessable private values (d &lt; 256) let anyone forge certificates, why pip's vendored certifi means only pip 26.2.2+ closes the hole, and how to patch it end to end: a hash-pinned pip bootstrap, certifi and uv upgrades, virtualenvs, ensurepip, containers, CI, and a version-check script you can run today.
+      </description>
+      <guid>https://kfir-g.dev/blog/blogs/2026-10-22_emudhra-emsign-ca-incident-python</guid>
+    </item>
+
     <!-- Post 29 -->
     <item>
       <title>HTTP/2 in Python with httpx2: What It Really Means for Async FastAPI</title>
