@@ -1,0 +1,5 @@
+/* Increase logo size */
+.md-header-nav__title img {
+    height: 150px;
+    width: auto;
+}
